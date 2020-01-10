@@ -4,7 +4,6 @@ module.exports = {
   themeConfig: {
     // logo: '/mm.png',
     nav: [
-      { text: 'Home', link: '/' },
       { text: 'Donate', link: 'https://magicmirror.builders/donate' },
       { text: 'Forum', link: 'https://forum.magicmirror.builders' }
     ],
