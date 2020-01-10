@@ -18,6 +18,16 @@ Therefore the only officially supported way of installation is by using a [manua
 The installation step for `npm install` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
 :::
 
+## Alternative Installation Methods
+The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
+
+### Automatic Installation Scripts
+
+- Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts)
+
+### Docker Image
+- MagicMirror² in server only mode can be deployed using [Docker](https://docker.com). Head over to the [MagicMirror Docker GitHub repository](https://github.com/bastilimbach/docker-MagicMirror) for more information.
+
 ## Usage
 
 Note the following:
@@ -50,15 +60,3 @@ var config = {
 ### Client Only
 
 This is when you already have a server running remotely and want your RPi to connect as a standalone client to this instance, to show the MM from the server. Then from your RPi, you run it with: `node clientonly --address 192.168.1.5 --port 8080`. (Specify the ip address and port number of the server)
-
-
-## Alternative Installation Methods
-The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
-
-### Automatic Installation Scripts
-
-- Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: https://github.com/sdetweil/MagicMirror_scripts
-
-### Docker Image
-MagicMirror² in server only mode can be deployed using [Docker](https://docker.com). Head over to the [MagicMirror Docker GitHub repository](https://github.com/bastilimbach/docker-MagicMirror) for more information.
-
