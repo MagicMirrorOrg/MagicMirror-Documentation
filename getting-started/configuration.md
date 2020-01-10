@@ -27,17 +27,6 @@ The following properties can be configured:
 | `language` | The language of the interface. (Note: Not all elements will be localized.) Possible values are `en`, `nl`, `ru`, `fr`, etc., but the default value is `en`. |
 | `timeFormat` | The form of time notation that will be used. Possible values are `12` or `24`. The default is `24`. |
 | `units` | The units that will be used in the default weather modules. Possible values are `metric` or `imperial`. The default is `metric`. |
-| `modules` | An array of active modules. **The array must contain objects. See the next table below for more information.** |
+| `modules` | An array of active modules. **The array must contain objects. See [module configuration](/modules/configuration.md) for more information.** |
 | `electronOptions` | An optional array of Electron (browser) options. This allows configuration of e.g. the browser screen size and position (example: `electronOptions: { fullscreen: false, width: 800, height: 600 }`). Kiosk mode can be enabled by setting `kiosk: true`, `autoHideMenuBar: false` and `fullscreen: false`. More options can be found [here](https://github.com/electron/electron/blob/master/docs/api/browser-window.md). |
 | `customCss` | The path of the `custom.css` stylesheet. The default is `css/custom.css`. |
-
-Module configuration:
-
-| **Option** | **Description** |
-| --- | --- |
-| `module` | The name of the module. This can also contain the subfolder. Valid examples include `clock`, `default/calendar` and `custommodules/mymodule`. |
-| `position` | The location of the module in which the module will be loaded. Possible values are `top_bar`, `top_left`, `top_center`, `top_right`, `upper_third`, `middle_center`, `lower_third`, `bottom_left`, `bottom_center`, `bottom_right`, `bottom_bar`, `fullscreen_above`, and `fullscreen_below`. This field is optional but most modules require this field to set. Check the documentation of the module for more information. Multiple modules with the same position will be ordered based on the order in the configuration file. |
-| `classes` | Additional classes which are passed to the module. The field is optional. |
-| `header` | To display a header text above the module, add the header property. This field is optional. |
-| `disabled` | Set disabled to `true` to skip creating the module. This field is optional. |
-| `config` | An object with the module configuration properties. Check the documentation of the module for more information. This field is optional, unless the module requires extra configuration. |

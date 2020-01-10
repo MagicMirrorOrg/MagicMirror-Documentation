@@ -1,39 +1,52 @@
 module.exports = {
-  title: 'MagicMirror²',
-  description: 'Documentation',
+  title: 'MagicMirror² Documentation',
+  description: 'The open source modular smart mirror platform.',
   themeConfig: {
     // logo: '/mm.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Donate', link: 'https://magicmirror.builders/donate' }
+      { text: 'Donate', link: 'https://magicmirror.builders/donate' },
+      { text: 'Forum', link: 'https://forum.magicmirror.builders' }
     ],
     sidebar: [
       {
         title: 'Getting Started',
+        collapsable: false,
         children: [
           '/',
           'getting-started/license',
+          'getting-started/requirements',
           'getting-started/installation',
           'getting-started/configuration',
           'getting-started/upgrade-guide',
           'getting-started/contributing',
           'getting-started/support',
+          'getting-started/manifesto',
+          'getting-started/donate',
         ]
       },
       {
         title: 'Modules',
+        collapsable: false,
         children: [
           'modules/introduction',
-          'modules/alert',
-          'modules/calendar',
-          'modules/clock',
-          'modules/compliments',
-          'modules/currentweather',
-          'modules/helloworld',
-          'modules/newsfeed',
-          'modules/updatenotification',
-          'modules/weather',
-          'modules/weatherforecast'
+          'modules/configuration',
+          {
+            title: 'Default Modules',
+            collapsable: false,
+            children: [
+              'modules/alert',
+              'modules/calendar',
+              'modules/clock',
+              'modules/compliments',
+              'modules/currentweather',
+              'modules/helloworld',
+              'modules/newsfeed',
+              'modules/updatenotification',
+              'modules/weather',
+              'modules/weatherforecast'
+            ]
+          }
         ]
       },
       'development/introduction',

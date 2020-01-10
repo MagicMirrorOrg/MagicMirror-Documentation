@@ -1,5 +1,9 @@
 # Upgrade Guide
 
+::: danger WARNING
+Always backup your `config.js`, `custom.css` and `modules` folder before you start the upgrade process!
+:::
+
 If you want to update your MagicMirror² to the latest version, use your terminal to go to your Magic Mirror folder and type the following command:
 ```
 git pull && npm install
@@ -9,4 +13,4 @@ If you changed nothing more than the config or the modules, this should work wit
 
 If you want to update your MagicMirror² to the latest version, use your terminal to go to your Magic Mirror folder and type the following command:
 
-If you want to try the community maintained automated update then, then see the instructions [here](https://github.com/sdetweil/MagicMirror_scripts)
+If you want to try the community maintained automated update then, please see [alternative installation methods](installation.html#alternative-installation-methods)
