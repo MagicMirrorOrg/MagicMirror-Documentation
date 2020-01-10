@@ -14,9 +14,18 @@ Therefore the only officially supported way of installation is by using a [manua
 4. Install and run the app with: `npm install && npm start` \
    For **Server Only** use: `npm install && node serveronly` .
 
+::: tip Raspbian Buster
+If you are running Raspbian Buster you will need to upgrade Electron. This can be done by running the following command from within your MagicMirror folder:
+```
+npm install electron@6.0.12
+```
+:::
+
 ::: warning NOTE
 The installation step for `npm install` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
 :::
+
+
 
 ## Alternative Installation Methods
 The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
