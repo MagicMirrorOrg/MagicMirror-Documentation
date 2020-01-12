@@ -33,6 +33,7 @@ The following installation methods are not maintained by the MagicMirror² core 
 ### Automatic Installation Scripts
 
 - Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts)
+- [The MagicMirror Package Manager](https://github.com/Bee-Mar/mmpm) is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules.
 
 ### Docker Image
 - MagicMirror² in server only mode can be deployed using [Docker](https://docker.com). Head over to the [MagicMirror Docker GitHub repository](https://github.com/bastilimbach/docker-MagicMirror) for more information.
