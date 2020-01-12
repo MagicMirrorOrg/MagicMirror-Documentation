@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-# MagicMirror² Module Development Documentation
+# Module Development Documentation
 This documentation describes the way to develop your own MagicMirror² modules.
 
 ## General Advice
