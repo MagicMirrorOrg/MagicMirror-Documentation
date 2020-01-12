@@ -4,7 +4,7 @@ This module displays a random compliment.
 
 ## Screenshots
 - Compliments Screenshot
-![Compliments Screenshot](compliments_screenshot.png)
+![Compliments Screenshot](./screenshots/compliments_screenshot.png)
 
 ## Using the module
 

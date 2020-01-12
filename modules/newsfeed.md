@@ -4,7 +4,7 @@ This module displays news headlines based on an RSS feed. Scrolling through news
 
 ## Screenshot
 - News Feed Screenshot using the NYT
-![NYT News Feed Screenshot](newsfeed_screenshot.png)
+![NYT News Feed Screenshot](./screenshots/newsfeed_screenshot.png)
 
 ## Using the module
 

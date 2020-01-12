@@ -5,7 +5,7 @@ This module displays the weather forecast for the coming week, including an an i
 ## Screenshots
 
 - 5 day forecast
-![Screenshot of 5 day forecast](forecast_screenshot.png)
+![Screenshot of 5 day forecast](./screenshots/forecast_screenshot.png)
 
 ## Using the module
 

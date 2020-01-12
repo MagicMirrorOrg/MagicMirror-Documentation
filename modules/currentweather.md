@@ -5,7 +5,7 @@ This module displays the current weather, including the windspeed, the sunset or
 ## Screenshot
 
 - Current weather screenshot
-![Current Weather Screenshot](weather_screenshot.png)
+![Current Weather Screenshot](./screenshots/weather_screenshot.png)
 
 ## Using the module
 

@@ -10,14 +10,14 @@ module.exports = {
     sidebar: [
       {
         title: 'Getting Started',
-        collapsable: false,
+        collapsable: true,
         children: [
           '/',
-          'getting-started/license',
           'getting-started/requirements',
           'getting-started/installation',
           'getting-started/configuration',
           'getting-started/upgrade-guide',
+          'getting-started/license',
           'getting-started/contributing',
           'getting-started/support',
           'getting-started/manifesto',
@@ -26,7 +26,7 @@ module.exports = {
       },
       {
         title: 'Modules',
-        collapsable: false,
+        collapsable: true,
         children: [
           'modules/introduction',
           'modules/configuration',
@@ -48,7 +48,17 @@ module.exports = {
           }
         ]
       },
-      'development/introduction',
+      {
+        title: 'Development',
+        collapsable: true,
+        children: [
+          'development/introduction.md',
+          'development/core-module-file.md',
+          'development/node-helper.md',
+          'development/helper-methods.md',
+          'development/logger.md',
+        ]
+      }
     ],
     repo: 'MichMich/MagicMirror',
     repoLabel: 'GitHub',
