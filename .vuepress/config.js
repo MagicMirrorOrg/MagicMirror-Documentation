@@ -49,7 +49,7 @@ module.exports = {
         ]
       },
       {
-        title: 'Development',
+        title: 'Module Development',
         collapsable: true,
         children: [
           'development/introduction.md',
