@@ -19,6 +19,7 @@ If you are running Raspbian Buster you will need to upgrade Electron. This can b
 ```
 npm install electron@6.0.12
 ```
+(This will be fixed in 2.11.0)
 :::
 
 ::: warning NOTE
