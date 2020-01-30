@@ -11,8 +11,9 @@ Therefore the only officially supported way of installation is by using a [manua
 - `sudo apt install -y nodejs`
 2. Clone the repository and check out the master branch: `git clone https://github.com/MichMich/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
-4. Install and run the app with: `npm install && npm start` \
-   For **Server Only** use: `npm install && node serveronly` .
+4. Install the application: `npm install`
+5. Start the application: `npm start` \
+   For **Server Only** use: `node serveronly` .
 
 ::: tip Raspbian Buster
 If you are running Raspbian Buster you will need to upgrade Electron. This can be done by running the following command from within your MagicMirror folder:
