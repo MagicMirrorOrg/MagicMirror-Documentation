@@ -17,6 +17,10 @@ title: Introduction
 MagicMirror² focuses on a modular plugin system and uses [Electron](http://electron.atom.io/) as an application wrapper. So no more web server or browser installs necessary!
 
 
+**MagicMirror²** 是一个开源的，模块化的智能镜平台。伴随可安装模板的丰富，**MagicMirror²**可帮助你把门厅或浴室的镜子转变为你的私人助理。**MagicMirror²**
+是由[初代MagicMirror](http://michaelteeuw.nl/tagged/magicmirror)的创建者以及提供极大帮助的[不断增长的贡献者社区](https://github.com/MichMich/MagicMirror/graphs/contributors).所搭建。
+
+MagicMirror²致力于模块化插件系统并使用[Electron](http://electron.atom.io/)作为应用包装器。因此不再需要安装网页服务器或浏览器!
 <p align="center">
 <br>
 	<a href="https://forum.magicmirror.builders/topic/728/magicmirror-is-voted-number-1-in-the-magpi-top-50"><img src="https://magicmirror.builders/img/magpi-best-watermark-custom.png" width="150" alt="MagPi Top 50"></a>
