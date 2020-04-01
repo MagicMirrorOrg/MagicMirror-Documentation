@@ -1,6 +1,6 @@
 # Installation & Usage
 
-The Magic Mirror can be installed manually or using automatic installers. At the start of 2020 the desision was made to remove the automatic installer from the MagicMirror² core repository and move it to a community maintained separate repository. For more infomation about this desision, please check issue [#1860](https://github.com/MichMich/MagicMirror/issues/1860) on GitHub.
+The Magic Mirror can be installed manually or using automatic installers. At the start of 2020 the decision was made to remove the automatic installer from the MagicMirror² core repository and move it to a community maintained separate repository. For more information about this desision, please check issue [#1860](https://github.com/MichMich/MagicMirror/issues/1860) on GitHub.
 
 Therefore the only officially supported way of installation is by using a [manual installation](#manual-installation). Using external installation scripts is at your own risk but can make the process a lot easier. Available automatic installers can be found under: [alternative installation methods](#alternative-installation-methods).
 
