@@ -12,7 +12,8 @@ Therefore the only officially supported way of installation is by using a [manua
 2. Clone the repository and check out the master branch: `git clone https://github.com/MichMich/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
 4. Install the application: `npm install`
-5. Start the application: `npm start` \
+5. Make a copy of the config sample file: `cp config/config.js.sample config/config.js`
+6. Start the application: `npm start` \
    For **Server Only** use: `node serveronly` .
 
 ::: tip Raspbian Buster
