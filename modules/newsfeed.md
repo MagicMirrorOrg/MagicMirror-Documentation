@@ -47,6 +47,7 @@ MagicMirror's [notification mechanism](https://github.com/MichMich/MagicMirror/t
 | `ARTICLE_LESS_DETAILS`  | Hides the summary or full news article and only displays the news title of the currently viewed news item.
 | `ARTICLE_TOGGLE_FULL`   | Toggles article in fullscreen.
 | `ARTICLE_INFO_REQUEST`  | Causes `newsfeed` to respond with the notification `ARTICLE_INFO_RESPONSE`, the payload of which provides the `title`, `source`, `date`, `desc` and `url` of the current news title.
+| `CHANGED_PROFILE`       | The "to" information in the payload of this notification is used to deceide which profile is currently active.
 
 #### Notifications sent by the module
 MagicMirror's [notification mechanism](https://github.com/MichMich/MagicMirror/tree/master/modules#thissendnotificationnotification-payload) can also be used to send notifications from the current module to all other modules. The following notifications are broadcasted from this module:
@@ -105,3 +106,4 @@ The `feeds` property contains an array with multiple objects. These objects have
 | `title`    | The name of the feed source to be displayed above the news items. <br><br> This property is optional.
 | `url`      | The url of the feed used for the headlines. <br><br> **Example:** `'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'`
 | `encoding` | The encoding of the news feed. <br><br> This property is optional. <br> **Possible values:**`'UTF-8'`, `'ISO-8859-1'`, etc ... <br> **Default value:** `'UTF-8'`
+| `profiles` | A space separated string that contains the names of the profiles in which news of this feed should be displayed. This configuration is optional. If no string is provided the news will be displayed in every profile.
