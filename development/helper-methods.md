@@ -69,7 +69,7 @@ MM.getModules().enumerate(function(module) {
 ````
 
 **Example:**
-To hide all modules except the your module instance, you could write something like:
+To hide all modules except your module instance, you could write something like:
 ````javascript
 Module.register("modulename",{
 	//...
