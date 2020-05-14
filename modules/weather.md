@@ -8,7 +8,7 @@ The module is in a very early stage, and needs a lot of work. It's API isn't set
 
 ## Example
 
-![Current Weather Screenshot](current.png) ![Weather Forecast Screenshot](forecast.png)
+![Current Weather Screenshot](screenshots/current.png) ![Weather Forecast Screenshot](screenshots/forecast.png)
 
 ## Usage
 
