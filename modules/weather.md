@@ -117,4 +117,4 @@ The following properties can be configured:
 
 ## API Provider Development
 
-If you want to add another API provider checkout the [Guide](providers).
+If you want to add another API provider checkout the [Guide](https://github.com/MichMich/MagicMirror/tree/master/modules/default/weather/providers).
