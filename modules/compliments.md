@@ -40,7 +40,7 @@ The following properties can be configured:
 | `morningEndTime`        |  Time in hours (in 24 format), after which the mode of "morning" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`
 | `afternoonStartTime`        | Time in hours (in 24 format), after which the mode "afternoon" will begin <br> **Possible values:** `0` - `24` <br><br>  **Default value:** `12`
 | `afternoonEndTime`        | Time in hours (in 24 format), after which the mode "afternoon" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `17`
-| `advice`        | Boolean (true or false), whether to show pieces of advice from the [Advice Slip API](https://api.adviceslip.com/) instead of the compliments. If set to true, the rest of the compliments config not necessary.
+| `advice`        | Show advice from the [Advice Slip API](https://api.adviceslip.com/) instead of the compliments. If set to true, the rest of the compliments config not necessary. <br> **Possible values:** `true` or `false` <br><br> **Default value:** `false`
 
 All the rest of the time that does not fall into the morningStartTime-morningEndTime and afternoonStartTime-afternoonEndTime ranges is considered "evening".
 
