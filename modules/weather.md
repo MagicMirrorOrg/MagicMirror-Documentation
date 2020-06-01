@@ -112,7 +112,7 @@ The following properties can be configured:
 | Option                       | Description
 | ---------------------------- | -----------
 | `apiBase`                    | The UKMO base URL. <br><br> **Possible value:**  `'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'` <br>  This value is **REQUIRED**
-| `locationId`	               | The UKMO API location code. <br><br> **Possible values:** `322942` <br>  This value is **REQUIRED**
+| `locationID`	               | The UKMO API location code. <br><br> **Possible values:** `322942` <br>  This value is **REQUIRED**
 | `apiKey`                     | The [UK Met Office](https://www.metoffice.gov.uk/datapoint/getting-started) API key, which can be obtained by creating an UKMO Datapoint account. <br><br>  This value is **REQUIRED**
 
 ## API Provider Development
