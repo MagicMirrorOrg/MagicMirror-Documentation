@@ -65,6 +65,7 @@ The following properties can be configured:
 | `showIndoorTemperature`      | If you have another module that emits the `INDOOR_TEMPERATURE` notification, the indoor temperature will be displayed <br> **Default value:** `false`
 | `showIndoorHumidity`         | If you have another module that emits the `INDOOR_HUMIDITY` notification, the indoor humidity will be displayed <br> **Default value:** `false`
 | `showFeelsLike`              | Shows the Feels like temperature weather. <br><br> **Possible values:** `true` or `false`<br>**Default value:** `true`
+| `showSun`                    | Shows Sunrise and Sunset time. <br><br> **Possible values:** `true` or `false`<br>**Default value:** `true`
 
 #### Weather forecast options
 
