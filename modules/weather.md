@@ -115,6 +115,17 @@ The following properties can be configured:
 | `locationID`	               | The UKMO API location code. <br><br> **Possible values:** `322942` <br>  This value is **REQUIRED**
 | `apiKey`                     | The [UK Met Office](https://www.metoffice.gov.uk/datapoint/getting-started) API key, which can be obtained by creating an UKMO Datapoint account. <br><br>  This value is **REQUIRED**
 
+### UK Met Office (DataHub) options
+
+| Option                       | Description
+| ---------------------------- | -----------
+| `apiBase`                    | The UKMO DataHub base URL.<br><br> **Possible value:**  `'https://api-metoffice.apiconnect.ibmcloud.com/metoffice/production/v0/forecasts/point/'` <br> This value is **REQUIRED**
+| `apiKey`                     | Your API key. See the [Getting Started](https://metoffice.apiconnect.ibmcloud.com/metoffice/production/start) guide on the Met Office website for creating a new account. <br> This value is **REQUIRED**
+| `apiSecret`                  | Your API secret (see above).
+| `lat`                        | The latitude coordinate for the desired location. <br><br> **Possible value:** `50.7271915`
+| `lon`                        | The longitude coordinate for the descired location. <br><br> **Possible value:** `-3.4776089`
+| `windUnits`                  | Set the units for wind speed. If not specified, uses the `units` value from `config.js` <br><br> **Possible values:** `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour
+
 ## API Provider Development
 
 If you want to add another API provider checkout the [Guide](providers).
