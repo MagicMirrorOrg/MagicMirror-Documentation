@@ -8,7 +8,7 @@ The module is in a very early stage, and needs a lot of work. It's API isn't set
 
 ## Example
 
-![Current Weather Screenshot](current.png) ![Weather Forecast Screenshot](forecast.png)
+![Current Weather Screenshot](screenshots/current.png) ![Weather Forecast Screenshot](screenshots/forecast.png)
 
 ## Usage
 
@@ -124,7 +124,7 @@ The following properties can be configured:
 | `apiSecret`                  | Your API secret (see above).
 | `lat`                        | The latitude coordinate for the desired location. <br><br> **Possible value:** `50.7271915`
 | `lon`                        | The longitude coordinate for the descired location. <br><br> **Possible value:** `-3.4776089`
-| `windUnits`                  | Set the units for wind speed. If not specified, uses the `units` value from `config.js` <br><br> **Possible values:** `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour
+| `windUnits`                  | Set the units for wind speed. If not specified, uses the `units` value from `config.js`. This option is useful for those in the UK, for example, where we use metric units but have wind speed in mph. <br><br> **Possible values:** `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour
 
 ## API Provider Development
 
