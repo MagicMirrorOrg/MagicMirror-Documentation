@@ -8,7 +8,7 @@ The module is in a very early stage, and needs a lot of work. It's API isn't set
 
 ## Example
 
-![Current Weather Screenshot](current.png) ![Weather Forecast Screenshot](forecast.png)
+![Current Weather Screenshot](screenshots/current.png) ![Weather Forecast Screenshot](screenshots/forecast.png)
 
 ## Usage
 
@@ -114,6 +114,17 @@ The following properties can be configured:
 | `apiBase`                    | The UKMO base URL. <br><br> **Possible value:**  `'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'` <br>  This value is **REQUIRED**
 | `locationID`	               | The UKMO API location code. <br><br> **Possible values:** `322942` <br>  This value is **REQUIRED**
 | `apiKey`                     | The [UK Met Office](https://www.metoffice.gov.uk/datapoint/getting-started) API key, which can be obtained by creating an UKMO Datapoint account. <br><br>  This value is **REQUIRED**
+
+### UK Met Office (DataHub) options
+
+| Option                       | Description
+| ---------------------------- | -----------
+| `apiBase`                    | The UKMO DataHub base URL.<br><br> **Possible value:**  `'https://api-metoffice.apiconnect.ibmcloud.com/metoffice/production/v0/forecasts/point/'` <br> This value is **REQUIRED**
+| `apiKey`                     | Your API key. See the [Getting Started](https://metoffice.apiconnect.ibmcloud.com/metoffice/production/start) guide on the Met Office website for creating a new account. <br> This value is **REQUIRED**
+| `apiSecret`                  | Your API secret (see above). <br> This value is **REQUIRED**
+| `lat`                        | The latitude coordinate for the desired location. <br><br> **Possible value:** `50.7271915` <br> This value is **REQUIRED**
+| `lon`                        | The longitude coordinate for the descired location. <br><br> **Possible value:** `-3.4776089` <br> This value is **REQUIRED**
+| `windUnits`                  | Set the units for wind speed. If not specified, uses the `units` value from `config.js`. This option is useful for those in the UK, for example, where we use metric units but have wind speed in mph. <br><br> **Possible values:** `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour
 
 ## API Provider Development
 
