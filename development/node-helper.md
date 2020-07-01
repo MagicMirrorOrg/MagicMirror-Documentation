@@ -120,3 +120,20 @@ If you want to send a notification to all your modules, use the `sendSocketNotif
 ````javascript
 this.sendSocketNotification('SET_CONFIG', this.config);
 ````
+
+## Using native node modules in your node_helper
+If you want use `native node modules` within electron you need to recompile them for electron.
+To do so you have to install  `electron-rebuild`.
+````
+npm install --save-dev electron-rebuild
+````
+
+and run it after every install (package.json example):
+````
+...
+"scripts": {
+	...
+	"postinstall": "./node_modules/.bin/electron-rebuild"
+}
+...
+````
