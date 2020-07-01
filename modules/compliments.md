@@ -45,10 +45,11 @@ All the rest of the time that does not fall into the morningStartTime-morningEnd
 
 ### Compliment configuration
 
-The `compliments` property contains an object with four arrays: <code>morning</code>, <code>afternoon</code>, <code>evening</code> and <code>anytime</code>. Based on the time of the day, the compliments will be picked out of one of these arrays. The arrays contain one or multiple compliments.
+The `compliments` property contains an object with at least four arrays: <code>morning</code>, <code>afternoon</code>, <code>evening</code> and <code>anytime</code>. Based on the time of the day, the compliments will be picked out of one of these arrays. The arrays contain one or multiple compliments.
 
+Compliments can be set for a specific day in the format `YYYY-MM-DD`. `.` can be used as a wildcard.
 
-If use the currentweather is possible use a actual weather for set compliments. The availables properties are:
+If set, the currentweather can be used for compliments. The availables properties are:
 - `day_sunny`
 - `day_cloudy`
 - `cloudy`
@@ -65,6 +66,20 @@ If use the currentweather is possible use a actual weather for set compliments. 
 - `night_thunderstorm`
 - `night_snow`
 - `night_alt_cloudy_windy`
+
+#### Example use with date
+````javascript
+config: {
+	compliments: {
+		"....-01-01": [
+			"Happy new year!"
+		],
+		"....-10-31": [
+			"Happy Halloween!"
+		]
+	}
+}
+````
 
 #### Example use with currentweather module
 ````javascript
@@ -106,6 +121,9 @@ config: {
 			"Wow, you look hot!",
 			"You look nice!",
 			"Hi, sexy!"
+		],
+		"....-01-01": [
+			"Happy new year!"
 		]
 	}
 }
