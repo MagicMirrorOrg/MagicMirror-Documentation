@@ -33,6 +33,9 @@ The following installation methods are not maintained by the MagicMirror² core 
 ### Docker Image
 - MagicMirror² in server only mode can be deployed using [Docker](https://docker.com). Head over to the [MagicMirror Docker GitHub repository](https://github.com/bastilimbach/docker-MagicMirror) for more information.
 
+### Kubernetes Helm Chart
+- If you want to run MagicMirror² (in server only mode) in a kubernetes cluster then take a look at this [MagicMirror Helm Chart](https://gitlab.com/khassel/magicmirror-helm).
+
 ### MagicMirrorOS
 - This is a full OS based on raspian. So instead of downloading raspian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses an [alternative docker setup](https://gitlab.com/khassel/magicmirror) (which allows direct output on the raspberry screen).
 
