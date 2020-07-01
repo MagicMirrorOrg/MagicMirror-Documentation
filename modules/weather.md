@@ -8,7 +8,10 @@ The module is in a very early stage, and needs a lot of work. It's API isn't set
 
 ## Example
 
-![Current Weather Screenshot](screenshots/current.png) ![Weather Forecast Screenshot](screenshots/forecast.png)
+<p align="center"> 
+	<img src="screenshots/forecast.png">
+	<img src="screenshots/current.png">
+</p>
 
 ## Usage
 
@@ -129,4 +132,4 @@ The following properties can be configured:
 
 ## API Provider Development
 
-If you want to add another API provider checkout the [Guide](providers).
+If you want to add another API provider checkout the [Guide](https://github.com/MichMich/MagicMirror/tree/master/modules/default/weather/providers).
