@@ -8,10 +8,8 @@ The module is in a very early stage, and needs a lot of work. It's API isn't set
 
 ## Example
 
-<p align="center"> 
-	<img src="screenshots/forecast.png">
-	<img src="screenshots/current.png">
-</p>
+![Screenshot of current weather](./screenshots/current.png)
+![Screenshot of forecast](./screenshots/forecast.png)
 
 ## Usage
 
