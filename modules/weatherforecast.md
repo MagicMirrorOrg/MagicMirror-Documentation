@@ -34,6 +34,8 @@ The following properties can be configured:
 | ---------------------------- | -----------
 | `location`                   | The location used for weather information. <br><br> **Example:** `'Amsterdam,Netherlands'` <br> **Default value:** `false` <br><br> **Note:** When the `location` and `locationID` are both not set, the location will be based on the information provided by the calendar module. The first upcoming event with location data will be used.
 | `locationID`                 | Location ID from [OpenWeatherMap](https://openweathermap.org/find) **This will override anything you put in location.** <br> Leave blank if you want to use location. <br> **Example:** `1234567` <br> **Default value:** `false` <br><br> **Note:** When the `location` and `locationID` are both not set, the location will be based on the information provided by the calendar module. The first upcoming event with location data will be used.
+| `lat`                 | Latitude in degrees. **This will not be read if using locationID.** <br >Leave `locationID` blank if you want to use lat and lon. <br> **Example:** `45.523449` <br> **Default value:** `false` <br><br> **Note:** Must be used with `lon`.
+| `lon`                 | Longitude in degrees. **This will not be read if using locationID.**  <br> Leave `locationID` blank if you want to use lat and lon. <br> **Example:** `-122.676208` <br> **Default value:** `false` <br><br> **Note:** Must be used with `lat`.
 | `appid`                      | The [OpenWeatherMap](https://home.openweathermap.org) API key, which can be obtained by creating an OpenWeatherMap account. <br><br> This value is **REQUIRED**
 | `units`                      | What units to use. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` =Fahrenheit <br> **Default value:** `config.units`
 | `roundTemp`                  | Round temperature values to nearest integer. <br><br> **Possible values:** `true` (round to integer) or `false` (display exact value with decimal point) <br> **Default value:** `false`
@@ -50,6 +52,7 @@ The following properties can be configured:
 | `apiVersion`                 | The OpenWeatherMap API version to use. <br><br> **Default value:**  `2.5`
 | `apiBase`                    | The OpenWeatherMap base URL. <br><br> **Default value:**  `'http://api.openweathermap.org/data/'`
 | `forecastEndpoint`           | The OpenWeatherMap API endPoint. <br><br> **Default value:**  `'forecast/daily'`
+| `excludes`                   | Exclude some parts of the weather data from the API response. It should be a comma-delimited list (without spaces). <br><br> **Default value:**  `false`
 | `appendLocationNameToHeader` | If set to `true`, the returned location name will be appended to the header of the module, if the header is enabled. This is mainly intresting when using calender based weather. <br><br> **Default value:**  `true`
 | `calendarClass`              | The class for the calendar module to base the event based weather information on. <br><br> **Default value:** `'calendar'`
 | `tableClass`                  | Name of the classes issued from `main.css`. <br><br> **Possible values:** xsmall, small, medium, large, xlarge. <br> **Default value:** _small._
