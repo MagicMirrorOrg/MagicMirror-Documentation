@@ -42,7 +42,7 @@ The following properties can be configured:
 | `lon`             | Longitude for sun/moon calculations. <br><br> **Default value:** `-122.344147`
 | `dateFormat`      | Configure the date format as you like. <br><br> **Possible values:** [Docs](http://momentjs.com/docs/#/displaying/format/) <br> **Default value:** `"dddd, LL"`
 | `displayType`     | Display a digital clock, analog clock, or both together. <br><br> **Possible values:** `digital`, `analog`, or `both` <br> **Default value:** `digital`
-| `analogSize`      | **Specific to the analog clock.** Defines how large the analog display is. <br><br> **Possible values:** A positive number of pixels` <br> **Default value:** `200px`
+| `analogSize`      | **Specific to the analog clock.** Defines how large the analog display is. <br><br> **Possible values:** `A positive number of pixels` <br> **Default value:** `200px`
 | `analogFace`      | **Specific to the analog clock.** Specifies which clock face to use. <br><br> **Possible values:** `simple` for a simple border, `none` for no face or border, or `face-###` (where ### is currently a value between 001 and 012, inclusive) <br> **Default value:** `simple`
 | `secondsColor`    | **Specific to the analog clock.** Specifies what color to make the 'seconds' hand. <br><br> **Possible values:** `any HTML RGB Color` <br> **Default value:** `#888888`
 | `analogPlacement` | **Specific to the analog clock. _(requires displayType set to `'both'`)_** Specifies where the analog clock is in relation to the digital clock <br><br> **Possible values:** `top`, `right`, `bottom`, or `left` <br> **Default value:** `bottom`
