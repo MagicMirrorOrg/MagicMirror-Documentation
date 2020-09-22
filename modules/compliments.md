@@ -143,6 +143,21 @@ Adding the `remoteFile` variable will override an array you specify in the confi
 
 This file must be straight JSON. Note that the array names need quotes
 around them ("morning", "afternoon", "evening", "snow", "rain", etc.).
+
+#### Example config/config.js of a Compliment File hosted on GitHub
+````
+{
+module: 'compliments',
+position: 'middle_center',
+   config: { 
+     remoteFile: 'https://gist.githubusercontent.com/user/e28a69665b8839f6e9a7acd6b4acc97d/raw/be1dee8f805a433f6ee0fa3556d1927da14e7799/compliments.json'
+   }
+},
+
+````
+
+(When copying the link from Github, you must use the 'Raw' link)
+
 #### Example compliments.json file:
 ````json
 {
