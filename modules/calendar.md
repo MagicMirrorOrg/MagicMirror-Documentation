@@ -29,7 +29,7 @@ The following properties can be configured:
 | `maximumEntries`             | The maximum number of events shown. / **Possible values:** `0` - `100` <br> **Default value:** `10`
 | `maximumNumberOfDays`        | The maximum number of days in the future. <br><br> **Default value:** `365`
 | `displaySymbol`              | Display a symbol in front of an entry. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
-| `defaultSymbol`              | The default symbol. <br><br> **Possible values:** See [Font Awsome](http://fontawesome.io/icons/) website. <br> **Default value:** `calendar`
+| `defaultSymbol`              | The default symbol. <br><br> **Possible values:** See [Font Awesome](http://fontawesome.io/icons/) website. <br> **Default value:** `calendar`
 | `showLocation`               | Whether to show event locations. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `maxTitleLength`             | The maximum title length. <br><br> **Possible values:** `10` - `50` <br> **Default value:** `25`
 | `maxLocationTitleLength`     | The maximum location title length. <br><br> **Possible values:** `10` - `50` <br> **Default value:** `25`
