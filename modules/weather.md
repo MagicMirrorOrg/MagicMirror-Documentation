@@ -96,7 +96,7 @@ The following properties can be configured:
 | ---------------------------- | -----------
 | `apiBase`                    | The DarkSky base URL. The darksky api has disabled [cors](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), therefore a proxy is required. <br><br> **Possible value:** `'https://cors-anywhere.herokuapp.com/https://api.darksky.net'` <br> This value is **REQUIRED**
 | `weatherEndpoint`	           | The DarkSky API endPoint. <br><br> **Possible values:** `/forecast` <br> This value is **REQUIRED**
-| `apiKey`                     | The [DarkSky](https://darksky.net/dev/register) API key, which can be obtained by creating an DarkSky account. <br><br> This value is **REQUIRED**
+| `apiKey`                     | The [DarkSky](https://darksky.net/dev/register) API key, which can be obtained by creating an DarkSky account. Please note Dark Sky no longer accept new signups. The API will continue to function through the end of 2021.<br><br> This value is **REQUIRED**
 | `lat`                        | The geo coordinate latitude. <br><br> This value is **REQUIRED**
 | `lon`                        | The geo coordinate longitude. <br><br> This value is **REQUIRED**
 
