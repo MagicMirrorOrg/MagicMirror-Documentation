@@ -37,7 +37,7 @@ The following properties can be configured:
 | Option                       | Description
 | ---------------------------- | -----------
 | `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `openweathermap` , `darksky` , `weathergov` or `ukmetoffice`<br> **Default value:** `openweathermap`
-| `type`                       | Which type of weather data should be displayed. <br><br> **Possible values:** `current` or `forecast` <br> **Default value:** `current`
+| `type`                       | Which type of weather data should be displayed. <br><br> **Possible values:** `current` , `hourly` , `daily` , or `forecast` <br> **Default value:** `current` <br><br> **Note:** The `daily` type is another name for the `forecast` type, and the two are interchangeable. The `hourly` type is currently only implemented for the OpenWeatherMap provider, and only when `/onecall` is used as the specified endpoint.
 | `units`                      | What units to use. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `config.units`
 | `tempUnits`                  | What units to use for temperature. If specified overrides `units` setting. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `units`
 | `windUnits`                  | What units to use for wind speed.  If specified overrides `units` setting. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `units`
@@ -77,7 +77,8 @@ The following properties can be configured:
 | `showPrecipitationAmount`    | Show the amount of rain/snow in the forecast <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `fade`                       | Fade the future events to black. (Gradient) <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `fadePoint`                  | Where to start fade? <br><br> **Possible values:** `0` (top of the list) - `1` (bottom of list) <br> **Default value:** `0.25`
-| `maxNumberOfDays`            | How many days of forecast to return. Specified by config.js <br><br> **Possible values:** `1` - `16` <br> **Default value:** `5` (5 days) <br> This value is optional. By default the weatherforecast module will return 5 days.
+| `maxNumberOfDays`            | How many days of forecast to return. Specified by config.js <br><br> **Possible values:** `1` - `16` <br> **Default value:** `5` (5 days) <br> This value is optional. By default the weather module will return 5 days.
+| `maxEntries`                 | How many entries of an OpenWeatherMap One Call hourly or daily forecast type to return. Specified by config.js <br><br> **Possible values:** `1` - `48` for `'hourly'` , `1` - `7` for `'daily'` <br> **Default value:** `5` (5 entries) <br> This value is optional and specifically meant to be used with the OpenWeatherMap provider and its `'/onecall'` endpoint. By default the weather module will return 5 entries. Intended to act as a more generalized of the `maxNumberOfDays` option.
 
 ### Openweathermap options
 
@@ -85,9 +86,11 @@ The following properties can be configured:
 | ---------------------------- | -----------
 | `apiVersion`                 | The OpenWeatherMap API version to use. <br><br> **Default value:** `2.5`
 | `apiBase`                    | The OpenWeatherMap base URL. <br><br> **Default value:** `'http://api.openweathermap.org/data/'`
-| `weatherEndpoint`	           | The OpenWeatherMap API endPoint. <br><br> **Possible values:** `/weather`, `/forecast` (free users) or `/forecast/daily` (paying users or old apiKey only) <br> **Default value:** `'/weather'`
+| `weatherEndpoint`	           | The OpenWeatherMap API endPoint. <br><br> **Possible values:** `'/weather'` , `'/onecall'` , `'/forecast'` (free users) or `'/forecast/daily'` (paying users or old apiKey only) <br> **Default value:** `'/weather'`
 | `locationID`                 | Location ID from [OpenWeatherMap](https://openweathermap.org/find) **This will override anything you put in location.** <br> Leave blank if you want to use location. <br> **Example:** `1234567` <br> **Default value:** `false` <br><br> **Note:** When the `location` and `locationID` are both not set, the location will be based on the information provided by the calendar module. The first upcoming event with location data will be used.
 | `location`                   | The location used for weather information. <br><br> **Example:** `'Amsterdam,Netherlands'` <br> **Default value:** `false` <br><br> **Note:** When the `location` and `locationID` are both not set, the location will be based on the information provided by the calendar module. The first upcoming event with location data will be used.
+| `lat`                        | Latitude of the location used for weather information. <br><br> **Example:** `40.7128` <br> **Default value:** `0` <br><br> **Note:** Latitude and longitude are **REQUIRED** if `weatherEndpoint` is set to `'/onecall'`. The `locationID` and `location` options are ignored when the OpenWeatherMap One Call API is used.
+| `lon`                        | Longitude of the location used for weather information. <br><br> **Example:** `-74.0060` <br> **Default value:** `0` <br><br> **Note:** Latitude and longitude are **REQUIRED** if `weatherEndpoint` is set to `'/onecall'`. The `locationID` and `location` options are ignored when the OpenWeatherMap One Call API is used.
 | `apiKey`                     | The [OpenWeatherMap](https://home.openweathermap.org) API key, which can be obtained by creating an OpenWeatherMap account. <br><br> This value is **REQUIRED**
 
 ### Darksky options
