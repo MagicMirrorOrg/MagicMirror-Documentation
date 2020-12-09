@@ -60,7 +60,7 @@ The following properties can be configured:
 | `broadcastPastEvents`        | If this is set to true, events from the past `maximumNumberOfDays` will be included in event broadcasts <br> **Default value:** `false`
 | `sliceMultiDayEvents`        | If this is set to true, events exceeding at least one midnight will be sliced into separate events including a counter like (1/2). This is especially helpful in "dateheaders" mode. Events will be sliced at midnight, end time for all events but the last will be 23:59 <br> **Default value:** `true`
 | `nextDaysRelative`           | If this is set to true, the appointments of today and tomorrow are displayed relatively, even if the timeformat is set to absolute. <br> **Default value:** `false`
-| `customEvents`               | An array of keywords/symbols/colors that will customize events based on keyword in title. <br> <br> Keyword is a case-insensitive string that if present in event title will trigger the use of custom symbol and/or color for that event.<br>Example: `customEvents: [{keyword: 'Birthday', symbol: 'fa-birthday-cake', color: 'Gold'}]`
+| `customEvents`               | An array of keywords/symbols/colors that will customize events based on keyword in title. <br> <br> Keyword is a case-insensitive string that if present in event title will trigger the use of custom symbol and/or color for that event. symbol is the font awesome icon to use as symbol and color is the CSS color to use for the event. <br> <br> **Example:** `customEvents: [{keyword: 'Birthday', symbol: 'fa-birthday-cake', color: 'Gold'}]`
 
 ### Calendar configuration
 
