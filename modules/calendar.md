@@ -59,7 +59,8 @@ The following properties can be configured:
 | `excludedEvents`             | An array of words / phrases from event titles that will be excluded from being shown. <br><br>Additionally advanced filter objects can be passed in. Below is the configuration for the advance filtering object.<br>**Required**<br>`filterBy` - string used to determine if filter is applied.<br>**Optional**<br>`until` - Time before an event to display it  Ex: [`'3 days'`, `'2 months'`, `'1 week'`]<br>`caseSensitive` - By default, excludedEvents are case insensitive, set this to true to enforce case sensitivity<br>`regex` - set to `true` if filterBy is a regex. For those not familiar with regex it is used for pattern matching, please see [here](https://regexr.com/) for more info.<br><br> **Example:** `['Birthday', 'Hide This Event', {filterBy: 'Payment', until: '6 days', caseSensitive: true}, {filterBy: '^[0-9]{1,}.*', regex: true}]` <br> **Default value:** `[]`
 | `broadcastPastEvents`        | If this is set to true, events from the past `maximumNumberOfDays` will be included in event broadcasts <br> **Default value:** `false`
 | `sliceMultiDayEvents`        | If this is set to true, events exceeding at least one midnight will be sliced into separate events including a counter like (1/2). This is especially helpful in "dateheaders" mode. Events will be sliced at midnight, end time for all events but the last will be 23:59 <br> **Default value:** `true`
-| `nextDaysRelative   `        | If this is set to true, the appointments of today and tomorrow are displayed relatively, even if the timeformat is set to absolute. <br> **Default value:** `false`
+| `nextDaysRelative`           | If this is set to true, the appointments of today and tomorrow are displayed relatively, even if the timeformat is set to absolute. <br> **Default value:** `false`
+| `customEvents`               | An array of keywords/symbols/colors that will customize events based on keyword in title. <br> <br> Keyword is a case-insensitive string that if present in event title will trigger the use of custom symbol and/or color for that event.<br>Example: `customEvents: [{keyword: 'Birthday', symbol: 'fa-birthday-cake', color: 'Gold'}]`
 
 ### Calendar configuration
 
@@ -91,7 +92,7 @@ config: {
 | --------------------- | -----------
 | `url`	                | The url of the calendar .ical. This property is required. <br><br> **Possible values:** Any public accessible .ical calendar.
 | `symbol`              | The symbol to show in front of an event. This property is optional. <br><br> **Possible values:** See [Font Awesome](http://fontawesome.io/icons/) website. To have multiple symbols you can define them in an array e.g. `["calendar", "plane"]`
-| `color`              | The font color of an event from this calendar. This property should be set if the config is set to colored: true. <br><br> **Possible values:** HEX, RGB or RGBA values (#efefef, rgb(242,242,242), rgba(242,242,242,0.5)).
+| `color`               | The font color of an event from this calendar. This property should be set if the config is set to colored: true. <br><br> **Possible values:** HEX, RGB or RGBA values (#efefef, rgb(242,242,242), rgba(242,242,242,0.5)).
 | `repeatingCountTitle`	| The count title for yearly repating events in this calendar.  <br><br> **Example:** `'Birthday'`
 | `maximumEntries`      | The maximum number of events shown.  Overrides global setting. **Possible values:** `0` - `100`
 | `maximumNumberOfDays` | The maximum number of days in the future.  Overrides global setting
