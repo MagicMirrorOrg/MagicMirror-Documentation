@@ -131,6 +131,15 @@ The following properties can be configured:
 | `lon`                        | The longitude coordinate for the descired location. <br><br> **Possible value:** `-3.4776089` <br> This value is **REQUIRED**
 | `windUnits`                  | Set the units for wind speed. If not specified, uses the `units` value from `config.js`. This option is useful for those in the UK, for example, where we use metric units but have wind speed in mph. <br><br> **Possible values:** `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour
 
+
+### SMHI options
+
+| Option                       | Description
+| ---------------------------- | -----------
+| `lat`                        | The latitude coordinate for the desired location. <br><br> **Possible value:** `59.322665376` <br> This value is **REQUIRED**
+| `lon`                        | The longitude coordinate for the descired location. <br><br> **Possible value:** `18.069666388` <br> This value is **REQUIRED**
+| `precipitationValue`         | The type of precipitation to display (min, max, median, mean).  <br><br> **Possible values:** `'pmin'` , `'pmean'` , `'pmedian'`, `'pmax'`. <br> **Default value:** `'pmedian'`
+
 ## API Provider Development
 
 If you want to add another API provider checkout the [Guide](https://github.com/MichMich/MagicMirror/tree/master/modules/default/weather/providers).
