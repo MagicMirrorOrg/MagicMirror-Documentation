@@ -36,7 +36,7 @@ The following properties can be configured:
 
 | Option                       | Description
 | ---------------------------- | -----------
-| `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `openweathermap` , `darksky` , `weathergov` or `ukmetoffice`<br> **Default value:** `openweathermap`
+| `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `openweathermap` , `darksky` , `weathergov`, `ukmetoffice`, or `weatherbit`<br> **Default value:** `openweathermap`
 | `type`                       | Which type of weather data should be displayed. <br><br> **Possible values:** `current` , `hourly` , `daily` , or `forecast` <br> **Default value:** `current` <br><br> **Note:** The `daily` type is another name for the `forecast` type, and the two are interchangeable. The `hourly` type is currently only implemented for the OpenWeatherMap provider, and only when `/onecall` is used as the specified endpoint.
 | `units`                      | What units to use. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `config.units`
 | `tempUnits`                  | What units to use for temperature. If specified overrides `units` setting. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `units`
@@ -131,6 +131,14 @@ The following properties can be configured:
 | `lon`                        | The longitude coordinate for the descired location. <br><br> **Possible value:** `-3.4776089` <br> This value is **REQUIRED**
 | `windUnits`                  | Set the units for wind speed. If not specified, uses the `units` value from `config.js`. This option is useful for those in the UK, for example, where we use metric units but have wind speed in mph. <br><br> **Possible values:** `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour
 
+### Weatherbit options
+| Option                       | Description
+| ---------------------------- | -----------
+|`apiBase`                     | The Weather base URL.   Possible value: `https://api.weatherbit.io/v2.0`  This value is **REQUIRED**
+|`weatherEndpoint`             | The Weatherbit API endPoint.  Possible values: `/current`, `/forecast/daily`  This value is **REQUIRED**
+|`apiKey`                      | The Weatherbit API key which can be obtained by creating an WeatherBit account at https://www.weatherbit.io  This value is **REQUIRED**
+|`lat`                         | The geo coordinate latitude.  This value is **REQUIRED**
+|`lon`                         | The geo coordinate longitude.  This value is **REQUIRED**
 
 ### SMHI options
 
