@@ -47,7 +47,7 @@ The following properties can be configured:
 | `animationSpeed`             | Speed of the update animation. (Milliseconds) <br><br> **Possible values:** `0` - `5000` <br> **Default value:** `1000` (1 second)
 | `timeFormat`                 | Use 12 or 24 hour format. <br><br> **Possible values:** `12` or `24` <br> **Default value:** uses value of _config.timeFormat_
 | `showPeriod`                 | Show the period (am/pm) with 12 hour format <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
-| `showPeriodUpper`	           | Show the period (AM/PM) with 12 hour format as uppercase <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
+| `showPeriodUpper`	       | Show the period (AM/PM) with 12 hour format as uppercase <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `lang`                       | The language of the days. <br><br> **Possible values:** `en`, `nl`, `ru`, etc ... <br> **Default value:** uses value of _config.language_
 | `decimalSymbol`              | The decimal symbol to use.<br><br> **Possible values:** `.`, `,` or any other symbol.<br> **Default value:** `.`
 | `initialLoadDelay`           | The initial delay before loading. If you have multiple modules that use the same API key, you might want to delay one of the requests. (Milliseconds) <br><br> **Possible values:** `1000` - `5000` <br> **Default value:** `0`
@@ -86,7 +86,7 @@ The following properties can be configured:
 | ---------------------------- | -----------
 | `apiVersion`                 | The OpenWeatherMap API version to use. <br><br> **Default value:** `2.5`
 | `apiBase`                    | The OpenWeatherMap base URL. <br><br> **Default value:** `'http://api.openweathermap.org/data/'`
-| `weatherEndpoint`	           | The OpenWeatherMap API endPoint. <br><br> **Possible values:** `'/weather'` , `'/onecall'` , `'/forecast'` (free users) or `'/forecast/daily'` (paying users or old apiKey only) <br> **Default value:** `'/weather'`
+| `weatherEndpoint`	       | The OpenWeatherMap API endPoint. <br><br> **Possible values:** `'/weather'` , `'/onecall'` , `'/forecast'` (free users) or `'/forecast/daily'` (paying users or old apiKey only) <br> **Default value:** `'/weather'`
 | `locationID`                 | Location ID from [OpenWeatherMap](https://openweathermap.org/find) **This will override anything you put in location.** <br> Leave blank if you want to use location. <br> **Example:** `1234567` <br> **Default value:** `false` <br><br> **Note:** When the `location` and `locationID` are both not set, the location will be based on the information provided by the calendar module. The first upcoming event with location data will be used.
 | `location`                   | The location used for weather information. <br><br> **Example:** `'Amsterdam,Netherlands'` <br> **Default value:** `false` <br><br> **Note:** When the `location` and `locationID` are both not set, the location will be based on the information provided by the calendar module. The first upcoming event with location data will be used.
 | `lat`                        | Latitude of the location used for weather information. <br><br> **Example:** `40.7128` <br> **Default value:** `0` <br><br> **Note:** Latitude and longitude are **REQUIRED** if `weatherEndpoint` is set to `'/onecall'`. The `locationID` and `location` options are ignored when the OpenWeatherMap One Call API is used.
@@ -98,7 +98,7 @@ The following properties can be configured:
 | Option                       | Description
 | ---------------------------- | -----------
 | `apiBase`                    | The DarkSky base URL. The darksky api has disabled [cors](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), therefore a proxy is required. <br><br> **Possible value:** `'https://cors-anywhere.herokuapp.com/https://api.darksky.net'` <br> This value is **REQUIRED**
-| `weatherEndpoint`	           | The DarkSky API endPoint. <br><br> **Possible values:** `/forecast` <br> This value is **REQUIRED**
+| `weatherEndpoint`	       | The DarkSky API endPoint. <br><br> **Possible values:** `/forecast` <br> This value is **REQUIRED**
 | `apiKey`                     | The [DarkSky](https://darksky.net/dev/register) API key, which can be obtained by creating an DarkSky account. Please note Dark Sky no longer accept new signups. The API will continue to function through the end of 2021.<br><br> This value is **REQUIRED**
 | `lat`                        | The geo coordinate latitude. <br><br> This value is **REQUIRED**
 | `lon`                        | The geo coordinate longitude. <br><br> This value is **REQUIRED**
@@ -108,7 +108,7 @@ The following properties can be configured:
 | Option                       | Description
 | ---------------------------- | -----------
 | `apiBase`                    | The weather.gov base URL. <br><br> **Possible value:** `'https://api.weather.gov/points/'` <br> This value is **REQUIRED**
-| `weatherEndpoint`	           | The weather.gov API endPoint. <br><br> **Possible values:** `/forecast` for forecast and `/forecast/hourly` for current. <br> This value is **REQUIRED**
+| `weatherEndpoint`	       | The weather.gov API endPoint. <br><br> **Possible values:** `/forecast` for forecast and `/forecast/hourly` for current. <br> This value is **REQUIRED**
 | `lat`                        | The geo coordinate latitude. <br><br> This value is **REQUIRED**
 | `lon`                        | The geo coordinate longitude. <br><br> This value is **REQUIRED**
 
@@ -134,11 +134,11 @@ The following properties can be configured:
 ### Weatherbit options
 | Option                       | Description
 | ---------------------------- | -----------
-|`apiBase`                     | The Weather base URL.   Possible value: `https://api.weatherbit.io/v2.0`  This value is **REQUIRED**
-|`weatherEndpoint`             | The Weatherbit API endPoint.  Possible values: `/current`, `/forecast/daily`  This value is **REQUIRED**
-|`apiKey`                      | The Weatherbit API key which can be obtained by creating an WeatherBit account at https://www.weatherbit.io  This value is **REQUIRED**
-|`lat`                         | The geo coordinate latitude.  This value is **REQUIRED**
-|`lon`                         | The geo coordinate longitude.  This value is **REQUIRED**
+|`apiBase`                     | The Weather base URL.<br><br> **Possible value:** `https://api.weatherbit.io/v2.0` <br> This value is **REQUIRED**
+|`weatherEndpoint`             | The Weatherbit API endPoint.<br><br> **Possible values:** `/current`, `/forecast/daily` <br> This value is **REQUIRED**
+|`apiKey`                      | The [Weatherbit API](https://www.weatherbit.io) key which can be obtained by creating an WeatherBit account  <br><br> This value is **REQUIRED**
+|`lat`                         | The geo coordinate latitude. <br><br> This value is **REQUIRED**
+|`lon`                         | The geo coordinate longitude. <br><br> This value is **REQUIRED**
 
 ### SMHI options
 
