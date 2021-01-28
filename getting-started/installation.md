@@ -45,8 +45,8 @@ Note the following:
 
 - `npm start` does **not** work via SSH. But you can use `DISPLAY=:0 nohup npm start &` instead. \
   This starts the mirror on the remote display.
-- If you want to debug on Raspberry Pi you can use `npm start dev` which will start MM with *Dev Tools* enabled.
-- To access toolbar menu when in mirror mode, hit `ALT` key.
+- If you want to debug on your Raspberry Pi you can use `npm run start:dev` which will start MM with *Dev Tools* enabled.
+- To access the toolbar menu when in mirror mode, hit `ALT` key.
 - To toggle the (web) `Developer Tools` from mirror mode, use `CTRL-SHIFT-I` or `ALT` and select `View`.
 
 
