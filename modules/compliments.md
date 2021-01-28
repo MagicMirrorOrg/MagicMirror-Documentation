@@ -49,7 +49,7 @@ The `compliments` property contains an object with at least four arrays: <code>m
 
 Compliments can be set for a specific day in the format `YYYY-MM-DD`. `.` can be used as a wildcard.
 
-If set, the currentweather can be used for compliments. The availables properties are:
+If set, the currentweather can be used for compliments. The available properties are:
 - `day_sunny`
 - `day_cloudy`
 - `cloudy`
@@ -98,7 +98,6 @@ config: {
 	}
 }
 ````
-
 
 #### Default value:
 ````javascript

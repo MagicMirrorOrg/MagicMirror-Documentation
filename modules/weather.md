@@ -1,6 +1,6 @@
 # Weather Module
 
-This module is aimed to be the replacement for the current `currentweather` and `weatherforcast` modules. The module will be configurable to be used as a current weather view, or to show the forecast. This way the module can be used twice to fullfil both purposes.
+This module is aimed to be the replacement for the current `currentweather` and `weatherforcast` modules. The module will be configurable to be used as a current weather view, or to show the forecast. This way the module can be used twice to fulfill both purposes.
 
 The biggest change is the use of weather providers. This way we are not bound to one API source. And users can choose which API they want to use as their source.
 
@@ -128,7 +128,7 @@ The following properties can be configured:
 | `apiKey`                     | Your API key. See the [Getting Started](https://metoffice.apiconnect.ibmcloud.com/metoffice/production/start) guide on the Met Office website for creating a new account. <br> This value is **REQUIRED**
 | `apiSecret`                  | Your API secret (see above). <br> This value is **REQUIRED**
 | `lat`                        | The latitude coordinate for the desired location. <br><br> **Possible value:** `50.7271915` <br> This value is **REQUIRED**
-| `lon`                        | The longitude coordinate for the descired location. <br><br> **Possible value:** `-3.4776089` <br> This value is **REQUIRED**
+| `lon`                        | The longitude coordinate for the desired location. <br><br> **Possible value:** `-3.4776089` <br> This value is **REQUIRED**
 | `windUnits`                  | Set the units for wind speed. If not specified, uses the `units` value from `config.js`. This option is useful for those in the UK, for example, where we use metric units but have wind speed in mph. <br><br> **Possible values:** `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour
 
 ### Weatherbit options
@@ -145,7 +145,7 @@ The following properties can be configured:
 | Option                       | Description
 | ---------------------------- | -----------
 | `lat`                        | The latitude coordinate for the desired location. <br><br> **Possible value:** `59.322665376` <br> This value is **REQUIRED**
-| `lon`                        | The longitude coordinate for the descired location. <br><br> **Possible value:** `18.069666388` <br> This value is **REQUIRED**
+| `lon`                        | The longitude coordinate for the desired location. <br><br> **Possible value:** `18.069666388` <br> This value is **REQUIRED**
 | `precipitationValue`         | The type of precipitation to display (min, max, median, mean).  <br><br> **Possible values:** `'pmin'` , `'pmean'` , `'pmedian'`, `'pmax'`. <br> **Default value:** `'pmedian'`
 
 ## API Provider Development
