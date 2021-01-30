@@ -1,4 +1,8 @@
 # Weather Forecast
+::: warning
+This module has been deprecated in favor of the [Weather-module](/modules/weather.html). See [migration](#migration) for help migrating to the new module.
+:::
+
 The `weatherforecast` module is one of the default modules of the MagicMirror.
 This module displays the weather forecast for the coming week, including an an icon to display the current conditions, the minimum temperature and the maximum temperature.
 
@@ -83,3 +87,33 @@ iconTable: {
     '50n': 'wi-night-alt-cloudy-windy'
 }
 ````
+
+## Migration
+The following lines needs to be changed when migrating to the new weather module for current weather:
+``` json {2,5,8}
+	{
+		module: "weatherforecast",
+		position: "top_right",
+		config: {
+
+			location: "Amsterdam,Netherlands",
+			locationID: "",
+			appid: "abcde12345abcde12345abcde12345ab"
+		}
+	}
+```
+To this:
+``` json {2,5,8}
+	{
+		module: "weather",
+		position: "top_right",
+		config: {
+			type: "forecast",
+			location: "Amsterdam,Netherlands",
+			locationID: "",
+			apiKey: "abcde12345abcde12345abcde12345ab"
+		}
+	}
+```
+
+Most of the other configuration options should be unchanged and should be available in the new module too, if there's still something missing please open an issue [here](https://github.com/MichMich/MagicMirror/issues/new).
