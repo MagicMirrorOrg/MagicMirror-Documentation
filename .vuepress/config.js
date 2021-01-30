@@ -45,7 +45,8 @@ module.exports = {
               'modules/weather',
               'modules/weatherforecast'
             ]
-          }
+          },
+          'modules/customcss'
         ]
       },
       {
