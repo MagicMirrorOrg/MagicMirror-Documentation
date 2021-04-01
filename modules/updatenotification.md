@@ -25,4 +25,4 @@ The following properties can be configured:
 | Option           | Description
 | ---------------- | -----------
 | `updateInterval` | How often do you want to check for a new version? This value represents the interval in milliseconds. <br><br> **Possible values:** Any value above `60000` (1 minute) <br> **Default value:** `600000` (10 minutes);
-| `ignoreModules` | An array of module names that should not check for update. <br><br> **Example:** `["MMM-ExampleModule1", "MMM-ExampleModule2"]` <br> **Default value:** `[]` (empty array, no modules);
+| `ignoreModules`  | An array of module names that should not check for update. <br><br> **Example:** `["MMM-ExampleModule1", "MMM-ExampleModule2"]` <br> **Default value:** `[]` (empty array, no modules);
