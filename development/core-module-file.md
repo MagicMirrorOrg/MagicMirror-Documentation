@@ -310,6 +310,7 @@ Possible configurable options:
 
 - `lockString` - String - When setting lock string, the module can not be shown without passing the correct lockstring. This way (multiple) modules can prevent a module from showing. See *visibility locking* below.
 - `force` - Boolean - When setting the force tag to `true`, the locking mechanism will be overwritten. Use this option with caution. It's considered best practice to let the usage of the force option be use- configurable. See *visibility locking* below.
+- `onError(error)` - Function - If a module is hidden with other lock strings and can therefore not be shown the onError callback triggers with an error object, if specified in the options (*Introduced in version: 2.15.0*). 
 
 **Note 1:** If the show animation is canceled, for instance because the hide method is called before the show animation was finished, the callback will not be called.<br>
 **Note 2:** If the show animation is hijacked (an other method calls show on the same module), the callback will not be called.<br>
