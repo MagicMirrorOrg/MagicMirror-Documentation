@@ -21,14 +21,25 @@ Therefore the only officially supported way of installation is by using a [manua
 The installation step for `npm install` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
 :::
 
-### Common Installation Problems
-1. `"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`
-	**fix:** Modify start script:
-	1. Navigate to `package.json`
-	2. Search for `"start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",`
-	3. Replace with `"start": "node_modules/.bin/electron js/electron.js",`
-2.  Screen is black (modules don't show up)
-	**fix:** Install vendor packages: `cd vendor && npm install && cd ..`
+### Common Installation Issues
+- Program won't start (i.e. `"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`)
+	
+    **fix:** Modify start script.
+    1. Navigate to the file `package.json`
+    2. Find where it says 
+    ```
+    "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
+    ```
+    and replace it with
+    ```
+    "start": "node_modules/.bin/electron js/electron.js",
+    ``` 
+
+
+- Screen is black (modules don't show up)
+
+	**fix:** Install vendor packages: 
+    1. `cd vendor && npm install && cd ..`
 
 ## Alternative Installation Methods
 The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
