@@ -62,6 +62,7 @@ The following properties can be configured:
 | `nextDaysRelative`           | If this is set to true, the appointments of today and tomorrow are displayed relatively, even if the timeformat is set to absolute. <br> **Default value:** `false`
 | `customEvents`               | An array of `keyword`/`symbol`/`color` that will customize events based on keyword in title. <br> <br> `keyword` is a case-insensitive string that if present in event title will trigger the use of custom symbol and/or color for that event, `symbol` is the Font Awesome icon to use as symbol and `color` is the CSS color to use for the event. `keyword` and at least one of `symbol` and `color`is required. <br> <br> **Example:** `customEvents: [{keyword: 'Birthday', symbol: 'fa-birthday-cake', color: 'Gold'}]`
 | `limitDays`                  | If this property is set to a value greater than zero, the number of unique days displayed will be limited to `limitDays` days. <br><br> **Default value:** `0` (no limit)
+| `hideTime`                  | If this property is set to true the time portion on relative times will be hidden.<br><br> **Default value:** `false`
 
 ### Calendar configuration
 
