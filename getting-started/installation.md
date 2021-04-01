@@ -15,12 +15,20 @@ Therefore the only officially supported way of installation is by using a [manua
 5. Make a copy of the config sample file: `cp config/config.js.sample config/config.js`
 6. Start the application: `npm run start` \
    For **Server Only** use: `npm run server` .
+7. See next section for common installation issues.
 
 ::: warning NOTE
 The installation step for `npm install` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
 :::
 
-
+### Common Installation Problems
+1. `"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`
+	**fix:** Modify start script:
+	1. Navigate to `package.json`
+	2. Search for `"start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",`
+	3. Replace with `"start": "node_modules/.bin/electron js/electron.js",`
+2.  Screen is black (modules don't show up)
+	**fix:** Install vendor packages: `cd vendor && npm install && cd ..`
 
 ## Alternative Installation Methods
 The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
@@ -37,7 +45,7 @@ The following installation methods are not maintained by the MagicMirror² core 
 - If you want to run MagicMirror² (in server only mode) in a kubernetes cluster then take a look at this [MagicMirror Helm Chart](https://gitlab.com/khassel/magicmirror-helm).
 
 ### MagicMirrorOS
-- This is a full OS based on raspian. So instead of downloading raspian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses an [alternative docker setup](https://gitlab.com/khassel/magicmirror) (which allows direct output on the raspberry screen).
+- This is a full OS based on Raspbian. So instead of downloading Raspbian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses an [alternative docker setup](https://gitlab.com/khassel/magicmirror) (which allows direct output on the raspberry screen).
 
 ## Usage
 
@@ -45,8 +53,8 @@ Note the following:
 
 - `npm start` does **not** work via SSH. But you can use `DISPLAY=:0 nohup npm start &` instead. \
   This starts the mirror on the remote display.
-- If you want to debug on Raspberry Pi you can use `npm start dev` which will start MM with *Dev Tools* enabled.
-- To access toolbar menu when in mirror mode, hit `ALT` key.
+- If you want to debug on your Raspberry Pi you can use `npm run start:dev` which will start MM with *Dev Tools* enabled.
+- To access the toolbar menu when in mirror mode, hit `ALT` key.
 - To toggle the (web) `Developer Tools` from mirror mode, use `CTRL-SHIFT-I` or `ALT` and select `View`.
 
 
