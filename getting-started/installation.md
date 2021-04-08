@@ -13,9 +13,10 @@ Therefore the only officially supported way of installation is by using a [manua
 3. Enter the repository: `cd MagicMirror/`
 4. Install the application: `npm install`
 5. Make a copy of the config sample file: `cp config/config.js.sample config/config.js`
-6. Start the application: `npm run start` \
+6. Install electron: `npm install electron --save-dev`
+7. Start the application: `npm run start` \
    For **Server Only** use: `npm run server` .
-7. See next section for common installation issues.
+8. See next section for common installation issues.
 
 ::: warning NOTE
 The installation step for `npm install` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
