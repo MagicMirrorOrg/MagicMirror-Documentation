@@ -36,7 +36,7 @@ The following properties can be configured:
 
 | Option                       | Description
 | ---------------------------- | -----------
-| `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `openweathermap` , `darksky` , `weathergov`, `ukmetoffice`, or `weatherbit`<br> **Default value:** `openweathermap`
+| `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `openweathermap` , `darksky` , `weathergov`, `ukmetofficedatahub`, `ukmetoffice`, or `weatherbit`<br> **Default value:** `openweathermap`
 | `type`                       | Which type of weather data should be displayed. <br><br> **Possible values:** `current` , `hourly` , `daily` , or `forecast` <br> **Default value:** `current` <br><br> **Note:** The `daily` type is another name for the `forecast` type, and the two are interchangeable. The `hourly` type is currently only implemented for the OpenWeatherMap provider, and only when `/onecall` is used as the specified endpoint.
 | `units`                      | What units to use. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `config.units`
 | `tempUnits`                  | What units to use for temperature. If specified overrides `units` setting. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `units`
@@ -112,7 +112,7 @@ The following properties can be configured:
 | `lat`                        | The geo coordinate latitude. <br><br> This value is **REQUIRED**
 | `lon`                        | The geo coordinate longitude. <br><br> This value is **REQUIRED**
 
-### UK Met Office options
+### UK Met Office (`ukmetoffice`) options
 
 | Option                       | Description
 | ---------------------------- | -----------
@@ -120,13 +120,13 @@ The following properties can be configured:
 | `locationID`	               | The UKMO API location code. <br><br> **Possible values:** `322942` <br>  This value is **REQUIRED**
 | `apiKey`                     | The [UK Met Office](https://www.metoffice.gov.uk/datapoint/getting-started) API key, which can be obtained by creating an UKMO Datapoint account. <br><br>  This value is **REQUIRED**
 
-### UK Met Office (DataHub) options
+### UK Met Office (`ukmetofficedatahub`) options
 
 | Option                       | Description
 | ---------------------------- | -----------
 | `apiBase`                    | The UKMO DataHub base URL.<br><br> **Possible value:**  `'https://api-metoffice.apiconnect.ibmcloud.com/metoffice/production/v0/forecasts/point/'` <br> This value is **REQUIRED**
-| `apiKey`                     | Your API key. See the [Getting Started](https://metoffice.apiconnect.ibmcloud.com/metoffice/production/start) guide on the Met Office website for creating a new account. <br> This value is **REQUIRED**
-| `apiSecret`                  | Your API secret (see above). <br> This value is **REQUIRED**
+| `apiKey`                     | Your API key (MetOffice API ClientID). See the [Getting Started](https://metoffice.apiconnect.ibmcloud.com/metoffice/production/start) guide on the Met Office website for creating a new account. <br> This value is **REQUIRED**
+| `apiSecret`                  | Your API secret (MetOffice API ClientSecret). <br> This value is **REQUIRED**
 | `lat`                        | The latitude coordinate for the desired location. <br><br> **Possible value:** `50.7271915` <br> This value is **REQUIRED**
 | `lon`                        | The longitude coordinate for the desired location. <br><br> **Possible value:** `-3.4776089` <br> This value is **REQUIRED**
 | `windUnits`                  | Set the units for wind speed. If not specified, uses the `units` value from `config.js`. This option is useful for those in the UK, for example, where we use metric units but have wind speed in mph. <br><br> **Possible values:** `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour
