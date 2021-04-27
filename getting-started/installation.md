@@ -7,7 +7,7 @@ Therefore the only officially supported way of installation is by using a [manua
 ## Manual Installation
 
 1. Download and install the latest *Node.js* version:
-- `curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`
+- `curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -`
 - `sudo apt install -y nodejs`
 2. Clone the repository and check out the master branch: `git clone https://github.com/MichMich/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
@@ -50,7 +50,9 @@ The following installation methods are not maintained by the MagicMirror² core 
 - [The MagicMirror Package Manager](https://github.com/Bee-Mar/mmpm) is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules.
 
 ### Docker Image
-- MagicMirror² in server only mode can be deployed using [Docker](https://docker.com). Head over to the [MagicMirror Docker GitHub repository](https://github.com/bastilimbach/docker-MagicMirror) for more information.
+- MagicMirror² can be deployed using [Docker](https://docker.com). Head over to one of the following repositories for more information:
+  - [Docker Setup by khassel](https://gitlab.com/khassel/magicmirror)
+  - [Docker Setup by bastilimbach](https://github.com/bastilimbach/docker-MagicMirror) (currently unmaintained, only `server only` mode)
 
 ### Kubernetes Helm Chart
 - If you want to run MagicMirror² (in server only mode) in a kubernetes cluster then take a look at this [MagicMirror Helm Chart](https://gitlab.com/khassel/magicmirror-helm).
