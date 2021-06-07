@@ -79,6 +79,7 @@ The following properties can be configured:
 | `fadePoint`                  | Where to start fade? <br><br> **Possible values:** `0` (top of the list) - `1` (bottom of list) <br> **Default value:** `0.25`
 | `maxNumberOfDays`            | How many days of forecast to return. Specified by config.js <br><br> **Possible values:** `1` - `16` <br> **Default value:** `5` (5 days) <br> This value is optional. By default the weather module will return 5 days.
 | `maxEntries`                 | How many entries of an OpenWeatherMap One Call hourly or daily forecast type to return. Specified by config.js <br><br> **Possible values:** `1` - `48` for `'hourly'` , `1` - `7` for `'daily'` <br> **Default value:** `5` (5 entries) <br> This value is optional and specifically meant to be used with the OpenWeatherMap provider and its `'/onecall'` endpoint. By default the weather module will return 5 entries. Intended to act as a more generalized of the `maxNumberOfDays` option.
+| `ignoreToday`                | If set to `true`, today's weather will not be displayed. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 
 ### Openweathermap options
 
