@@ -161,7 +161,7 @@ When using the `type: "hourly"` config, the module can display a max of 24 hours
 | ---------------------------- | -----------
 | `siteCode`                   | The city/town unique identifier for which weather is to be displayed. <br><br> **Example:** `siteCode: 's0000458'` is the value for Toronto, Ontario <br><br> To determine the `siteCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `siteCode` under column A (Codes) <br><br> This value is **REQUIRED**
 | `provCode`                   | The 2-character province code for the selected city/town `siteCode`. <br><br> **Example:** `provCode: 'ON'` is the value for Toronto, Ontario <br><br> To determine the `provCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `provCode` under column C (Province) - and of course the `siteCode` under column A (Codes) <br><br> This value is **REQUIRED**
-| `location`    		       | The free-format text string intended to hold a location name (e.g. city) that should appear in the module header. <br><br> **Example:** `location: 'Toronto, ON'`
+| `location`		       | The free-format text string intended to hold a location name (e.g. city) that should appear in the module header. <br><br> **Example:** `location: 'Toronto, ON'`
 
 ## API Provider Development
 
