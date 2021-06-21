@@ -152,6 +152,10 @@ The following properties can be configured:
 
 **Note** that `envcanada` supports Canadian locations only.
 
+When using the 'type: "forecast"' config, the module can display a max of 6 days (Today + the next 5 days). The forecast for each day reflects the daytime forecast. The Today forecast is a special case that will reflect the daytime forecast until late afternoon, after which Today will be reflecting the nightime forecast for the current day.
+
+When using the 'type: "hourly"' config, the module can display a max of 24 hours.
+
 | Option                       | Description
 | ---------------------------- | -----------
 | `siteCode`                   | The city/town unique identifier for which weather is to be displayed. <br><br> **Example:** `siteCode: 's0000458'` is the value for Toronto, Ontario <br><br> To determine the `siteCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `siteCode` under column A (Codes) <br><br> This value is **REQUIRED**
