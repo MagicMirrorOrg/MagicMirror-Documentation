@@ -74,6 +74,7 @@ The following properties can be configured:
 | Option             | Description
 | ------------------ | -----------
 | `feeds`            | An array of feed urls that will be used as source. <br> More info about this object can be found below. <br> **Default value:** `[{ title: "New York Times", url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml", encoding: "UTF-8" }]`<br>You can add `reloadInterval` option to set particular reloadInterval to a feed.
+| `showAsList`       | Display the news as a list. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `showSourceTitle`  | Display the title of the source. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `showPublishDate`  | Display the publish date of an headline. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `broadcastNewsFeeds`   | Gives the ability to broadcast news feeds to all modules, by using ```sendNotification()``` when set to `true`, rather than ```sendSocketNotification()``` when `false` <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
