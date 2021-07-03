@@ -36,8 +36,8 @@ The following properties can be configured:
 
 | Option                       | Description
 | ---------------------------- | -----------
-| `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `openweathermap` , `darksky` , `weathergov`, `ukmetofficedatahub`, `ukmetoffice`, or `weatherbit`<br> **Default value:** `openweathermap`
-| `type`                       | Which type of weather data should be displayed. <br><br> **Possible values:** `current` , `hourly` , `daily` , or `forecast` <br> **Default value:** `current` <br><br> **Note:** The `daily` type is another name for the `forecast` type, and the two are interchangeable. The `hourly` type is currently only implemented for the OpenWeatherMap provider, and only when `/onecall` is used as the specified endpoint.
+| `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `openweathermap` , `darksky` , `weathergov`, `ukmetofficedatahub`, `ukmetoffice`, `weatherbit`, or `envcanada`<br> **Default value:** `openweathermap`
+| `type`                       | Which type of weather data should be displayed. <br><br> **Possible values:** `current` , `hourly` , `daily` , or `forecast` <br> **Default value:** `current` <br><br> **Note:** The `daily` type is another name for the `forecast` type, and the two are interchangeable. <br><br> The `hourly` type is currently only implemented for: <br> **Environment Canada** (`envcanada`) provider <br> **OpenWeatherMap** provider, and only when `/onecall` is used as the specified endpoint.
 | `units`                      | What units to use. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `config.units`
 | `tempUnits`                  | What units to use for temperature. If specified overrides `units` setting. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `units`
 | `windUnits`                  | What units to use for wind speed.  If specified overrides `units` setting. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `units`
@@ -147,6 +147,21 @@ The following properties can be configured:
 | `lat`                        | The latitude coordinate for the desired location. <br><br> **Possible value:** `59.322665376` <br> This value is **REQUIRED**
 | `lon`                        | The longitude coordinate for the desired location. <br><br> **Possible value:** `18.069666388` <br> This value is **REQUIRED**
 | `precipitationValue`         | The type of precipitation to display (min, max, median, mean).  <br><br> **Possible values:** `'pmin'` , `'pmean'` , `'pmedian'`, `'pmax'`. <br> **Default value:** `'pmedian'`
+
+### Environment Canada (`envcanada`) options
+
+**Note** that `envcanada` supports Canadian locations only.
+
+When using the `type: "forecast"` config, the module can display a max of 6 days (Today + the next 5 days). The forecast for each day reflects the daytime forecast. The Today forecast is a special case that will reflect the daytime forecast until late afternoon, after which Today will be reflecting the nightime forecast for the current day.
+
+When using the `type: "hourly"` config, the module can display a max of 24 hours.
+
+
+| Option                       | Description
+| ---------------------------- | -----------
+| `siteCode`                   | The city/town unique identifier for which weather is to be displayed. <br><br> **Example:** `siteCode: 's0000458'` is the value for Toronto, Ontario <br><br> To determine the `siteCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `siteCode` under column A (Codes) <br><br> This value is **REQUIRED**
+| `provCode`                   | The 2-character province code for the selected city/town `siteCode`. <br><br> **Example:** `provCode: 'ON'` is the value for Toronto, Ontario <br><br> To determine the `provCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `provCode` under column C (Province) - and of course the `siteCode` under column A (Codes) <br><br> This value is **REQUIRED**
+| `location`		       | The free-format text string intended to hold a location name (e.g. city) that should appear in the module header. <br><br> **Example:** `location: 'Toronto, ON'`
 
 ## API Provider Development
 
