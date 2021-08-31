@@ -17,4 +17,4 @@ Using a Lite Version of Raspbian **will not work**.
 
 ## Node
 
-Although older version of Node might work, we suggest you use Node 10.
+Although older version of Node might work, we suggest you use Node 12.
