@@ -58,6 +58,7 @@ module.exports = {
           'development/node-helper.md',
           'development/helper-methods.md',
           'development/logger.md',
+          'development/weather-provider.md',
         ]
       }
     ],
