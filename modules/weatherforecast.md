@@ -23,7 +23,7 @@ modules: [
 		config: {
 			// See 'Configuration options' for more information.
 			location: "Amsterdam,Netherlands",
-			locationID: "", //Location ID from http://bulk.openweathermap.org/sample/city.list.json.gz
+			locationID: "", //Location ID from https://bulk.openweathermap.org/sample/city.list.json.gz
 			appid: "abcde12345abcde12345abcde12345ab" //openweathermap.org API key.
 		}
 	}
@@ -54,7 +54,7 @@ The following properties can be configured:
 | `initialLoadDelay`           | The initial delay before loading. If you have multiple modules that use the same API key, you might want to delay one of the requests. (Milliseconds) <br><br> **Possible values:** `1000` - `5000` <br> **Default value:**  `2500` (2.5 seconds delay. This delay is used to keep the OpenWeather API happy.)
 | `retryDelay`                 | The delay before retrying after a request failure. (Milliseconds) <br><br> **Possible values:** `1000` - `60000` <br> **Default value:**  `2500`
 | `apiVersion`                 | The OpenWeatherMap API version to use. <br><br> **Default value:**  `2.5`
-| `apiBase`                    | The OpenWeatherMap base URL. <br><br> **Default value:**  `'http://api.openweathermap.org/data/'`
+| `apiBase`                    | The OpenWeatherMap base URL. <br><br> **Default value:**  `'https://api.openweathermap.org/data/'`
 | `forecastEndpoint`           | The OpenWeatherMap API endPoint. <br><br> **Default value:**  `'forecast/daily'`
 | `excludes`                   | Exclude some parts of the weather data from the API response. It should be a comma-delimited list (without spaces). <br><br> **Default value:**  `false`
 | `appendLocationNameToHeader` | If set to `true`, the returned location name will be appended to the header of the module, if the header is enabled. This is mainly interesting when using calender based weather. <br><br> **Default value:**  `true`

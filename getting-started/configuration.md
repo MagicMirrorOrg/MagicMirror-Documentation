@@ -4,7 +4,7 @@
 
 The following wiki links are helpful for the initial configuration of your MagicMirror² operating system:
 - [Configuring the Raspberry Pi](https://github.com/MichMich/MagicMirror/wiki/Configuring-the-Raspberry-Pi)
-- [Auto Starting MagicMirror](https://github.com/MichMich/MagicMirror/wiki/Auto-Starting-MagicMirror)
+- [Auto Starting MagicMirror](https://docs.magicmirror.builders/getting-started/autostart.html)
 
 
 ## General

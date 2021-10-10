@@ -44,10 +44,10 @@ The following properties can be configured:
 | `calendars`                  | The list of calendars. <br><br> **Possible values:** An array, see _calendar configuration_ below. <br> **Default value:** _An example calendar._
 | `titleReplace`               | An object of textual replacements applied to the tile of the event. This allow to remove or replace certain words in the title. <br><br> **Example:** `{'Birthday of ' : '', 'foo':'bar'}` <br> **Default value:** `{	"De verjaardag van ": "", "'s birthday": ""	}`
 | `displayRepeatingCountTitle` | Show count title for yearly repeating events (e.g. "X. Birthday", "X. Anniversary") <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
-| `dateFormat`                 | Format to use for the date of events when using absolute dates. (version <= 2.16.0) From version 2.16.0, this option will be used to format absolute and relative dates. (e.g. DD/MM/YY to change from the default MM/DD/YYYY) <br><br> **Possible values:** See [Moment.js formats](http://momentjs.com/docs/#/parsing/string-format/) <br> **Default value:** `MMM Do` (e.g. Jan 18th)
+| `dateFormat`                 | Format to use for the date of events when using absolute dates. (version <= 2.16.0) From version 2.16.0, this option will be used to format absolute and relative dates. (e.g. DD/MM/YY to change from the default MM/DD/YYYY) <br><br> **Possible values:** See [Moment.js formats](https://momentjs.com/docs/#/parsing/string-format/) <br> **Default value:** `MMM Do` (e.g. Jan 18th)
 | `dateEndFormat`              | Format to use for the end time of events <br><br> **Possible values:** See [Moment.js formats](https://momentjs.com/docs/#/parsing/string-format/) <br> **Default value:** `HH:mm` (e.g. 16:30)
 | `showEnd`                    | Show end time of events  <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
-| `fullDayEventDateFormat`     | Format to use for the date of full day events (when using absolute dates) <br><br> **Possible values:** See [Moment.js formats](http://momentjs.com/docs/#/parsing/string-format/) <br> **Default value:** `MMM Do` (e.g. Jan 18th)
+| `fullDayEventDateFormat`     | Format to use for the date of full day events (when using absolute dates) <br><br> **Possible values:** See [Moment.js formats](https://momentjs.com/docs/#/parsing/string-format/) <br> **Default value:** `MMM Do` (e.g. Jan 18th)
 | `timeFormat`                 | Display event times as absolute dates, or relative time, or using absolute date headers with times for each event next to it <br><br> **Possible values:** `absolute` or `relative` or `dateheaders` <br> **Default value:** `relative`
 | `showEnd`                    | Display the end of a date as well <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `getRelative`                | How much time (in hours) should be left until calendar events start getting relative? <br><br> **Possible values:** `0` (events stay absolute) - `48` (48 hours before the event starts) <br> **Default value:** `6`
@@ -77,7 +77,7 @@ config: {
 	coloredSymbolOnly: false,
 	calendars: [
 		{
-			url: 'http://www.calendarlabs.com/templates/ical/US-Holidays.ics',
+			url: 'https://www.calendarlabs.com/templates/ical/US-Holidays.ics',
 			symbol: 'calendar',
 			auth: {
 			    user: 'username',
@@ -94,7 +94,7 @@ config: {
 | Option                | Description
 | --------------------- | -----------
 | `url`	                | The url of the calendar .ical. This property is required. <br><br> **Possible values:** Any public accessible .ical calendar.
-| `symbol`              | The symbol to show in front of an event. This property is optional. <br><br> **Possible values:** See [Font Awesome](http://fontawesome.io/icons/) website. To have multiple symbols you can define them in an array e.g. `["calendar", "plane"]`
+| `symbol`              | The symbol to show in front of an event. This property is optional. <br><br> **Possible values:** See [Font Awesome](https://fontawesome.io/icons/) website. To have multiple symbols you can define them in an array e.g. `["calendar", "plane"]`
 | `color`               | The font color of an event from this calendar. This property should be set if the config is set to colored: true. <br><br> **Possible values:** HEX, RGB or RGBA values (#efefef, rgb(242,242,242), rgba(242,242,242,0.5)).
 | `repeatingCountTitle`	| The count title for yearly repeating events in this calendar.  <br><br> **Example:** `'Birthday'`
 | `maximumEntries`      | The maximum number of events shown.  Overrides global setting. **Possible values:** `0` - `100`
