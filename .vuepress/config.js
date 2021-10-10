@@ -16,6 +16,7 @@ module.exports = {
           'getting-started/requirements',
           'getting-started/installation',
           'getting-started/configuration',
+          'getting-started/autostart',
           'getting-started/upgrade-guide',
           'getting-started/license',
           'getting-started/contributing',
