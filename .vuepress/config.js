@@ -20,14 +20,16 @@ module.exports = {
           '/',
           'getting-started/requirements',
           'getting-started/installation',
-          'getting-started/configuration',
-          'getting-started/autostart',
           'getting-started/upgrade-guide',
-          'getting-started/license',
-          'getting-started/contributing',
-          'getting-started/support',
-          'getting-started/manifesto',
-          'getting-started/donate',
+        ]
+      },
+      {
+        title: 'Configuration',
+        collapsable: true,
+        children: [
+          'configuration/introduction',
+          'configuration/autostart',
+          'configuration/raspberry',
         ]
       },
       {
@@ -68,7 +70,18 @@ module.exports = {
           'development/weather-provider.md',
           'development/documentation.md',
         ]
-      }
+      },
+      {
+        title: 'About',
+        collapsable: true,
+        children: [
+          'about/manifesto',
+          'about/contributing',
+          'about/donate',
+          'about/support',
+          'about/license',
+        ]
+      },
     ],
     repo: 'MichMich/MagicMirror',
     repoLabel: 'GitHub',
