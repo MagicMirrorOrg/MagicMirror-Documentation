@@ -61,6 +61,7 @@ module.exports = {
           'development/logger.md',
           'development/notifications.md',
           'development/weather-provider.md',
+          'development/documentation.md',
         ]
       }
     ],
