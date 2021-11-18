@@ -97,7 +97,7 @@ iconTable: {
 The following lines needs to be changed when migrating to the new weather module for current weather:
 ``` json {2,5,8}
 	{
-		module: "weatherforecast",
+		module: "currentweather",
 		position: "top_right",
 		config: {
 
