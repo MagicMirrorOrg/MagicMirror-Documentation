@@ -22,6 +22,7 @@ The installation step for `npm install` will take a very long time, often with l
 :::
 
 ### Common Installation Issues
+
 - Program won't start (i.e. `"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`)
 	
     **fix:** Modify start script.
@@ -35,7 +36,6 @@ The installation step for `npm install` will take a very long time, often with l
     "start": "node_modules/.bin/electron js/electron.js",
     ``` 
 
-
 - Screen is black (modules don't show up)
 
 	**fix:** Install vendor packages: 
@@ -45,7 +45,6 @@ The installation step for `npm install` will take a very long time, often with l
 The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
 
 ### Automatic Installation Scripts
-
 - Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts)
 - [The MagicMirror Package Manager](https://github.com/Bee-Mar/mmpm) is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules.
 
@@ -60,8 +59,12 @@ The following installation methods are not maintained by the MagicMirror² core 
 ### MagicMirrorOS
 - This is a full OS based on Raspbian. So instead of downloading Raspbian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses an [alternative docker setup](https://gitlab.com/khassel/magicmirror) (which allows direct output on the raspberry screen).
 
-## Usage
+### Other Operating System
+- Windows: 
+    - Make sure to fix the package.json script as mentioned [here](#common-installation-issues)
 
+
+## Usage
 Note the following:
 
 - `npm start` does **not** work via SSH. But you can use `DISPLAY=:0 nohup npm start &` instead. \
@@ -80,7 +83,7 @@ Make sure that you whitelist the interface/ip (`ipWhitelist`) in the server conf
 :::
 
 ```javascript
-var config = {
+let config = {
 	address: "0.0.0.0",	// default is "localhost"
 	port: 8080,		// default
 	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:172.17.0.1"], // default -- need to add your IP here
