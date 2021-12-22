@@ -23,19 +23,6 @@ The installation step for `npm install` will take a very long time, often with l
 
 ### Common Installation Issues
 
-- Program won't start (i.e. `"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`)
-	
-    **fix:** Modify start script.
-    1. Navigate to the file `package.json`
-    2. Find where it says 
-    ```
-    "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
-    ```
-    and replace it with
-    ```
-    "start": "node_modules/.bin/electron js/electron.js",
-    ``` 
-
 - Screen is black (modules don't show up)
 
 	**fix:** Install vendor packages: 
@@ -60,9 +47,24 @@ The following installation methods are not maintained by the MagicMirror² core 
 - This is a full OS based on Raspbian. So instead of downloading Raspbian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses an [alternative docker setup](https://gitlab.com/khassel/magicmirror) (which allows direct output on the raspberry screen).
 
 ### Other Operating System
-- Windows: 
-    - Make sure to fix the package.json script as mentioned [here](#common-installation-issues)
 
+#### Windows: 
+
+Make sure to fix the start script in the `package.json` file:
+
+    1. Navigate to the file `package.json`
+    2. Find where it says 
+    ```
+    "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
+    ```
+    and replace it with
+    ```
+    "start": "node_modules/.bin/electron js/electron.js",
+    ``` 
+    
+Otherwise the program won't start, but will display this error message: 
+`"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`
+	
 
 ## Usage
 Note the following:
