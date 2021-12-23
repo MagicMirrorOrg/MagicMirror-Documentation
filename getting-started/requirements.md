@@ -10,8 +10,11 @@ MagicMirror² is developed to run on a Raspberry Pi. It might (and will) run on 
 
 Note that you will need to install the latest full version of Raspbian, **don't use the Lite version**.
 
+If you want to run the software on other Operating Systems, take a look at [this section](/getting-started/installation#other-operating-system)
+
 ::: warning NOTE
-To run Electron, you need a desktop environment. \
+You **do** need a desktop environment to run Electron! 
+
 Using a Lite Version of Raspbian **will not work**.
 :::
 
