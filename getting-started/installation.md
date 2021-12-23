@@ -5,7 +5,6 @@ The Magic Mirror can be installed manually or using automatic installers. At the
 Therefore the only officially supported way of installation is by using a [manual installation](#manual-installation). Using external installation scripts is at your own risk but can make the process a lot easier. Available automatic installers can be found under: [alternative installation methods](#alternative-installation-methods).
 
 ## Manual Installation
-
 1. Download and install the latest *Node.js* version:
 - `curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -`
 - `sudo apt install -y nodejs`
@@ -15,18 +14,10 @@ Therefore the only officially supported way of installation is by using a [manua
 5. Make a copy of the config sample file: `cp config/config.js.sample config/config.js`
 6. Start the application: `npm run start` \
    For **Server Only** use: `npm run server` .
-7. See next section for common installation issues.
 
 ::: warning NOTE
 The installation step for `npm install` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
 :::
-
-### Common Installation Issues
-
-- Screen is black (modules don't show up)
-
-	**fix:** Install vendor packages: 
-    1. `cd vendor && npm install && cd ..`
 
 ## Alternative Installation Methods
 The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
@@ -46,11 +37,20 @@ The following installation methods are not maintained by the MagicMirror² core 
 ### MagicMirrorOS
 - This is a full OS based on Raspbian. So instead of downloading Raspbian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses an [alternative docker setup](https://gitlab.com/khassel/magicmirror) (which allows direct output on the raspberry screen).
 
-### Other Operating System
+## Other Operating Systems
 
-#### Windows: 
+### Windows: 
 
-Make sure to fix the start script in the `package.json` file:
+To get the MagicMirror software running on Windows, you have to do two things in addition to the [steps](#manual-installation) above:
+
+4a. Install dependencies in the vendor and font directories:
+
+    1. `cd fonts && npm install && cd ..`
+    2. `cd vendor && npm install && cd ..`
+    
+Otherwise the screen will stay black when starting the MagicMirror.
+
+5a. Fix the start script in the `package.json` file:
 
     1. Navigate to the file `package.json`
     2. Find where it says 
@@ -64,7 +64,6 @@ Make sure to fix the start script in the `package.json` file:
     
 Otherwise the program won't start, but will display this error message: 
 `"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`
-	
 
 ## Usage
 Note the following:
@@ -74,7 +73,6 @@ Note the following:
 - If you want to debug on your Raspberry Pi you can use `npm run start:dev` which will start MM with *Dev Tools* enabled.
 - To access the toolbar menu when in mirror mode, hit `ALT` key.
 - To toggle the (web) `Developer Tools` from mirror mode, use `CTRL-SHIFT-I` or `ALT` and select `View`.
-
 
 ### Server Only
 
@@ -92,7 +90,6 @@ let config = {
 	...
 };
 ```
-
 
 ### Client Only
 
