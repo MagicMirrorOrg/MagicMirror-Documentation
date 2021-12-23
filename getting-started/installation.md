@@ -7,7 +7,7 @@ Therefore the only officially supported way of installation is by using a [manua
 ## Manual Installation
 
 1. Download and install the latest *Node.js* version:
-- `curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -`
+- `curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -`
 - `sudo apt install -y nodejs`
 2. Clone the repository and check out the master branch: `git clone https://github.com/MichMich/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
