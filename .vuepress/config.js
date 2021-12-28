@@ -3,6 +3,10 @@ module.exports = {
   description: 'The open source modular smart mirror platform.',
   themeConfig: {
     // logo: '/mm.png',
+    algolia: {
+      apiKey: '9e5792a7d42f7658b454261c9d8e90dc',
+      indexName: 'docs-magicmirror-builders'
+    },
     nav: [
       { text: 'Donate', link: 'https://magicmirror.builders/donate' },
       { text: 'Forum', link: 'https://forum.magicmirror.builders' }
