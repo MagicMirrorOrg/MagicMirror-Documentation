@@ -4,7 +4,7 @@ module.exports = {
   themeConfig: {
     // logo: '/mm.png',
     algolia: {
-      apiKey: '9e5792a7d42f7658b454261c9d8e90dc',
+      apiKey: '96d207343bbb5e45068a1e3c8d141bb4',
       indexName: 'docs-magicmirror-builders'
     },
     nav: [
