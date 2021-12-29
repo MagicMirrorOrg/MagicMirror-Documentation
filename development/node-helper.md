@@ -7,7 +7,7 @@ The node helper (`node_helper.js`) is a Node.js script that is able to do some b
 In it's most simple form, the node_helper.js file must contain:
 
 ```javascript
-var NodeHelper = require("node_helper");
+const NodeHelper = require("node_helper");
 module.exports = NodeHelper.create({});
 ```
 
