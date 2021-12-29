@@ -21,6 +21,7 @@ module.exports = {
           'getting-started/requirements',
           'getting-started/installation',
           'getting-started/configuration',
+          'getting-started/autostart',
           'getting-started/upgrade-guide',
           'getting-started/license',
           'getting-started/contributing',
@@ -63,7 +64,9 @@ module.exports = {
           'development/node-helper.md',
           'development/helper-methods.md',
           'development/logger.md',
+          'development/notifications.md',
           'development/weather-provider.md',
+          'development/documentation.md',
         ]
       }
     ],

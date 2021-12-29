@@ -42,7 +42,7 @@ The following properties can be configured:
 | `showMoonTimes`   | Turn off or on the section showing moonrise and moonset times (digital clock only). <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `lat`             | Latitude for sun/moon calculations. <br><br> **Default value:** `47.630539`
 | `lon`             | Longitude for sun/moon calculations. <br><br> **Default value:** `-122.344147`
-| `dateFormat`      | Configure the date format as you like. <br><br> **Possible values:** [Docs](http://momentjs.com/docs/#/displaying/format/) <br> **Default value:** `"dddd, LL"`
+| `dateFormat`      | Configure the date format as you like. <br><br> **Possible values:** [Docs](https://momentjs.com/docs/#/displaying/format/) <br> **Default value:** `"dddd, LL"`
 | `displayType`     | Display a digital clock, analog clock, or both together. <br><br> **Possible values:** `digital`, `analog`, or `both` <br> **Default value:** `digital`
 | `analogSize`      | **Specific to the analog clock.** Defines how large the analog display is. <br><br> **Possible values:** `A positive number of pixels` <br> **Default value:** `200px`
 | `analogFace`      | **Specific to the analog clock.** Specifies which clock face to use. <br><br> **Possible values:** `simple` for a simple border, `none` for no face or border, or `face-###` (where ### is currently a value between 001 and 012, inclusive) <br> **Default value:** `simple`

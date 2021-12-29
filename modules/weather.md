@@ -86,7 +86,7 @@ The following properties can be configured:
 | Option                       | Description
 | ---------------------------- | -----------
 | `apiVersion`                 | The OpenWeatherMap API version to use. <br><br> **Default value:** `2.5`
-| `apiBase`                    | The OpenWeatherMap base URL. <br><br> **Default value:** `'http://api.openweathermap.org/data/'`
+| `apiBase`                    | The OpenWeatherMap base URL. <br><br> **Default value:** `'https://api.openweathermap.org/data/'`
 | `weatherEndpoint`	           | The OpenWeatherMap API endPoint. <br><br> **Possible values:** `'/weather'` , `'/onecall'` , `'/forecast'` (free users) or `'/forecast/daily'` (paying users or old apiKey only) <br> **Default value:** `'/weather'`
 | `locationID`                 | Location ID from [OpenWeatherMap](https://openweathermap.org/find) **This will override anything you put in location.** <br> Leave blank if you want to use location. <br> **Example:** `1234567` <br> **Default value:** `false` <br><br> **Note:** When the `location` and `locationID` are both not set, the location will be based on the information provided by the calendar module. The first upcoming event with location data will be used.
 | `location`                   | The location used for weather information. <br><br> **Example:** `'Amsterdam,Netherlands'` <br> **Default value:** `false` <br><br> **Note:** When the `location` and `locationID` are both not set, the location will be based on the information provided by the calendar module. The first upcoming event with location data will be used.
@@ -117,7 +117,7 @@ The following properties can be configured:
 
 | Option                       | Description
 | ---------------------------- | -----------
-| `apiBase`                    | The UKMO base URL. <br><br> **Possible value:**  `'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'` <br>  This value is **REQUIRED**
+| `apiBase`                    | The UKMO base URL. <br><br> **Possible value:**  `'https://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'` <br>  This value is **REQUIRED**
 | `locationID`	               | The UKMO API location code. <br><br> **Possible values:** `322942` <br>  This value is **REQUIRED**
 | `apiKey`                     | The [UK Met Office](https://www.metoffice.gov.uk/datapoint/getting-started) API key, which can be obtained by creating an UKMO Datapoint account. <br><br>  This value is **REQUIRED**
 
