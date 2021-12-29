@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.8.2",
-    "@vuepress/plugin-google-analytics": "^1.8.2",
+    "@vuepress/plugin-back-to-top": "^1.8.3",
+    "@vuepress/plugin-google-analytics": "^1.8.3",
     "vue-template-compiler": "^2.6.14",
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.3"
   },
   "scripts": {
     "docs:dev": "vuepress dev .",
