@@ -3,6 +3,11 @@ module.exports = {
   description: 'The open source modular smart mirror platform.',
   themeConfig: {
     // logo: '/mm.png',
+    algolia: {
+      appId: 'U3QOOOGLZR',
+      apiKey: '96d207343bbb5e45068a1e3c8d141bb4',
+      indexName: 'docs-magicmirror-builders'
+    },
     nav: [
       { text: 'Donate', link: 'https://magicmirror.builders/donate' },
       { text: 'Forum', link: 'https://forum.magicmirror.builders' }
@@ -16,6 +21,7 @@ module.exports = {
           'getting-started/requirements',
           'getting-started/installation',
           'getting-started/configuration',
+          'getting-started/autostart',
           'getting-started/upgrade-guide',
           'getting-started/license',
           'getting-started/contributing',
@@ -58,7 +64,9 @@ module.exports = {
           'development/node-helper.md',
           'development/helper-methods.md',
           'development/logger.md',
+          'development/notifications.md',
           'development/weather-provider.md',
+          'development/documentation.md',
         ]
       }
     ],
