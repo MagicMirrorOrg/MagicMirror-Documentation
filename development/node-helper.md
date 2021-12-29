@@ -84,7 +84,7 @@ This method is called when the MagicMirror server receives a `SIGINT` command an
 **Example:**
 ```javascript
 stop: function() {
-	console.log("Shutting down MyModule");
+	Log.log("Shutting down MyModule");
 	this.connection.close();
 }
 ```
