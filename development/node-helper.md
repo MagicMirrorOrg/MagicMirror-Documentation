@@ -6,10 +6,10 @@ The node helper (`node_helper.js`) is a Node.js script that is able to do some b
 
 In it's most simple form, the node_helper.js file must contain:
 
-````javascript
-var NodeHelper = require("node_helper");
+```javascript
+const NodeHelper = require("node_helper");
 module.exports = NodeHelper.create({});
-````
+```
 
 Of course, the above helper would not do anything useful. So with the information above, you should be able to make it a bit more sophisticated.
 
@@ -31,18 +31,18 @@ The path of the module
 This is a link to the express instance. It will allow you to define extra routes.
 
 **Example:**
-````javascript
+```javascript
 start: function() {
-	this.expressApp.get('/foobar', function (req, res) {
-		res.send('GET request to /foobar');
+	this.expressApp.get("/foobar", function (req, res) {
+		res.send("GET request to /foobar");
 	});
 }
-````
+```
 
 **Note:** By default, a public path to your module's public folder will be created:
-````javascript
+```javascript
 this.expressApp.use("/" + this.name, express.static(this.path + "/public"));
-````
+```
 
 ### `this.io`
 **Socket IO Instance**
@@ -58,9 +58,9 @@ A string that defines the minimum version of the MagicMirror framework. If it is
 **Note:** Since this check is introduced in version 2.1.0, this check will not be run in older versions. Keep this in mind if you get issue reports on your module.
 
 Example:
-````javascript
+```javascript
 requiresVersion: "2.1.0",
-````
+```
 
 ## Subclassable module methods
 
@@ -71,23 +71,23 @@ This method is called when a node helper gets instantiated. In most cases you do
 This method is called when all node helpers are loaded and the system is ready to boot up. The start method is a perfect place to define any additional module properties:
 
 **Example:**
-````javascript
+```javascript
 start: function() {
 	this.mySpecialProperty = "So much wow!";
-	Log.log(this.name + ' is started!');
+	Log.log(this.name + " is started!");
 }
-````
+```
 
 ### `stop()`
 This method is called when the MagicMirror server receives a `SIGINT` command and is shutting down. This method should include any commands needed to close any open connections, stop any sub-processes and gracefully exit the module.
 
 **Example:**
-````javascript
+```javascript
 stop: function() {
-	console.log("Shutting down MyModule");
+	Log.log("Shutting down MyModule");
 	this.connection.close();
 }
-````
+```
 
 ### `socketNotificationReceived: function(notification, payload)`
 With this method, your node helper can receive notifications from your modules. When this method is called, it has 2 arguments:
@@ -98,11 +98,11 @@ With this method, your node helper can receive notifications from your modules. 
 **Note:** The socket connection is established as soon as the module sends its first message using [sendSocketNotification](thissendsocketnotificationnotification-payload).
 
 **Example:**
-````javascript
+```javascript
 socketNotificationReceived: function(notification, payload) {
 	Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 },
-````
+```
 
 ## Module instance methods
 
@@ -117,23 +117,23 @@ If you want to send a notification to all your modules, use the `sendSocketNotif
 **Note:** Since all instances of your module will receive the notifications, it's your task to make sure the right module responds to your messages.
 
 **Example:**
-````javascript
-this.sendSocketNotification('SET_CONFIG', this.config);
-````
+```javascript
+this.sendSocketNotification("SET_CONFIG", this.config);
+```
 
 ## Using native node modules in your node_helper
 If you want use `native node modules` within electron you need to recompile them for electron.
-To do so you have to install  `electron-rebuild`.
-````
+To do so you have to install `electron-rebuild`.
+```console
 npm install --save-dev electron-rebuild
-````
+```
 
 and run it after every install (package.json example):
-````
+```javascript
 ...
 "scripts": {
 	...
 	"postinstall": "./node_modules/.bin/electron-rebuild"
 }
 ...
-````
+```

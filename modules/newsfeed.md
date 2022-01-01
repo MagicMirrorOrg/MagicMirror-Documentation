@@ -23,11 +23,11 @@ modules: [
 			feeds: [
 				{
 					title: "New York Times",
-					url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+					url: "https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml",
 				},
 				{
 					title: "BBC",
-					url: "http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk",
+					url: "https://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk",
 				},
 			]
 		}
@@ -73,7 +73,7 @@ The following properties can be configured:
 
 | Option             | Description
 | ------------------ | -----------
-| `feeds`            | An array of feed urls that will be used as source. <br> More info about this object can be found below. <br> **Default value:** `[{ title: "New York Times", url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml", encoding: "UTF-8" }]`<br>You can add `reloadInterval` option to set particular reloadInterval to a feed.
+| `feeds`            | An array of feed urls that will be used as source. <br> More info about this object can be found below. <br> **Default value:** `[{ title: "New York Times", url: "https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml", encoding: "UTF-8" }]`<br>You can add `reloadInterval` option to set particular reloadInterval to a feed.
 | `showAsList`       | Display the news as a list. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `showSourceTitle`  | Display the title of the source. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `showPublishDate`  | Display the publish date of an headline. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
@@ -104,5 +104,5 @@ The `feeds` property contains an array with multiple objects. These objects have
 | Option     | Description
 | ---------- | -----------
 | `title`    | The name of the feed source to be displayed above the news items. <br><br> This property is optional.
-| `url`      | The url of the feed used for the headlines. <br><br> **Example:** `'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'`
+| `url`      | The url of the feed used for the headlines. <br><br> **Example:** `'https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'`
 | `encoding` | The encoding of the news feed. <br><br> This property is optional. <br> **Possible values:**`'UTF-8'`, `'ISO-8859-1'`, etc ... <br> **Default value:** `'UTF-8'`

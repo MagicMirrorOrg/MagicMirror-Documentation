@@ -9,7 +9,7 @@ One common request is to make the weather icons colorful, this can easily be ach
 }
 ```
 
-MagicMirror² uses these weather icons: [http://erikflowers.github.io/weather-icons/](http://erikflowers.github.io/weather-icons/).
+MagicMirror² uses these weather icons: [https://erikflowers.github.io/weather-icons/](http://erikflowers.github.io/weather-icons/).
 On that page you can find what class name is used for the displayed icon and add it to your `custom.css`-file like in the example above.
 
 ### Target a specific module
