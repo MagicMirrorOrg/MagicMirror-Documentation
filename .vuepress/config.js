@@ -6,7 +6,10 @@ module.exports = {
     algolia: {
       appId: 'U3QOOOGLZR',
       apiKey: '96d207343bbb5e45068a1e3c8d141bb4',
-      indexName: 'docs-magicmirror-builders'
+      indexName: 'docs-magicmirror-builders',
+      searchParameters: {
+        facetFilters: ['language:en'],
+      },
     },
     nav: [
       { text: 'Donate', link: 'https://magicmirror.builders/donate' },
