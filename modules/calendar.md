@@ -28,7 +28,7 @@ The following properties can be configured:
 | `maximumEntries`             | The maximum number of events shown. / **Possible values:** `0` - `100` <br> **Default value:** `10`
 | `maximumNumberOfDays`        | The maximum number of days in the future. <br><br> **Default value:** `365`
 | `displaySymbol`              | Display a symbol in front of an entry. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
-| `defaultSymbol`              | The default symbol. <br><br> **Possible values:** See [Font Awesome](https://fontawesome.io/icons/) website. <br> **Default value:** `calendar`
+| `defaultSymbol`              | The default symbol. <br><br> **Possible values:** See [Font Awesome](https://fontawesome.com/icons) website. <br> **Default value:** `calendar`
 | `showLocation`               | Whether to show event locations. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `maxTitleLength`             | The maximum title length. <br><br> **Possible values:** `10` - `50` <br> **Default value:** `25`
 | `maxLocationTitleLength`     | The maximum location title length. <br><br> **Possible values:** `10` - `50` <br> **Default value:** `25`
@@ -94,7 +94,7 @@ config: {
 | Option                | Description
 | --------------------- | -----------
 | `url`	                | The url of the calendar .ical. This property is required. <br><br> **Possible values:** Any public accessible .ical calendar.
-| `symbol`              | The symbol to show in front of an event. This property is optional. <br><br> **Possible values:** See [Font Awesome](https://fontawesome.io/icons/) website. To have multiple symbols you can define them in an array e.g. `["calendar", "plane"]`
+| `symbol`              | The symbol to show in front of an event. This property is optional. <br><br> **Possible values:** See [Font Awesome](https://fontawesome.com/icons/) website. To have multiple symbols you can define them in an array e.g. `["calendar", "plane"]`
 | `color`               | The font color of an event from this calendar. This property should be set if the config is set to colored: true. <br><br> **Possible values:** HEX, RGB or RGBA values (#efefef, rgb(242,242,242), rgba(242,242,242,0.5)).
 | `repeatingCountTitle`	| The count title for yearly repeating events in this calendar.  <br><br> **Example:** `'Birthday'`
 | `maximumEntries`      | The maximum number of events shown.  Overrides global setting. **Possible values:** `0` - `100`
