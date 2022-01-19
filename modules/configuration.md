@@ -14,7 +14,7 @@ The module configuration is used as part of the main configuration file. Please 
 
 ## Example
 
-```{2-19}
+```javascript
 var config = {
 	modules: [
 		{
