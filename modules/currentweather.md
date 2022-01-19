@@ -14,7 +14,7 @@ This module displays the current weather, including the windspeed, the sunset or
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
-````javascript
+```javascript
 modules: [
 	{
 		module: "currentweather",
@@ -28,7 +28,7 @@ modules: [
 		}
 	}
 ]
-````
+```
 
 ## Configuration options
 
@@ -70,7 +70,7 @@ The following properties can be configured:
 | `iconTable`                  | The conversion table to convert the weather conditions to weather-icons. <br><br> **Default value:**  view tabel below.
 
 #### Default Icon Table
-````javascript
+```javascript
 iconTable: {
 	'01d': 'wi-day-sunny',
 	'02d': 'wi-day-cloudy',
@@ -91,7 +91,7 @@ iconTable: {
 	'13n': 'wi-night-snow',
 	'50n': 'wi-night-alt-cloudy-windy'
 }
-````
+```
 
 ## Migration
 The following lines needs to be changed when migrating to the new weather module for current weather:

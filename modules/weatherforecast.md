@@ -14,7 +14,7 @@ This module displays the weather forecast for the coming week, including an an i
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
-````javascript
+```javascript
 modules: [
 	{
 		module: "weatherforecast",
@@ -28,7 +28,7 @@ modules: [
 		}
 	}
 ]
-````
+```
 
 ## Configuration options
 
@@ -65,7 +65,7 @@ The following properties can be configured:
 | `scale  `                    | If set to `true` the module will display `C` for Celsius degrees and `F` for Fahrenheit degrees after the number, based on the value of the `units` option, otherwise only the &deg; character is displayed. <br><br> **Default value:** `false`
 
 #### Default Icon Table
-````javascript
+```javascript
 iconTable: {
     '01d': 'wi-day-sunny',
     '02d': 'wi-day-cloudy',
@@ -86,7 +86,7 @@ iconTable: {
     '13n': 'wi-night-snow',
     '50n': 'wi-night-alt-cloudy-windy'
 }
-````
+```
 
 ## Migration
 The following lines needs to be changed when migrating to the new weather module for current weather:

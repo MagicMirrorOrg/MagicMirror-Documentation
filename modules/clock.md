@@ -10,7 +10,7 @@ This module displays the current date and time. The information will be updated 
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
-````javascript
+```javascript
 modules: [
 	{
 		module: "clock",
@@ -21,7 +21,7 @@ modules: [
 		}
 	}
 ]
-````
+```
 
 ## Configuration options
 

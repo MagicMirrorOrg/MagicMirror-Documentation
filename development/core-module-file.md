@@ -1,11 +1,11 @@
 # The Core module file
 This is the script in which the module will be defined. This script is required in order for the module to be used. In it's most simple form, the core module file must be named after the module (`modulename.js`) and must contain:
-````javascript
+```javascript
 Module.register("modulename",{});
-````
+```
 Of course, the above module would not do anything fancy, so it's good to look at one of the simplest modules: **helloworld**:
 
-````javascript
+```javascript
 //helloworld.js:
 
 Module.register("helloworld",{
@@ -21,7 +21,7 @@ Module.register("helloworld",{
 		return wrapper;
 	}
 });
-````
+```
 
 As you can see, the `Module.register()` method takes two arguments: the name of the module and an object with the module properties.
 
@@ -57,9 +57,9 @@ A string that defines the minimum version of the MagicMirror framework. If it is
 **Note:** Since this check is introduced in version 2.1.0, this check will not be run in older versions. Keep this in mind if you get issue reports on your module.
 
 Example:
-````javascript
+```javascript
 requiresVersion: "2.1.0",
-````
+```
 
 ## Subclassable module methods
 
@@ -73,24 +73,24 @@ This method is called when a module gets instantiated. In most cases you do not 
 This method is called when a module is loaded. Subsequent modules in the config are not yet loaded. The `callback` function MUST be called when the module is done loading. In most cases you do not need to subclass this method.
 
 **Example:**
-````javascript
+```javascript
 loaded: function(callback) {
 	this.finishLoading();
 	Log.log(this.name + ' is loaded!');
 	callback();
 }
-````
+```
 
 ### `start()`
 This method is called when all modules are loaded and the system is ready to boot up. Keep in mind that the dom object for the module is not yet created. The start method is a perfect place to define any additional module properties:
 
 **Example:**
-````javascript
+```javascript
 start: function() {
 	this.mySpecialProperty = "So much wow!";
 	Log.log(this.name + ' is started!');
 }
-````
+```
 
 ### `getScripts()`
 **Should return: Array**
@@ -98,7 +98,7 @@ start: function() {
 The getScripts method is called to request any additional scripts that need to be loaded. This method should therefore return an array with strings. If you want to return a full path to a file in the module folder, use the `this.file('filename.js')` method. In all cases the loader will only load a file once. It even checks if the file is available in the default vendor folder.
 
 **Example:**
-````javascript
+```javascript
 getScripts: function() {
 	return [
 		'script.js', // will try to load it from the vendor folder, otherwise it will load is from the module folder.
@@ -108,7 +108,7 @@ getScripts: function() {
 	]
 }
 
-````
+```
 **Note:** If a file can not be loaded, the boot up of the mirror will stall. Therefore, it's advised not to use any external urls.
 
 
@@ -118,7 +118,7 @@ getScripts: function() {
 The getStyles method is called to request any additional stylesheets that need to be loaded. This method should therefore return an array with strings. If you want to return a full path to a file in the module folder, use the `this.file('filename.css')` method. In all cases the loader will only load a file once. It even checks if the file is available in the default vendor folder.
 
 **Example:**
-````javascript
+```javascript
 getStyles: function() {
 	return [
 		'script.css', // will try to load it from the vendor folder, otherwise it will load is from the module folder.
@@ -128,7 +128,7 @@ getStyles: function() {
 	]
 }
 
-````
+```
 **Note:** If a file can not be loaded, the boot up of the mirror will stall. Therefore, it's advised not to use any external URLs.
 
 ### `getTranslations()`
@@ -139,7 +139,7 @@ The getTranslations method is called to request translation files that need to b
 If the module does not have any module specific translations, the function can just be omitted or return `false`.
 
 **Example:**
-````javascript
+```javascript
 getTranslations: function() {
 	return {
 			en: "translations/en.json",
@@ -147,7 +147,7 @@ getTranslations: function() {
 	}
 }
 
-````
+```
 
 ### `getDom()`
 **Should return:** Dom Object
@@ -155,14 +155,14 @@ getTranslations: function() {
 Whenever the MagicMirror needs to update the information on screen (because it starts, or because your module asked a refresh using `this.updateDom()`), the system calls the getDom method. This method should therefore return a dom object.
 
 **Example:**
-````javascript
+```javascript
 getDom: function() {
 	var wrapper = document.createElement("div");
 	wrapper.innerHTML = 'Hello world!';
 	return wrapper;
 }
 
-````
+```
 
 ### `getHeader()`
 **Should return:** String
@@ -174,12 +174,12 @@ If you want to use the original user's configured header, reference `this.data.h
 **NOTE:** If the user did not configure a default header, no header will be displayed and thus this method will not be called.
 
 **Example:**
-````javascript
+```javascript
 getHeader: function() {
 	return this.data.header + ' Foo Bar';
 }
 
-````
+```
 
 ### `notificationReceived(notification, payload, sender)`
 
@@ -190,7 +190,7 @@ That MagicMirror core has the ability to send notifications to modules. Or even 
 - `sender` - Module - The sender of the notification. If this argument is `undefined`, the sender of the notification is the core system.
 
 **Example:**
-````javascript
+```javascript
 notificationReceived: function(notification, payload, sender) {
 	if (sender) {
 		Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
@@ -198,7 +198,7 @@ notificationReceived: function(notification, payload, sender) {
 		Log.log(this.name + " received a system notification: " + notification);
 	}
 }
-````
+```
 
 **Note:** the system sends three notifications when starting up. These notifications could come in handy!
 
@@ -218,11 +218,11 @@ When using a node_helper, the node helper can send your module notifications. Wh
 **Note 2:** The socket connection is established as soon as the module sends its first message using [sendSocketNotification](#thissendsocketnotificationnotification-payload).
 
 **Example:**
-````javascript
+```javascript
 socketNotificationReceived: function(notification, payload) {
 	Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 },
-````
+```
 
 ### `suspend()`
 When a module is hidden (using the `module.hide()` method), the `suspend()` method will be called. By subclassing this method you can perform tasks like halting the update timers.
@@ -249,7 +249,7 @@ Whenever your module need to be updated, call the `updateDom(speed)` method. It 
 
 As an example: the clock modules calls this method every second:
 
-````javascript
+```javascript
 ...
 start: function() {
 	var self = this;
@@ -258,7 +258,7 @@ start: function() {
 	}, 1000); //perform every 1000 milliseconds.
 },
 ...
-````
+```
 
 ### `this.sendNotification(notification, payload)`
 ***notification* String** - The notification identifier.<br>
@@ -267,9 +267,9 @@ start: function() {
 If you want to send a notification to all other modules, use the `sendNotification(notification, payload)`. All other modules will receive the message via the [notificationReceived](#notificationreceivednotification-payload-sender) method. In that case, the sender is automatically set to the instance calling the sendNotification method.
 
 **Example:**
-````javascript
+```javascript
 this.sendNotification('MYMODULE_READY_FOR_ACTION', {foo:bar});
-````
+```
 
 ### `this.sendSocketNotification(notification, payload)`
 ***notification* String** - The notification identifier.<br>
@@ -278,9 +278,9 @@ this.sendNotification('MYMODULE_READY_FOR_ACTION', {foo:bar});
 If you want to send a notification to the node_helper, use the `sendSocketNotification(notification, payload)`. Only the node_helper of this module will receive the socket notification.
 
 **Example:**
-````javascript
+```javascript
 this.sendSocketNotification('SET_CONFIG', this.config);
-````
+```
 
 ### `this.hide(speed, callback, options)`
 ***speed* Number** - Optional (Required when setting callback or options), The speed of the hide animation in milliseconds.
@@ -323,51 +323,51 @@ Possible configurable options:
 Visibility locking helps the module system to prevent unwanted hide/show actions. The following scenario explains the concept:
 
 **Module B asks module A to hide:**
-````javascript
+```javascript
 moduleA.hide(0, {lockString: "module_b_identifier"});
-````
+```
 Module A is now hidden, and has an lock array with the following strings:
-````javascript
+```javascript
 moduleA.lockStrings == ["module_b_identifier"]
 moduleA.hidden == true
-````
+```
 **Module C asks module A to hide:**
-````javascript
+```javascript
 moduleA.hide(0, {lockString: "module_c_identifier"});
-````
+```
 Module A is now hidden, and has an lock array with the following strings:
-````javascript
+```javascript
 moduleA.lockStrings == ["module_b_identifier", "module_c_identifier"]
 moduleA.hidden == true
-````
+```
 **Module B asks module A to show:**
-````javascript
+```javascript
 moduleA.show(0, {lockString: "module_b_identifier"});
-````
+```
 The lockString will be removed from moduleA’s locks array, but since there still is an other lock string available, the module remains hidden:
-````javascript
+```javascript
 moduleA.lockStrings == ["module_c_identifier"]
 moduleA.hidden == true
-````
+```
 **Module C asks module A to show:**
-````javascript
+```javascript
 moduleA.show(0, {lockString: "module_c_identifier"});
-````
+```
 The lockString will be removed from moduleA’s locks array, and since this will result in an empty lock array, the module will be visible:
-````javascript
+```javascript
 moduleA.lockStrings == []
 moduleA.hidden == false
-````
+```
 
 **Note:** The locking mechanism can be overwritten by using the force tag:
-````javascript
+```javascript
 moduleA.show(0, {force: true});
-````
+```
 This will reset the lockstring array, and will show the module.
-````javascript
+```javascript
 moduleA.lockStrings == []
 moduleA.hidden == false
-````
+```
 
 Use this `force` method with caution. See `show()` method for more information.
 
@@ -388,16 +388,16 @@ If no translation is found, a fallback will be used. The fallback sequence is as
 When adding translations to your module, it's a good idea to see if an appropriate translation is already available in the [core translation files](https://github.com/MichMich/MagicMirror/tree/master/translations). This way, your module can benefit from the existing translations.
 
 **Example:**
-````javascript
+```javascript
 this.translate("INFO") //Will return a translated string for the identifier INFO
-````
+```
 
 **Example json file:**
-````javascript
+```javascript
 {
   "INFO": "Really important information!"
 }
-````
+```
 
 **Note:** although comments are officially not supported in JSON files, MagicMirror allows it by stripping the comments before parsing the JSON file. Comments in translation files could help other translators.
 
@@ -409,40 +409,40 @@ This improved and backwards compatible way to handle translations behaves like t
 
 
 **Example:**
-````javascript
+```javascript
 var timeUntilEnd = moment(event.endDate, "x").fromNow(true);
 this.translate("RUNNING", { "timeUntilEnd": timeUntilEnd) }); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended.
-````
+```
 
 **Example English .json file:**
-````javascript
+```javascript
 {
 	"RUNNING": "Ends in {timeUntilEnd}",
 }
-````
+```
 
 **Example Finnish .json file:**
-````javascript
+```javascript
 {
 	"RUNNING": "Päättyy {timeUntilEnd} päästä",
 }
-````
+```
 
 **Note:** The *variables* Object has an special case called `fallback`. It's used to support old translations in translation files that do not have the variables in them. If you are upgrading an old module that had translations that did not support the word order, it is recommended to have the fallback layout.
 
 **Example:**
-````javascript
+```javascript
 var timeUntilEnd = moment(event.endDate, "x").fromNow(true);
 this.translate("RUNNING", {
 	"fallback": this.translate("RUNNING") + " {timeUntilEnd}"
 	"timeUntilEnd": timeUntilEnd
 )}); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended. (has a fallback)
-````
+```
 
 **Example Swedish .json file that does not have the variable in it:**
-````javascript
+```javascript
 {
 	"RUNNING": "Slutar",
 }
-````
+```
 In this case the `translate`-function will not find any variables in the translation, will look for `fallback` variable and use that if possible to create the translation.

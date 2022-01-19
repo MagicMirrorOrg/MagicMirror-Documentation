@@ -5,7 +5,7 @@ This module displays events from a public .ical calendar. It can combine multipl
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
-````javascript
+```javascript
 modules: [
 	{
 		module: "calendar",
@@ -17,7 +17,7 @@ modules: [
 		}
 	}
 ]
-````
+```
 
 ## Configuration options
 
@@ -71,7 +71,7 @@ The `coloredSymbolOnly` property will apply color to the symbol only, not the wh
 
 #### Default value:
 
-````javascript
+```javascript
 config: {
 	colored: false,
 	coloredSymbolOnly: false,
@@ -87,7 +87,7 @@ config: {
 		},
 	],
 }
-````
+```
 
 #### Calendar configuration options:
 
