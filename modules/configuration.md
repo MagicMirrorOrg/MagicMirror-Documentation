@@ -15,7 +15,7 @@ The module configuration is used as part of the main configuration file. Please 
 ## Example
 
 ```javascript
-var config = {
+let config = {
 	modules: [
 		{
 			module: "clock",
