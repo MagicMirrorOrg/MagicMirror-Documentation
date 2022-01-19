@@ -1,6 +1,6 @@
 # Logger
 
-The Magic Mirror contains a convenience wrapper for logging. Currently, this logger is a simple proxy to the original `console.log` methods. But it might get additional features in the future.
+The MagicMirror contains a convenience wrapper for logging. Currently, this logger is a simple proxy to the original `console.log` methods. But it might get additional features in the future.
 
 **Examples:**
 ```javascript

@@ -9,7 +9,7 @@ This module displays a random compliment.
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
-````javascript
+```javascript
 modules: [
 	{
 		module: "compliments",
@@ -22,7 +22,7 @@ modules: [
 		}
 	}
 ]
-````
+```
 
 ## Configuration options
 
@@ -68,7 +68,7 @@ If set, the currentweather can be used for compliments. The available properties
 - `night_alt_cloudy_windy`
 
 #### Example use with date
-````javascript
+```javascript
 config: {
 	compliments: {
 		"....-01-01": [
@@ -79,10 +79,10 @@ config: {
 		]
 	}
 }
-````
+```
 
 #### Example use with currentweather module
-````javascript
+```javascript
 config: {
 	compliments: {
 		day_sunny: [
@@ -97,10 +97,10 @@ config: {
 		]
 	}
 }
-````
+```
 
 #### Default value:
-````javascript
+```javascript
 config: {
 	compliments: {
 		anytime: [
@@ -126,7 +126,7 @@ config: {
 		]
 	}
 }
-````
+```
 
 #### Multi-line compliments:
 Use `\n` to split compliment text into multiple lines, e.g. `First line.\nSecond line.` will be shown as:
@@ -144,7 +144,7 @@ This file must be straight JSON. Note that the array names need quotes
 around them ("morning", "afternoon", "evening", "snow", "rain", etc.).
 
 #### Example config/config.js of a Compliment File hosted on GitHub
-````
+```
 {
 module: 'compliments',
 position: 'middle_center',
@@ -153,12 +153,12 @@ position: 'middle_center',
    }
 },
 
-````
+```
 
 (When copying the link from Github, you must use the 'Raw' link)
 
 #### Example compliments.json file:
-````json
+```json
 {
     "anytime" : [
         "Hey there sexy!"
@@ -179,5 +179,5 @@ position: 'middle_center',
         "The day was better for your efforts."
     ]
 }
-````
+```
 

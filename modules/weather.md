@@ -15,7 +15,7 @@ The module is in a very early stage, and needs a lot of work. It's API isn't set
 
 To use this module, add it to the modules array in the `config/config.js` file:
 
-````javascript
+```javascript
 modules: [
 	{
 		module: "weather",
@@ -26,7 +26,7 @@ modules: [
 		}
 	}
 ]
-````
+```
 
 ## Configuration options
 

@@ -1,6 +1,6 @@
 # News Feed
 The `newsfeed ` module is one of the default modules of the MagicMirror.
-This module displays news headlines based on an RSS feed. Scrolling through news headlines happens time-based (````updateInterval````), but can also be controlled by sending news feed specific notifications to the module.
+This module displays news headlines based on an RSS feed. Scrolling through news headlines happens time-based (```updateInterval```), but can also be controlled by sending news feed specific notifications to the module.
 
 ## Screenshot
 - News Feed Screenshot using the NYT
@@ -10,7 +10,7 @@ This module displays news headlines based on an RSS feed. Scrolling through news
 
 ### Configuration
 To use this module, add it to the modules array in the `config/config.js` file:
-````javascript
+```javascript
 modules: [
 	{
 		module: "newsfeed",
@@ -33,7 +33,7 @@ modules: [
 		}
 	}
 ]
-````
+```
 
 ### Notifications
 #### Interacting with the module
@@ -60,9 +60,9 @@ Note the payload of the sent notification event is ignored.
 
 #### Example
 The following example shows how the next news article title can be displayed on the MagicMirror.
-````javascript
+```javascript
 this.sendNotification('ARTICLE_NEXT');
-````
+```
 
 #### `newsfeed` specific notification emitting modules
 The third party [MMM-Gestures](https://github.com/thobach/MMM-Gestures) module supports above notifications when moving your hand up, down, left or right in front of a gesture sensor attached to the MagicMirror. See module's readme for more details.
