@@ -20,11 +20,11 @@ To make a selection of all currently loaded module instances, run the `MM.getMod
 If you want to make a selection based on one or more class names, use the withClass method on a result of the `MM.getModules()` method. The argument of the `withClass(classname)` method can be an array, or space separated string.
 
 **Examples:**
-````javascript
+```javascript
 var modules = MM.getModules().withClass('classname');
 var modules = MM.getModules().withClass('classname1 classname2');
 var modules = MM.getModules().withClass(['classname1','classname2']);
-````
+```
 
 #### `.exceptWithClass(classnames)`
 ***classnames* String or Array** - The class names of the modules you want to remove from the results.
@@ -33,11 +33,11 @@ var modules = MM.getModules().withClass(['classname1','classname2']);
 If you to remove some modules from a selection based on a classname, use the exceptWithClass method on a result of the `MM.getModules()` method. The argument of the `exceptWithClass(classname)` method can be an array, or space separated string.
 
 **Examples:**
-````javascript
+```javascript
 var modules = MM.getModules().exceptWithClass('classname');
 var modules = MM.getModules().exceptWithClass('classname1 classname2');
 var modules = MM.getModules().exceptWithClass(['classname1','classname2']);
-````
+```
 
 #### `.exceptModule(module)`
 ***module* Module Object** - The reference to a module you want to remove from the results.
@@ -46,31 +46,31 @@ var modules = MM.getModules().exceptWithClass(['classname1','classname2']);
 If you to remove a specific module instance from a selection based on a classname, use the exceptWithClass method on a result of the `MM.getModules()` method. This can be helpful if you want to select all module instances except the instance of your module.
 
 **Examples:**
-````javascript
+```javascript
 var modules = MM.getModules().exceptModule(this);
-````
+```
 
 Of course, you can combine all of the above filters:
 
 **Example:**
-````javascript
+```javascript
 var modules = MM.getModules().withClass('classname1').exceptwithClass('classname2').exceptModule(aModule);
-````
+```
 
 #### `.enumerate(callback)`
 ***callback* Function(module)** - The callback run on every instance.
 
 If you want to perform an action on all selected modules, you can use the `enumerate` function:
 
-````javascript
+```javascript
 MM.getModules().enumerate(function(module) {
     Log.log(module.name);
 });
-````
+```
 
 **Example:**
 To hide all modules except your module instance, you could write something like:
-````javascript
+```javascript
 Module.register("modulename",{
 	//...
 	notificationReceived: function(notification, payload, sender) {
@@ -84,4 +84,4 @@ Module.register("modulename",{
 	},
 	//...
 });
-````
+```
