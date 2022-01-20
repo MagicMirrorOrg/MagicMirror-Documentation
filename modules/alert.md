@@ -56,7 +56,7 @@ self.sendNotification("SHOW_ALERT", {});
 | `title`                                         | The title of the alert. <br><br> **Possible values:** `text` or `html`
 | `message`                                       | The message of the alert. <br><br> **Possible values:** `text` or `html`
 | `imageUrl` (optional)                           | Image to show in the alert <br><br> **Possible values:** `url` `path` <br> **Default value:** `none`
-| `imageFA` (optional)                            | Font Awesome icon to show in the alert <br><br> **Possible values:** See [Font Awesome](https://fontawesome.com/v4.7/icons/) website. <br> **Default value:** `none`
+| `imageFA` (optional)                            | Font Awesome icon to show in the alert <br><br> **Possible values:** See [Font Awesome](https://fontawesome.com/v5.15/icons?m=free) website. <br> **Default value:** `none`
 | `imageHeight` (optional even with imageUrl set) | Height of the image <br><br> **Possible values:** `intpx` <br> **Default value:** `80px`
 | `timer` (optional)                              | How long the alert should stay visible in ms. <br> **Important:** If you do not use the `timer`, it is your duty to hide the alert by using `self.sendNotification("HIDE_ALERT");`! <br><br>**Possible values:** `int` `float` <br> **Default value:** `none`
 
