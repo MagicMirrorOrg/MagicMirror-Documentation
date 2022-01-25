@@ -45,23 +45,32 @@ To get the MagicMirror software running on Windows, you have to do two things in
 
 4a. Install dependencies in the vendor and font directories:
 
-    1. `cd fonts && npm install && cd ..`
-    2. `cd vendor && npm install && cd ..`
+  Powershell:
+  
+  1. `cd fonts; npm install; cd ..`
+  2. `cd vendor; npm install; cd ..`
+    
+  Command Prompt:
+  
+  1. `cd fonts && npm install && cd ..`
+  2. `cd vendor && npm install && cd ..`
     
 Otherwise the screen will stay black when starting the MagicMirror.
 
 5a. Fix the start script in the `package.json` file:
 
-    1. Navigate to the file `package.json`
-    2. Find where it says 
-    ```
-    "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
-    ```
-    and replace it with
-    ```
-    "start": "node_modules/.bin/electron js/electron.js",
-    ``` 
-    
+  1. Navigate to the file `package.json`
+  2. Find where it says 
+	  ```
+	  "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
+	  "start:dev": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js dev",  
+	  ```
+  3. and replace it with 
+	  ```
+	  "start": ".\\node_modules\\.bin\\electron js\\electron.js",
+	  "start:dev": ".\\node_modules\\.bin\\electron js\\electron.js dev",
+	  ``` 
+
 Otherwise the program won't start, but will display this error message: 
 `"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`
 
