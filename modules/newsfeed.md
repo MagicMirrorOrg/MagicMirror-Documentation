@@ -80,6 +80,7 @@ The following properties can be configured:
 | `broadcastNewsFeeds`   | Gives the ability to broadcast news feeds to all modules, by using ```sendNotification()``` when set to `true`, rather than ```sendSocketNotification()``` when `false` <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `broadcastNewsUpdates`   | Gives the ability to broadcast news feed updates to all modules <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `showDescription`  | Display the description of an item. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
+| `showTitleAsUrl`   | If set, the displayed title is a link to the article which is useful when running in a browser and you want to read this article. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`
 | `wrapTitle`        | Wrap the title of the item to multiple lines. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `wrapDescription`  | Wrap the description of the item to multiple lines. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`
 | `truncDescription` | Truncate description? <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`

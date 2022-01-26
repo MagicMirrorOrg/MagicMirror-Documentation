@@ -27,15 +27,13 @@ The following installation methods are not maintained by the MagicMirror² core 
 - [The MagicMirror Package Manager](https://github.com/Bee-Mar/mmpm) is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules.
 
 ### Docker Image
-- MagicMirror² can be deployed using [Docker](https://docker.com). Head over to one of the following repositories for more information:
-  - [Docker Setup by khassel](https://gitlab.com/khassel/magicmirror)
-  - [Docker Setup by bastilimbach](https://github.com/bastilimbach/docker-MagicMirror) (currently unmaintained, only `server only` mode)
+- MagicMirror² can be deployed using [Docker](https://docker.com). Head over to [this repository](https://gitlab.com/khassel/magicmirror) for more information.
 
 ### Kubernetes Helm Chart
 - If you want to run MagicMirror² (in server only mode) in a kubernetes cluster then take a look at this [MagicMirror Helm Chart](https://gitlab.com/khassel/magicmirror-helm).
 
 ### MagicMirrorOS
-- This is a full OS based on Raspbian. So instead of downloading Raspbian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses an [alternative docker setup](https://gitlab.com/khassel/magicmirror) (which allows direct output on the raspberry screen).
+- This is a full OS based on Raspbian. So instead of downloading Raspbian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses the [docker setup](https://gitlab.com/khassel/magicmirror).
 
 ## Other Operating Systems
 
