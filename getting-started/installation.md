@@ -10,13 +10,13 @@ Therefore the only officially supported way of installation is by using a [manua
 - `sudo apt install -y nodejs`
 2. Clone the repository and check out the master branch: `git clone https://github.com/MichMich/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
-4. Install the application: `npm install`
+4. Install the application: `npm install --only=prod --omit=dev`
 5. Make a copy of the config sample file: `cp config/config.js.sample config/config.js`
 6. Start the application: `npm run start` \
    For **Server Only** use: `npm run server` .
 
 ::: warning NOTE
-The installation step for `npm install` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
+The installation step for `npm install --only=prod --omit=dev` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
 :::
 
 ## Alternative Installation Methods

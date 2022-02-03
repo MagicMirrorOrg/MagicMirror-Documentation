@@ -6,7 +6,7 @@ Always backup your `config.js`, `custom.css` and `modules` folder before you sta
 
 If you want to update your MagicMirror² to the latest version, use your terminal to go to your Magic Mirror folder and type the following command:
 ```
-git pull && npm install
+git pull && npm install --only=prod --omit=dev
 ```
 
 If you changed nothing more than the config or the modules, this should work without any problems. Type git status to see your changes, if there are any, you can reset them with `git reset --hard`. After that, git pull should be possible.
