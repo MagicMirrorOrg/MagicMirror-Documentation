@@ -12,7 +12,7 @@ WeatherProvider.register("yourprovider", {
 
   fetchCurrentWeather() {},
 
-  fetchWeatherForecast() {}
+  fetchWeatherForecast() {},
 });
 ```
 

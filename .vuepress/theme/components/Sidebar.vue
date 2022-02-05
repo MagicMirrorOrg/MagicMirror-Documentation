@@ -1,24 +1,24 @@
 <template>
   <aside class="sidebar">
-    <CarbonAds/>
-    <NavLinks/>
-    <slot name="top"/>
-    <SidebarLinks :depth="0" :items="items"/>
-    <slot name="bottom"/>
+    <CarbonAds />
+    <NavLinks />
+    <slot name="top" />
+    <SidebarLinks :depth="0" :items="items" />
+    <slot name="bottom" />
   </aside>
 </template>
 
 <script>
-import SidebarLinks from '@theme/components/SidebarLinks.vue'
-import NavLinks from '@theme/components/NavLinks.vue'
-import CarbonAds from './CarbonAds'
+import SidebarLinks from "@theme/components/SidebarLinks.vue";
+import NavLinks from "@theme/components/NavLinks.vue";
+import CarbonAds from "./CarbonAds";
 export default {
-  name: 'Sidebar',
+  name: "Sidebar",
 
   components: { SidebarLinks, NavLinks, CarbonAds },
 
-  props: ['items']
-}
+  props: ["items"],
+};
 </script>
 
 <style lang="stylus">

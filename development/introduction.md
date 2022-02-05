@@ -3,6 +3,7 @@ title: Introduction
 ---
 
 # Module Development Documentation
+
 This documentation describes the way to develop your own MagicMirror² modules.
 
 ## General Advice
@@ -23,7 +24,8 @@ All modules are loaded in the `modules` folder. The default modules are grouped 
 A module can be placed in one single folder. Or multiple modules can be grouped in a subfolder. Note that name of the module must be unique. Even when a module with a similar name is placed in a different folder, they can't be loaded at the same time.
 
 ### Files
+
 - **modulename/modulename.js** - This is your core module script.
 - **modulename/node_helper.js** - This is an optional helper that will be loaded by the node script. The node helper and module script can communicate with each other using an integrated socket system.
 - **modulename/public** - Any files in this folder can be accessed via the browser on `/modulename/filename.ext`.
-- **modulename/anyfileorfolder** Any other file or folder in the module folder can be used by the core module script. For example: *modulename/css/modulename.css* would be a good path for your additional module styles.
+- **modulename/anyfileorfolder** Any other file or folder in the module folder can be used by the core module script. For example: _modulename/css/modulename.css_ would be a good path for your additional module styles.

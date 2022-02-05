@@ -1,22 +1,24 @@
 # Calendar
+
 The `calendar` module is one of the default modules of the MagicMirror.
 This module displays events from a public .ical calendar. It can combine multiple calendars.
 
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
+
 ```javascript
 modules: [
-	{
-		module: "calendar",
-		position: "top_left",	// This can be any of the regions. Best results in left or right regions.
-		config: {
-			// The config property is optional.
-			// If no config is set, an example calendar is shown.
-			// See 'Configuration options' for more information.
-		}
-	}
-]
+  {
+    module: "calendar",
+    position: "top_left", // This can be any of the regions. Best results in left or right regions.
+    config: {
+      // The config property is optional.
+      // If no config is set, an example calendar is shown.
+      // See 'Configuration options' for more information.
+    },
+  },
+];
 ```
 
 ## Configuration options
@@ -108,33 +110,32 @@ config: {
 
 #### Calendar authentication options:
 
-| Option                | Description
-| --------------------- | -----------
-| `user`                | The username for HTTP authentication.
-| `pass`                | The password for HTTP authentication. (If you use Bearer authentication, this should be your BearerToken.)
-| `method`              | Which authentication method should be used. HTTP Basic, Digest and Bearer authentication methods are supported. Basic authentication is used by default if this option is omitted. **Possible values:** `digest`, `basic`, `bearer` **Default value:** `basic`
-
+| Option   | Description                                                                                                                                                                                                                                                    |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `user`   | The username for HTTP authentication.                                                                                                                                                                                                                          |
+| `pass`   | The password for HTTP authentication. (If you use Bearer authentication, this should be your BearerToken.)                                                                                                                                                     |
+| `method` | Which authentication method should be used. HTTP Basic, Digest and Bearer authentication methods are supported. Basic authentication is used by default if this option is omitted. **Possible values:** `digest`, `basic`, `bearer` **Default value:** `basic` |
 
 ## Syncing your Microsoft, Google and Apple calendars
 
-To be able to use your calendar with Microsoft Outlook, Google Calendar and Apple iCal calendars, 
-you need to either add each, individually or find a way to sync them into one. There are several 
+To be able to use your calendar with Microsoft Outlook, Google Calendar and Apple iCal calendars,
+you need to either add each, individually or find a way to sync them into one. There are several
 free and non-free software that can help you do this.
 
-For example, in [this forum thread](https://forum.magicmirror.builders/topic/5327/sync-private-icloud-calendar-with-magicmirror/50?page=1) are instructions how to sync with `iCal`. 
+For example, in [this forum thread](https://forum.magicmirror.builders/topic/5327/sync-private-icloud-calendar-with-magicmirror/50?page=1) are instructions how to sync with `iCal`.
 
 ### Two-way Syncing
 
-Here are some various projects that can be used to sync your calendars into one. 
+Here are some various projects that can be used to sync your calendars into one.
 
-* https://github.com/phw198/OutlookGoogleCalendarSync
-* https://github.com/Dashbrd/CalendarSyncplus
-* https://www.sync2.com/Download.aspx
-* https://www.pppindia.com/calendar-sync/index.html
-* https://www.fieldstonsoftware.com/software/gsyncit5/Download.aspx
-* https://tools.google.com/dlpage/gappssync
-* https://www.lifewire.com/how-to-sync-google-calendar-outlook-and-iphone-calendar-1172188
-* https://www.makeuseof.com/tag/how-to-sync-microsoft-outlook-with-google-calendar/
+- https://github.com/phw198/OutlookGoogleCalendarSync
+- https://github.com/Dashbrd/CalendarSyncplus
+- https://www.sync2.com/Download.aspx
+- https://www.pppindia.com/calendar-sync/index.html
+- https://www.fieldstonsoftware.com/software/gsyncit5/Download.aspx
+- https://tools.google.com/dlpage/gappssync
+- https://www.lifewire.com/how-to-sync-google-calendar-outlook-and-iphone-calendar-1172188
+- https://www.makeuseof.com/tag/how-to-sync-microsoft-outlook-with-google-calendar/
 
 ### Office 365 Calendar Support
 
