@@ -170,6 +170,13 @@ When using the `type: "hourly"` config, the module can display a max of 24 hours
 | `provCode`                   | The 2-character province code for the selected city/town `siteCode`. <br><br> **Example:** `provCode: 'ON'` is the value for Toronto, Ontario <br><br> To determine the `provCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `provCode` under column C (Province) - and of course the `siteCode` under column A (Codes) <br><br> This value is **REQUIRED**
 | `location`		       | The free-format text string intended to hold a location name (e.g. city) that should appear in the module header. <br><br> **Example:** `location: 'Toronto, ON'`
 
+### Weatherflow options
+| Option                       | Description
+| ---------------------------- | -----------
+|`apiBase`                     | The Weatherflow base URL.<br><br> **Possible value:** `https://swd.weatherflow.com/swd/rest/` <br> This value is **REQUIRED**
+|`token`                       | The [Weatherflow](https://weatherflow.github.io/Tempest/api/) token which can be obtained in the webapp of Weatherflow  <br><br> This value is **REQUIRED**
+|`stationid`                   | The id of your weather station from wich you want to show the data. This also can be obtained in the webapp of Weatherflow <br><br> This value is **REQUIRED**
+
 ## API Provider Development
 
 If you want to add another API provider checkout the [Guide](https://github.com/MichMich/MagicMirror/tree/master/modules/default/weather/providers).
