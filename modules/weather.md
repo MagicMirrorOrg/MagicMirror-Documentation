@@ -53,6 +53,7 @@ The following properties can be configured:
 | `initialLoadDelay`           | The initial delay before loading. If you have multiple modules that use the same API key, you might want to delay one of the requests. (Milliseconds) <br><br> **Possible values:** `1000` - `5000` <br> **Default value:** `0`
 | `appendLocationNameToHeader` | If set to `true`, the returned location name will be appended to the header of the module, if the header is enabled. This is mainly interesting when using calender based weather. <br><br> **Default value:** `true`
 | `calendarClass`              | The class for the calender module to base the event based weather information on. <br><br> **Default value:** `'calendar'`
+| `useCorsProxy`               | Some weather modules need a cors proxy to get their api running. <br><br> **Possible values:** true or false <br> **Default value:** `false` (except providers `darksky` and `envcanada`)
 
 #### Current weather options
 
@@ -95,12 +96,17 @@ The following properties can be configured:
 | `apiKey`                     | The [OpenWeatherMap](https://home.openweathermap.org) API key, which can be obtained by creating an OpenWeatherMap account. <br><br> This value is **REQUIRED**
 
 ### Darksky options
+::: warning
+The Darksky api has been deprecated, see [this blog post for more info](https://blog.darksky.net/).
+Please note Darksky no longer accept new signups and the API will shutdown at the end of 2022.
+:::
+
 
 | Option                       | Description
 | ---------------------------- | -----------
-| `apiBase`                    | The DarkSky base URL. The darksky api has disabled [cors](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), therefore a proxy is required. <br><br> **Possible value:** `'https://cors-anywhere.herokuapp.com/https://api.darksky.net'` <br> This value is **REQUIRED**
+| `apiBase`                    | The DarkSky base URL. <br><br> **Possible value:** `'https://api.darksky.net'` <br> This value is **REQUIRED**
 | `weatherEndpoint`	           | The DarkSky API endPoint. <br><br> **Possible values:** `/forecast` <br> This value is **REQUIRED**
-| `apiKey`                     | The [DarkSky](https://darksky.net/dev/register) API key, which can be obtained by creating an DarkSky account. Please note Dark Sky no longer accept new signups. The API will continue to function through the end of 2021.<br><br> This value is **REQUIRED**
+| `apiKey`                     | The [DarkSky](https://darksky.net/dev/register) API key, which can be obtained by creating an DarkSky account. <br><br> This value is **REQUIRED**
 | `lat`                        | The geo coordinate latitude. <br><br> This value is **REQUIRED**
 | `lon`                        | The geo coordinate longitude. <br><br> This value is **REQUIRED**
 
