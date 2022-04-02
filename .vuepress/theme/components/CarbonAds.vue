@@ -1,39 +1,39 @@
 <script>
 export default {
-  name: 'CarbonAds',
+  name: "CarbonAds",
 
   watch: {
-    '$route' (to, from) {
+    $route(to, from) {
       if (
-        to.path !== from.path
+        to.path !== from.path &&
         // Only reload if the ad has been loaded
         // otherwise it's possible that the script is appended but
         // the ads are not loaded yet. This would result in duplicated ads.
-        && this.$el.querySelector('#carbonads')
+        this.$el.querySelector("#carbonads")
       ) {
-        this.$el.innerHTML = ''
-        this.load()
+        this.$el.innerHTML = "";
+        this.load();
       }
-    }
+    },
   },
 
-  mounted () {
-    this.load()
+  mounted() {
+    this.load();
   },
 
   methods: {
-    load () {
-      const s = document.createElement('script')
-      s.id = '_carbonads_js'
-      s.src = `//cdn.carbonads.com/carbon.js?serve=CK7IC23N&placement=magicmirrorbuilders`
-      this.$el.appendChild(s)
-    }
+    load() {
+      const s = document.createElement("script");
+      s.id = "_carbonads_js";
+      s.src = `//cdn.carbonads.com/carbon.js?serve=CK7IC23N&placement=magicmirrorbuilders`;
+      this.$el.appendChild(s);
+    },
   },
 
-  render (h) {
-    return h('div', { class: 'carbon-ads' })
-  }
-}
+  render(h) {
+    return h("div", { class: "carbon-ads" });
+  },
+};
 </script>
 
 <style lang="stylus">

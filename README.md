@@ -1,6 +1,7 @@
 ---
 title: Introduction
 ---
+
 ![MagicMirror²: The open source modular smart mirror platform. ](header.png)
 
 <p style="text-align: center">

@@ -5,9 +5,12 @@ The Magic Mirror can be installed manually or using automatic installers. At the
 Therefore the only officially supported way of installation is by using a [manual installation](#manual-installation). Using external installation scripts is at your own risk but can make the process a lot easier. Available automatic installers can be found under: [alternative installation methods](#alternative-installation-methods).
 
 ## Manual Installation
-1. Download and install the latest *Node.js* version:
+
+1. Download and install the latest _Node.js_ version:
+
 - `curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -`
 - `sudo apt install -y nodejs`
+
 2. Clone the repository and check out the master branch: `git clone https://github.com/MichMich/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
 4. Install the application: `npm install --only=prod --omit=dev`
@@ -20,64 +23,70 @@ The installation step for `npm install --only=prod --omit=dev` will take a very 
 :::
 
 ## Alternative Installation Methods
+
 The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
 
 ### Automatic Installation Scripts
+
 - Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts)
 - [The MagicMirror Package Manager](https://github.com/Bee-Mar/mmpm) is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules.
 
 ### Docker Image
+
 - MagicMirror² can be deployed using [Docker](https://docker.com). Head over to [this repository](https://gitlab.com/khassel/magicmirror) for more information.
 
 ### Kubernetes Helm Chart
+
 - If you want to run MagicMirror² (in server only mode) in a kubernetes cluster then take a look at this [MagicMirror Helm Chart](https://gitlab.com/khassel/magicmirror-helm).
 
 ### MagicMirrorOS
+
 - This is a full OS based on Raspbian. So instead of downloading Raspbian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses the [docker setup](https://gitlab.com/khassel/magicmirror).
 
 ## Other Operating Systems
 
-### Windows: 
+### Windows:
 
 To get the MagicMirror software running on Windows, you have to do two things in addition to the [steps](#manual-installation) above:
 
 4a. Install dependencies in the vendor and font directories:
 
-  Powershell:
-  
-  1. `cd fonts; npm install; cd ..`
-  2. `cd vendor; npm install; cd ..`
-    
-  Command Prompt:
-  
-  1. `cd fonts && npm install && cd ..`
-  2. `cd vendor && npm install && cd ..`
-    
+Powershell:
+
+1. `cd fonts; npm install; cd ..`
+2. `cd vendor; npm install; cd ..`
+
+Command Prompt:
+
+1. `cd fonts && npm install && cd ..`
+2. `cd vendor && npm install && cd ..`
+
 Otherwise the screen will stay black when starting the MagicMirror.
 
 5a. Fix the start script in the `package.json` file:
 
-  1. Navigate to the file `package.json`
-  2. Find where it says 
-	  ```
-	  "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
-	  "start:dev": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js dev",  
-	  ```
-  3. and replace it with 
-	  ```
-	  "start": ".\\node_modules\\.bin\\electron js\\electron.js",
-	  "start:dev": ".\\node_modules\\.bin\\electron js\\electron.js dev",
-	  ``` 
+1. Navigate to the file `package.json`
+2. Find where it says
+   ```
+   "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
+   "start:dev": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js dev",
+   ```
+3. and replace it with
+   ```
+   "start": ".\\node_modules\\.bin\\electron js\\electron.js",
+   "start:dev": ".\\node_modules\\.bin\\electron js\\electron.js dev",
+   ```
 
-Otherwise the program won't start, but will display this error message: 
+Otherwise the program won't start, but will display this error message:
 `"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`
 
 ## Usage
+
 Note the following:
 
 - `npm start` does **not** work via SSH. But you can use `DISPLAY=:0 nohup npm start &` instead. \
   This starts the mirror on the remote display.
-- If you want to debug on your Raspberry Pi you can use `npm run start:dev` which will start MM with *Dev Tools* enabled.
+- If you want to debug on your Raspberry Pi you can use `npm run start:dev` which will start MM with _Dev Tools_ enabled.
 - To access the toolbar menu when in mirror mode, hit `ALT` key.
 - To toggle the (web) `Developer Tools` from mirror mode, use `CTRL-SHIFT-I` or `ALT` and select `View`.
 
