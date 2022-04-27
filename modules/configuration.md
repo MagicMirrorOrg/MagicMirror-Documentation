@@ -1,6 +1,6 @@
 # Module Configuration
 
-The module configuration is used as part of the main configuration file. Please see [configuration](/getting-started/configuration.md) for more information.
+The module configuration is used as part of the main configuration file. Please see [configuration](/configuration/introduction.md) for more information.
 
 | **Option**        | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
