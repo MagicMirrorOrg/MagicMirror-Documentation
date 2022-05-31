@@ -23,7 +23,7 @@ The installation step for `npm install --only=prod --omit=dev` will take a very 
 :::
 
 ::: warning NOTE
-You may receive a High Security Alert for npm during the installation of MagicMirror verion 2.19.0. Please ignore the alert as there othing we can do about it. The audit fix causes more trouble than it fixes and npm 8 has not been tested with this version of MagicMirror.
+You may receive a High Security Alert for npm during the installation referencing npm. Please ignore the alert as there is nothing we can do about it. The audit fix causes more trouble than it fixes and npm 8 has not been tested with this version of MagicMirror.
 :::
 
 ## Alternative Installation Methods
