@@ -147,3 +147,17 @@ Here are the instructions to fix it:
 3. Go to Google Calendar and create a private address to use in the calendar module for your Magic Mirror.
 
 This trigger will run every 5 minutes. Make sure to give it time after you create a new event in Office 365 to appear in Google Calendar. Past events will NOT be created using Flow; to do this, follow step 1 to import your calendar into Google Calendar.
+
+## Manually fetching calendar
+
+The calendar automatically updates every so or so interval (specified in the config). It is possible to manually fetch updates from the calendar through socket notifications.
+
+The calendar subscribes to socket notification `FETCH_CALENDAR` and expects a payload containing the _url_ to the calendar in which to update.
+
+Socket notifications can be accessed through `this.io` from any MagicMirror `node_helper`. _(See example)_
+
+```js
+this.io.of("calendar").emit("FETCH_CALENDAR", {"url": "http://url.to.cal"})
+```
+
+It is even possible to access the socket notifications from outside of MagicMirror. An example can be seen and implemented in @oenstrom s [MMM-mycroft-bridge](https://github.com/oenstrom/MMM-mycroft-bridge).
