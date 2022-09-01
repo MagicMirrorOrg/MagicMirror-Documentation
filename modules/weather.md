@@ -155,7 +155,7 @@ Please note Darksky no longer accept new signups and the API will shutdown at th
 | `lat`                | The latitude coordinate for the desired location. <br><br> **Possible value:** `59.322665376` <br> This value is **REQUIRED**                                                  |
 | `lon`                | The longitude coordinate for the desired location. <br><br> **Possible value:** `18.069666388` <br> This value is **REQUIRED**                                                 |
 | `precipitationValue` | The type of precipitation to display (min, max, median, mean). <br><br> **Possible values:** `'pmin'` , `'pmean'` , `'pmedian'`, `'pmax'`. <br> **Default value:** `'pmedian'` |
-| `location` | The location used for weather information. <br><br> **Example:** `'Stockholm'` <br> **Default value:** `false` <br><br> |
+| `location` | The optional display name of the location, shown on top of the module. <br><br> **Example:** `'Stockholm'` <br> **Default value:** `false` <br><br> |
 
 
 
