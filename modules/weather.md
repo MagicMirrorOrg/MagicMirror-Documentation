@@ -186,4 +186,4 @@ When using the `type: "hourly"` config, the module can display a max of 24 hours
 
 ## API Provider Development
 
-If you want to add another API provider checkout the [Guide](https://github.com/MichMich/MagicMirror/tree/master/modules/default/weather/providers).
+If you want to add another API provider checkout the [Guide](/development/weather-provider.md).
