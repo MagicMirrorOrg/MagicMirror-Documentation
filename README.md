@@ -11,7 +11,7 @@ title: Introduction
 	<img src="https://img.shields.io/github/workflow/status/michmich/magicmirror/Run%20Automated%20Tests" alt="GitHub Actions">
 	<img src="https://img.shields.io/github/checks-status/michmich/magicmirror/master" alt="Build Status">
 	<a href="https://codecov.io/gh/MichMich/MagicMirror">
-		<img src="https://codecov.io/gh/MichMich/MagicMirror/branch/master/graph/badge.svg?token=LEG1KitZR6" alt="CodeCov Status"/>
+		<img src="https://img.shields.io/codecov/c/github/michmich/MagicMirror?token=LEG1KitZR6" alt="CodeCov Status"/>
 	</a>
 	<a href="https://github.com/MichMich/MagicMirror">
 		<img src="https://img.shields.io/github/stars/michmich/magicmirror?style=social">
