@@ -26,12 +26,15 @@ let config = {
       position: "lower_third",
     },
     {
-      module: "currentweather",
+      module: "weather",
       position: "top_right",
       config: {
+        weatherProvider: "openweathermap",
+        type: "current",
         location: "New York",
-        appid: "YOUR_OPENWEATHER_API_KEY",
-      },
+        locationID: "5128581", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
+        apiKey: "YOUR_OPENWEATHER_API_KEY"
+      }
     },
   ],
 };
