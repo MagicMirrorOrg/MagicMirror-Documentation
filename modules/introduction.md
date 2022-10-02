@@ -8,8 +8,7 @@ The following modules are installed by default.
 
 - [**Clock**](clock.md)
 - [**Calendar**](calendar.md)
-- [**Current Weather**](currentweather.md)
-- [**Weather Forecast**](weatherforecast.md)
+- [**Weather**](weather.md)
 - [**News Feed**](newsfeed.md)
 - [**Compliments**](compliments.md)
 - [**Hello World**](helloworld.md)
