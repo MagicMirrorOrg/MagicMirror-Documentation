@@ -3,7 +3,7 @@
 ### Configuring your MagicMirror
 
 1. Copy `/home/pi/MagicMirror/config/config.js.sample` to `/home/pi/MagicMirror/config/config.js`. \
-   **Note:** If you used the installer script this step is already done for you.
+   **Note:** If you used a third-party installer script, this step may already have been done for you.
 
 2. Modify your required settings. \
    Note: You can check your configuration running `npm run config:check` in `/home/pi/MagicMirror`.
