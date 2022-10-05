@@ -6,7 +6,7 @@
    **Note:** If you used a third-party installer script, this step may already have been done for you.
 
 2. Modify your required settings. \
-   Note: You can check your configuration running `npm run config:check` in `/home/pi/MagicMirror`.
+   **Note:** You can check your configuration running `npm run config:check` in `/home/pi/MagicMirror`.
 
 The following properties can be configured:
 
