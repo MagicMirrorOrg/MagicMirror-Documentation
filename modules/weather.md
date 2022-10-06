@@ -115,7 +115,6 @@ Please note Darksky no longer accept new signups and the API will shutdown at th
 | Option            | Description                                                                                                                                              |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apiBase`         | The weather.gov base URL. <br><br> **Possible value:** `'https://api.weather.gov/points/'` <br> This value is **REQUIRED**                               |
-| `weatherEndpoint` | The weather.gov API endPoint. <br><br> **Possible values:** `/forecast` for forecast and `/forecast/hourly` for current. <br> This value is **REQUIRED** |
 | `lat`             | The geo coordinate latitude. <br><br> This value is **REQUIRED**                                                                                         |
 | `lon`             | The geo coordinate longitude. <br><br> This value is **REQUIRED**                                                                                        |
 
