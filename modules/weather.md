@@ -36,8 +36,8 @@ The following properties can be configured:
 
 | Option                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `openweathermap` , `darksky` , `weathergov`, `ukmetofficedatahub`, `ukmetoffice`, `weatherbit`, or `envcanada`<br> **Default value:** `openweathermap`                                                                                                                                                                                                                                                                 |
-| `type`                       | Which type of weather data should be displayed. <br><br> **Possible values:** `current` , `hourly` , `daily` , or `forecast` <br> **Default value:** `current` <br><br> **Note:** The `daily` type is another name for the `forecast` type, and the two are interchangeable. <br><br> The `hourly` type is currently only implemented for: <br> **Environment Canada** (`envcanada`) provider <br> **OpenWeatherMap** provider, and only when `/onecall` is used as the specified endpoint. |
+| `weatherProvider`            | Which weather provider should be used. <br><br> **Possible values:** `darksky`, `envcanada`, `openweathermap`, `ukmetoffice`, `ukmetofficedatahub`, `weatherbit`,`weathergov` or `yr`.<br> **Default value:** `openweathermap`                                                                                                                                                                                                                                                                 |
+| `type`                       | Which type of weather data should be displayed. <br><br> **Possible values:** `current` , `hourly` , `daily` , or `forecast` <br> **Default value:** `current` <br><br> **Note:** The `daily` type is another name for the `forecast` type, and the two are interchangeable. <br><br> The `hourly` type is currently only implemented for: <br> **Environment Canada** (`envcanada`) provider <br> **OpenWeatherMap** provider, and only when `/onecall` is used as the specified endpoint.<br/>**Yr** (`yr`) provider |
 | `units`                      | What units to use. Specified by config.js <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `config.units`                                                                                                                                                                                                                                                                     |
 | `tempUnits`                  | What units to use for temperature. If not specified, the module uses the `units` value from `config.js`. <br><br> **Possible values:** `config.units` = Specified by config.js, `default` = Kelvin, `metric` = Celsius, `imperial` = Fahrenheit <br> **Default value:** `units`                                                                                                                                                                                                             |
 | `windUnits`                  | What units to use for wind speed. If not specified, the module uses the `units` value from `config.js`. <br><br> **Possible values:** `config.units` = Specified by config.js, `mps` = metres per second, `kmh` or `metric` = kilometres per hour, `mph` or `imperial` = miles per hour **Default value:** `units`                                                                                                                                                                          |
@@ -184,6 +184,26 @@ When using the `type: "hourly"` config, the module can display a max of 24 hours
 | `apiBase`   | The Weatherflow base URL.<br><br> **Possible value:** `https://swd.weatherflow.com/swd/rest/` <br> This value is **REQUIRED**                                  |
 | `token`     | The [Weatherflow](https://weatherflow.github.io/Tempest/api/) token which can be obtained in the webapp of Weatherflow <br><br> This value is **REQUIRED**     |
 | `stationid` | The id of your weather station from wich you want to show the data. This also can be obtained in the webapp of Weatherflow <br><br> This value is **REQUIRED** |
+
+### Yr options
+
+The Yr weather provider is quite simple to set up, and only requires the coordinates for the desired location. These can be obtained from for instance Google Maps by right-clicking the map.
+
+If you use several instances of the Yr weather provider, please set the `initialLoadDelay` to have a minimum value of `500` between the instances. Yr.no wants as little traffic as possible to their servers, and a slight load delay is enough for the instances to cooperate better when fetching the data.
+
+| Option | Description |
+| --- | --- |
+| `lat` | The latitude coordinate used for weather information. This value can **not** have more than four decimals. Use `.`, not `,`.<br><br>**Example:** `59.9171`<br>This value is **REQUIRED**. |
+| `lon` | The longitude coordinate used for weather information. This value can **not** have more than four decimals. Use `.`, not `,`.<br><br>**Example:** `10.7276`<br>This value is **REQUIRED**. |
+| `altitude` | The height/vertical distance above sea level used for weather information.<br><br>This value is optional.<br>**Example:** `30`<br>**Default value:** `0`. |
+
+#### Current weather options
+
+Possible options when using the `type: "current"` config, the module displays the forecast for the specified time. If Yr predicts rain from 1 to 2, and sun from 2 to 3, the rain-symbol will display until 2 and then change on the next update.
+
+| Option | Description |
+| --- | --- |
+| `currentForecastHours` | How many hours the displayed weather should represent. Possible values are `1`, `6` or `12`.<br><br>This value is optional.<br>**Example:** `6`<br>**Default value:** `1`. |
 
 ## API Provider Development
 
