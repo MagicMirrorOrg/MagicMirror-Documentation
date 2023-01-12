@@ -49,7 +49,21 @@ The following installation methods are not maintained by the MagicMirror² core 
 
 To get the MagicMirror software running on Windows, you have to do two things in addition to the [steps](#manual-installation) above:
 
-4a. Fix the start script in the `package.json` file:
+4a. Install dependencies in the vendor and font directories:
+
+Powershell:
+
+1. `cd fonts; npm install; cd ..`
+2. `cd vendor; npm install; cd ..`
+
+Command Prompt:
+
+1. `cd fonts && npm install && cd ..`
+2. `cd vendor && npm install && cd ..`
+
+Otherwise the screen will stay black when starting the MagicMirror.
+
+5a. Fix the start script in the `package.json` file:
 
 1. Navigate to the file `package.json`
 2. Find where it says
