@@ -22,10 +22,6 @@ Therefore the only officially supported way of installation is by using a [manua
 The installation step for `npm run install-mm` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
 :::
 
-::: warning NOTE
-You may receive a High Security Alert for npm during the installation referencing npm. Please ignore the alert as there is nothing we can do about it. The audit fix causes more trouble than it fixes and npm 8 has not been tested with this version of MagicMirror.
-:::
-
 ## Alternative Installation Methods
 
 The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
@@ -53,21 +49,7 @@ The following installation methods are not maintained by the MagicMirror² core 
 
 To get the MagicMirror software running on Windows, you have to do two things in addition to the [steps](#manual-installation) above:
 
-4a. Install dependencies in the vendor and font directories:
-
-Powershell:
-
-1. `cd fonts; npm install; cd ..`
-2. `cd vendor; npm install; cd ..`
-
-Command Prompt:
-
-1. `cd fonts && npm install && cd ..`
-2. `cd vendor && npm install && cd ..`
-
-Otherwise the screen will stay black when starting the MagicMirror.
-
-5a. Fix the start script in the `package.json` file:
+4a. Fix the start script in the `package.json` file:
 
 1. Navigate to the file `package.json`
 2. Find where it says
