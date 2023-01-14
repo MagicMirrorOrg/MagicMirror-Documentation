@@ -22,10 +22,6 @@ Therefore the only officially supported way of installation is by using a [manua
 The installation step for `npm run install-mm` will take a very long time, often with little or no terminal response! For the RPi3 this is **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a :broken_heart: by Raspberry Jam.
 :::
 
-::: warning NOTE
-You may receive a High Security Alert for npm during the installation referencing npm. Please ignore the alert as there is nothing we can do about it. The audit fix causes more trouble than it fixes and npm 8 has not been tested with this version of MagicMirror.
-:::
-
 ## Alternative Installation Methods
 
 The following installation methods are not maintained by the MagicMirror² core team. Use these scripts and methods at your own risk.
