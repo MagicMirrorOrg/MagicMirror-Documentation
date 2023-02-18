@@ -39,3 +39,22 @@ let config = {
   ],
 };
 ```
+
+## Position
+
+The locations can be found in the following screenshot by their color:
+
+- `top_bar` and `bottom_bar` are light gray
+- `top_left` and `bottom_left` are red
+- `top_center` and `bottom_center` are blue
+- `top_right` and `bottom_right` are green
+- `upper_third` is yellow
+- `middle_center` is cyan
+- `lower_third` is magenta
+
+![Screenshot of Regions](./screenshots/regions.png)
+
+Missing are the fullscreen_below and fullscreen_above as those cover the whole screen, one under everything else and
+the other above.
+
+All these regions will resize as needed.
