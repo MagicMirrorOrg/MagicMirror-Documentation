@@ -18,4 +18,4 @@ Using `git reset --hard` as described below will delete all your changes made in
 
 Type `git status` to see your changes, if there are any, you can reset them with `git reset --hard`. After that, `git pull` should be possible.
 
-If you want to try the community maintained automated update then, please see [alternative installation methods](installation.html#alternative-installation-methods)
+If you want to try the community maintained automated update then, please see [alternative installation methods](installation.md#alternative-installation-methods)

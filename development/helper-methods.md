@@ -12,7 +12,7 @@ The only additional method available for your module, is the feature to retrieve
 
 To make a selection of all currently loaded module instances, run the `MM.getModules()` method. It will return an array with all currently loaded module instances. The returned array has a lot of filtering methods. See below for more info.
 
-**Note:** This method returns an empty array if not all modules are started yet. Wait for the `ALL_MODULES_STARTED` [notification](#notificationreceivednotification-payload-sender).
+**Note:** This method returns an empty array if not all modules are started yet. Wait for the `ALL_MODULES_STARTED` [notification](core-module-file.md#notificationreceived-notification-payload-sender).
 
 #### `.withClass(classnames)`
 
