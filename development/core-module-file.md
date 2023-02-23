@@ -235,7 +235,7 @@ When using a node_helper, the node helper can send your module notifications. Wh
 - `payload` - AnyType - The payload of a notification.
 
 **Note 1:** When a node helper sends a notification, all modules of that module type receive the same notifications. <br>
-**Note 2:** The socket connection is established as soon as the module sends its first message using [sendSocketNotification](#thissendsocketnotificationnotification-payload).
+**Note 2:** The socket connection is established as soon as the module sends its first message using [sendSocketNotification](#this-sendsocketnotification-notification-payload).
 
 **Example:**
 
@@ -288,7 +288,7 @@ start: function() {
 **_notification_ String** - The notification identifier.<br>
 **_payload_ AnyType** - Optional. A notification payload.<br>
 
-If you want to send a notification to all other modules, use the `sendNotification(notification, payload)`. All other modules will receive the message via the [notificationReceived](#notificationreceivednotification-payload-sender) method. In that case, the sender is automatically set to the instance calling the sendNotification method.
+If you want to send a notification to all other modules, use the `sendNotification(notification, payload)`. All other modules will receive the message via the [notificationReceived](#notificationreceived-notification-payload-sender) method. In that case, the sender is automatically set to the instance calling the sendNotification method.
 
 **Example:**
 
@@ -323,7 +323,7 @@ Possible configurable options:
 
 **Note 1:** If the hide animation is cancelled, for instance because the show method is called before the hide animation was finished, the callback will not be called.<br>
 **Note 2:** If the hide animation is hijacked (an other method calls hide on the same module), the callback will not be called.<br>
-**Note 3:** If the dom is not yet created, the hide method won't work. Wait for the `DOM_OBJECTS_CREATED` [notification](#notificationreceivednotification-payload-sender).
+**Note 3:** If the dom is not yet created, the hide method won't work. Wait for the `DOM_OBJECTS_CREATED` [notification](#notificationreceived-notification-payload-sender).
 
 ### `this.show(speed, callback, options)`
 
@@ -341,7 +341,7 @@ Possible configurable options:
 
 **Note 1:** If the show animation is canceled, for instance because the hide method is called before the show animation was finished, the callback will not be called.<br>
 **Note 2:** If the show animation is hijacked (an other method calls show on the same module), the callback will not be called.<br>
-**Note 3:** If the dom is not yet created, the show method won't work. Wait for the `DOM_OBJECTS_CREATED` [notification](#notificationreceivednotification-payload-sender).
+**Note 3:** If the dom is not yet created, the show method won't work. Wait for the `DOM_OBJECTS_CREATED` [notification](#notificationreceived-notification-payload-sender).
 
 ### Visibility locking
 
