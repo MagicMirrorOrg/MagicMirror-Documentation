@@ -5,9 +5,9 @@ The MagicMirror contains a convenience wrapper for logging. Currently, this logg
 **Examples:**
 
 ```javascript
-Log.info("error");
+Log.info("info");
 Log.log("log");
-Log.error("info");
+Log.error("error");
 ```
 
 By default, the logger is only available in the core module file. If you want to use the logger in the `node_helper.js`, you have to add it by inserting the following line at the beginning of the file:
