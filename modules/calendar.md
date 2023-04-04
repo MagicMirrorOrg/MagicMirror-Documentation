@@ -165,7 +165,7 @@ The calendar subscribes to socket notification `FETCH_CALENDAR` and expects a pa
 
 Socket notifications can be accessed through `this.io` from any MagicMirror `node_helper`. _(See example)_
 
-```js
+```javascript
 this.io.of("calendar").emit("FETCH_CALENDAR", { url: "http://url.to.cal" });
 ```
 

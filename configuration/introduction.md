@@ -36,7 +36,7 @@ Variables must be inserted as `${MY_VARIABLE}`, examples:
 
 `config.js.template`:
 
-```js
+```javascript
 let config = {
 	address: "${MY_ADDRESS}",
 	port: ${MY_PORT},
@@ -50,7 +50,7 @@ would become
 
 `config.js`:
 
-```js
+```javascript
 let config = {
   address: "localhost",
   port: 8080,
@@ -70,7 +70,7 @@ This file must be in the same folder as the `config.js.template` and contains th
 
 File content of `config.env`:
 
-```bash
+```
 MY_ADDRESS=localhost
 MYPORT=8080
 MY_HTTPS=false
@@ -80,7 +80,7 @@ MY_HTTPS=false
 
 You have to declare them before you start MagicMirror², e.g. by executing:
 
-```bash
+```shell
 export MY_ADDRESS=localhost
 export MYPORT=8080
 export MY_HTTPS=false
@@ -88,7 +88,7 @@ export MY_HTTPS=false
 
 #### Real world example of `config.js.template`
 
-```js
+```javascript
 let config = {
   address: "0.0.0.0",
   port: 8080,

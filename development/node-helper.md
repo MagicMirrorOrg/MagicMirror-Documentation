@@ -142,7 +142,7 @@ this.sendSocketNotification("SET_CONFIG", this.config);
 If you want use `native node modules` within electron you need to recompile them for electron.
 To do so you have to install `electron-rebuild`.
 
-```console
+```shell
 npm install --save-dev electron-rebuild
 ```
 
