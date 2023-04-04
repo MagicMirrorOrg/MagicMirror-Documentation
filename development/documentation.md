@@ -1,7 +1,7 @@
 # How to write good documentation
 
 MagicMirror is meant to be accessible to anyone with any skill level. But to help promote building technical skills
-and educate in these technologies, it requires a little bit more effort from developers to make their amazing projects
+and educate in these technologies, it requires a little more effort from developers to make their amazing projects
 more easily obtainable by ordinary people.
 
 Most novices coming to MM are overwhelmed by the amount of information and perhaps even the technology itself. To

@@ -4,7 +4,7 @@ The node helper (`node_helper.js`) is a Node.js script that is able to do some b
 
 **Note:** Because there is only one node helper per module type, there is no default config available within your module. It's your task to send the desired config from your module to your node helper.
 
-In it's most simple form, the node_helper.js file must contain:
+In its most simple form, the node_helper.js file must contain:
 
 ```javascript
 const NodeHelper = require("node_helper");

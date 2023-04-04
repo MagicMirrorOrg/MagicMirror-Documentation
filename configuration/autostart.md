@@ -1,4 +1,4 @@
-# Autostarting your MagicMirror
+# Autostart your MagicMirror
 
 The methods below describe ways to automatically start your MagicMirror on boot, and even ways to keep it running in case of a failure.
 
@@ -16,7 +16,7 @@ sudo npm install -g pm2
 
 ### Starting PM2 on Boot
 
-To make sure PM2 can do it's job when (re)booting your operating system, it needs to be started on boot. Luckily, PM2 has a handy helper for this.
+To make sure PM2 can do its job when (re)booting your operating system, it needs to be started on boot. Luckily, PM2 has a handy helper for this.
 
 ```
 pm2 startup
