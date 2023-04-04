@@ -35,6 +35,7 @@ You can provide a `config.js.template` instead of a `config.js` file. The differ
 Variables must be inserted as `${MY_VARIABLE}`, examples:
 
 `config.js.template`:
+
 ```js
 let config = {
 	address: "${MY_ADDRESS}",
@@ -48,10 +49,11 @@ if (typeof module !== "undefined") {module.exports = config;}
 would become
 
 `config.js`:
+
 ```js
 let config = {
-	address: "localhost",
-	port: 8080,
+  address: "localhost",
+  port: 8080,
 	useHttps: false,
 };
 /*************** DO NOT EDIT THE LINE BELOW ***************/
