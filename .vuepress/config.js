@@ -100,6 +100,7 @@ module.exports = {
   },
   plugins: [
     ["@vuepress/back-to-top"],
+    ['check-md'],
     [
       "@vuepress/google-analytics",
       {

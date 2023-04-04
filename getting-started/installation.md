@@ -92,7 +92,7 @@ Note the following:
 
 ### Server Only
 
-In some cases, you want to start the application without an actual app window. In this case, you can start MagicMirror² in server only mode by manually running `npm run server` or using Docker. This will start the server, after which you can open the application in your browser of choice. Detailed description below.
+In some cases, you want to start the application without an actual app window. In this case, you can start MagicMirror² in server only mode by manually running `npm run server`. This will start the server, after which you can open the application in your browser of choice. Detailed description below.
 
 ::: warning IMPORTANT
 Make sure that you whitelist the interface/ip (`ipWhitelist`) in the server config where you want the client to connect to, otherwise it will not be allowed to connect to the server. You also need to set the local host `address` field to `0.0.0.0` in order for the RPi to listen on all interfaces and not only `localhost` (default).
