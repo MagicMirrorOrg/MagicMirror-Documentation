@@ -108,7 +108,7 @@ With this method, your node helper can receive notifications from your modules. 
 - `notification` - String - The notification identifier.
 - `payload` - AnyType - The payload of a notification.
 
-**Note:** The socket connection is established as soon as the module sends its first message using [sendSocketNotification](thissendsocketnotificationnotification-payload).
+**Note:** The socket connection is established as soon as the module sends its first message using [sendSocketNotification](core-module-file.md#this-sendsocketnotification-notification-payload).
 
 **Example:**
 

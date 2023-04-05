@@ -1,15 +1,17 @@
 {
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.9.8",
-    "@vuepress/plugin-google-analytics": "^1.9.8",
-    "prettier": "^2.8.4",
+    "@vuepress/plugin-back-to-top": "^1.9.9",
+    "@vuepress/plugin-google-analytics": "^1.9.9",
+    "prettier": "^2.8.7",
     "vue-template-compiler": "^2.7.14",
-    "vuepress": "^1.9.8"
+    "vuepress": "^1.9.9",
+    "vuepress-plugin-check-md": "^0.0.3"
   },
   "scripts": {
     "start": "npm run docs:dev",
     "docs:dev": "vuepress dev .",
     "docs:build": "vuepress build .",
+    "check": "vuepress check-md .",
     "lint": "prettier . --write"
   }
 }
