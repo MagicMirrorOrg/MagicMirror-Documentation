@@ -20,4 +20,4 @@ Using a Lite Version of Raspbian **will not work**.
 
 ## Node
 
-Although older version of Node might work, we suggest you use Node 16.
+Although older version of Node might work, we suggest you use Node 18.
