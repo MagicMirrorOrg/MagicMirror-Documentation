@@ -1,4 +1,4 @@
-# Autostarting your MagicMirror
+# Autostart your MagicMirror
 
 The methods below describe ways to automatically start your MagicMirror on boot, and even ways to keep it running in case of a failure.
 
@@ -10,15 +10,15 @@ PM2 is a production process manager for Node.js applications with a built-in loa
 
 Install PM2 using NPM:
 
-```
+```shell
 sudo npm install -g pm2
 ```
 
 ### Starting PM2 on Boot
 
-To make sure PM2 can do it's job when (re)booting your operating system, it needs to be started on boot. Luckily, PM2 has a handy helper for this.
+To make sure PM2 can do its job when (re)booting your operating system, it needs to be started on boot. Luckily, PM2 has a handy helper for this.
 
-```
+```shell
 pm2 startup
 ```
 
@@ -105,7 +105,7 @@ Note: Systemctl is a control interface for systemd, a powerful service manager o
 
 To start, you'll need to create a config file via your editor of choice (nano used in these examples):
 
-```
+```shell
 sudo nano /etc/systemd/system/magicmirror.service
 ```
 
@@ -139,13 +139,13 @@ Note: For any of the below commands 'magicmirror.service' can be replaced with `
 
 #### Start MM with systemctl
 
-```
+```shell
 sudo systemctl start magicmirror.service
 ```
 
 #### Stop MM with systemctl
 
-```
+```shell
 sudo systemctl stop magicmirror.service
 ```
 
@@ -159,13 +159,13 @@ sudo systemctl status magicmirror.service
 
 Note: does not start immediately, need to run start command or reboot
 
-```
+```shell
 sudo systemctl enable magicmirror.service
 ```
 
 #### Disable autostart of Magic Mirror
 
-```
+```shell
 sudo systemctl disable magicmirror.service
 ```
 

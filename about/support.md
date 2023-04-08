@@ -6,4 +6,4 @@ The community around the MagicMirror² is constantly growing. We even have a [fo
 
 ## Discord
 
-If you prefer chat over slow talk, please join our [Discord channel](https://discord.gg/J5BAtvx).
+If you prefer chat to slow talk, please join our [Discord channel](https://discord.gg/J5BAtvx).
