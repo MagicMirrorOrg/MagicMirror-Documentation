@@ -5,7 +5,7 @@ in order for the module to be used. In it's most simple form, the core module
 file must be named after the module (`modulename.js`) and must contain:
 
 ```javascript
-Module.register("modulename", {});
+Module.register('modulename', {})
 ```
 
 Of course, the above module would not do anything fancy, so it's good to look at
@@ -14,19 +14,19 @@ one of the simplest modules: **helloworld**:
 ```javascript
 //helloworld.js:
 
-Module.register("helloworld", {
+Module.register('helloworld', {
   // Default module config.
   defaults: {
-    text: "Hello World!",
+    text: 'Hello World!',
   },
 
   // Override dom generator.
   getDom: function () {
-    var wrapper = document.createElement("div");
-    wrapper.innerHTML = this.config.text;
-    return wrapper;
+    var wrapper = document.createElement('div')
+    wrapper.innerHTML = this.config.text
+    return wrapper
   },
-});
+})
 ```
 
 As you can see, the `Module.register()` method takes two arguments: the name of
@@ -358,7 +358,7 @@ the sendNotification method.
 **Example:**
 
 ```javascript
-this.sendNotification("MYMODULE_READY_FOR_ACTION", { foo: bar });
+this.sendNotification('MYMODULE_READY_FOR_ACTION', { foo: bar })
 ```
 
 ### `this.sendSocketNotification(notification, payload)`
@@ -373,7 +373,7 @@ module will receive the socket notification.
 **Example:**
 
 ```javascript
-this.sendSocketNotification("SET_CONFIG", this.config);
+this.sendSocketNotification('SET_CONFIG', this.config)
 ```
 
 ### `this.hide(speed, callback, options)`
@@ -447,68 +447,68 @@ actions. The following scenario explains the concept:
 **Module B asks module A to hide:**
 
 ```javascript
-moduleA.hide(0, { lockString: "module_b_identifier" });
+moduleA.hide(0, { lockString: 'module_b_identifier' })
 ```
 
 Module A is now hidden, and has an lock array with the following strings:
 
 ```javascript
-moduleA.lockStrings == ["module_b_identifier"];
-moduleA.hidden == true;
+moduleA.lockStrings == ['module_b_identifier']
+moduleA.hidden == true
 ```
 
 **Module C asks module A to hide:**
 
 ```javascript
-moduleA.hide(0, { lockString: "module_c_identifier" });
+moduleA.hide(0, { lockString: 'module_c_identifier' })
 ```
 
 Module A is now hidden, and has an lock array with the following strings:
 
 ```javascript
-moduleA.lockStrings == ["module_b_identifier", "module_c_identifier"];
-moduleA.hidden == true;
+moduleA.lockStrings == ['module_b_identifier', 'module_c_identifier']
+moduleA.hidden == true
 ```
 
 **Module B asks module A to show:**
 
 ```javascript
-moduleA.show(0, { lockString: "module_b_identifier" });
+moduleA.show(0, { lockString: 'module_b_identifier' })
 ```
 
 The lockString will be removed from moduleA’s locks array, but since there still
 is an other lock string available, the module remains hidden:
 
 ```javascript
-moduleA.lockStrings == ["module_c_identifier"];
-moduleA.hidden == true;
+moduleA.lockStrings == ['module_c_identifier']
+moduleA.hidden == true
 ```
 
 **Module C asks module A to show:**
 
 ```javascript
-moduleA.show(0, { lockString: "module_c_identifier" });
+moduleA.show(0, { lockString: 'module_c_identifier' })
 ```
 
 The lockString will be removed from moduleA’s locks array, and since this will
 result in an empty lock array, the module will be visible:
 
 ```javascript
-moduleA.lockStrings == [];
-moduleA.hidden == false;
+moduleA.lockStrings == []
+moduleA.hidden == false
 ```
 
 **Note:** The locking mechanism can be overwritten by using the force tag:
 
 ```javascript
-moduleA.show(0, { force: true });
+moduleA.show(0, { force: true })
 ```
 
 This will reset the lockstring array, and will show the module.
 
 ```javascript
-moduleA.lockStrings == [];
-moduleA.hidden == false;
+moduleA.lockStrings == []
+moduleA.hidden == false
 ```
 
 Use this `force` method with caution. See `show()` method for more information.
@@ -542,7 +542,7 @@ This way, your module can benefit from the existing translations.
 **Example:**
 
 ```javascript
-this.translate("INFO"); //Will return a translated string for the identifier INFO
+this.translate('INFO') //Will return a translated string for the identifier INFO
 ```
 
 **Example json file:**

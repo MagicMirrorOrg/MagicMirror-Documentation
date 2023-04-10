@@ -22,14 +22,14 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ```javascript
 modules: [
   {
-    module: "weather",
-    position: "top_right",
+    module: 'weather',
+    position: 'top_right',
     config: {
       // See 'Configuration options' for more information.
-      type: "current",
+      type: 'current',
     },
   },
-];
+]
 ```
 
 ## Configuration options

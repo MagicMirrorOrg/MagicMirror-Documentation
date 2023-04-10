@@ -9,13 +9,13 @@ This is the script in which the weather provider will be defined. In its most
 simple form, the weather provider must implement the following:
 
 ```javascript
-WeatherProvider.register("yourprovider", {
-  providerName: "YourProvider",
+WeatherProvider.register('yourprovider', {
+  providerName: 'YourProvider',
 
   fetchCurrentWeather() {},
 
   fetchWeatherForecast() {},
-});
+})
 ```
 
 ## Weather provider methods to implement

@@ -12,8 +12,8 @@ config from your module to your node helper.
 In its most simple form, the node_helper.js file must contain:
 
 ```javascript
-const NodeHelper = require("node_helper");
-module.exports = NodeHelper.create({});
+const NodeHelper = require('node_helper')
+module.exports = NodeHelper.create({})
 ```
 
 Of course, the above helper would not do anything useful. So with the
@@ -54,7 +54,7 @@ start: function() {
 created:
 
 ```javascript
-this.expressApp.use("/" + this.name, express.static(this.path + "/public"));
+this.expressApp.use('/' + this.name, express.static(this.path + '/public'))
 ```
 
 ### `this.io`
@@ -160,7 +160,7 @@ it's your task to make sure the right module responds to your messages.
 **Example:**
 
 ```javascript
-this.sendSocketNotification("SET_CONFIG", this.config);
+this.sendSocketNotification('SET_CONFIG', this.config)
 ```
 
 ## Using native node modules in your node_helper

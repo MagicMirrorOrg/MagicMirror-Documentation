@@ -34,9 +34,9 @@ the `withClass(classname)` method can be an array, or space separated string.
 **Examples:**
 
 ```javascript
-var modules = MM.getModules().withClass("classname");
-var modules = MM.getModules().withClass("classname1 classname2");
-var modules = MM.getModules().withClass(["classname1", "classname2"]);
+var modules = MM.getModules().withClass('classname')
+var modules = MM.getModules().withClass('classname1 classname2')
+var modules = MM.getModules().withClass(['classname1', 'classname2'])
 ```
 
 #### `.exceptWithClass(classnames)`
@@ -52,9 +52,9 @@ string.
 **Examples:**
 
 ```javascript
-var modules = MM.getModules().exceptWithClass("classname");
-var modules = MM.getModules().exceptWithClass("classname1 classname2");
-var modules = MM.getModules().exceptWithClass(["classname1", "classname2"]);
+var modules = MM.getModules().exceptWithClass('classname')
+var modules = MM.getModules().exceptWithClass('classname1 classname2')
+var modules = MM.getModules().exceptWithClass(['classname1', 'classname2'])
 ```
 
 #### `.exceptModule(module)`
@@ -70,7 +70,7 @@ the instance of your module.
 **Examples:**
 
 ```javascript
-var modules = MM.getModules().exceptModule(this);
+var modules = MM.getModules().exceptModule(this)
 ```
 
 Of course, you can combine all of the above filters:
@@ -79,9 +79,9 @@ Of course, you can combine all of the above filters:
 
 ```javascript
 var modules = MM.getModules()
-  .withClass("classname1")
-  .exceptwithClass("classname2")
-  .exceptModule(aModule);
+  .withClass('classname1')
+  .exceptwithClass('classname2')
+  .exceptModule(aModule)
 ```
 
 #### `.enumerate(callback)`
@@ -93,27 +93,27 @@ If you want to perform an action on all selected modules, you can use the
 
 ```javascript
 MM.getModules().enumerate(function (module) {
-  Log.log(module.name);
-});
+  Log.log(module.name)
+})
 ```
 
 **Example:** To hide all modules except your module instance, you could write
 something like:
 
 ```javascript
-Module.register("modulename", {
+Module.register('modulename', {
   //...
   notificationReceived: function (notification, payload, sender) {
-    if (notification === "DOM_OBJECTS_CREATED") {
+    if (notification === 'DOM_OBJECTS_CREATED') {
       MM.getModules()
         .exceptModule(this)
         .enumerate(function (module) {
           module.hide(1000, function () {
             //Module hidden.
-          });
-        });
+          })
+        })
     }
   },
   //...
-});
+})
 ```

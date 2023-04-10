@@ -63,13 +63,13 @@ would become
 
 ```javascript
 let config = {
-  address: "localhost",
+  address: 'localhost',
   port: 8080,
   useHttps: false,
-};
+}
 /*************** DO NOT EDIT THE LINE BELOW ***************/
-if (typeof module !== "undefined") {
-  module.exports = config;
+if (typeof module !== 'undefined') {
+  module.exports = config
 }
 ```
 
