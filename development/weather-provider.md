@@ -20,7 +20,8 @@ WeatherProvider.register("yourprovider", {
 
 ## Weather provider methods to implement
 
-::: warning IMPORTANT The weather module expects the weather data to be in
+::: warning IMPORTANT
+The weather module expects the weather data to be in
 metric units:
 
 - `degree celsius` for temperatures
@@ -29,7 +30,8 @@ metric units:
 Some weather APIs already deliver their data in those units.
 
 If that is not the case you can use helper methods from the `weatherutils.js`
-class to convert the data. :::
+class to convert the data.
+:::
 
 #### `fetchCurrentWeather()`
 

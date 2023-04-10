@@ -21,7 +21,8 @@ Raspbian).
 If you want to run the software on other Operating Systems, take a look at
 [this section](/getting-started/installation.html#other-operating-systems)
 
-::: warning NOTE You **do** need a desktop environment to run Electron!
+::: warning
+NOTE You **do** need a desktop environment to run Electron!
 
 Using a Lite Version of Raspberry Pi OS **will not work**.
 
