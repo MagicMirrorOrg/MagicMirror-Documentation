@@ -1,6 +1,7 @@
 # Module Configuration
 
-The module configuration is used as part of the main configuration file. Please see [configuration](/configuration/introduction.md) for more information.
+The module configuration is used as part of the main configuration file. Please
+see [configuration](/configuration/introduction.md) for more information.
 
 | **Option**        | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,7 +56,7 @@ The locations can be found in the following screenshot by their color:
 
 ![Screenshot of Regions](./screenshots/regions.png)
 
-Missing are the fullscreen_below and fullscreen_above as those cover the whole screen, one under everything else and
-the other above.
+Missing are the fullscreen_below and fullscreen_above as those cover the whole
+screen, one under everything else and the other above.
 
 All these regions will resize as needed.

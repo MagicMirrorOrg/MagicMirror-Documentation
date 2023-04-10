@@ -4,10 +4,11 @@ title: Notifications
 
 # Introduction
 
-The MagicMirror core has the ability to send notifications to modules. Or even better: the modules have the possibility
-to send notifications to other modules.
+The MagicMirror core has the ability to send notifications to modules. Or even
+better: the modules have the possibility to send notifications to other modules.
 
-Additional technical information on the notifications can be found in the [modules' documentation](/development/introduction.md#general-advice):
+Additional technical information on the notifications can be found in the
+[modules' documentation](/development/introduction.md#general-advice):
 
 - [notificationReceived](/development/core-module-file.md#subclassable-module-methods)
 - [sendNotification](/development/core-module-file.md#module-instance-methods)
@@ -39,4 +40,5 @@ These notifications are send by the default modules:
 
 # 3rd Party Module notifications
 
-Take a look in the [wiki](https://github.com/MichMich/MagicMirror/wiki/) to see if 3rd party modules send notifications you might want to use.
+Take a look in the [wiki](https://github.com/MichMich/MagicMirror/wiki/) to see
+if 3rd party modules send notifications you might want to use.

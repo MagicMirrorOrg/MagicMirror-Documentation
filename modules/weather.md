@@ -1,10 +1,14 @@
 # Weather Module
 
-This module will be configurable to be used as a current weather view, or to show the forecast. This way the module can be used twice to fulfill both purposes.
+This module will be configurable to be used as a current weather view, or to
+show the forecast. This way the module can be used twice to fulfill both
+purposes.
 
-The biggest change is the use of weather providers. This way we are not bound to one API source. And users can choose which API they want to use as their source.
+The biggest change is the use of weather providers. This way we are not bound to
+one API source. And users can choose which API they want to use as their source.
 
-The module is in a very early stage, and needs a lot of work. It's API isn't set in stone, so keep that in mind when you want to contribute.
+The module is in a very early stage, and needs a lot of work. It's API isn't set
+in stone, so keep that in mind when you want to contribute.
 
 ## Example
 
@@ -155,9 +159,14 @@ The following properties can be configured:
 
 **Note** that `envcanada` supports Canadian locations only.
 
-When using the `type: "forecast"` config, the module can display a max of 6 days (Today + the next 5 days). The forecast for each day reflects the daytime forecast. The Today forecast is a special case that will reflect the daytime forecast until late afternoon, after which Today will be reflecting the nightime forecast for the current day.
+When using the `type: "forecast"` config, the module can display a max of 6 days
+(Today + the next 5 days). The forecast for each day reflects the daytime
+forecast. The Today forecast is a special case that will reflect the daytime
+forecast until late afternoon, after which Today will be reflecting the nightime
+forecast for the current day.
 
-When using the `type: "hourly"` config, the module can display a max of 24 hours.
+When using the `type: "hourly"` config, the module can display a max of 24
+hours.
 
 | Option     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -185,9 +194,14 @@ When using the `type: "hourly"` config, the module can display a max of 24 hours
 
 ### Yr options
 
-The Yr weather provider is quite simple to set up, and only requires the coordinates for the desired location. These can be obtained from for instance Google Maps by right-clicking the map.
+The Yr weather provider is quite simple to set up, and only requires the
+coordinates for the desired location. These can be obtained from for instance
+Google Maps by right-clicking the map.
 
-If you use several instances of the Yr weather provider, please set the `initialLoadDelay` to have a minimum value of `500` between the instances. Yr.no wants as little traffic as possible to their servers, and a slight load delay is enough for the instances to cooperate better when fetching the data.
+If you use several instances of the Yr weather provider, please set the
+`initialLoadDelay` to have a minimum value of `500` between the instances. Yr.no
+wants as little traffic as possible to their servers, and a slight load delay is
+enough for the instances to cooperate better when fetching the data.
 
 | Option     | Description                                                                                                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -197,7 +211,10 @@ If you use several instances of the Yr weather provider, please set the `initial
 
 #### Current weather options
 
-Possible options when using the `type: "current"` config, the module displays the forecast for the specified time. If Yr predicts rain from 1 to 2, and sun from 2 to 3, the rain-symbol will display until 2 and then change on the next update.
+Possible options when using the `type: "current"` config, the module displays
+the forecast for the specified time. If Yr predicts rain from 1 to 2, and sun
+from 2 to 3, the rain-symbol will display until 2 and then change on the next
+update.
 
 | Option                 | Description                                                                                                                                                                |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -205,4 +222,5 @@ Possible options when using the `type: "current"` config, the module displays th
 
 ## API Provider Development
 
-If you want to add another API provider checkout the [Guide](/development/weather-provider.md).
+If you want to add another API provider checkout the
+[Guide](/development/weather-provider.md).
