@@ -28,7 +28,7 @@ The following installation methods are not maintained by the MagicMirror² core 
 
 ### Automatic Installation Scripts
 
-- Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts)
+- Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains an easy-to-use installation and update script: [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts)
 - [The MagicMirror Package Manager](https://github.com/Bee-Mar/mmpm) is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules.
 
 ### Docker Image
@@ -41,7 +41,7 @@ The following installation methods are not maintained by the MagicMirror² core 
 
 ### MagicMirrorOS
 
-- This is a full OS based on Raspbian. So instead of downloading Raspbian and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses the [docker setup](https://gitlab.com/khassel/magicmirror).
+- This is a full OS based on Raspberry Pi OS. So instead of downloading Raspberry Pi OS and putting this on your sd card, you can use [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out of the box with a default setup of MagicMirror, under the hood it uses the [docker setup](https://gitlab.com/khassel/magicmirror).
 
 ## Other Operating Systems
 

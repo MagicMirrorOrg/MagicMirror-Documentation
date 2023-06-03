@@ -8,14 +8,17 @@ _Electron_, the app wrapper around MagicMirror², only supports the Raspberry Pi
 
 ## Operating System
 
-Note that you will need to install the latest full version of Raspbian, **don't use the Lite version**.
+You will need to install the latest full version of [Raspberry Pi OS](https://www.raspberrypi.com/software/)
+(previously called Raspbian).
 
 If you want to run the software on other Operating Systems, take a look at [this section](/getting-started/installation.html#other-operating-systems)
 
 ::: warning NOTE
 You **do** need a desktop environment to run Electron!
 
-Using a Lite Version of Raspbian **will not work**.
+Using a Lite Version of Raspberry Pi OS **will not work**.
+
+Raspberry Pi OS versions based on Debian "Stretch" are also no longer supported.
 :::
 
 ## Node
