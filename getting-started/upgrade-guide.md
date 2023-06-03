@@ -6,7 +6,7 @@ Always backup your `config.js`, `custom.css` and `modules` folder before you sta
 
 If you want to update your MagicMirror² to the latest version, use your terminal to go to your Magic Mirror folder and type the following command:
 
-```
+```shell
 git pull && npm run install-mm
 ```
 
