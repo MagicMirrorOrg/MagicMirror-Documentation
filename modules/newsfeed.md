@@ -19,8 +19,8 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ```javascript
 modules: [
   {
-    module: 'newsfeed',
-    position: 'bottom_bar', // This can be any of the regions. Best results in center regions.
+    module: "newsfeed",
+    position: "bottom_bar", // This can be any of the regions. Best results in center regions.
     config: {
       // The config property is optional.
       // If no config is set, an example calendar is shown.
@@ -28,17 +28,17 @@ modules: [
 
       feeds: [
         {
-          title: 'New York Times',
-          url: 'https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml',
+          title: "New York Times",
+          url: "https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml",
         },
         {
-          title: 'BBC',
-          url: 'https://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk',
+          title: "BBC",
+          url: "https://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk",
         },
       ],
     },
   },
-]
+];
 ```
 
 ### Notifications
@@ -79,7 +79,7 @@ The following example shows how the next news article title can be displayed on
 the MagicMirror.
 
 ```javascript
-this.sendNotification('ARTICLE_NEXT')
+this.sendNotification("ARTICLE_NEXT");
 ```
 
 #### `newsfeed` specific notification emitting modules

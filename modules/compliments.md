@@ -15,8 +15,8 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ```javascript
 modules: [
   {
-    module: 'compliments',
-    position: 'lower_third', // This can be any of the regions.
+    module: "compliments",
+    position: "lower_third", // This can be any of the regions.
     // Best results in one of the middle regions like: lower_third
     config: {
       // The config property is optional.
@@ -24,7 +24,7 @@ modules: [
       // See 'Configuration options' for more information.
     },
   },
-]
+];
 ```
 
 ## Configuration options

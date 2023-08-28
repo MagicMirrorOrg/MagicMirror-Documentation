@@ -9,19 +9,18 @@ This is the script in which the weather provider will be defined. In its most
 simple form, the weather provider must implement the following:
 
 ```javascript
-WeatherProvider.register('yourprovider', {
-  providerName: 'YourProvider',
+WeatherProvider.register("yourprovider", {
+  providerName: "YourProvider",
 
   fetchCurrentWeather() {},
 
   fetchWeatherForecast() {},
-})
+});
 ```
 
 ## Weather provider methods to implement
 
-::: warning IMPORTANT
-The weather module expects the weather data to be in
+::: warning IMPORTANT The weather module expects the weather data to be in
 metric units:
 
 - `degree celsius` for temperatures
@@ -30,8 +29,7 @@ metric units:
 Some weather APIs already deliver their data in those units.
 
 If that is not the case you can use helper methods from the `weatherutils.js`
-class to convert the data.
-:::
+class to convert the data. :::
 
 #### `fetchCurrentWeather()`
 
