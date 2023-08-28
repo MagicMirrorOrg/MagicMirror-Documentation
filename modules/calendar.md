@@ -1,7 +1,8 @@
 # Calendar
 
-The `calendar` module is one of the default modules of the MagicMirror.
-This module displays events from a public .ical calendar. It can combine multiple calendars.
+The `calendar` module is one of the default modules of the MagicMirror. This
+module displays events from a public .ical calendar. It can combine multiple
+calendars.
 
 ## Using the module
 
@@ -127,11 +128,14 @@ config: {
 
 ## Syncing your Microsoft, Google and Apple calendars
 
-To be able to use your calendar with Microsoft Outlook, Google Calendar and Apple iCal calendars,
-you need to either add each, individually or find a way to sync them into one. There are several
-free and non-free software that can help you do this.
+To be able to use your calendar with Microsoft Outlook, Google Calendar and
+Apple iCal calendars, you need to either add each, individually or find a way to
+sync them into one. There are several free and non-free software that can help
+you do this.
 
-For example, in [this forum thread](https://forum.magicmirror.builders/topic/5327/sync-private-icloud-calendar-with-magicmirror/50?page=1) are instructions how to sync with `iCal`.
+For example, in
+[this forum thread](https://forum.magicmirror.builders/topic/5327/sync-private-icloud-calendar-with-magicmirror/50?page=1)
+are instructions how to sync with `iCal`.
 
 ### Two-way Syncing
 
@@ -148,25 +152,39 @@ Here are some various projects that can be used to sync your calendars into one.
 
 ### Office 365 Calendar Support
 
-Office 365 calendars create date formats that are incompatible with MM2.
-Here are the instructions to fix it:
+Office 365 calendars create date formats that are incompatible with MM2. Here
+are the instructions to fix it:
 
-1. Import your Office 365 calendar into a Google Calendar. This will take care of all the previous events of your calendar.
-2. Go to [Microsoft Flow](https://flow.microsoft.com) and setup a Flow trigger that will create a new event in your Google Calendar whenever an event in Office 365 is created. [Here is a guide to help with this task.](https://shift.newco.co/sync-your-calendars-using-microsoft-flow-and-yes-google-calendar-works-too-a28be5a604dd)
-3. Go to Google Calendar and create a private address to use in the calendar module for your Magic Mirror.
+1. Import your Office 365 calendar into a Google Calendar. This will take care
+   of all the previous events of your calendar.
+2. Go to [Microsoft Flow](https://flow.microsoft.com) and setup a Flow trigger
+   that will create a new event in your Google Calendar whenever an event in
+   Office 365 is created.
+   [Here is a guide to help with this task.](https://shift.newco.co/sync-your-calendars-using-microsoft-flow-and-yes-google-calendar-works-too-a28be5a604dd)
+3. Go to Google Calendar and create a private address to use in the calendar
+   module for your Magic Mirror.
 
-This trigger will run every 5 minutes. Make sure to give it time after you create a new event in Office 365 to appear in Google Calendar. Past events will NOT be created using Flow; to do this, follow step 1 to import your calendar into Google Calendar.
+This trigger will run every 5 minutes. Make sure to give it time after you
+create a new event in Office 365 to appear in Google Calendar. Past events will
+NOT be created using Flow; to do this, follow step 1 to import your calendar
+into Google Calendar.
 
 ## Manually fetching calendar
 
-The calendar automatically updates every so or so interval (specified in the config). It is possible to manually fetch updates from the calendar through socket notifications.
+The calendar automatically updates every so or so interval (specified in the
+config). It is possible to manually fetch updates from the calendar through
+socket notifications.
 
-The calendar subscribes to socket notification `FETCH_CALENDAR` and expects a payload containing the _url_ to the calendar in which to update.
+The calendar subscribes to socket notification `FETCH_CALENDAR` and expects a
+payload containing the _url_ to the calendar in which to update.
 
-Socket notifications can be accessed through `this.io` from any MagicMirror `node_helper`. _(See example)_
+Socket notifications can be accessed through `this.io` from any MagicMirror
+`node_helper`. _(See example)_
 
 ```javascript
 this.io.of("calendar").emit("FETCH_CALENDAR", { url: "http://url.to.cal" });
 ```
 
-It is even possible to access the socket notifications from outside of MagicMirror. An example can be seen and implemented in @oenstrom s [MMM-mycroft-bridge](https://github.com/oenstrom/MMM-mycroft-bridge).
+It is even possible to access the socket notifications from outside of
+MagicMirror. An example can be seen and implemented in @oenstrom s
+[MMM-mycroft-bridge](https://github.com/oenstrom/MMM-mycroft-bridge).

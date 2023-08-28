@@ -1,7 +1,7 @@
 # Compliments
 
-The `compliments` module is one of the default modules of the MagicMirror.
-This module displays a random compliment.
+The `compliments` module is one of the default modules of the MagicMirror. This
+module displays a random compliment.
 
 ## Screenshots
 
@@ -43,13 +43,20 @@ The following properties can be configured:
 | `afternoonStartTime` | Time in hours (in 24 format), after which the mode "afternoon" will begin <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                |
 | `afternoonEndTime`   | Time in hours (in 24 format), after which the mode "afternoon" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `17`                                                                                                                                                                                                                                                                  |
 
-All the rest of the time that does not fall into the morningStartTime-morningEndTime and afternoonStartTime-afternoonEndTime ranges is considered "evening".
+All the rest of the time that does not fall into the
+morningStartTime-morningEndTime and afternoonStartTime-afternoonEndTime ranges
+is considered "evening".
 
 ### Compliment configuration
 
-The `compliments` property contains an object with at least four arrays: <code>morning</code>, <code>afternoon</code>, <code>evening</code> and <code>anytime</code>. Based on the time of the day, the compliments will be picked out of one of these arrays. The arrays contain one or multiple compliments.
+The `compliments` property contains an object with at least four arrays:
+<code>morning</code>, <code>afternoon</code>, <code>evening</code> and
+<code>anytime</code>. Based on the time of the day, the compliments will be
+picked out of one of these arrays. The arrays contain one or multiple
+compliments.
 
-Compliments can be set for a specific day in the format `YYYY-MM-DD`. `.` can be used as a wildcard.
+Compliments can be set for a specific day in the format `YYYY-MM-DD`. `.` can be
+used as a wildcard.
 
 If set, the weather can be used for compliments. The available properties are:
 
@@ -136,7 +143,8 @@ config: {
 
 #### Multi-line compliments:
 
-Use `\n` to split compliment text into multiple lines, e.g. `First line.\nSecond line.` will be shown as:
+Use `\n` to split compliment text into multiple lines, e.g.
+`First line.\nSecond line.` will be shown as:
 
 ```
 First line.
@@ -145,12 +153,14 @@ Second line.
 
 ### External Compliment File
 
-You may specify an external file that contains the three compliment arrays. This is particularly useful if you have a
-large number of compliments and do not wish to crowd your `config.js` file with a large array of compliments.
-Adding the `remoteFile` variable will override an array you specify in the configuration file.
+You may specify an external file that contains the three compliment arrays. This
+is particularly useful if you have a large number of compliments and do not wish
+to crowd your `config.js` file with a large array of compliments. Adding the
+`remoteFile` variable will override an array you specify in the configuration
+file.
 
-This file must be straight JSON. Note that the array names need quotes
-around them ("morning", "afternoon", "evening", "snow", "rain", etc.).
+This file must be straight JSON. Note that the array names need quotes around
+them ("morning", "afternoon", "evening", "snow", "rain", etc.).
 
 #### Example config/config.js of a Compliment File hosted on GitHub
 

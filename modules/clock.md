@@ -1,12 +1,11 @@
 # Clock
 
-The `clock` module is one of the default modules of the MagicMirror.
-This module displays the current date and time. The information will be updated realtime.
+The `clock` module is one of the default modules of the MagicMirror. This module
+displays the current date and time. The information will be updated realtime.
 
 ## Screenshot
 
-- Current time
-  ![Current time](./screenshots/clock_screenshot.png)
+- Current time ![Current time](./screenshots/clock_screenshot.png)
 
 ## Using the module
 
@@ -55,7 +54,9 @@ The following properties can be configured:
 
 ## Notifications
 
-The clock makes use of the built-in [Notification Mechanism](https://github.com/michMich/MagicMirror/wiki/notifications) to relay notifications to all modules.
+The clock makes use of the built-in
+[Notification Mechanism](https://github.com/michMich/MagicMirror/wiki/notifications)
+to relay notifications to all modules.
 
 Current notifications are:
 

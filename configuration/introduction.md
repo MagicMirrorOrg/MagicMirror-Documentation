@@ -2,8 +2,10 @@
 
 ### Configuring your MagicMirror
 
-1. Copy `/home/pi/MagicMirror/config/config.js.sample` to `/home/pi/MagicMirror/config/config.js`. \
-   **Note:** If you used a third-party installer script, this step may already have been done for you.
+1. Copy `/home/pi/MagicMirror/config/config.js.sample` to
+   `/home/pi/MagicMirror/config/config.js`. \
+   **Note:** If you used a third-party installer script, this step may already have
+   been done for you.
 
 2. Modify your required settings. \
    **Note:** You can check your configuration running `npm run config:check` in `/home/pi/MagicMirror`.
@@ -26,11 +28,20 @@ The following properties can be configured:
 
 ### Environment variables
 
-As the `config.js` is javascript code there is no direct way to provide environment variables. This feature was requested by some users, e.g. with environment variables it is easier to share the configuration with others (otherwise you have to delete all private data as e.g. api keys). There was a longer [discussion on github](https://github.com/MichMich/MagicMirror/issues/1756) where you can read the full story.
+As the `config.js` is javascript code there is no direct way to provide
+environment variables. This feature was requested by some users, e.g. with
+environment variables it is easier to share the configuration with others
+(otherwise you have to delete all private data as e.g. api keys). There was a
+longer
+[discussion on github](https://github.com/MichMich/MagicMirror/issues/1756)
+where you can read the full story.
 
 #### `config.js` and `config.js.template`
 
-You can provide a `config.js.template` instead of a `config.js` file. The difference is, that you can use environment variables in the `config.js.template`. When starting MagicMirror² a `config.js` is created from `config.js.template` and the variables are resolved.
+You can provide a `config.js.template` instead of a `config.js` file. The
+difference is, that you can use environment variables in the
+`config.js.template`. When starting MagicMirror² a `config.js` is created from
+`config.js.template` and the variables are resolved.
 
 Variables must be inserted as `${MY_VARIABLE}`, examples:
 
@@ -64,11 +75,13 @@ if (typeof module !== "undefined") {
 
 #### Providing environment variables
 
-There are 2 ways for declaring them, you can mix both. If a variable is declared in both ways the one declared as linux environment variable is used.
+There are 2 ways for declaring them, you can mix both. If a variable is declared
+in both ways the one declared as linux environment variable is used.
 
 ##### Using a `config.env` file
 
-This file must be in the same folder as the `config.js.template` and contains the variables, example from above:
+This file must be in the same folder as the `config.js.template` and contains
+the variables, example from above:
 
 File content of `config.env`:
 

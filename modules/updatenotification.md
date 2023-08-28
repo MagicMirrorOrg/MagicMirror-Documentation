@@ -1,7 +1,8 @@
 # Update Notification
 
-The `updatenotification` module is one of the default modules of the MagicMirror.
-This will display a message whenever a new version of the MagicMirror application is available.
+The `updatenotification` module is one of the default modules of the
+MagicMirror. This will display a message whenever a new version of the
+MagicMirror application is available.
 
 ## Using the module
 

@@ -1,10 +1,14 @@
 # Autostart your MagicMirror
 
-The methods below describe ways to automatically start your MagicMirror on boot, and even ways to keep it running in case of a failure.
+The methods below describe ways to automatically start your MagicMirror on boot,
+and even ways to keep it running in case of a failure.
 
 ## Using PM2
 
-PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks. In this case we will use it to keep a shell script running.
+PM2 is a production process manager for Node.js applications with a built-in
+load balancer. It allows you to keep applications alive forever, to reload them
+without downtime and to facilitate common system admin tasks. In this case we
+will use it to keep a shell script running.
 
 ### Install PM2
 
@@ -16,7 +20,8 @@ sudo npm install -g pm2
 
 ### Starting PM2 on Boot
 
-To make sure PM2 can do its job when (re)booting your operating system, it needs to be started on boot. Luckily, PM2 has a handy helper for this.
+To make sure PM2 can do its job when (re)booting your operating system, it needs
+to be started on boot. Luckily, PM2 has a handy helper for this.
 
 ```shell
 pm2 startup
@@ -26,7 +31,9 @@ PM2 will now show you a command you need to execute.
 
 ### Make a MagicMirror start script.
 
-To use PM2 in combination with MagicMirror, we need to make a simple shell script. Preferable, we put this script outside the MagicMirror folder to make sure it won't give us any issues if we want to upgrade the mirror.
+To use PM2 in combination with MagicMirror, we need to make a simple shell
+script. Preferable, we put this script outside the MagicMirror folder to make
+sure it won't give us any issues if we want to upgrade the mirror.
 
 ```shell
 cd ~
@@ -40,8 +47,8 @@ cd ./MagicMirror
 DISPLAY=:0 npm start
 ```
 
-Save and close, using the commands `CTRL-O` and `CTRL-X`.
-Now make sure the shell script is executable by performing the following command:
+Save and close, using the commands `CTRL-O` and `CTRL-X`. Now make sure the
+shell script is executable by performing the following command:
 
 ```shell
 chmod +x mm.sh
@@ -61,13 +68,16 @@ You mirror should now boot up and appear on your screen after a few seconds.
 
 ### Enable restarting of the MagicMirror script.
 
-To make sure the MagicMirror restarts after rebooting, you need to save the current state of all scripts running via PM2. To do this, execute the following command
+To make sure the MagicMirror restarts after rebooting, you need to save the
+current state of all scripts running via PM2. To do this, execute the following
+command
 
 ```shell
 pm2 save
 ```
 
-And that's all there is! You MagicMirror should now reboot after start, and restart after any failure.
+And that's all there is! You MagicMirror should now reboot after start, and
+restart after any failure.
 
 ### Controlling you MagicMirror via PM2.
 
@@ -99,19 +109,29 @@ pm2 show mm
 
 ## Using systemd/systemctl
 
-Note: Systemctl is a control interface for systemd, a powerful service manager often found in full Linux systems. This approach is most like only applicable for those using the "server only" setup running on a linux server.
+Note: Systemctl is a control interface for systemd, a powerful service manager
+often found in full Linux systems. This approach is most like only applicable
+for those using the "server only" setup running on a linux server.
 
 ### Create service file
 
-To start, you'll need to create a config file via your editor of choice (nano used in these examples):
+To start, you'll need to create a config file via your editor of choice (nano
+used in these examples):
 
 ```shell
 sudo nano /etc/systemd/system/magicmirror.service
 ```
 
-Place the below text into your new file, modify as needed (see notes below) then save & exit.
-Notes:
-The example assumes your Magic Mirror is installed in the "WorkingDirectory" of "/home/server/MagicMirror/" and your node install is located at "/usr/bin/node" (run `which node` if you're unsure where to find node) this means your full manual start command would be "/usr/bin/node /home/server/MagicMirror/serveronly". While you almost certainly don't type this all out when you run manually, systemctl requires full paths. This example also assumes you have an existing Linux user of "server", but any user will do. "root" will certainly work but has the potential to do more damage, so you should avoid it if possible.
+Place the below text into your new file, modify as needed (see notes below) then
+save & exit. Notes: The example assumes your Magic Mirror is installed in the
+"WorkingDirectory" of "/home/server/MagicMirror/" and your node install is
+located at "/usr/bin/node" (run `which node` if you're unsure where to find
+node) this means your full manual start command would be "/usr/bin/node
+/home/server/MagicMirror/serveronly". While you almost certainly don't type this
+all out when you run manually, systemctl requires full paths. This example also
+assumes you have an existing Linux user of "server", but any user will do.
+"root" will certainly work but has the potential to do more damage, so you
+should avoid it if possible.
 
 ```
 [Unit]
@@ -133,9 +153,12 @@ WantedBy=multi-user.target
 
 ### Control MM with systemctl
 
-Now try starting MM with the commands below. If start is successful work, use the 'enable' command below to automatically start when MM fails or is rebooted. If MM does not start, use the "status" command below to see most recent errors.
+Now try starting MM with the commands below. If start is successful work, use
+the 'enable' command below to automatically start when MM fails or is rebooted.
+If MM does not start, use the "status" command below to see most recent errors.
 
-Note: For any of the below commands 'magicmirror.service' can be replaced with `magicmirror` as systemd will automatically look for `\*.service`
+Note: For any of the below commands 'magicmirror.service' can be replaced with
+`magicmirror` as systemd will automatically look for `\*.service`
 
 #### Start MM with systemctl
 
@@ -171,7 +194,8 @@ sudo systemctl disable magicmirror.service
 
 ### Autostart browser for server mode
 
-Create file `/home/server/.config/lxsession/LXDE-pi/autostart` with the following contents:
+Create file `/home/server/.config/lxsession/LXDE-pi/autostart` with the
+following contents:
 
 ```
 @lxpanel --profile LXDE-pi
