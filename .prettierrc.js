@@ -1,13 +1,6 @@
-{
-}
-
-/** @type import("prettier").Options */
-const config = {
+module.exports = {
   ...require("prettier-config-vuepress"),
+  proseWrap: "always",
+  singleQuote: false,
+  semi: true,
 };
-
-config.proseWrap = "always";
-config.singleQuote = false;
-config.semi = true;
-
-module.exports = config;
