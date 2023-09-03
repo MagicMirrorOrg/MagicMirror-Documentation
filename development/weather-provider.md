@@ -29,7 +29,8 @@ metric units:
 Some weather APIs already deliver their data in those units.
 
 If that is not the case you can use helper methods from the `weatherutils.js`
-class to convert the data. :::
+class to convert the data.
+:::
 
 #### `fetchCurrentWeather()`
 
