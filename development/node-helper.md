@@ -154,10 +154,6 @@ If you want to send a notification to your module, use the
 `sendSocketNotification(notification, payload)`.<br>
 Only the module of your module type will receive the socket notification.
 
-::: tip
-`sendSocketNotification` sends a notification from the helper to all the instances of your module.
-:::
-
 **Note:** Since all instances of your module will receive the notifications,
 it's your task to make sure the right module responds to your messages.
 
@@ -166,6 +162,10 @@ it's your task to make sure the right module responds to your messages.
 ```javascript
 this.sendSocketNotification("SET_CONFIG", this.config);
 ```
+
+::: warning Reminder
+`sendSocketNotification` sends a notification from the helper to all the instances of your module.
+:::
 
 ## Using native node modules in your node_helper
 
