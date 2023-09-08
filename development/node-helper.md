@@ -148,7 +148,7 @@ module.
 ### `this.sendSocketNotification(notification, payload)`
 
 **_notification_ String** - The notification identifier.<br>
-**_payload_AnyType** - Optional. A notification payload.<br>
+**_payload_AnyType** - Optional. A notification payload.
 
 If you want to send a notification to your module, use the
 `sendSocketNotification(notification, payload)`.<br>
