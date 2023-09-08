@@ -229,7 +229,7 @@ will return the user's configured header.
 If you want to use the original user's configured header, reference
 `this.data.header`.
 
-**NOTE:** If the user did not configure a default header, no header will be
+**Note:** If the user did not configure a default header, no header will be
 displayed and thus this method will not be called.
 
 **Example:**
@@ -348,7 +348,7 @@ start: function() {
 ### `this.sendNotification(notification, payload)`
 
 **_notification_ String** - The notification identifier.<br>
-**_payload_AnyType** - Optional. A notification payload.
+**_payload_ AnyType** - Optional. A notification payload.
 
 If you want to send a notification to all other modules, use the
 `sendNotification(notification, payload)`. All other modules will receive the
@@ -366,7 +366,7 @@ this.sendNotification("MYMODULE_READY_FOR_ACTION", { foo: bar });
 ### `this.sendSocketNotification(notification, payload)`
 
 **_notification_ String** - The notification identifier.<br>
-**_payload_AnyType** - Optional. A notification payload.
+**_payload_ AnyType** - Optional. A notification payload.
 
 If you want to send a notification to the node_helper, use the
 `sendSocketNotification(notification, payload)`. Only the node_helper of this
