@@ -11,7 +11,9 @@ see [configuration](/configuration/introduction.md) for more information.
 | `header`          | To display a header text above the module, add the header property. This field is optional.                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `hiddenOnStartup` | Set module as being hidden on startup. This field is optional.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `disabled`        | Set disabled to `true` to skip creating the module. This field is optional.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `configDeepMerge` | allow to merge with internal configuration in deep (Array and/with object). This field is optional (on developer choice generaly).                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `configDeepMerge` | Allow to merge with internal configuration in deep (Array and/with object). This field is optional (on developer choice generaly).                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `animateIn`       | Special animate name when a module appears (see below) This field is optional.                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `animateOut`      | Special animates name when a module should hide (see below) This field is optional.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `config`          | An object with the module configuration properties. Check the documentation of the module for more information. This field is optional, unless the module requires extra configuration.                                                                                                                                                                                                                                                                                                                                            |
 
 ## Example
@@ -60,3 +62,149 @@ Missing are the fullscreen_below and fullscreen_above as those cover the whole
 screen, one under everything else and the other above.
 
 All these regions will resize as needed.
+
+## Animates
+
+Animated feature allows to define an animation to a module
+
+- `animateIn`: When module appears
+- `animateOut`: when module should hide
+
+::: tip
+Just check the [animate.css](https://animate.style/) library to see a preview of the animation name result
+:::
+
+### animateIn
+
+Special animation available:
+
+- bounce
+- flash
+- pulse
+- rubberBand
+- shakeX
+- shakeY
+- headShake
+- swing
+- tada
+- wobble
+- jello
+- heartBeat
+- backInDown
+- backInLeft
+- backInRight
+- backInUp
+- bounceIn
+- bounceInDown
+- bounceInLeft
+- bounceInRight
+- bounceInUp
+- fadeIn
+- fadeInDown
+- fadeInDownBig
+- fadeInLeft
+- fadeInLeftBig
+- fadeInRight
+- fadeInRightBig
+- fadeInUp
+- fadeInUpBig
+- fadeInTopLeft
+- fadeInTopRight
+- fadeInBottomLeft
+- fadeInBottomRight
+- flip
+- flipInX
+- flipInY
+- lightSpeedInRight
+- lightSpeedInLeft
+- rotateIn
+- rotateInDownLeft
+- rotateInDownRight
+- rotateInUpLeft
+- rotateInUpRight
+- jackInTheBox
+- rollIn
+- zoomIn
+- zoomInDown
+- zoomInLeft
+- zoomInRight
+- zoomInUp
+- slideInDown
+- slideInLeft
+- slideInRight
+- slideInUp
+
+### animateIn
+
+Special animation available:
+
+- backOutDown
+- backOutLeft
+- backOutRight
+- backOutUp
+- bounceOut
+- bounceOutDown
+- bounceOutLeft
+- bounceOutRight
+- bounceOutUp
+- fadeOut
+- fadeOutDown
+- fadeOutDownBig
+- fadeOutLeft
+- fadeOutLeftBig
+- fadeOutRight
+- fadeOutRightBig
+- fadeOutUp
+- fadeOutUpBig
+- fadeOutTopLeft
+- fadeOutTopRight
+- fadeOutBottomRight
+- fadeOutBottomLeft
+- flipOutX
+- flipOutY
+- lightSpeedOutRight
+- lightSpeedOutLeft
+- rotateOut
+- rotateOutDownLeft
+- rotateOutDownRight
+- rotateOutUpLeft
+- rotateOutUpRight
+- hinge
+- rollOut
+- zoomOut
+- zoomOutDown
+- zoomOutLeft
+- zoomOutRight
+- zoomOutUp
+- slideOutDown
+- slideOutLeft
+- slideOutRight
+- slideOutUp
+
+### Example with `newsfeed` module
+
+For this example, news will come from the left (`slideInLeft` animation), wait in the middle, and exit from the right (`slideOutRight` animation)
+
+![animateCSS](./screenshots/animate.webp)
+
+```javascript
+{
+  module: "newsfeed",
+  position: "bottom_bar",
+  animateIn: "slideInLeft",
+  animateOut: "slideOutRight",
+  config: {
+    feeds: [
+      {
+        title: "New York Times",
+        url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+      }
+    ],
+    showSourceTitle: true,
+    showPublishDate: true,
+    broadcastNewsFeeds: true,
+    broadcastNewsUpdates: true
+  }
+},
+```
+
