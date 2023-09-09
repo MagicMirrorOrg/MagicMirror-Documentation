@@ -283,7 +283,8 @@ When this module is called, it has 2 arguments:
 - `payload` - AnyType - The payload of a notification.
 
 **Note 1:** When a node helper sends a notification, all modules of that module
-type receive the same notifications. <br> **Note 2:** The socket connection is
+type receive the same notifications.<br>
+**Note 2:** The socket connection is
 established as soon as the module sends its first message using
 [sendSocketNotification](#this-sendsocketnotification-notification-payload).
 
@@ -315,7 +316,8 @@ module.
 ### `this.file(filename)`
 
 **_filename_ String** - The name of the file you want to create the path
-for.<br> **Returns String**
+for.<br>
+**Returns String**
 
 If you want to create a path to a file in your module folder, use the `file()`
 method. It returns the path to the filename given as the attribute. Is method
@@ -345,8 +347,8 @@ start: function() {
 
 ### `this.sendNotification(notification, payload)`
 
-**_notification_ String** - The notification identifier.<br> **_payload_
-AnyType** - Optional. A notification payload.<br>
+**_notification_ String** - The notification identifier.<br>
+**_payload_AnyType** - Optional. A notification payload.
 
 If you want to send a notification to all other modules, use the
 `sendNotification(notification, payload)`. All other modules will receive the
@@ -363,8 +365,8 @@ this.sendNotification("MYMODULE_READY_FOR_ACTION", { foo: bar });
 
 ### `this.sendSocketNotification(notification, payload)`
 
-**_notification_ String** - The notification identifier.<br> **_payload_
-AnyType** - Optional. A notification payload.<br>
+**_notification_ String** - The notification identifier.<br>
+**_payload_AnyType** - Optional. A notification payload.
 
 If you want to send a notification to the node_helper, use the
 `sendSocketNotification(notification, payload)`. Only the node_helper of this
@@ -379,9 +381,9 @@ this.sendSocketNotification("SET_CONFIG", this.config);
 ### `this.hide(speed, callback, options)`
 
 **_speed_ Number** - Optional (Required when setting callback or options), The
-speed of the hide animation in milliseconds. **_callback_ Function** - Optional,
-The callback after the hide animation is finished. **_options_ Function** -
-Optional, Object with additional options for the hide action (see below).
+speed of the hide animation in milliseconds.<br>
+**_callback_ Function** - Optional, The callback after the hide animation is finished.<br>
+**_options_ Function** - Optional, Object with additional options for the hide action (see below).
 (_Introduced in version: 2.1.0._)
 
 To hide a module, you can call the `hide(speed, callback)` method. You can call
@@ -398,18 +400,17 @@ Possible configurable options:
 
 **Note 1:** If the hide animation is cancelled, for instance because the show
 method is called before the hide animation was finished, the callback will not
-be called.<br> **Note 2:** If the hide animation is hijacked (an other method
-calls hide on the same module), the callback will not be called.<br> **Note 3:**
-If the dom is not yet created, the hide method won't work. Wait for the
+be called.<br>
+**Note 2:** If the hide animation is hijacked (an other method calls hide on the same module),the callback will not be called.<br>
+**Note 3:** If the dom is not yet created, the hide method won't work. Wait for the
 `DOM_OBJECTS_CREATED`
 [notification](#notificationreceived-notification-payload-sender).
 
 ### `this.show(speed, callback, options)`
 
-**_speed_ Number** - Optional (Required when setting callback or options), The
-speed of the show animation in milliseconds. **_callback_ Function** - Optional,
-The callback after the show animation is finished. **_options_ Function** -
-Optional, Object with additional options for the show action (see below).
+**_speed_ Number** - Optional (Required when setting callback or options), The speed of the show animation in milliseconds.<br>
+**_callback_ Function** - Optional, The callback after the show animation is finished.<br>
+**_options_ Function** - Optional, Object with additional options for the show action (see below).
 (_Introduced in version: 2.1.0._)
 
 To show a module, you can call the `show(speed, callback)` method. You can call
@@ -431,9 +432,10 @@ Possible configurable options:
 
 **Note 1:** If the show animation is canceled, for instance because the hide
 method is called before the show animation was finished, the callback will not
-be called.<br> **Note 2:** If the show animation is hijacked (an other method
-calls show on the same module), the callback will not be called.<br> **Note 3:**
-If the dom is not yet created, the show method won't work. Wait for the
+be called.<br>
+**Note 2:** If the show animation is hijacked (an other method
+calls show on the same module), the callback will not be called.<br>
+**Note 3:** If the dom is not yet created, the show method won't work. Wait for the
 `DOM_OBJECTS_CREATED`
 [notification](#notificationreceived-notification-payload-sender).
 
@@ -559,7 +561,7 @@ Comments in translation files could help other translators.
 
 #### `this.translate(identifier, variables)`
 
-**_identifier_ String** - Identifier of the string that should be translated.
+**_identifier_ String** - Identifier of the string that should be translated.<br>
 **_variables_ Object** - Object of variables to be used in translation.
 
 This improved and backwards compatible way to handle translations behaves like
