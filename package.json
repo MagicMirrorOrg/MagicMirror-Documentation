@@ -12,6 +12,7 @@
     "start": "npm run docs:dev",
     "docs:dev": "vuepress dev .",
     "docs:build": "vuepress build .",
+    "local:dev": "NODE_OPTIONS=--openssl-legacy-provider npm start",
     "check": "vuepress check-md .",
     "lint": "prettier . --write"
   }
