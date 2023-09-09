@@ -68,9 +68,9 @@ All these regions will resize as needed.
 Animated feature allows to define an animation to a module
 
 - `animateIn`: When module appears
-- `animateOut`: when module should hide
+- `animateOut`: When module should hide
 
-::: tip
+::: tip Preview of animates
 Just check the [animate.css](https://animate.style/) library to see a preview of the animation name result
 :::
 
@@ -185,7 +185,7 @@ Special animation available:
 
 For this example, news will come from the left (`slideInLeft` animation), wait in the middle, and exit from the right (`slideOutRight` animation)
 
-![animateCSS](./screenshots/animate.webp)
+![animateCSS](./screenshots/animate.gif)
 
 ```javascript
 {
@@ -207,4 +207,3 @@ For this example, news will come from the left (`slideInLeft` animation), wait i
   }
 },
 ```
-
