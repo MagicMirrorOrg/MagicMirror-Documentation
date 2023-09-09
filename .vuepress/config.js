@@ -85,7 +85,7 @@ module.exports = {
     repoLabel: "GitHub",
 
     docsRepo: "MichMich/MagicMirror-Documentation",
-    docsBranch: "master",
+    docsBranch: "develop",
     editLinks: true,
     editLinkText: "Help us improve this page!",
     lastUpdated: "Updated",
