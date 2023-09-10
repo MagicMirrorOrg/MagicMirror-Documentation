@@ -30,4 +30,5 @@ Raspberry Pi OS versions based on Debian "Stretch" are also no longer supported.
 
 ## Node
 
-Although older version of Node might work, we suggest you use Node 18.
+Node 18 is required, all older versions have reached end of life and will not
+work.
