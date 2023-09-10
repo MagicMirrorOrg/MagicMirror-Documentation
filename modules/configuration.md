@@ -63,123 +63,19 @@ screen, one under everything else and the other above.
 
 All these regions will resize as needed.
 
-## Animates
+## Animated
+(_Introduced in version: 2.25.0_)
 
 Animated feature allows to define an animation to a module
 
 - `animateIn`: When module appears
 - `animateOut`: When module should hide
 
-::: tip Preview of animates
-Just check the [animate.css](https://animate.style/) library to see a preview of the animation name result
+The whole of animation names are available [there](./animate).
+
+::: tip Preview of animations
+- check the [animate.css](https://animate.style/) library to see a preview of the animation name result
 :::
-
-### animateIn
-
-Special animation available:
-
-- bounce
-- flash
-- pulse
-- rubberBand
-- shakeX
-- shakeY
-- headShake
-- swing
-- tada
-- wobble
-- jello
-- heartBeat
-- backInDown
-- backInLeft
-- backInRight
-- backInUp
-- bounceIn
-- bounceInDown
-- bounceInLeft
-- bounceInRight
-- bounceInUp
-- fadeIn
-- fadeInDown
-- fadeInDownBig
-- fadeInLeft
-- fadeInLeftBig
-- fadeInRight
-- fadeInRightBig
-- fadeInUp
-- fadeInUpBig
-- fadeInTopLeft
-- fadeInTopRight
-- fadeInBottomLeft
-- fadeInBottomRight
-- flip
-- flipInX
-- flipInY
-- lightSpeedInRight
-- lightSpeedInLeft
-- rotateIn
-- rotateInDownLeft
-- rotateInDownRight
-- rotateInUpLeft
-- rotateInUpRight
-- jackInTheBox
-- rollIn
-- zoomIn
-- zoomInDown
-- zoomInLeft
-- zoomInRight
-- zoomInUp
-- slideInDown
-- slideInLeft
-- slideInRight
-- slideInUp
-
-### animateIn
-
-Special animation available:
-
-- backOutDown
-- backOutLeft
-- backOutRight
-- backOutUp
-- bounceOut
-- bounceOutDown
-- bounceOutLeft
-- bounceOutRight
-- bounceOutUp
-- fadeOut
-- fadeOutDown
-- fadeOutDownBig
-- fadeOutLeft
-- fadeOutLeftBig
-- fadeOutRight
-- fadeOutRightBig
-- fadeOutUp
-- fadeOutUpBig
-- fadeOutTopLeft
-- fadeOutTopRight
-- fadeOutBottomRight
-- fadeOutBottomLeft
-- flipOutX
-- flipOutY
-- lightSpeedOutRight
-- lightSpeedOutLeft
-- rotateOut
-- rotateOutDownLeft
-- rotateOutDownRight
-- rotateOutUpLeft
-- rotateOutUpRight
-- hinge
-- rollOut
-- zoomOut
-- zoomOutDown
-- zoomOutLeft
-- zoomOutRight
-- zoomOutUp
-- slideOutDown
-- slideOutLeft
-- slideOutRight
-- slideOutUp
 
 ### Example with `newsfeed` module
 
