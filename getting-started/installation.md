@@ -161,9 +161,9 @@ let config = {
 This is when you already have a server running remotely and want your RPi to
 connect as a standalone client to this instance, to show the MM from the server.
 
-Follow the installation steps above, but dont start the application
+Follow the installation steps above, but dont start the application.
 
-You can start MagicMirror² in client mode by manually running the following command with the MagicMirror directory
+You can start MagicMirror² in client mode by manually running the following command with the MagicMirror directory:
 `node clientonly --address 192.168.1.5 --port 8080`
 
 If you want to allways start MagicMirror² in client mode after a reboot:
