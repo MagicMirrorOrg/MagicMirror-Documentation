@@ -14,7 +14,7 @@ installers can be found under:
 
 ## Manual Installation
 
-These instructions deploy a standalone version of Magic Mirror, for server and client installs please read the install specific instructions below
+These instructions deploy a standalone version of Magic Mirror, for [server](https://docs.magicmirror.builders/getting-started/installation.html#server-only) and [client](https://docs.magicmirror.builders/getting-started/installation.html#client-only) installs please read the install specific instructions below
 
 1. Download and install the latest _Node.js_ version:
 
