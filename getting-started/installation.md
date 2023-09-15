@@ -148,26 +148,12 @@ let config = {
 This is when you already have a server running remotely and want your RPi to
 connect as a standalone client to this instance, to show the MM from the server.
 
-1. Download and install the latest _Node.js_ version:
+Follow the installation steps above, but dont start the application
 
-- `curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -`
-- `sudo apt install -y nodejs`
-
-2. Clone the repository and check out the master branch:
-   `git clone https://github.com/MichMich/MagicMirror`
-3. Enter the repository: `cd MagicMirror/`
-4. Install the application: `npm run install-mm`
-5. Backup package.json: `cp package.json package.json.bak`
-6. Edit package.jons: `nano package.json`
-7. Replace
-   `"start": "DISPLAY="${DISPLAY:=:0}" ./node_modules/.bin/electron js/electron.js",`
+1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
+2. Edit mm.sh: `nano mm.sh`
+3. Replace
+   `DISPLAY=:0 npm start`
    with
-   `"start": "node ./clientonly --address 192.168.1.5 --port 8080",` (Specify the ip address and
-port number of the server)
-9. Start the application: `npm run start` \
-
-::: warning NOTE The installation step for `npm run install-mm` will take a very
-long time, often with little or no terminal response! For the RPi3 this is
-**~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk
-getting a :broken_heart: by Raspberry Jam.
-:::
+   `DISPLAY=:0 node clientonly --address 192.168.1.5 --port 8080` (Specify the ip address and port number of the server)
+4. Start the application: `./installers/mm.sh` \
