@@ -14,7 +14,7 @@ installers can be found under:
 
 ## Manual Installation
 
-These instructions deploy a standalone version of Magic Mirror, for [server](https://docs.magicmirror.builders/getting-started/installation.html#server-only) and [client](https://docs.magicmirror.builders/getting-started/installation.html#client-only) installs please read the install specific instructions below
+These instructions deploy a standalone version of Magic Mirror, for [Server Only](https://docs.magicmirror.builders/getting-started/installation.html#server-only) and [Client Only](https://docs.magicmirror.builders/getting-started/installation.html#client-only) installs please read the install specific instructions below
 
 1. Download and install the latest _Node.js_ version:
 
@@ -123,9 +123,22 @@ Note the following:
 ### Server Only
 
 In some cases, you want to start the application without an actual app window.
-In this case, you can start MagicMirror² in server only mode by manually running
-`npm run server`. This will start the server, after which you can open the
-application in your browser of choice. Detailed description below.
+
+Follow the installation steps above, but dont start the application
+
+You can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
+`npm run server` 
+This will start the server, after which you can open the application in your browser of choice. 
+
+If you want to allways start MagicMirror² in server only mode after a reboot:
+
+1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
+2. Edit mm.sh: `nano mm.sh`
+3. Replace
+   `DISPLAY=:0 npm start`
+   with
+   `DISPLAY=:0 npm server` (Specify the ip address and port number of the server)
+4. Reboot
 
 ::: warning IMPORTANT Make sure that you whitelist the interface/ip
 (`ipWhitelist`) in the server config where you want the client to connect to,
@@ -150,10 +163,17 @@ connect as a standalone client to this instance, to show the MM from the server.
 
 Follow the installation steps above, but dont start the application
 
+You can start MagicMirror² in client mode by manually running the following command with the MagicMirror directory
+`node clientonly --address 192.168.1.5 --port 8080`
+
+If you want to allways start MagicMirror² in client mode after a reboot:
+
 1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
 2. Edit mm.sh: `nano mm.sh`
 3. Replace
    `DISPLAY=:0 npm start`
    with
    `DISPLAY=:0 node clientonly --address 192.168.1.5 --port 8080` (Specify the ip address and port number of the server)
-4. Start the application: `./installers/mm.sh` \
+4. Reboot
+
+The steps above will also convert a standalone MagicMirror² install into client mode and disregard the config file and any local modules.
