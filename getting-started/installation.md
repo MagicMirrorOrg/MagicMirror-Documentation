@@ -27,7 +27,7 @@ These instructions deploy a standalone version of Magic Mirror, for [Server Only
 4. Install the application: `npm run install-mm`
 5. Make a copy of the config sample file:
    `cp config/config.js.sample config/config.js`
-6. Start the application: `npm run start` \
+6. Start the application: `npm run start` 
 
 ::: warning NOTE The installation step for `npm run install-mm` will take a very
 long time, often with little or no terminal response! For the RPi3 this is
