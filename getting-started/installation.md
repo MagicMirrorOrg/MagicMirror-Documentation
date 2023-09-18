@@ -122,9 +122,7 @@ Note the following:
 
 ### Server Only
 
-In some cases, you want to start the application without an actual app window. 
-
-After installation you can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
+In some cases, you want to start the application without an actual app window. To do so after installation you can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
 `npm run server` 
 
 ::: warning IMPORTANT please read the information below on fully setting up MagicMirror² for running in server only mode.
@@ -140,7 +138,7 @@ By default MagicMirror² does not allow other remote devices to connect, this is
 - change address to `0.0.0.0` this will allow MagicMirror² to listen on all network interfaces
 - change `ipWhitelist` to the list of IP's you want to allow to connect
 
-Sample Configuration below [and more config options here](https://docs.magicmirror.builders/configuration/introduction.html#introduction)
+Sample Configuration below [and link to full configuration options](https://docs.magicmirror.builders/configuration/introduction.html#introduction)
 
 ```javascript
 let config = {
@@ -166,7 +164,7 @@ To always start MagicMirror² in server only mode you need to edit the `installe
 ### Client Only
 
 This is when you already have a server running remotely and want your RPi to
-connect as a standalone client to this instance, to show the MM from the server.
+connect as a standalone client to this instance, to show theMagicMirror² from the server.
 
 You can start MagicMirror² in client mode by manually running the following command with the MagicMirror directory:
 `node clientonly --address 192.168.1.5 --port 8080`
