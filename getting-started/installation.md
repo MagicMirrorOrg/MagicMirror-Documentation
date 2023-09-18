@@ -125,7 +125,7 @@ Note the following:
 In some cases, you want to start the application without an actual app window. To do so after installation you can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
 `npm run server` 
 
-::: warning IMPORTANT please read the information below on fully setting up MagicMirror² for running in server only mode.
+::: warning IMPORTANT please read the information below on fully setting up MagicMirror² for running in server only mode otherwise you wont be able to connect to your MagicMirror² server from a remote device
 ::: 
 
 In order to run MagicMirror² in server mode you need to:
