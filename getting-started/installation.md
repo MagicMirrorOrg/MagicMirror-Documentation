@@ -122,13 +122,33 @@ Note the following:
 
 ### Server Only
 
-In some cases, you want to start the application without an actual app window.
+In some cases, you want to start the application without an actual app window. 
 
-Follow the installation steps above, but dont start the application
+After installation you can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
+`npm run server` please read the information below on fully setting up MagicMirror² for running in server only mode.
 
-You can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
-`npm run server` 
-This will start the server, after which you can open the application in your browser of choice. 
+Follow the installation steps above, but dont start the application. In order to run MagicMirror² in server mode you need to:
+- Allow Remote Connections to MagicMirror²
+- Start MagicMirror² in Server mode on boot
+
+#### Allow Remote Connections to MagicMirror²
+
+By default MagicMirror² does not allow other devices to connect, this is controlled by the (`ipWhitelist`) setting inside the config file by interface or ip
+- change address to `0.0.0.0` this will allow MagicMirror² to listen on all network interfaces
+- change `ipWhitelist` to the list of IP you want to allow to connect
+
+Sample Configuration below [and more config options here](https://docs.magicmirror.builders/configuration/introduction.html#introduction)
+
+```javascript
+let config = {
+	address: "0.0.0.0",	// default is "localhost"
+	port: 8080,		// default
+	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:172.17.0.1"], // default -- need to add your IP here
+	...
+};
+```
+
+#### Start MagicMirror² in Server mode on boot
 
 If you want to allways start MagicMirror² in server only mode after a reboot:
 
@@ -140,21 +160,7 @@ If you want to allways start MagicMirror² in server only mode after a reboot:
    `DISPLAY=:0 npm server` (Specify the ip address and port number of the server)
 4. Reboot
 
-::: warning IMPORTANT Make sure that you whitelist the interface/ip
-(`ipWhitelist`) in the server config where you want the client to connect to,
-otherwise it will not be allowed to connect to the server. You also need to set
-the local host `address` field to `0.0.0.0` in order for the RPi to listen on
-all interfaces and not only `localhost` (default).
-:::
 
-```javascript
-let config = {
-	address: "0.0.0.0",	// default is "localhost"
-	port: 8080,		// default
-	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:172.17.0.1"], // default -- need to add your IP here
-	...
-};
-```
 
 ### Client Only
 
