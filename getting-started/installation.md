@@ -154,7 +154,7 @@ let config = {
 To always start MagicMirror² in server only mode you need to edit the `installers/mm.sh` file otherwise it will start in full mode after a reboot:
 
 1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
-2. Edit mm.sh: `nano mm.sh`
+2. Edit mm.sh: `nano mm.sh` (you can use your favorite editor)
 3. Replace
    `DISPLAY=:0 npm start`
    with
@@ -172,7 +172,7 @@ You can start MagicMirror² in client mode by manually running the following com
 To always start MagicMirror² in client mode you need to edit `installers/mm.sh` file otherwise it will start in full mode after a reboot:
 
 1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
-2. Edit mm.sh: `nano mm.sh`
+2. Edit mm.sh: `nano mm.sh` (you can use your favorite editor)
 3. Replace
    `DISPLAY=:0 npm start`
    with
