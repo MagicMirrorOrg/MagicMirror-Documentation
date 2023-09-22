@@ -413,7 +413,7 @@ this.sendSocketNotification("SET_CONFIG", this.config);
 **_speed_ Number** - Optional (Required when setting callback or options), The
 speed of the hide animation in milliseconds.<br>
 **_callback_ Function** - Optional, The callback after the hide animation is finished.<br>
-**_options_ Function** - Optional, Object with additional options for the hide action (see below).
+**_options_ Function** - Optional, Object with additional options for the hide action (see below). (_Introduced in version: 2.1.0._)
 
 To hide a module, you can call the `hide(speed, callback)` method. You can call
 the hide method on the module instance itself using `this.hide()`, but of course
@@ -443,7 +443,7 @@ be called.<br>
 
 **_speed_ Number** - Optional (Required when setting callback or options), The speed of the show animation in milliseconds.<br>
 **_callback_ Function** - Optional, The callback after the show animation is finished.<br>
-**_options_ Function** - Optional, Object with additional options for the show action (see below).
+**_options_ Function** - Optional, Object with additional options for the show action (see below). (_Introduced in version: 2.1.0._)
 
 To show a module, you can call the `show(speed, callback)` method. You can call
 the show method on the module instance itself using `this.show()`, but of course
@@ -460,7 +460,7 @@ Possible configurable options:
   _visibility locking_ below.
 - `onError(error)` - Function - If a module is hidden with other lock strings
   and can therefore not be shown the onError callback triggers with an error
-  object, if specified in the options.
+  object, if specified in the options (_Introduced in version: 2.15.0_).
 - `animate` - String - (_Introduced in version: 2.25.0._) Show the module with a special animation. It will use an `animateIn` type name. All animations name are available in [Animation Guide](../modules/animate.html#animatein)
 
 ::: warning Notes:

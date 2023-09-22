@@ -158,7 +158,7 @@ Sample:
 removeAnimateCSS("myDivSample", "flipInX")
 ```
 
-::: tip Tip: Use case
+::: tip Tip
 :::
 
 You have to update only one element of your module.<br>
