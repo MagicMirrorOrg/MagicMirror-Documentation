@@ -53,6 +53,7 @@ module.exports = {
             ],
           },
           "modules/customcss",
+          "modules/animate"
         ],
       },
       {
