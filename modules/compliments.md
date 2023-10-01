@@ -38,10 +38,10 @@ The following properties can be configured:
 | `compliments`        | The list of compliments. <br><br> **Possible values:** An object with four arrays: `morning`, `afternoon`, `evening` and `anytime`. See _compliment configuration_ below. <br> **Default value:** See _compliment configuration_ below.                                                                                                                                                                        |
 | `remoteFile`         | External file from which to load the compliments <br><br> **Possible values:** Path or URL (starting with `http://` or `https://`) to a JSON file containing compliments, configured as per the value of the _compliments configuration_ (see below). An object with four arrays: `morning`, `afternoon`, `evening` and `anytime`. - `compliments.json` <br> **Default value:** `null` (Do not load from file) |
 | `classes`            | Override the CSS classes of the div showing the compliments <br><br> **Default value:** `thin xlarge bright`                                                                                                                                                                                                                                                                                                   |
-| `morningStartTime`   | Time in hours (in 24 format), after which the mode of "morning" will begin <br> **Possible values:** `0` - `24` <br><br> **Default value:** `3`                                                                                                                                                                                                                                                                |
-| `morningEndTime`     | Time in hours (in 24 format), after which the mode of "morning" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                 |
-| `afternoonStartTime` | Time in hours (in 24 format), after which the mode "afternoon" will begin <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                |
-| `afternoonEndTime`   | Time in hours (in 24 format), after which the mode "afternoon" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `17`                                                                                                                                                                                                                                                                  |
+| `morningStartTime`   | Time in hours (in 24 format), after which the mode of "morning" will begin <br><br> **Possible values:** `0` - `24` <br> **Default value:** `3`                                                                                                                                                                                                                                                                |
+| `morningEndTime`     | Time in hours (in 24 format), after which the mode of "morning" will end <br><br> **Possible values:** `0` - `24` <br> **Default value:** `12`                                                                                                                                                                                                                                                                 |
+| `afternoonStartTime` | Time in hours (in 24 format), after which the mode "afternoon" will begin <br><br> **Possible values:** `0` - `24` <br> **Default value:** `12`                                                                                                                                                                                                                                                                |
+| `afternoonEndTime`   | Time in hours (in 24 format), after which the mode "afternoon" will end <br><br> **Possible values:** `0` - `24` <br> **Default value:** `17`                                                                                                                                                                                                                                                                  |
 
 All the rest of the time that does not fall into the
 morningStartTime-morningEndTime and afternoonStartTime-afternoonEndTime ranges
@@ -80,14 +80,18 @@ If set, the weather can be used for compliments. The available properties are:
 #### Example use with date
 
 ```javascript
-config: {
-	compliments: {
-		"....-01-01": [
-			"Happy new year!"
-		],
-		"....-10-31": [
-			"Happy Halloween!"
-		]
+{
+	module: "compliments",
+	position: "lower_third",
+	config: {
+		compliments: {
+			"....-01-01": [
+				"Happy new year!"
+			],
+			"....-10-31": [
+				"Happy Halloween!"
+			]
+		}
 	}
 }
 ```
@@ -95,18 +99,22 @@ config: {
 #### Example use with weather module
 
 ```javascript
-config: {
-	compliments: {
-		day_sunny: [
-			"Today is a sunny day",
-			"It's a beautiful day"
-		],
-		snow: [
-			"Snowball battle!"
-		],
-		rain: [
-			"Don't forget your umbrella"
-		]
+{
+	module: "compliments",
+	position: "lower_third",
+	config: {
+		compliments: {
+			day_sunny: [
+				"Today is a sunny day",
+				"It's a beautiful day"
+			],
+			snow: [
+				"Snowball battle!"
+			],
+			rain: [
+				"Don't forget your umbrella"
+			]
+		}
 	}
 }
 ```
@@ -114,29 +122,33 @@ config: {
 #### Default value:
 
 ```javascript
-config: {
-	compliments: {
-		anytime: [
-			"Hey there sexy!"
-		],
-		morning: [
-			"Good morning, handsome!",
-			"Enjoy your day!",
-			"How was your sleep?"
-		],
-		afternoon: [
-			"Hello, beauty!",
-			"You look sexy!",
-			"Looking good today!"
-		],
-		evening: [
-			"Wow, you look hot!",
-			"You look nice!",
-			"Hi, sexy!"
-		],
-		"....-01-01": [
-			"Happy new year!"
-		]
+{
+	module: "compliments",
+	position: "lower_third",
+	config: {
+		compliments: {
+			anytime: [
+				"Hey there sexy!"
+			],
+			morning: [
+				"Good morning, handsome!",
+				"Enjoy your day!",
+				"How was your sleep?"
+			],
+			afternoon: [
+				"Hello, beauty!",
+				"You look sexy!",
+				"Looking good today!"
+			],
+			evening: [
+				"Wow, you look hot!",
+				"You look nice!",
+				"Hi, sexy!"
+			],
+			"....-01-01": [
+				"Happy new year!"
+			]
+		}
 	}
 }
 ```
@@ -164,13 +176,13 @@ them ("morning", "afternoon", "evening", "snow", "rain", etc.).
 
 #### Example config/config.js of a Compliment File hosted on GitHub
 
-```
+```javascript
 {
-module: 'compliments',
-position: 'middle_center',
-   config: {
-     remoteFile: 'https://gist.githubusercontent.com/user/e28a69665b8839f6e9a7acd6b4acc97d/raw/be1dee8f805a433f6ee0fa3556d1927da14e7799/compliments.json'
-   }
+	module: 'compliments',
+	position: 'middle_center',
+	config: {
+		remoteFile: 'https://gist.githubusercontent.com/user/e28a69665b8839f6e9a7acd6b4acc97d/raw/be1dee8f805a433f6ee0fa3556d1927da14e7799/compliments.json'
+	}
 },
 
 ```
