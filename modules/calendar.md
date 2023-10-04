@@ -120,11 +120,11 @@ config: {
 
 #### Calendar authentication options:
 
-| Option   | Description                                                                                                                                                                                                                                 |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `user`   | The username for HTTP authentication.                                                                                                                                                                                                       |
-| `pass`   | The password for HTTP authentication. (If you use Bearer authentication, this should be your BearerToken.)                                                                                                                                  |
-| `method` | Which authentication method should be used. HTTP Basic and Bearer authentication methods are supported. Basic authentication is used by default if this option is omitted.**Possible values:** `basic`, `bearer` **Default value:** `basic` |
+| Option   | Description                                                                                                                                                                                                                                      |
+| -------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `user`   | The username for HTTP authentication.                                                                                                                                                                                                            |
+| `pass`   | The password for HTTP authentication. (If you use Bearer authentication, this should be your BearerToken.)                                                                                                                                       |
+| `method` | Which authentication method should be used. HTTP Basic and Bearer authentication methods are supported. Basic authentication is used by default if this option is omitted.<br/>**Possible values:** `basic`, `bearer` **Default value:** `basic` |
 
 ## Syncing your Microsoft, Google and Apple calendars
 
