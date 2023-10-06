@@ -147,12 +147,12 @@ module.
 
 ### `this.sendSocketNotification(notification, payload)`
 
-**_notification_ String** - The notification identifier.<br> **_payload_
-AnyType** - Optional. A notification payload.<br>
+**_notification_ String** - The notification identifier.<br>
+**_payload_ AnyType** - Optional. A notification payload.
 
-If you want to send a notification to all your modules, use the
-`sendSocketNotification(notification, payload)`. Only the module of your module
-type will receive the socket notification.
+If you want to send a notification to your module, use the
+`sendSocketNotification(notification, payload)`.<br>
+Only the module of your module type will receive the socket notification.
 
 **Note:** Since all instances of your module will receive the notifications,
 it's your task to make sure the right module responds to your messages.
@@ -162,6 +162,10 @@ it's your task to make sure the right module responds to your messages.
 ```javascript
 this.sendSocketNotification("SET_CONFIG", this.config);
 ```
+
+::: warning Reminder
+`sendSocketNotification` sends a notification from the helper to all the instances of your module.
+:::
 
 ## Using native node modules in your node_helper
 
