@@ -16,11 +16,9 @@ installers can be found under:
 
 These instructions deploy a standalone version of Magic Mirror, for [Server Only](https://docs.magicmirror.builders/getting-started/installation.html#server-only) and [Client Only](https://docs.magicmirror.builders/getting-started/installation.html#client-only) installs please read the install specific instructions below
 
-1. Download and install the latest _Node.js_ version:
-
-- `curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -`
-- `sudo apt install -y nodejs`
-
+1. Download and install the latest _Node.js_ version, see the official documentation:
+- [Linux based distributions](https://github.com/nodesource/distributions)
+- [Others](https://nodejs.org/en/download)
 2. Clone the repository and check out the master branch:
    `git clone https://github.com/MichMich/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
