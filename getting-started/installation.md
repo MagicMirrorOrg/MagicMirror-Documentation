@@ -14,7 +14,7 @@ installers can be found under:
 
 ## Manual Installation
 
-These instructions deploy a standalone version of Magic Mirror, for [Server Only](https://docs.magicmirror.builders/getting-started/installation.html#server-only) and [Client Only](https://docs.magicmirror.builders/getting-started/installation.html#client-only) installs please read the install specific instructions below
+These instructions deploy a standalone version of Magic Mirror, for [Server Only](/getting-started/installation.html#server-only) and [Client Only](/getting-started/installation.html#client-only) installs please read the install specific instructions below
 
 1. Download and install the latest _Node.js_ version, see the official documentation:
 - [Linux based distributions](https://github.com/nodesource/distributions)
@@ -136,7 +136,7 @@ By default MagicMirror² does not allow other remote devices to connect, this is
 - change address to `0.0.0.0` this will allow MagicMirror² to listen on all network interfaces
 - change `ipWhitelist` to the list of IP's you want to allow to connect
 
-Sample Configuration below [and link to full configuration options](https://docs.magicmirror.builders/configuration/introduction.html#introduction)
+Sample Configuration below [and link to full configuration options](/configuration/introduction.html#introduction)
 
 ```javascript
 let config = {
