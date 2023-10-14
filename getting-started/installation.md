@@ -14,7 +14,7 @@ installers can be found under:
 
 ## Manual Installation
 
-These instructions deploy a standalone version of Magic Mirror, for [Server Only](/getting-started/installation.html#server-only) and [Client Only](/getting-started/installation.html#client-only) installs please read the install specific instructions below
+These instructions deploy a standalone version of MagicMirror², for [Server Only](/getting-started/installation.html#server-only) and [Client Only](/getting-started/installation.html#client-only) installs please read the install specific instructions below
 
 1. Download and install the latest _Node.js_ version, see the official documentation:
 - [Linux based distributions](https://github.com/nodesource/distributions)
@@ -162,7 +162,7 @@ To always start MagicMirror² in server only mode you need to edit the `installe
 ### Client Only
 
 This is when you already have a server running remotely and want your RPi to
-connect as a standalone client to this instance, to show theMagicMirror² from the server.
+connect as a standalone client to this instance, to show the MagicMirror² from the server.
 
 You can start MagicMirror² in client mode by manually running the following command with the MagicMirror directory:
 `node clientonly --address 192.168.1.5 --port 8080`
