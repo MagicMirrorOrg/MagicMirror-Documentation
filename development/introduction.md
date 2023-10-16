@@ -8,7 +8,7 @@ This documentation describes the way to develop your own MagicMirror² modules.
 
 ## General Advice
 
-As MagicMirror has gained huge popularity, so has the number of available
+As MagicMirror² has gained huge popularity, so has the number of available
 modules. For new users and developers alike, it is very time-consuming to
 navigate around the various repositories in order to find out what exactly a
 certain modules does, how it looks and what it depends on. Unfortunately, this
