@@ -16,6 +16,18 @@ sudo apt install fonts-noto-color-emoji
 
 ## Rotating the screen and hide Rainbow colored cube
 
+Option 1: Screen Configuration Tool
+
+Option 2: Command line https://pimylifeup.com/raspberry-pi-rotate-screen/
+
+Case 2.1: 
+
+dtoverlay=vc4-kms-v3d enabled -> set via xrandr tool
+
+Case 2.2:
+
+set display_hdmi_rotate=0 in boot/config.txt
+
 
 ## Autohiding the Mouse Pointer
 
