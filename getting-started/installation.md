@@ -1,6 +1,6 @@
 # Installation & Usage
 
-The Magic Mirror can be installed manually or using automatic installers. At the
+The MagicMirror² can be installed manually or using automatic installers. At the
 start of 2020 the decision was made to remove the automatic installer from the
 MagicMirror² core repository and move it to a community maintained separate
 repository. For more information about this decision, please check issue
