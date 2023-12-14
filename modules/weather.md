@@ -64,17 +64,17 @@ The following properties can be configured:
 
 #### Current weather options
 
-| Option                      | Description                                                                                                                                                                                             |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `onlyTemp`                  | Show only current Temperature and weather icon without windspeed, sunset, sunrise time and feels like. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                  |
-| `showWindDirection`         | Show the wind direction next to the wind speed. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`                                                                          |
-| `showWindDirectionAsArrow`  | Show the wind direction as an arrow instead of abbreviation <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                             |
-| `showHumidity`              | Show the current humidity <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                               |
-| `showIndoorTemperature`     | If you have another module that emits the `INDOOR_TEMPERATURE` notification, the indoor temperature will be displayed <br> **Default value:** `false`                                                   |
-| `showIndoorHumidity`        | If you have another module that emits the `INDOOR_HUMIDITY` notification, the indoor humidity will be displayed <br> **Default value:** `false`                                                         |
-| `showFeelsLike`             | Shows the Feels like temperature weather. <br><br> **Possible values:** `true` or `false`<br>**Default value:** `true`                                                                                  |
-| `showSun`                   | Shows Sunrise and Sunset time. <br><br> **Possible values:** `true` or `false`<br>**Default value:** `true`                                                                                             |
-| `allowOverrideNotification` | Enables the ability to provide a `CURRENT_WEATHER_OVERRIDE` notification containing a `WeatherObject` payload that will be combined with the existing current weather <br>**Default value:** `false`    |
+| Option                      | Description                                                                                                                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `onlyTemp`                  | Show only current Temperature and weather icon without windspeed, sunset, sunrise time and feels like. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`               |
+| `showWindDirection`         | Show the wind direction next to the wind speed. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`                                                                       |
+| `showWindDirectionAsArrow`  | Show the wind direction as an arrow instead of abbreviation <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                          |
+| `showHumidity`              | Show the current humidity <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                            |
+| `showIndoorTemperature`     | If you have another module that emits the `INDOOR_TEMPERATURE` notification, the indoor temperature will be displayed <br> **Default value:** `false`                                                |
+| `showIndoorHumidity`        | If you have another module that emits the `INDOOR_HUMIDITY` notification, the indoor humidity will be displayed <br> **Default value:** `false`                                                      |
+| `showFeelsLike`             | Shows the Feels like temperature weather. <br><br> **Possible values:** `true` or `false`<br>**Default value:** `true`                                                                               |
+| `showSun`                   | Shows Sunrise and Sunset time. <br><br> **Possible values:** `true` or `false`<br>**Default value:** `true`                                                                                          |
+| `allowOverrideNotification` | Enables the ability to provide a `CURRENT_WEATHER_OVERRIDE` notification containing a `WeatherObject` payload that will be combined with the existing current weather <br>**Default value:** `false` |
 
 #### Weather forecast options
 
