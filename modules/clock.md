@@ -5,7 +5,7 @@ displays the current date and time. The information will be updated realtime.
 
 ## Screenshot
 
-- Current time ![Current time](./screenshots/clock_screenshot.png)
+![Clock screenshot](./screenshots/clock.png)
 
 ## Using the module
 

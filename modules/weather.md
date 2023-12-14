@@ -10,10 +10,15 @@ one API source. And users can choose which API they want to use as their source.
 The module is in a very early stage, and needs a lot of work. It's API isn't set
 in stone, so keep that in mind when you want to contribute.
 
-## Example
+## Screenshot
 
-![Screenshot of current weather](./screenshots/current.png)
-![Screenshot of forecast](./screenshots/forecast.png)
+### Current weather: 
+
+![Screenshot of current weather](./screenshots/weather_current.png)
+
+### Forecast:
+
+![Screenshot of weather forecast](./screenshots/weather_forecast.png)
 
 ## Usage
 
