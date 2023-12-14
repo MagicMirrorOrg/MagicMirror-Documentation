@@ -1,4 +1,5 @@
 # Animation Guide
+
 (_Introduced in version: 2.25.0_)
 
 ::: tip Preview of animation
@@ -6,6 +7,7 @@ check the [animate.css](https://animate.style/) library to see a preview of the 
 :::
 
 ::: warning Where animation can be used?
+
  - [global module configuration](configuration.html#animated) of a module
  - [this.hide()](../development/core-module-file.html#this-hide-speed-callback-options) function in core module file
  - [this.show()](../development/core-module-file.html#this-show-speed-callback-options) function in core module file

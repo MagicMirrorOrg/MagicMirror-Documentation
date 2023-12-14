@@ -3,10 +3,9 @@
 The `compliments` module is one of the default modules of the MagicMirror. This
 module displays a random compliment.
 
-## Screenshots
+## Screenshot
 
-- Compliments Screenshot
-  ![Compliments Screenshot](./screenshots/compliments_screenshot.png)
+![Compliments Screenshot](./screenshots/compliments.png)
 
 ## Using the module
 

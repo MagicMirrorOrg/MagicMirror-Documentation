@@ -64,6 +64,7 @@ screen, one under everything else and the other above.
 All these regions will resize as needed.
 
 ## Animated
+
 (_Introduced in version: 2.25.0_)
 
 Animated feature allows to define an animation to a module
@@ -79,7 +80,8 @@ The whole of animation names are available [there](./animate.html).
 
 ### Example with `newsfeed` module
 
-For this example, news will come from the left (`slideInLeft` animation), wait in the middle, and exit from the right (`slideOutRight` animation)
+For this example, news will come from the left (`slideInLeft` animation), wait
+in the middle, and exit from the right (`slideOutRight` animation)
 
 ![animateCSS](./screenshots/animate.gif)
 
