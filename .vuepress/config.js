@@ -99,7 +99,7 @@ export default {
   },
   plugins: [
     googleAnalyticsPlugin({
-      id: "UA-1219071-59", // UA-00000000-0
+      id: "UA-1219071-59",
     }),
     docsearchPlugin({
       apiKey: "96d207343bbb5e45068a1e3c8d141bb4",
