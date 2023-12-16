@@ -27,7 +27,7 @@
 
 4.  run your magic mirror. 
 
-### More useful Configuring your MagicMirror
+### More useful configuration of your MagicMirror
 
 These directions assume a linux/bash style command line, and previous instructions followed. If not, please insert the path directly from your installation. 
 
