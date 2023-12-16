@@ -1,6 +1,7 @@
 # Upgrade Guide
 
-::: danger WARNING Always backup your `config.js`, `custom.css` and `modules`
+::: danger WARNING 
+Always backup your `config.js`, `custom.css` and `modules`
 folder before you start the upgrade process!
 :::
 
@@ -14,7 +15,8 @@ git pull && npm run install-mm
 If you changed nothing more than the config or the modules, this should work
 without any problems.
 
-::: danger WARNING Using `git reset --hard` as described below will delete all
+::: danger WARNING
+Using `git reset --hard` as described below will delete all
 your changes made in the source code, so only execute this if you know what you
 are doing!
 :::

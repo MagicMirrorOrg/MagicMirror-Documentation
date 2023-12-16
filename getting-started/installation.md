@@ -1,6 +1,6 @@
 # Installation & Usage
 
-The Magic Mirror can be installed manually or using automatic installers. At the
+The MagicMirror² can be installed manually or using automatic installers. At the
 start of 2020 the decision was made to remove the automatic installer from the
 MagicMirror² core repository and move it to a community maintained separate
 repository. For more information about this decision, please check issue
@@ -29,7 +29,8 @@ installers can be found under:
 6. Start the application: `npm run start` \
    For **Server Only** use: `npm run server` .
 
-::: warning NOTE The installation step for `npm run install-mm` will take a very
+::: warning NOTE
+The installation step for `npm run install-mm` will take a very
 long time, often with little or no terminal response! For the RPi3 this is
 **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk
 getting a :broken_heart: by Raspberry Jam.
@@ -127,7 +128,8 @@ In this case, you can start MagicMirror² in server only mode by manually runnin
 `npm run server`. This will start the server, after which you can open the
 application in your browser of choice. Detailed description below.
 
-::: warning IMPORTANT Make sure that you whitelist the interface/ip
+::: warning IMPORTANT 
+Make sure that you whitelist the interface/ip
 (`ipWhitelist`) in the server config where you want the client to connect to,
 otherwise it will not be allowed to connect to the server. You also need to set
 the local host `address` field to `0.0.0.0` in order for the RPi to listen on
