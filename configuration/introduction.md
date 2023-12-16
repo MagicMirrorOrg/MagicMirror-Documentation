@@ -1,47 +1,97 @@
 # Introduction
 
-### Configuring your MagicMirror
 
-1. Copy `/home/pi/MagicMirror/config/config.js.sample` to
-   `/home/pi/MagicMirror/config/config.js`. \
-   **Note:** If you used a third-party installer script, this step may already have
-   been done for you.
 
-2. Modify your required settings. \
-   **Note:** You can check your configuration running `npm run config:check` in `/home/pi/MagicMirror`.
+### Extremely Basic Configuration of MagicMirror²: 
 
-The following properties can be configured:
+1. Go to your configuration directory: In Bash/linux, it'll be in `~/MagicMirror/config/`
 
-| **Option**         | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `port`             | The port on which the MagicMirror² server will run on. The default value is `8080`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `address`          | The _interface_ ip address on which to accept connections. The default is `localhost`, which would prevent exposing the built-in webserver to machines on the local network. To expose it to other machines, use: `0.0.0.0`.                                                                                                                                                                                                                                                                                                                              |
-| `ipWhitelist`      | The list of IPs from which you are allowed to access the MagicMirror². The default value is `["127.0.0.1", "::ffff:127.0.0.1", "::1"]`, which is from `localhost` only. Add your IP when needed. You can also specify IP ranges with subnet masks (`["127.0.0.1", "127.0.0.1/24"]`) or directly with (`["127.0.0.1", ["192.168.0.1", "192.168.0.100"]]`). Set `[]` to allow all IP addresses. For more information see: [follow post ipWhitelist HowTo](https://forum.magicmirror.builders/topic/1326/ipwhitelist-howto)                                  |
-| `zoom`             | This allows to scale the mirror contents with a given zoom factor. The default value is `1.0`                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `language`         | The language of the interface. (Note: Not all elements will be localized.) Possible values are `en`, `nl`, `ru`, `fr`, etc., but the default value is `en`.                                                                                                                                                                                                                                                                                                                                                                                               |
-| `timeFormat`       | The form of time notation that will be used. Possible values are `12` or `24`. The default is `24`.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `units`            | The units that will be used in the default weather modules. Possible values are `metric` or `imperial`. The default is `metric`.                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `modules`          | An array of active modules. **The array must contain objects. See [module configuration](/modules/configuration.md) for more information.**                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `electronOptions`  | An optional array of Electron (browser) options. This allows configuration of e.g. the browser screen size and position (example: `electronOptions: { fullscreen: false, width: 800, height: 600 }`). Kiosk mode can be enabled by setting `kiosk: true`, `autoHideMenuBar: false` and `fullscreen: false`. More options can be found [here](https://github.com/electron/electron/blob/master/docs/api/browser-window.md).                                                                                                                                |
-| `electronSwitches` | An optional array of Electron switches. This allows configuration of electron app itself. <br> This properties will not affect the `serveronly` mode. Usually normal `MM` users don't need this property, but if you are a hard-core hacker, you might need this to handle Electron itself over `MagicMirror` provides. More options can be found [here](https://www.electronjs.org/docs/latest/api/command-line-switches) (Not all available switches are described there.)<br>example:`electronSwitches:["enable-transparent-visuals", "disable-gpu"];` |
-| `customCss`        | The path of the `custom.css` stylesheet. The default is `css/custom.css`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+2. create and edit a config.js by using your editor of choice. 
 
-### Environment variables
+3. Minimum configuration requires the following: 
 
-As the `config.js` is javascript code there is no direct way to provide
-environment variables. This feature was requested by some users, e.g. with
-environment variables it is easier to share the configuration with others
-(otherwise you have to delete all private data as e.g. api keys). There was a
-longer
-[discussion on github](https://github.com/MichMich/MagicMirror/issues/1756)
-where you can read the full story.
+   ``` js
+   let config = {
+     modules: [
+       {
+           module: <any module>,
+           position: fullscreen_above,
+           config: {
+       	}
+       },
+     ],
+   };
+   ```
 
-#### `config.js` and `config.js.template`
+   See [module configuration](/modules/configuration.md) for more information and examples. 
 
-You can provide a `config.js.template` instead of a `config.js` file. The
-difference is, that you can use environment variables in the
-`config.js.template`. When starting MagicMirror² a `config.js` is created from
-`config.js.template` and the variables are resolved.
+4.  run your magic mirror. 
+
+### More useful Configuring your MagicMirror
+
+These directions assume a linux/bash style command line, and previous instructions followed. If not, please insert the path directly from your installation. 
+
+1. Copy `~/MagicMirror/config/config.js.sample` to `~/MagicMirror/config/config.js`. \
+   **Note:** If you used a third-party installer script, this step may already have been done for you.
+
+2. Modify your required settings using your preferred editor. `nano` is the easiest. 
+
+3. You can check your configuration running `npm run config:check` in `~/MagicMirror`. 
+
+The following properties can be configured, place them above the modules item:
+
+| **Option**         | **Description**                                              | Default Value                              |
+| ------------------ | ------------------------------------------------------------ | ------------------------------------------ |
+| `port`             | The port on which the MagicMirror² server will run on. This may need to be changed in specific advanced installations, below. | 8080                                       |
+| `address`          | The _interface_ ip address on which to accept connections. The default prevents exposing the built-in webserver to machines on the local network. To expose it to other machines, use: `0.0.0.0`. | `localhost`                                |
+| `ipWhitelist`      | The list of IPs from which you are allowed to access the MagicMirror². Add your IP when needed. You can also specify IP ranges with subnet masks (`["127.0.0.1", "127.0.0.1/24"]`) or directly with (`["127.0.0.1", ["192.168.0.1", "192.168.0.100"]]`). Set `[]` to allow all IP addresses. For more information see: [ipWhitelist HowTo](https://forum.magicmirror.builders/topic/1326/ipwhitelist-howto) | `["127.0.0.1", "::ffff:127.0.0.1", "::1"]` |
+| `zoom`             | This allows to scale the mirror contents with a given zoom factor. | `1.0`                                      |
+| `language`         | The language of the interface. (Note: Not all elements will be localized.) Possible values are `en`, `nl`, `ru`, `fr`, etc. for the full list see: [List of ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) | `en`                                       |
+| `timeFormat`       | The form of time notation that will be used. Possible values are `12` or `24`. | 24                                         |
+| `units`            | The units that will be used in the default weather modules. Possible values are `metric` or `imperial`. | `metric`                                   |
+| `electronOptions`  | An optional array of Electron (browser) options. This allows configuration of e.g. the browser screen size and position (example: `electronOptions: { fullscreen: false, width: 800, height: 600 }`). Kiosk mode can be enabled by setting `kiosk: true`, `autoHideMenuBar: false` and `fullscreen: false`. More options can be found [here](https://github.com/electron/electron/blob/master/docs/api/browser-window.md). This will most likely be used in advanced installations, below. | []                                         |
+| `electronSwitches` | An optional array of Electron switches. This allows configuration of electron app itself. <br> This properties will not affect the `serveronly` mode. Usually normal `MM` users don't need this property, but if you are a hard-core hacker, you might need this to handle Electron itself over `MagicMirror` provides. More options can be found [here](https://www.electronjs.org/docs/latest/api/command-line-switches) (Not all available switches are described there.)<br>example:`electronSwitches:["enable-transparent-visuals", "disable-gpu"];` | []                                         |
+| `customCss`        | The path of the `custom.css` stylesheet. The default is `css/custom.css`. | `css/custom.css`                           |
+
+After the above options, you will then add modules. See [module configuration](/modules/configuration.md) for more information.
+
+
+
+### Advanced configuration and Frequently asked configuration examples: 
+
+
+
+#### Bash Environment variables
+
+There are two environment variables that override part or all of config.js. They are: 
+
+| Environment Variable Name | Use                                                          |
+| ------------------------- | ------------------------------------------------------------ |
+| MM_CONFIG_FILE            | This specifies an alternate configuration file for the system. This is useful when running multiple mirrors on the same device. This does not work with the template option below |
+| MM_PORT                   | This specifies an alternate TCPIP port, overriding "port" item within the config file. This is useful for testing to see if the product will run using another port. |
+
+##### Examples of use: 
+
+You have a second configuration file set up called `config2.js`, create a bash script called `mm2.js`:
+
+```bash
+cd ~/MagicMirror
+export MM_CONFIG_FILE=${pwd}/config/config2.js
+npm start
+```
+
+The default configuration would use this bash script (mm.sh): 
+
+```bash
+cd ~/MagicMirror
+npm start
+```
+
+
+
+#### Configuration Template system: 
+
+`config.js.template` can be used instead of `config.js`. This allows you to use variables to replace hardcoded options. When starting MagicMirror² a `config.js` is created from `config.js.template` and the variables are resolved. This is most useful for tech support provided on the [forums](http://forum.magicmirror.builders) and sharing your configuration. 
 
 Variables must be inserted as `${MY_VARIABLE}`, examples:
 
@@ -73,15 +123,15 @@ if (typeof module !== "undefined") {
 }
 ```
 
-#### Providing environment variables
+##### Defining variables:
 
-There are 2 ways for declaring them, you can mix both. If a variable is declared
-in both ways the one declared as linux environment variable is used.
+There are 2 ways to define variables, you can mix as needed or desired. If a variable is defined
+in both ways the linux environment variable is used.
 
 ##### Using a `config.env` file
 
 This file must be in the same folder as the `config.js.template` and contains
-the variables, example from above:
+the variables, using the example from above:
 
 File content of `config.env`:
 
@@ -93,15 +143,103 @@ MY_HTTPS=false
 
 ##### Using linux environment variables
 
-You have to declare them before you start MagicMirror², e.g. by executing:
+define them before you start MagicMirror², in a bash script, for example: 
 
-```shell
+```bash
+cd ~/MagicMirror
 export MY_ADDRESS=localhost
 export MYPORT=8080
 export MY_HTTPS=false
+npm start
 ```
 
-#### Real world example of `config.js.template`
+
+
+#### Using `electronOptions`: 
+
+The most common use for `electronOptions` is a dual monitor setup on a Raspberry Pi 4 or greater. To do so, you can launch a second MagicMirror and use `electronOptions` to move it over to the next monitor. For example: 
+
+```bash
+var config = {
+	electronOptions: { x: 1920 },
+	...
+```
+
+
+
+#### Real World Examples: 
+
+##### Two Screens: 
+
+A user has two monitors running on a Pi4B.  User wants to show cameras on one monitor, and wants to show informational panels on the other. Both Monitors are set up to 1920x1080 resolution, and within the Pi's OS, they're virtually located so left monitor is directly left of the right monitor, creating a effective 3840x1080 screen. User also uses the MagicMirror server on other computers within his firewalled network to double check information easily. 
+
+User would have to set up two config files, one custom.css, and two starting scripts to do so. User would use method of choice to launch starting scripts (e.g.: `PM2`). 
+
+Starting Script 1 (mm.sh): 
+
+```bash
+cd ~/MagicMirror
+npm start
+```
+
+Starting Script 2 (mm2.sh): 
+
+```bash
+cd ~/MagicMirror
+export MM_CONFIG_FILE=${pwd}/config/config2.js
+npm start
+```
+
+Configuration file 1 (for the 2nd monitor, it's easier this way): 
+
+``` js
+var config = {
+	electronOptions: { x: 1920 }, // This moves it to the second monitor. 
+	address: "0.0.0.0", 
+	port: 8081, // Must be different than the other configuration file. 
+	ipWhitelist: [],
+	language: "en",
+	timeFormat: 12,
+	units: "imperial",
+	//logLevel: ["INFO", "LOG", "WARN", "ERROR", "DEBUG"],
+	modules: [
+	(insert module bits here)
+	] // end of modules 
+}; // end of config variable. 
+/*************** DO NOT EDIT BELOW ***************/
+if (typeof module !== "undefined") {
+	module.exports = config;
+}
+```
+
+Configuration file 2 (for the first monitor):
+
+```js
+var config = {
+	address: "0.0.0.0",
+	port: 8080,
+	ipWhitelist: [],
+	language: "en",
+	timeFormat: 12,
+	units: "imperial",
+	//logLevel: ["INFO", "LOG", "WARN", "ERROR", "DEBUG"],
+	modules: [
+	(insert module bits here)
+	] // end of modules 
+}; // end of config variable. 
+/*************** DO NOT EDIT BELOW ***************/
+if (typeof module !== "undefined") {
+	module.exports = config;
+}
+```
+
+
+
+##### config.js.template example:
+
+User likes to help German language users in the forums. As such, he wants to be able to paste bits of his config.js into the forums to show as an example, but don't want to share his private data, and has a hard time remembering to remove them from the config.js file. 
+
+```config.js.template```: 
 
 ```javascript
 let config = {
@@ -213,3 +351,17 @@ let config = {
 /*************** DO NOT EDIT THE LINE BELOW ***************/
 if (typeof module !== "undefined") {module.exports = config;}
 ```
+
+Matching  `config.env` example (fake urls and locations): 
+
+```bash
+LAT=0.0
+LON=0.0 
+MAPBOX_URL="http://example.url/1458562" 
+STRAVA_API_KEY="FakeKey1234"
+OPENWEATHER_API_KEY="FakeKey4321"
+CAL_URL1="https://calendar.google.com/calendar/ical/example@example.example/private-fakeaddress12445812581119058955b/basic.ics"
+CAL_URL2="https://calendar.google.com/calendar/ical/example@example.example/private-fakeaddress2445812581119058955b/basic.ics"
+CAL_URL3="https://calendar.google.com/calendar/ical/example@example.example/private-fakeaddress32445812581119058955b/basic.ics"
+```
+
