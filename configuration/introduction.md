@@ -14,7 +14,7 @@
    let config = {
      modules: [
        {
-           module: <any module>,
+           module: clock,
            position: fullscreen_above,
            config: {
        	}
