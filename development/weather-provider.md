@@ -20,8 +20,8 @@ WeatherProvider.register("yourprovider", {
 
 ## Weather provider methods to implement
 
-::: warning IMPORTANT The weather module expects the weather data to be in
-metric units:
+::: warning IMPORTANT 
+The weather module expects the weather data to be in metric units:
 
 - `degree celsius` for temperatures
 - `meters per second` for wind
