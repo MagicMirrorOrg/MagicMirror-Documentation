@@ -57,7 +57,7 @@ After the above options, you will then add modules. See [module configuration](/
 
 
 
-### Advanced configuration and Frequently asked configuration examples: 
+### Advanced configuration and frequently asked how to configure examples: 
 
 
 
@@ -171,18 +171,18 @@ var config = {
 
 ##### Two Screens: 
 
-A user has two monitors running on a Pi4B.  User wants to show cameras on one monitor, and wants to show informational panels on the other. Both Monitors are set up to 1920x1080 resolution, and within the Pi's OS, they're virtually located so left monitor is directly left of the right monitor, creating a effective 3840x1080 screen. User also uses the MagicMirror server on other computers within his firewalled network to double check information easily. 
+A user has two monitors running on a Pi4B.  User wants to show cameras on one monitor, and wants to show informational panels on the other. Both Monitors are set up to 1920x1080 resolution, and within the Pi's OS, they're virtually located so left monitor is directly left of the right monitor, creating a effective 3840x1080 screen. 
 
 User would have to set up two config files, one custom.css, and two starting scripts to do so. User would use method of choice to launch starting scripts (e.g.: `PM2`). 
 
-Starting Script 1 (mm.sh): 
+Starting Script 1 (EG: mm.sh): 
 
 ```bash
 cd ~/MagicMirror
 npm start
 ```
 
-Starting Script 2 (mm2.sh): 
+Starting Script 2 (EG: mm2.sh): 
 
 ```bash
 cd ~/MagicMirror
@@ -190,20 +190,20 @@ export MM_CONFIG_FILE=${pwd}/config/config2.js
 npm start
 ```
 
-Configuration file 1 (for the 2nd monitor, it's easier this way): 
+Configuration file 1 (for the 2nd monitor): 
 
 ``` js
 var config = {
 	electronOptions: { x: 1920 }, // This moves it to the second monitor. 
-	address: "0.0.0.0", 
+	address: "0.0.0.0", // Can be whatever you set as your original.
 	port: 8081, // Must be different than the other configuration file. 
-	ipWhitelist: [],
+	ipWhitelist: [], // Can be whatever you set as your original.
 	language: "en",
 	timeFormat: 12,
 	units: "imperial",
 	//logLevel: ["INFO", "LOG", "WARN", "ERROR", "DEBUG"],
 	modules: [
-	(insert module bits here)
+	(insert module configurations here)
 	] // end of modules 
 }; // end of config variable. 
 /*************** DO NOT EDIT BELOW ***************/
@@ -212,19 +212,19 @@ if (typeof module !== "undefined") {
 }
 ```
 
-Configuration file 2 (for the first monitor):
+Configuration file 2 (for the 1st monitor):
 
 ```js
 var config = {
-	address: "0.0.0.0",
-	port: 8080,
-	ipWhitelist: [],
+	address: "0.0.0.0", // can be whatever you set as your original. 
+	port: 8080, // Must be different than the other configuration file.
+	ipWhitelist: [], // Can be whatever you set as your original.
 	language: "en",
 	timeFormat: 12,
 	units: "imperial",
 	//logLevel: ["INFO", "LOG", "WARN", "ERROR", "DEBUG"],
 	modules: [
-	(insert module bits here)
+	(insert module configurations here)
 	] // end of modules 
 }; // end of config variable. 
 /*************** DO NOT EDIT BELOW ***************/
@@ -233,7 +233,7 @@ if (typeof module !== "undefined") {
 }
 ```
 
-
+Note that the configurations are "backwards". This is due to a known bug. It would be best to autostart your system with PM2 or similar, see autostart tab.  
 
 ##### config.js.template example:
 
@@ -365,3 +365,6 @@ CAL_URL2="https://calendar.google.com/calendar/ical/example@example.example/priv
 CAL_URL3="https://calendar.google.com/calendar/ical/example@example.example/private-fakeaddress32445812581119058955b/basic.ics"
 ```
 
+
+
+For other help with setting up a more complex Mirror, please visit our forums at http://forum.magicmirror.builders 
