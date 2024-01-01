@@ -4,7 +4,7 @@ The MagicMirror² can be installed manually or using automatic installers. At th
 start of 2020 the decision was made to remove the automatic installer from the
 MagicMirror² core repository and move it to a community maintained separate
 repository. For more information about this decision, please check issue
-[#1860](https://github.com/MichMich/MagicMirror/issues/1860) on GitHub.
+[#1860](https://github.com/MagicMirrorOrg/MagicMirror/issues/1860) on GitHub.
 
 Therefore the only officially supported way of installation is by using a
 [manual installation](#manual-installation). Using external installation scripts
@@ -21,7 +21,7 @@ installers can be found under:
 - [Others](https://nodejs.org/en/download)
 
 2. Clone the repository and check out the master branch:
-   `git clone https://github.com/MichMich/MagicMirror`
+   `git clone https://github.com/MagicMirrorOrg/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
 4. Install the application: `npm run install-mm`
 5. Make a copy of the config sample file:

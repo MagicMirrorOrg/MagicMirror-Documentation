@@ -55,7 +55,7 @@ The following properties can be configured:
 ## Notifications
 
 The clock makes use of the built-in
-[Notification Mechanism](https://github.com/michMich/MagicMirror/wiki/notifications)
+[Notification Mechanism](https://github.com/magicmirrororg/magicmirror/wiki/notifications)
 to relay notifications to all modules.
 
 Current notifications are:
