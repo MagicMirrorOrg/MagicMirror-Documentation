@@ -577,7 +577,7 @@ follows:
 
 When adding translations to your module, it's a good idea to see if an
 appropriate translation is already available in the
-[core translation files](https://github.com/MichMich/MagicMirror/tree/master/translations).
+[core translation files](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/translations).
 This way, your module can benefit from the existing translations.
 
 **Example:**
