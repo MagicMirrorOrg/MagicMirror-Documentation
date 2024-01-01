@@ -7,8 +7,7 @@ sending news feed specific notifications to the module.
 
 ## Screenshot
 
-- News Feed Screenshot using the NYT
-  ![NYT News Feed Screenshot](./screenshots/newsfeed_screenshot.png)
+![NYT News Feed Screenshot](./screenshots/newsfeed.png)
 
 ## Using the module
 

@@ -26,7 +26,9 @@ Surely this also help you get better recognition and feedback for your work.
 
 ## Module name
 
-We recommend the following pattern: `MMM-MyNewCoolModule`. But it is not mandatory - your module will also work with other name patterns (as long as no other module has the same name).
+We recommend the following pattern: `MMM-MyNewCoolModule`. But it is not
+mandatory - your module will also work with other name patterns (as long as no
+other module has the same name).
 
 ## Module structure
 

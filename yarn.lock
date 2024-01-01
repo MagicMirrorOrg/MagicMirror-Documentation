@@ -6755,10 +6755,10 @@ prettier-config-vuepress@^4.4.0:
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.8.8.tgz"
   integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
 
-prettier@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-3.0.3.tgz"
-  integrity sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==
+prettier@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-3.1.1.tgz"
+  integrity sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==
 
 pretty-error@^2.0.2:
   version "2.1.2"
@@ -8485,10 +8485,10 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.6.10, vue-template-compiler@^2.7.14:
-  version "2.7.14"
-  resolved "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.7.14.tgz"
-  integrity sha512-zyA5Y3ArvVG0NacJDkkzJuPQDF8RFeRlzV2vLeSnhSpieO6LK2OVbdLPi5MPPs09Ii+gMO8nY4S3iKQxBxDmWQ==
+vue-template-compiler@^2.6.10, vue-template-compiler@^2.7.15:
+  version "2.7.15"
+  resolved "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.7.15.tgz"
+  integrity sha512-yQxjxMptBL7UAog00O8sANud99C6wJF+7kgbcwqkvA38vCGF7HWE66w0ZFnS/kX5gSoJr/PQ4/oS3Ne2pW37Og==
   dependencies:
     de-indent "^1.0.2"
     he "^1.2.0"

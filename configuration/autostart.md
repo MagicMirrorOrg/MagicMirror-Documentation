@@ -1,7 +1,7 @@
 # Autostart your MagicMirror²
 
-The methods below describe ways to automatically start your MagicMirror² on boot,
-and even ways to keep it running in case of a failure.
+The methods below describe ways to automatically start your MagicMirror² on
+boot, and even ways to keep it running in case of a failure.
 
 ## Using PM2
 

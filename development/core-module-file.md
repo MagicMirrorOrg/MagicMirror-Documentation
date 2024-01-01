@@ -283,9 +283,10 @@ When this module is called, it has 2 arguments:
 - `payload` - AnyType - The payload of a notification.
 
 **Note 1:** When a node helper sends a notification, all modules of that module
-type receive the same notifications.<br>
-**Note 2:** The socket connection is
-established as soon as the module sends its first message using
+type receive the same notifications.
+
+**Note 2:** The socket connection is established as soon as the module sends its
+first message using
 [sendSocketNotification](#this-sendsocketnotification-notification-payload).
 
 **Example:**
@@ -316,8 +317,7 @@ module.
 ### `this.file(filename)`
 
 **_filename_ String** - The name of the file you want to create the path
-for.<br>
-**Returns String**
+for.<br> **Returns String**
 
 If you want to create a path to a file in your module folder, use the `file()`
 method. It returns the path to the filename given as the attribute. Is method
@@ -345,22 +345,24 @@ start: function() {
 ...
 ```
 
-**_options_ Object** - (_Introduced in version: 2.25.0._) Optional. Allows you to determine the animation speed and animation type options, whenever your module needs to be updated
+**_options_ Object** - (_Introduced in version: 2.25.0._) Optional. Allows you
+to determine the animation speed and animation type options, whenever your
+module needs to be updated
 
-| options | type | description |
-| ------- | ---- | ----------- |
-| speed   | Number | animation speed in ms |
+| options | type   | description                          |
+| ------- | ------ | ------------------------------------ |
+| speed   | Number | animation speed in ms                |
 | animate | Object | animate IN and OUT rules (see below) |
-
 
 **animate Object**
 
-| animate | type | description                                                                                                                                             |
-| ------- | ---- |---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| animate | type   | description                                                                                                                                             |
+| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](/modules/animate#animatein))     |
 | out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](/modules/animate#animateout)) |
 
 As an example:
+
 ```javascript
 ...
   this.updateDom( {
@@ -377,8 +379,8 @@ As an example:
 
 ### `this.sendNotification(notification, payload)`
 
-**_notification_ String** - The notification identifier.<br>
-**_payload_ AnyType** - Optional. A notification payload.
+- `notification` - String - The notification identifier.
+- `payload` - AnyType - (Optional) A notification payload.
 
 If you want to send a notification to all other modules, use the
 `sendNotification(notification, payload)`. All other modules will receive the
@@ -395,8 +397,8 @@ this.sendNotification("MYMODULE_READY_FOR_ACTION", { foo: bar });
 
 ### `this.sendSocketNotification(notification, payload)`
 
-**_notification_ String** - The notification identifier.<br>
-**_payload_ AnyType** - Optional. A notification payload.
+- `notification` - String - The notification identifier.
+- `payload` - AnyType - (Optional) A notification payload.
 
 If you want to send a notification to the node_helper, use the
 `sendSocketNotification(notification, payload)`. Only the node_helper of this
