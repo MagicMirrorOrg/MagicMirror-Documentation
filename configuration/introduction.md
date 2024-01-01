@@ -33,7 +33,7 @@ environment variables. This feature was requested by some users, e.g. with
 environment variables it is easier to share the configuration with others
 (otherwise you have to delete all private data as e.g. api keys). There was a
 longer
-[discussion on github](https://github.com/MichMich/MagicMirror/issues/1756)
+[discussion on github](https://github.com/MagicMirrorOrg/MagicMirror/issues/1756)
 where you can read the full story.
 
 #### `config.js` and `config.js.template`
