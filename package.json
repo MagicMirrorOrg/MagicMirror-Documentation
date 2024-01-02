@@ -1,10 +1,11 @@
 {
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.9.9",
-    "@vuepress/plugin-google-analytics": "^1.9.9",
-    "prettier": "^2.8.7",
-    "vue-template-compiler": "^2.7.14",
-    "vuepress": "^1.9.9",
+    "@vuepress/plugin-back-to-top": "^1.9.10",
+    "@vuepress/plugin-google-analytics": "^1.9.10",
+    "prettier": "^3.1.1",
+    "prettier-config-vuepress": "^4.4.0",
+    "vue-template-compiler": "^2.7.15",
+    "vuepress": "^1.9.10",
     "vuepress-plugin-check-md": "^0.0.3"
   },
   "scripts": {

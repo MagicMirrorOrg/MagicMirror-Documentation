@@ -1,12 +1,11 @@
 # Clock
 
-The `clock` module is one of the default modules of the MagicMirror.
-This module displays the current date and time. The information will be updated realtime.
+The `clock` module is one of the default modules of the MagicMirror. This module
+displays the current date and time. The information will be updated realtime.
 
 ## Screenshot
 
-- Current time
-  ![Current time](./screenshots/clock_screenshot.png)
+![Clock screenshot](./screenshots/clock.png)
 
 ## Using the module
 
@@ -41,7 +40,7 @@ The following properties can be configured:
 | `showDate`          | Turn off or on the Date section. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`                                                                                                                                                                                                                       |
 | `showWeek`          | Turn off or on the Week section. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                                                                                                                                                      |
 | `showSunTimes`      | Turn off or on the section showing sunrise and sunset times (digital clock only). <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                                                                                                     |
-| `showMoonTimes`     | Turn off or on the section showing moonrise and moonset times (digital clock only). <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                                                                                                   |
+| `showMoonTimes`     | Turn off or on the section showing moonrise and moonset times (digital clock only). Optionally display an image of lunar phase and lit percentage of the moon<br><br> **Possible values:** `times`, `percent`, `phase`, `both` or `false` (disable) <br> **Default value:** `false`                                                   |
 | `lat`               | Latitude for sun/moon calculations. <br><br> **Default value:** `47.630539`                                                                                                                                                                                                                                                           |
 | `lon`               | Longitude for sun/moon calculations. <br><br> **Default value:** `-122.344147`                                                                                                                                                                                                                                                        |
 | `dateFormat`        | Configure the date format as you like. <br><br> **Possible values:** [Docs](https://momentjs.com/docs/#/displaying/format/) <br> **Default value:** `"dddd, LL"`                                                                                                                                                                      |
@@ -55,7 +54,9 @@ The following properties can be configured:
 
 ## Notifications
 
-The clock makes use of the built-in [Notification Mechanism](https://github.com/michMich/MagicMirror/wiki/notifications) to relay notifications to all modules.
+The clock makes use of the built-in
+[Notification Mechanism](https://github.com/magicmirrororg/magicmirror/wiki/notifications)
+to relay notifications to all modules.
 
 Current notifications are:
 

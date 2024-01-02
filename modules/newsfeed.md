@@ -1,12 +1,13 @@
 # News Feed
 
-The `newsfeed ` module is one of the default modules of the MagicMirror.
-This module displays news headlines based on an RSS feed. Scrolling through news headlines happens time-based (`updateInterval`), but can also be controlled by sending news feed specific notifications to the module.
+The `newsfeed ` module is one of the default modules of the MagicMirror. This
+module displays news headlines based on an RSS feed. Scrolling through news
+headlines happens time-based (`updateInterval`), but can also be controlled by
+sending news feed specific notifications to the module.
 
 ## Screenshot
 
-- News Feed Screenshot using the NYT
-  ![NYT News Feed Screenshot](./screenshots/newsfeed_screenshot.png)
+![NYT News Feed Screenshot](./screenshots/newsfeed.png)
 
 ## Using the module
 
@@ -43,7 +44,10 @@ modules: [
 
 #### Interacting with the module
 
-MagicMirror's [notification mechanism](https://github.com/MichMich/MagicMirror/tree/master/modules#thissendnotificationnotification-payload) allows to send notifications to the `newsfeed` module. The following notifications are supported:
+MagicMirror's
+[notification mechanism](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/modules#thissendnotificationnotification-payload)
+allows to send notifications to the `newsfeed` module. The following
+notifications are supported:
 
 | Notification Identifier | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -56,7 +60,10 @@ MagicMirror's [notification mechanism](https://github.com/MichMich/MagicMirror/t
 
 #### Notifications sent by the module
 
-MagicMirror's [notification mechanism](https://github.com/MichMich/MagicMirror/tree/master/modules#thissendnotificationnotification-payload) can also be used to send notifications from the current module to all other modules. The following notifications are broadcasted from this module:
+MagicMirror's
+[notification mechanism](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/modules#thissendnotificationnotification-payload)
+can also be used to send notifications from the current module to all other
+modules. The following notifications are broadcasted from this module:
 
 | Notification Identifier | Description                                |
 | ----------------------- | ------------------------------------------ |
@@ -67,7 +74,8 @@ Note the payload of the sent notification event is ignored.
 
 #### Example
 
-The following example shows how the next news article title can be displayed on the MagicMirror.
+The following example shows how the next news article title can be displayed on
+the MagicMirror.
 
 ```javascript
 this.sendNotification("ARTICLE_NEXT");
@@ -75,7 +83,10 @@ this.sendNotification("ARTICLE_NEXT");
 
 #### `newsfeed` specific notification emitting modules
 
-The third party [MMM-Gestures](https://github.com/thobach/MMM-Gestures) module supports above notifications when moving your hand up, down, left or right in front of a gesture sensor attached to the MagicMirror. See module's readme for more details.
+The third party [MMM-Gestures](https://github.com/thobach/MMM-Gestures) module
+supports above notifications when moving your hand up, down, left or right in
+front of a gesture sensor attached to the MagicMirror. See module's readme for
+more details.
 
 ## Configuration options
 
@@ -110,7 +121,8 @@ The following properties can be configured:
 | `scrollLength`         | Scrolls the full news article page by a given number of pixels when a `ARTICLE_MORE_DETAILS` notification is received and the full news article is already displayed.<br><br> **Possible values:** `1` or `10000` <br> **Default value:** `500`                                                                                         |
 | `logFeedWarnings`      | Log warnings when there is an error parsing a news article. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                                                                                                                             |
 
-The `feeds` property contains an array with multiple objects. These objects have the following properties:
+The `feeds` property contains an array with multiple objects. These objects have
+the following properties:
 
 | Option         | Description                                                                                                                                                       |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |

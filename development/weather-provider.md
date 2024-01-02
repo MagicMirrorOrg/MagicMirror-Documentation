@@ -1,10 +1,12 @@
 # Weather Module Weather Provider Development
 
-This document describes the way to develop your own MagicMirror² weather provider for the weather module.
+This document describes the way to develop your own MagicMirror² weather
+provider for the weather module.
 
 ## The weather provider file: yourprovider.js
 
-This is the script in which the weather provider will be defined. In its most simple form, the weather provider must implement the following:
+This is the script in which the weather provider will be defined. In its most
+simple form, the weather provider must implement the following:
 
 ```javascript
 WeatherProvider.register("yourprovider", {
@@ -18,7 +20,7 @@ WeatherProvider.register("yourprovider", {
 
 ## Weather provider methods to implement
 
-::: warning IMPORTANT
+::: warning IMPORTANT 
 The weather module expects the weather data to be in metric units:
 
 - `degree celsius` for temperatures
@@ -26,29 +28,42 @@ The weather module expects the weather data to be in metric units:
 
 Some weather APIs already deliver their data in those units.
 
-If that is not the case you can use helper methods from the `weatherutils.js` class to convert the data.
+If that is not the case you can use helper methods from the `weatherutils.js`
+class to convert the data.
 :::
 
 #### `fetchCurrentWeather()`
 
-This method is called when the weather module tries to fetch the current weather of your provider. The implementation of this method is required for current weather support.
-The implementation can make use of the already implemented function `this.fetchData(url, method, data);`, which is returning a promise.
-After the response is processed, the current weather information (as a [WeatherObject](#weatherobject)) needs to be set with `this.setCurrentWeather(currentWeather);`.
-It will then automatically refresh the module DOM with the new data.
+This method is called when the weather module tries to fetch the current weather
+of your provider. The implementation of this method is required for current
+weather support. The implementation can make use of the already implemented
+function `this.fetchData(url, method, data);`, which is returning a promise.
+After the response is processed, the current weather information (as a
+[WeatherObject](#weatherobject)) needs to be set with
+`this.setCurrentWeather(currentWeather);`. It will then automatically refresh
+the module DOM with the new data.
 
 #### `fetchWeatherForecast()`
 
-This method is called when the weather module tries to fetch the weather of your provider. The implementation of this method is required for forecast support.
-The implementation can make use of the already implemented function `this.fetchData(url, method, data);`, which is returning a promise.
-After the response is processed, the weather forecast information (as an array of [WeatherObject](#weatherobject)s) needs to be set with `this.setWeatherForecast(forecast);`.
-It will then automatically refresh the module DOM with the new data.
+This method is called when the weather module tries to fetch the weather of your
+provider. The implementation of this method is required for forecast support.
+The implementation can make use of the already implemented function
+`this.fetchData(url, method, data);`, which is returning a promise. After the
+response is processed, the weather forecast information (as an array of
+[WeatherObject](#weatherobject)s) needs to be set with
+`this.setWeatherForecast(forecast);`. It will then automatically refresh the
+module DOM with the new data.
 
 #### `fetchWeatherHourly()`
 
-This method is called when the weather module tries to fetch the weather of your provider. The implementation of this method is required for hourly support.
-The implementation can make use of the already implemented function `this.fetchData(url, method, data);`, which is returning a promise.
-After the response is processed, the hourly weather forecast information (as an array of [WeatherObject](#weatherobject)s) needs to be set with `this.setWeatherHourly(forecast);`.
-It will then automatically refresh the module DOM with the new data.
+This method is called when the weather module tries to fetch the weather of your
+provider. The implementation of this method is required for hourly support. The
+implementation can make use of the already implemented function
+`this.fetchData(url, method, data);`, which is returning a promise. After the
+response is processed, the hourly weather forecast information (as an array of
+[WeatherObject](#weatherobject)s) needs to be set with
+`this.setWeatherHourly(forecast);`. It will then automatically refresh the
+module DOM with the new data.
 
 ## Weather Provider instance methods
 
@@ -58,7 +73,8 @@ Called when a weather provider is initialized.
 
 #### `setConfig(config)`
 
-Called to set the config, this config is the same as the weather module's config.
+Called to set the config, this config is the same as the weather module's
+config.
 
 #### `start()`
 
@@ -82,15 +98,18 @@ This returns the name of the fetched location or an empty string.
 
 #### `setCurrentWeather(currentWeatherObject)`
 
-Set the currentWeather and notify the delegate that new information is available.
+Set the currentWeather and notify the delegate that new information is
+available.
 
 #### `setWeatherForecast(weatherForecastArray)`
 
-Set the weatherForecastArray and notify the delegate that new information is available.
+Set the weatherForecastArray and notify the delegate that new information is
+available.
 
 #### `setWeatherHourly(weatherHourlyArray)`
 
-Set the weatherHourlyArray and notify the delegate that new information is available.
+Set the weatherHourlyArray and notify the delegate that new information is
+available.
 
 #### `setFetchedLocation(name)`
 
