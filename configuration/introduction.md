@@ -182,7 +182,7 @@ npm start
 The most common use for `electronOptions` is a dual monitor setup on a Raspberry Pi 4 or greater. To do so, you can launch a second MagicMirror and use `electronOptions` to move it over to the next monitor. For example:
 
 You have two 1920x1080 monitors set up in the Pi as sitting next to each other: 
-![image-20231226175637817](dualmon.png)
+![Screen-Layout-Editor](./screenshots/dualmon.png)
 
 
 
