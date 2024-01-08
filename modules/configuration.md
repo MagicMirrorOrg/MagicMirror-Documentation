@@ -32,6 +32,7 @@ let config = {
     {
       module: "weather",
       position: "top_right",
+      classes: "myclass1 myclass2",
       config: {
         weatherProvider: "openweathermap",
         type: "current",
