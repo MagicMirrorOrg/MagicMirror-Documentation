@@ -8,10 +8,10 @@ check the [animate.css](https://animate.style/) library to see a preview of the 
 
 ::: warning Where animation can be used?
 
- - [global module configuration](configuration.html#animated) of a module
- - [this.hide()](../development/core-module-file.html#this-hide-speed-callback-options) function in core module file
- - [this.show()](../development/core-module-file.html#this-show-speed-callback-options) function in core module file
- - [this.updateDom()](../development/core-module-file.html#this-updatedom-speed-options) function in core module file
+ - [global module configuration](configuration.md#animated) of a module
+ - [this.hide()](/development/core-module-file.md#this-hide-speed-callback-options) function in core module file
+ - [this.show()](/development/core-module-file.md#this-show-speed-callback-options) function in core module file
+ - [this.updateDom()](/development/core-module-file.md#this-updatedom-speed-options) function in core module file
 :::
 
 ## animateIn
