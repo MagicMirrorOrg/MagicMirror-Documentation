@@ -1,7 +1,7 @@
 # Manifesto
 
 A real Manifesto is still to be written. Till then, Michael's response on
-[one of the repository issues](https://github.com/MichMich/MagicMirror/issues/1174)
+[one of the repository issues](https://github.com/MagicMirrorOrg/MagicMirror/issues/1174)
 gives a great summary:
 
 > "... I started this project as an ultimate starter project for Raspberry Pi

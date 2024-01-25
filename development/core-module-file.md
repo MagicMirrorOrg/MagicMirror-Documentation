@@ -356,10 +356,10 @@ module needs to be updated
 
 **animate Object**
 
-| animate | type   | description                                                                                                                                               |
-| ------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](../modules/animate#animatein))     |
-| out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](../modules/animate#animateout)) |
+| animate | type   | description                                                                                                                                             |
+| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](/modules/animate#animatein))     |
+| out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](/modules/animate#animateout)) |
 
 As an example:
 
@@ -429,7 +429,8 @@ Possible configurable options:
   modules identifier as the locksString: `this.identifier`. See _visibility
   locking_ below.
 
-- `animate` - String - (_Introduced in version: 2.25.0._) Hide the module with a special animate. It will use an `animateOut` type name. All animations name are available in [Animation Guide](../modules/animate.html#animateout)
+- `animate` - String - (_Introduced in version: 2.25.0._) Hide the module with a special animate. It will use an 
+`animateOut` type name. All animations name are available in [Animation Guide](/modules/animate.html#animateout)
 
 ::: warning Notes:
 - If the hide animation is cancelled, for instance because the show
@@ -463,7 +464,8 @@ Possible configurable options:
 - `onError(error)` - Function - If a module is hidden with other lock strings
   and can therefore not be shown the onError callback triggers with an error
   object, if specified in the options (_Introduced in version: 2.15.0_).
-- `animate` - String - (_Introduced in version: 2.25.0._) Show the module with a special animation. It will use an `animateIn` type name. All animations name are available in [Animation Guide](../modules/animate.html#animatein)
+- `animate` - String - (_Introduced in version: 2.25.0._) Show the module with a special animation. It will use an 
+`animateIn` type name. All animations name are available in [Animation Guide](/modules/animate.html#animatein)
 
 ::: warning Notes:
 - If the show animation is canceled, for instance because the hide
@@ -575,7 +577,7 @@ follows:
 
 When adding translations to your module, it's a good idea to see if an
 appropriate translation is already available in the
-[core translation files](https://github.com/MichMich/MagicMirror/tree/master/translations).
+[core translation files](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/translations).
 This way, your module can benefit from the existing translations.
 
 **Example:**

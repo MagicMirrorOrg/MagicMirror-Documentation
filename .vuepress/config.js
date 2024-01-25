@@ -80,10 +80,10 @@ export default {
         ],
       },
     ],
-    repo: "MichMich/MagicMirror",
+    repo: "MagicMirrorOrg/MagicMirror",
     repoLabel: "GitHub",
 
-    docsRepo: "MichMich/MagicMirror-Documentation",
+    docsRepo: "MagicMirrorOrg/MagicMirror-Documentation",
     docsBranch: "master",
     editLinks: true,
     editLinkText: "Help us improve this page!",

@@ -1,7 +1,7 @@
-# Autostart your MagicMirror
+# Autostart your MagicMirror²
 
-The methods below describe ways to automatically start your MagicMirror on boot,
-and even ways to keep it running in case of a failure.
+The methods below describe ways to automatically start your MagicMirror² on
+boot, and even ways to keep it running in case of a failure.
 
 ## Using PM2
 
@@ -29,10 +29,10 @@ pm2 startup
 
 PM2 will now show you a command you need to execute.
 
-### Make a MagicMirror start script.
+### Make a MagicMirror² start script.
 
-To use PM2 in combination with MagicMirror, we need to make a simple shell
-script. Preferable, we put this script outside the MagicMirror folder to make
+To use PM2 in combination with MagicMirror², we need to make a simple shell
+script. Preferable, we put this script outside the MagicMirror² folder to make
 sure it won't give us any issues if we want to upgrade the mirror.
 
 ```shell
@@ -54,9 +54,9 @@ shell script is executable by performing the following command:
 chmod +x mm.sh
 ```
 
-You are now ready to the MagicMirror using this script using PM2.
+You are now ready to the MagicMirror² using this script using PM2.
 
-### Starting your MagicMirror with PM2
+### Starting your MagicMirror² with PM2
 
 Simply start your mirror with the following command:
 
@@ -66,9 +66,9 @@ pm2 start mm.sh
 
 You mirror should now boot up and appear on your screen after a few seconds.
 
-### Enable restarting of the MagicMirror script.
+### Enable restarting of the MagicMirror² script.
 
-To make sure the MagicMirror restarts after rebooting, you need to save the
+To make sure the MagicMirror² restarts after rebooting, you need to save the
 current state of all scripts running via PM2. To do this, execute the following
 command
 
@@ -76,32 +76,32 @@ command
 pm2 save
 ```
 
-And that's all there is! You MagicMirror should now reboot after start, and
+And that's all there is! Your MagicMirror² should now reboot after start, and
 restart after any failure.
 
-### Controlling you MagicMirror via PM2.
+### Controlling your MagicMirror² via PM2.
 
 With your MagicMirror running via PM2, you have some handy tools at hand:
 
-#### Restarting your MagicMirror
+#### Restarting your MagicMirror²
 
 ```shell
 pm2 restart mm
 ```
 
-#### Stopping your MagicMirror
+#### Stopping your MagicMirror²
 
 ```shell
 pm2 stop mm
 ```
 
-#### Show the MagicMirror logs
+#### Show the MagicMirror² logs
 
 ```shell
 pm2 logs mm
 ```
 
-#### Show the MagicMirror process information
+#### Show the MagicMirror² process information
 
 ```shell
 pm2 show mm
@@ -172,13 +172,13 @@ sudo systemctl start magicmirror.service
 sudo systemctl stop magicmirror.service
 ```
 
-#### To check the status of Magic Mirror
+#### To check the status of MagicMirror²
 
 ```
 sudo systemctl status magicmirror.service
 ```
 
-#### Allow autostart Magic Mirror on boot
+#### Allow autostart MagicMirror² on boot
 
 Note: does not start immediately, need to run start command or reboot
 
@@ -186,7 +186,7 @@ Note: does not start immediately, need to run start command or reboot
 sudo systemctl enable magicmirror.service
 ```
 
-#### Disable autostart of Magic Mirror
+#### Disable autostart of MagicMirror²
 
 ```shell
 sudo systemctl disable magicmirror.service
