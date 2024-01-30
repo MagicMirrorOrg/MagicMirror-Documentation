@@ -1,10 +1,12 @@
-import { defaultTheme } from 'vuepress';
+import { defaultTheme } from '@vuepress/theme-default';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
-import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch';
+import { viteBundler } from '@vuepress/bundler-vite';
 
 export default {
   title: "MagicMirror² Documentation",
   description: "The open source modular smart mirror platform.",
+  bundler: viteBundler({}),
   theme: defaultTheme({
     // logo: '/mm.png',
     navbar: [
