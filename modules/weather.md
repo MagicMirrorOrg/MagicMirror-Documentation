@@ -229,4 +229,4 @@ update.
 ## API Provider Development
 
 If you want to add another API provider checkout the
-[Guide](/development/weather-provider.md).
+[Guide](/module-development/weather-provider.md).
