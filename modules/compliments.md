@@ -9,7 +9,7 @@ module displays a random compliment.
 
 ## Using the module
 
-To use this module, add it to the modules array in the `config/config.js` file:
+To use this module, add it to the modules array in the `<install folder>/modules/default/compliments/compliments.js` (Usually ~/MagicMirror/modules/default/compliments) file:
 
 ```javascript
 modules: [
@@ -96,16 +96,9 @@ config: {
 ```javascript
 config: {
 	compliments: {
-		day_sunny: [
-			"Today is a sunny day",
-			"It's a beautiful day"
-		],
-		snow: [
-			"Snowball battle!"
-		],
-		rain: [
-			"Don't forget your umbrella"
-		]
+		day_sunny: ["Today is a sunny day", "It's a beautiful day"],
+		snow: ["Snowball battle!", "Let's make snow angels"],
+		rain: ["Don't forget your umbrella", "I'm dancing in the rain"]
 	}
 }
 ```
@@ -115,27 +108,11 @@ config: {
 ```javascript
 config: {
 	compliments: {
-		anytime: [
-			"Hey there sexy!"
-		],
-		morning: [
-			"Good morning, handsome!",
-			"Enjoy your day!",
-			"How was your sleep?"
-		],
-		afternoon: [
-			"Hello, beauty!",
-			"You look sexy!",
-			"Looking good today!"
-		],
-		evening: [
-			"Wow, you look hot!",
-			"You look nice!",
-			"Hi, sexy!"
-		],
-		"....-01-01": [
-			"Happy new year!"
-		]
+		anytime: ["Hey there sexy!"],
+		morning: ["Good morning, handsome!", "Enjoy your day!", "How was your sleep?"],
+		afternoon: ["Hello, beauty!", "You look sexy!", "Looking good today!"],
+		evening: ["Wow, you look hot!", "You look nice!", "Hi, sexy!"],
+		"....-01-01": ["Happy new year!"]
 	}
 }
 ```
@@ -181,20 +158,8 @@ position: 'middle_center',
 ```json
 {
   "anytime": ["Hey there sexy!"],
-  "morning": [
-    "Good morning, sunshine!",
-    "Who needs coffee when you have your smile?",
-    "Go get 'em, Tiger!"
-  ],
-  "afternoon": [
-    "Hitting your stride!",
-    "You are making a difference!",
-    "You're more fun than bubble wrap!"
-  ],
-  "evening": [
-    "You made someone smile today, I know it.",
-    "You are making a difference.",
-    "The day was better for your efforts."
-  ]
+  "morning": ["Good morning, sunshine!","Who needs coffee when you have your smile?","Go get 'em, Tiger!"],
+  "afternoon": ["Hitting your stride!","You are making a difference!","You're more fun than bubble wrap!"],
+  "evening": ["You made someone smile today, I know it.", "You are making a difference.", "The day was better for your efforts."]
 }
 ```
