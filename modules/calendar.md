@@ -164,7 +164,7 @@ are the instructions to fix it:
    Office 365 is created.
    [Here is a guide to help with this task.](https://shift.newco.co/sync-your-calendars-using-microsoft-flow-and-yes-google-calendar-works-too-a28be5a604dd)
 3. Go to Google Calendar and create a private address to use in the calendar
-   module for your Magic Mirror.
+   module for your MagicMirror.
 
 This trigger will run every 5 minutes. Make sure to give it time after you
 create a new event in Office 365 to appear in Google Calendar. Past events will

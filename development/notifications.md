@@ -40,5 +40,5 @@ These notifications are send by the default modules:
 
 # 3rd Party Module notifications
 
-Take a look in the [wiki](https://github.com/MagicMirrorOrg/MagicMirror/wiki/) to see
-if 3rd party modules send notifications you might want to use.
+Take a look in the [wiki](https://github.com/MagicMirrorOrg/MagicMirror/wiki/)
+to see if 3rd party modules send notifications you might want to use.

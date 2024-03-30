@@ -121,7 +121,7 @@ Here is the list of names of special animations available:
 - slideOutDown
 - slideOutLeft
 - slideOutRight
-- slideOutUp 
+- slideOutUp
 
 ::: warning WARN
 - You can't choose an `animateIn` name to place it on an `animateOut` and vice versa
@@ -140,12 +140,13 @@ Allows you to add an animation to a single `<div>` of your module
 
 Syntaxe: `addAnimateCSS(<div>, <animation name>, <animation time in sec>)` <br>
 Sample:
- * You have created a `<div>` named "myDivSample"
- * You want to add a `flipInX` type animation for a duration of 1 second
 
- ```javascript
- addAnimateCSS("myDivSample", "flipInX", 1)
- ```
+- You have created a `<div>` named "myDivSample"
+- You want to add a `flipInX` type animation for a duration of 1 second
+
+```javascript
+addAnimateCSS("myDivSample", "flipInX", 1);
+```
 
 ::: tip removeAnimateCSS() function
 Allows you to remove an animation to a single `<div>` of your module
@@ -153,11 +154,12 @@ Allows you to remove an animation to a single `<div>` of your module
 
 Syntaxe: `removeAnimateCSS(<div>, <animation name>)` <br>
 Sample:
- * You have created a `<div>` named "myDivSample"
- * You want to remove a `flipInX` type animation created with `addAnimateCSS()` function
+
+- You have created a `<div>` named "myDivSample"
+- You want to remove a `flipInX` type animation created with `addAnimateCSS()` function
 
 ```javascript
-removeAnimateCSS("myDivSample", "flipInX")
+removeAnimateCSS("myDivSample", "flipInX");
 ```
 
 ::: tip Tip
