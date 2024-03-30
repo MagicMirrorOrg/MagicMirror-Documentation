@@ -6,7 +6,7 @@ folder before you start the upgrade process!
 :::
 
 If you want to update your MagicMirror² to the latest version, use your terminal
-to go to your Magic Mirror folder and type the following command:
+to go to your MagicMirror folder and type the following command:
 
 ```shell
 git pull && npm run install-mm

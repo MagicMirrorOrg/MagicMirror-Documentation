@@ -558,7 +558,7 @@ Use this `force` method with caution. See `show()` method for more information.
 
 **_identifier_ String** - Identifier of the string that should be translated.
 
-The Magic Mirror contains a convenience wrapper for `l18n`. You can use this to
+MagicMirror contains a convenience wrapper for `l18n`. You can use this to
 automatically serve different translations for your modules based on the user's
 `language` configuration.
 
