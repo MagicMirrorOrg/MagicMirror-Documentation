@@ -197,7 +197,7 @@ sudo systemctl disable magicmirror.service
 Create file `/home/server/.config/lxsession/LXDE-pi/autostart` with the
 following contents:
 
-```sh
+```shell
 @lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
 @xscreensaver -no-splash
@@ -207,7 +207,7 @@ following contents:
 
 Create file `/home/server/bin/start-chromium.sh` with the following contents:
 
-```sh
+```shell
 #!/bin/sh
 
 set -e
