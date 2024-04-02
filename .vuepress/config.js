@@ -4,15 +4,21 @@ import { docsearchPlugin } from '@vuepress/plugin-docsearch';
 import { viteBundler } from '@vuepress/bundler-vite';
 
 export default {
-  title: "MagicMirror² Documentation",
+  title: "MagicMirror² Docs",
   description: "The open source modular smart mirror platform.",
   bundler: viteBundler({}),
   theme: defaultTheme({
-    // logo: '/mm.png',
+    contributors: false,
+    docsRepo: "MagicMirrorOrg/MagicMirror-Documentation",
+    docsBranch: "master",
+    editLinkText: "Help us improve this page!",
+    logo: 'logo.png',
     navbar: [
       { text: "Donate", link: "https://magicmirror.builders/donate" },
       { text: "Forum", link: "https://forum.magicmirror.builders" },
     ],
+    repo: "MagicMirrorOrg/MagicMirror",
+    repoLabel: "GitHub",
     sidebar: [
       {
         text: "Getting Started",
@@ -82,14 +88,6 @@ export default {
         ],
       },
     ],
-    repo: "MagicMirrorOrg/MagicMirror",
-    repoLabel: "GitHub",
-
-    docsRepo: "MagicMirrorOrg/MagicMirror-Documentation",
-    docsBranch: "master",
-    editLinks: true,
-    editLinkText: "Help us improve this page!",
-    lastUpdated: "Updated",
   }),
   markdown: {
     toc: { includeLevel: [2, 3, 4] },
