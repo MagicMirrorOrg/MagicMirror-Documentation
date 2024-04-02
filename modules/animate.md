@@ -121,7 +121,7 @@ names of special animations available:
 - slideOutDown
 - slideOutLeft
 - slideOutRight
-- slideOutUp 
+- slideOutUp
 
 ::: warning WARN
 - You can't choose an `animateIn` name to place it on an `animateOut` and vice versa
@@ -151,7 +151,9 @@ addAnimateCSS("myDivSample", "flipInX", 1);
 ::: tip removeAnimateCSS() function
 Allows you to remove an animation to a single `<div>` of your module
 :::
-Syntaxe: `removeAnimateCSS(<div>, <animation name>)` <br> Sample:
+
+Syntaxe: `removeAnimateCSS(<div>, <animation name>)` <br>
+Sample:
 
 - You have created a `<div>` named "myDivSample"
 - You want to remove a `flipInX` type animation created with `addAnimateCSS()`
