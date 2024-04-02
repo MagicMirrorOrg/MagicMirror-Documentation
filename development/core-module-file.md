@@ -430,7 +430,7 @@ Possible configurable options:
   locking_ below.
 
 - `animate` - String - (_Introduced in version: 2.25.0._) Hide the module with a special animate. It will use an 
-`animateOut` type name. All animations name are available in [Animation Guide](/modules/animate.html#animateout)
+`animateOut` type name. All animations name are available in [Animation Guide](/modules/animate.md#animateout)
 
 ::: warning Notes:
 - If the hide animation is cancelled, for instance because the show
@@ -465,7 +465,7 @@ Possible configurable options:
   and can therefore not be shown the onError callback triggers with an error
   object, if specified in the options (_Introduced in version: 2.15.0_).
 - `animate` - String - (_Introduced in version: 2.25.0._) Show the module with a special animation. It will use an 
-`animateIn` type name. All animations name are available in [Animation Guide](/modules/animate.html#animatein)
+`animateIn` type name. All animations name are available in [Animation Guide](/modules/animate.md#animatein)
 
 ::: warning Notes:
 - If the show animation is canceled, for instance because the hide
@@ -558,7 +558,7 @@ Use this `force` method with caution. See `show()` method for more information.
 
 **_identifier_ String** - Identifier of the string that should be translated.
 
-The Magic Mirror contains a convenience wrapper for `l18n`. You can use this to
+MagicMirror contains a convenience wrapper for `l18n`. You can use this to
 automatically serve different translations for your modules based on the user's
 `language` configuration.
 

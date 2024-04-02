@@ -8,16 +8,16 @@ check the [animate.css](https://animate.style/) library to see a preview of the 
 
 ::: warning Where animation can be used?
 
- - [global module configuration](configuration.html#animated) of a module
- - [this.hide()](../development/core-module-file.html#this-hide-speed-callback-options) function in core module file
- - [this.show()](../development/core-module-file.html#this-show-speed-callback-options) function in core module file
- - [this.updateDom()](../development/core-module-file.html#this-updatedom-speed-options) function in core module file
+ - [global module configuration](configuration.md#animated) of a module
+ - [this.hide()](/development/core-module-file.md#this-hide-speed-callback-options) function in core module file
+ - [this.show()](/development/core-module-file.md#this-show-speed-callback-options) function in core module file
+ - [this.updateDom()](/development/core-module-file.md#this-updatedom-speed-options) function in core module file
 :::
 
 ## animateIn
 
-When the module appears, you can choose an animation.<br>
-Here is the list of names of special animations available:
+When the module appears, you can choose an animation.<br> Here is the list of
+names of special animations available:
 
 - bounce
 - flash
@@ -77,8 +77,8 @@ Here is the list of names of special animations available:
 
 ## animateOut
 
-When module should hide, you can choose an animation.<br>
-Here is the list of names of special animations available:
+When module should hide, you can choose an animation.<br> Here is the list of
+names of special animations available:
 
 - backOutDown
 - backOutLeft
@@ -121,7 +121,7 @@ Here is the list of names of special animations available:
 - slideOutDown
 - slideOutLeft
 - slideOutRight
-- slideOutUp 
+- slideOutUp
 
 ::: warning WARN
 - You can't choose an `animateIn` name to place it on an `animateOut` and vice versa
@@ -131,8 +131,8 @@ Here is the list of names of special animations available:
 
 ## Developer Notes
 
-You can create an animation on a single `<div>` of your module.<br>
-We coded `addAnimateCSS` and `removeAnimateCSS` in order to do this.
+You can create an animation on a single `<div>` of your module.<br> We coded
+`addAnimateCSS` and `removeAnimateCSS` in order to do this.
 
 ::: tip addAnimateCSS() function
 Allows you to add an animation to a single `<div>` of your module
@@ -140,11 +140,12 @@ Allows you to add an animation to a single `<div>` of your module
 
 Syntaxe: `addAnimateCSS(<div>, <animation name>, <animation time in sec>)` <br>
 Sample:
- * You have created a `<div>` named "myDivSample"
- * You want to add a `flipInX` type animation for a duration of 1 second
+
+- You have created a `<div>` named "myDivSample"
+- You want to add a `flipInX` type animation for a duration of 1 second
 
  ```javascript
- addAnimateCSS("myDivSample", "flipInX", 1)
+addAnimateCSS("myDivSample", "flipInX", 1);
  ```
 
 ::: tip removeAnimateCSS() function
@@ -153,18 +154,20 @@ Allows you to remove an animation to a single `<div>` of your module
 
 Syntaxe: `removeAnimateCSS(<div>, <animation name>)` <br>
 Sample:
- * You have created a `<div>` named "myDivSample"
- * You want to remove a `flipInX` type animation created with `addAnimateCSS()` function
+
+- You have created a `<div>` named "myDivSample"
+- You want to remove a `flipInX` type animation created with `addAnimateCSS()`
+  function
 
 ```javascript
-removeAnimateCSS("myDivSample", "flipInX")
+removeAnimateCSS("myDivSample", "flipInX");
 ```
 
 ::: tip Tip
 :::
 
-You have to update only one element of your module.<br>
-So, why not add an animation !?
+You have to update only one element of your module.<br> So, why not add an
+animation !?
 
 ```javascript
 ...

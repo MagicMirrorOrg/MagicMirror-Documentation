@@ -32,7 +32,7 @@ If that is not the case you can use helper methods from the `weatherutils.js`
 class to convert the data.
 :::
 
-#### `fetchCurrentWeather()`
+### `fetchCurrentWeather()`
 
 This method is called when the weather module tries to fetch the current weather
 of your provider. The implementation of this method is required for current
@@ -43,7 +43,7 @@ After the response is processed, the current weather information (as a
 `this.setCurrentWeather(currentWeather);`. It will then automatically refresh
 the module DOM with the new data.
 
-#### `fetchWeatherForecast()`
+### `fetchWeatherForecast()`
 
 This method is called when the weather module tries to fetch the weather of your
 provider. The implementation of this method is required for forecast support.
@@ -54,7 +54,7 @@ response is processed, the weather forecast information (as an array of
 `this.setWeatherForecast(forecast);`. It will then automatically refresh the
 module DOM with the new data.
 
-#### `fetchWeatherHourly()`
+### `fetchWeatherHourly()`
 
 This method is called when the weather module tries to fetch the weather of your
 provider. The implementation of this method is required for hourly support. The
@@ -67,16 +67,16 @@ module DOM with the new data.
 
 ## Weather Provider instance methods
 
-#### `init()`
+### `init()`
 
 Called when a weather provider is initialized.
 
-#### `setConfig(config)`
+### `setConfig(config)`
 
 Called to set the config, this config is the same as the weather module's
 config.
 
-#### `start()`
+### `start()`
 
 Called when the weather provider is about to start.
 
@@ -84,42 +84,42 @@ Called when the weather provider is about to start.
 
 This returns a WeatherDay object for the current weather.
 
-#### `weatherForecast()`
+### `weatherForecast()`
 
 This returns an array of WeatherDay objects for the weather forecast.
 
-#### `weatherHourly()`
+### `weatherHourly()`
 
 This returns an array of WeatherDay objects for the hourly weather forecast.
 
-#### `fetchedLocation()`
+### `fetchedLocation()`
 
 This returns the name of the fetched location or an empty string.
 
-#### `setCurrentWeather(currentWeatherObject)`
+### `setCurrentWeather(currentWeatherObject)`
 
 Set the currentWeather and notify the delegate that new information is
 available.
 
-#### `setWeatherForecast(weatherForecastArray)`
+### `setWeatherForecast(weatherForecastArray)`
 
 Set the weatherForecastArray and notify the delegate that new information is
 available.
 
-#### `setWeatherHourly(weatherHourlyArray)`
+### `setWeatherHourly(weatherHourlyArray)`
 
 Set the weatherHourlyArray and notify the delegate that new information is
 available.
 
-#### `setFetchedLocation(name)`
+### `setFetchedLocation(name)`
 
 Set the fetched location name.
 
-#### `updateAvailable()`
+### `updateAvailable()`
 
 Notify the delegate that new weather is available.
 
-#### `fetchData(url, method, data)`
+### `fetchData(url, method, data)`
 
 A convenience function to make requests. It returns a promise.
 
@@ -143,7 +143,7 @@ This object holds all data from your provider for usage in the template.
 | snow           | `number` | Metric: `millimeters` <br> Imperial: `inches`                                                                   |
 | precipitation  | `number` | Metric: `millimeters` <br> Imperial: `inches` <br> UK Met Office provider: `percent`                            |
 
-#### Current weather
+### Current weather
 
 For the current weather object the following properties are required:
 
@@ -155,7 +155,7 @@ For the current weather object the following properties are required:
 - windDirection
 - windSpeed
 
-#### Weather forecast
+### Weather forecast
 
 For the forecast weather object the following properties are required:
 
