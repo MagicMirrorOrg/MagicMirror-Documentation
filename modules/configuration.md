@@ -76,8 +76,9 @@ Animated feature allows to define an animation to a module
 The whole of animation names are available [there](animate.md).
 
 ::: tip Preview of animations
-- check the [animate.css](https://animate.style/) library to see a preview of the animation name result
-:::
+
+- check the [animate.css](https://animate.style/) library to see a preview of
+  the animation name result :::
 
 ### Example with `newsfeed` module
 

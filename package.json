@@ -2,7 +2,7 @@
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.9.10",
     "@vuepress/plugin-google-analytics": "^1.9.10",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "prettier-config-vuepress": "^4.4.0",
     "vue-template-compiler": "^2.7.16",
     "vuepress": "^1.9.10",
