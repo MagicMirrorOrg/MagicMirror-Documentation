@@ -124,7 +124,9 @@ names of special animations available:
 - slideOutUp
 
 ::: warning WARN
-- You can't choose an `animateIn` name to place it on an `animateOut` and vice versa
+
+- You can't choose an `animateIn` name to place it on an `animateOut` and vice
+  versa
 - Animation names are case sensitive
 - In case of wrong animation name, this will display the default animation (fade)
 :::
@@ -144,7 +146,7 @@ Sample:
 - You have created a `<div>` named "myDivSample"
 - You want to add a `flipInX` type animation for a duration of 1 second
 
- ```javascript
+```javascript
 addAnimateCSS("myDivSample", "flipInX", 1);
  ```
 
@@ -164,10 +166,9 @@ removeAnimateCSS("myDivSample", "flipInX");
 ```
 
 ::: tip Tip
-:::
-
 You have to update only one element of your module.<br> So, why not add an
 animation !?
+:::
 
 ```javascript
 ...

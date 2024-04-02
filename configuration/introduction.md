@@ -25,8 +25,8 @@
    and examples.
 
 4. Run your magic mirror. Refer back to
-   [installation](/getting-started/installation.md) if you're not sure how to
-   do so.
+   [installation](/getting-started/installation.md) if you're not sure how to do
+   so.
 
 ### More useful configuration of your MagicMirror
 
