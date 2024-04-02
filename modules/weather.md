@@ -95,6 +95,11 @@ The following properties can be configured:
 
 ### Openweathermap options
 
+**Note:** When using the type: "forecast" config, if you are using a free api
+key, the max forecast days you can retrieve is 5. Providing anything higher than
+5 for the `maxNumberOfDays` option will still return the default of 5. To
+retrieve more than 5 days you must subscribe to the OpenWeatherMap API.
+
 | Option            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `apiVersion`      | The OpenWeatherMap API version to use. <br><br> **Default value:** `2.5`                                                                                                                                                                                                                                                                                                                                                                             |
