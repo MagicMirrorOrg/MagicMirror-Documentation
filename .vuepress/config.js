@@ -46,7 +46,7 @@ export default {
           "/modules/introduction",
           "/modules/configuration",
           {
-            title: "Default Modules",
+            text: "Default Modules",
             collapsible: false,
             children: [
               "/modules/alert",
