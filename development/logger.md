@@ -19,5 +19,6 @@ following line at the beginning of the file:
 ```javascript
 const Log = require("logger");
 ```
-> Remember: Much of the JavaScript code is run in the electron front-end
-> or browser, so check the those consoles for log output as well.
+
+Remember: Much of the JavaScript code is run in the electron front-end
+or browser, so check the those consoles for log output as well.
