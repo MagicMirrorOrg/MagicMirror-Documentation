@@ -2,16 +2,19 @@
 
 (_Introduced in version: 2.25.0_)
 
-::: tip Preview of animation
-check the [animate.css](https://animate.style/) library to see a preview of the animation name result
+::: tip Preview of animation 
+Check the [animate.css](https://animate.style/) library to see a preview of the animation name result 
 :::
 
 ::: warning Where animation can be used?
 
- - [global module configuration](configuration.md#animated) of a module
- - [this.hide()](/development/core-module-file.md#this-hide-speed-callback-options) function in core module file
- - [this.show()](/development/core-module-file.md#this-show-speed-callback-options) function in core module file
- - [this.updateDom()](/development/core-module-file.md#this-updatedom-speed-options) function in core module file
+- [global module configuration](configuration.md#animated) of a module
+- [this.hide()](/development/core-module-file.md#this-hide-speed-callback-options)
+  function in core module file
+- [this.show()](/development/core-module-file.md#this-show-speed-callback-options)
+  function in core module file
+- [this.updateDom()](/development/core-module-file.md#this-updatedom-speed-options)
+  function in core module file 
 :::
 
 ## animateIn
@@ -148,7 +151,7 @@ Sample:
 
 ```javascript
 addAnimateCSS("myDivSample", "flipInX", 1);
- ```
+```
 
 ::: tip removeAnimateCSS() function
 Allows you to remove an animation to a single `<div>` of your module

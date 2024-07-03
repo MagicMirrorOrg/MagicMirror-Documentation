@@ -415,10 +415,11 @@ this.sendSocketNotification("SET_CONFIG", this.config);
 **_speed_ Number** - Optional (Required when setting callback or options), The
 speed of the hide animation in milliseconds.
 
-**_callback_ Function** -
-Optional, The callback after the hide animation is finished.<br> **_options_
-Function** - Optional, Object with additional options for the hide action (see
-below). (_Introduced in version: 2.1.0._)
+**_callback_ Function** - Optional, The callback after the hide animation is
+finished.
+
+**_options_ Function** - Optional, Object with additional options for the hide
+action (see below). (_Introduced in version: 2.1.0._)
 
 To hide a module, you can call the `hide(speed, callback)` method. You can call
 the hide method on the module instance itself using `this.hide()`, but of course
@@ -447,7 +448,7 @@ Possible configurable options:
   `DOM_OBJECTS_CREATED`
   [notification](#notificationreceived-notification-payload-sender).<br>
 - If an `animateOut` is defined in global module configuration, `animate` string
-  will be ignored 
+  will be ignored
 
 :::
 
@@ -490,7 +491,7 @@ Possible configurable options:
   `DOM_OBJECTS_CREATED`
   [notification](#notificationreceived-notification-payload-sender).<br>
 - If an `animateIn` is defined in global module configuration, `animate` string
-  will be ignored 
+  will be ignored
 
 :::
 

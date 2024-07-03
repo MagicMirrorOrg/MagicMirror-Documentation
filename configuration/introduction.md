@@ -36,8 +36,8 @@ installation.
 
 1. Copy `~/MagicMirror/config/config.js.sample` to
    `~/MagicMirror/config/config.js`. \
-   **Note:** If you used a third-party installer script, this step may already have
-   been done for you.
+   **Note:** If you used a third-party installer script, this step may already
+   have been done for you.
 
 2. Modify your required settings using your preferred editor. `nano` is the
    easiest.
