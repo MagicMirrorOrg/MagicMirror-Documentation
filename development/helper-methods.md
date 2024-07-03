@@ -1,8 +1,8 @@
 # MagicMirror Helper Methods
 
-The MagicMirror core object `MM` has some handy methods to help you
-control your and other modules. Most of the `MM` methods are available via the
-convenience methods on the Module instance.
+The MagicMirror core object `MM` has some handy methods to help you control your
+and other modules. Most of the `MM` methods are available via the convenience
+methods on the Module instance.
 
 ## Module selection
 

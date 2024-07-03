@@ -1,6 +1,6 @@
 # Introduction
 
-### Basic Configuration of MagicMirror²:
+### Basic Configuration of MagicMirror²
 
 1. Go to your configuration directory: In Bash/linux, it'll be in
    `~/MagicMirror/config/`
@@ -25,8 +25,8 @@
    and examples.
 
 4. Run your magic mirror. Refer back to
-   [installation](/getting-started/installation.md) if you're not sure how to
-   do so.
+   [installation](/getting-started/installation.md) if you're not sure how to do
+   so.
 
 ### More useful configuration of your MagicMirror
 
@@ -63,7 +63,7 @@ The following properties can be configured, place them above the modules item:
 After the above options, you will then add modules. See
 [module configuration](/modules/configuration.md) for more information.
 
-### Advanced configuration and frequently asked how to configure examples:
+### Advanced configuration and frequently asked how to configure examples
 
 #### Bash Environment variables
 
