@@ -2,16 +2,19 @@
 
 (_Introduced in version: 2.25.0_)
 
-::: tip Preview of animation
-check the [animate.css](https://animate.style/) library to see a preview of the animation name result
+::: tip Preview of animation 
+Check the [animate.css](https://animate.style/) library to see a preview of the animation name result 
 :::
 
 ::: warning Where animation can be used?
 
- - [global module configuration](configuration.md#animated) of a module
- - [this.hide()](/development/core-module-file.md#this-hide-speed-callback-options) function in core module file
- - [this.show()](/development/core-module-file.md#this-show-speed-callback-options) function in core module file
- - [this.updateDom()](/development/core-module-file.md#this-updatedom-speed-options) function in core module file
+- [global module configuration](configuration.md#animated) of a module
+- [this.hide()](/development/core-module-file.md#this-hide-speed-callback-options)
+  function in core module file
+- [this.show()](/development/core-module-file.md#this-show-speed-callback-options)
+  function in core module file
+- [this.updateDom()](/development/core-module-file.md#this-updatedom-speed-options)
+  function in core module file 
 :::
 
 ## animateIn
@@ -124,7 +127,9 @@ names of special animations available:
 - slideOutUp
 
 ::: warning WARN
-- You can't choose an `animateIn` name to place it on an `animateOut` and vice versa
+
+- You can't choose an `animateIn` name to place it on an `animateOut` and vice
+  versa
 - Animation names are case sensitive
 - In case of wrong animation name, this will display the default animation (fade)
 :::
@@ -144,9 +149,9 @@ Sample:
 - You have created a `<div>` named "myDivSample"
 - You want to add a `flipInX` type animation for a duration of 1 second
 
- ```javascript
+```javascript
 addAnimateCSS("myDivSample", "flipInX", 1);
- ```
+```
 
 ::: tip removeAnimateCSS() function
 Allows you to remove an animation to a single `<div>` of your module
@@ -164,10 +169,9 @@ removeAnimateCSS("myDivSample", "flipInX");
 ```
 
 ::: tip Tip
-:::
-
 You have to update only one element of your module.<br> So, why not add an
 animation !?
+:::
 
 ```javascript
 ...
