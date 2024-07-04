@@ -20,14 +20,16 @@ installers can be found under:
 - [Linux based distributions](https://github.com/nodesource/distributions)
 - [Others](https://nodejs.org/en/download)
 
-2. Clone the repository and check out the master branch:
+2. check if `git` is installed on your machine by executing `git`
+   (should show usage), otherwise install it
+3. Clone the repository:
    `git clone https://github.com/MagicMirrorOrg/MagicMirror`
-3. Enter the repository: `cd MagicMirror/`
-4. Install the application: `npm run install-mm`
-5. Make a copy of the config sample file:
+4. Enter the repository: `cd MagicMirror/`
+5. Install the application: `npm run install-mm`
+6. Make a copy of the config sample file:
    `cp config/config.js.sample config/config.js`
-6. Start the application: `npm run start` \
-   For **Server Only** use: `npm run server` .
+7. Start the application: `npm run start` \
+   For **Server Only** use: `npm run server`
 
 ::: warning NOTE
 The installation step for `npm run install-mm` will take a very
