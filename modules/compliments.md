@@ -3,10 +3,9 @@
 The `compliments` module is one of the default modules of the MagicMirror. This
 module displays a random compliment.
 
-## Screenshots
+## Screenshot
 
-- Compliments Screenshot
-  ![Compliments Screenshot](./screenshots/compliments_screenshot.png)
+![Compliments Screenshot](./screenshots/compliments.png)
 
 ## Using the module
 
@@ -42,6 +41,7 @@ The following properties can be configured:
 | `morningEndTime`     | Time in hours (in 24 format), after which the mode of "morning" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                 |
 | `afternoonStartTime` | Time in hours (in 24 format), after which the mode "afternoon" will begin <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                |
 | `afternoonEndTime`   | Time in hours (in 24 format), after which the mode "afternoon" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `17`                                                                                                                                                                                                                                                                  |
+| `specialDayUnique`   | Compliments configured with a date are by default added to the existing compliments list. Setting this option to `true` will show only your special day compliments on that day. See _Example use with date_ below <br><br> **Default value:** `false`                                                                                                                                                         |
 
 All the rest of the time that does not fall into the
 morningStartTime-morningEndTime and afternoonStartTime-afternoonEndTime ranges

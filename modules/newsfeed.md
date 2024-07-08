@@ -7,8 +7,7 @@ sending news feed specific notifications to the module.
 
 ## Screenshot
 
-- News Feed Screenshot using the NYT
-  ![NYT News Feed Screenshot](./screenshots/newsfeed_screenshot.png)
+![NYT News Feed Screenshot](./screenshots/newsfeed.png)
 
 ## Using the module
 
@@ -46,7 +45,7 @@ modules: [
 #### Interacting with the module
 
 MagicMirror's
-[notification mechanism](https://github.com/MichMich/MagicMirror/tree/master/modules#thissendnotificationnotification-payload)
+[notification mechanism](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/modules#thissendnotificationnotification-payload)
 allows to send notifications to the `newsfeed` module. The following
 notifications are supported:
 
@@ -62,7 +61,7 @@ notifications are supported:
 #### Notifications sent by the module
 
 MagicMirror's
-[notification mechanism](https://github.com/MichMich/MagicMirror/tree/master/modules#thissendnotificationnotification-payload)
+[notification mechanism](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/modules#thissendnotificationnotification-payload)
 can also be used to send notifications from the current module to all other
 modules. The following notifications are broadcasted from this module:
 

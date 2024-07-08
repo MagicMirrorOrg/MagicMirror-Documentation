@@ -1,8 +1,8 @@
 # MagicMirror Helper Methods
 
-The core Magic Mirror object: `MM` has some handy method that will help you in
-controlling your and other modules. Most of the `MM` methods are available via
-convenience methods on the Module instance.
+The MagicMirror core object `MM` has some handy methods to help you control your
+and other modules. Most of the `MM` methods are available via the convenience
+methods on the Module instance.
 
 ## Module selection
 
@@ -11,7 +11,7 @@ references to other modules. This can be used to hide and show other modules.
 
 ### `MM.getModules()`
 
-**Returns Array** - An array with module instances.<br>
+**Returns Array** - An array with module instances.
 
 To make a selection of all currently loaded module instances, run the
 `MM.getModules()` method. It will return an array with all currently loaded
@@ -25,7 +25,7 @@ Wait for the `ALL_MODULES_STARTED`
 #### `.withClass(classnames)`
 
 **_classnames_ String or Array** - The class names on which you want to filter.
-**Returns Array** - An array with module instances.<br>
+**Returns Array** - An array with module instances.
 
 If you want to make a selection based on one or more class names, use the
 withClass method on a result of the `MM.getModules()` method. The argument of
@@ -42,7 +42,7 @@ var modules = MM.getModules().withClass(["classname1", "classname2"]);
 #### `.exceptWithClass(classnames)`
 
 **_classnames_ String or Array** - The class names of the modules you want to
-remove from the results. **Returns Array** - An array with module instances.<br>
+remove from the results. **Returns Array** - An array with module instances.
 
 If you to remove some modules from a selection based on a classname, use the
 exceptWithClass method on a result of the `MM.getModules()` method. The argument
@@ -60,7 +60,7 @@ var modules = MM.getModules().exceptWithClass(["classname1", "classname2"]);
 #### `.exceptModule(module)`
 
 **_module_ Module Object** - The reference to a module you want to remove from
-the results. **Returns Array** - An array with module instances.<br>
+the results. **Returns Array** - An array with module instances.
 
 If you to remove a specific module instance from a selection based on a
 classname, use the exceptWithClass method on a result of the `MM.getModules()`

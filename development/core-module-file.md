@@ -283,9 +283,10 @@ When this module is called, it has 2 arguments:
 - `payload` - AnyType - The payload of a notification.
 
 **Note 1:** When a node helper sends a notification, all modules of that module
-type receive the same notifications.<br>
-**Note 2:** The socket connection is
-established as soon as the module sends its first message using
+type receive the same notifications.
+
+**Note 2:** The socket connection is established as soon as the module sends its
+first message using
 [sendSocketNotification](#this-sendsocketnotification-notification-payload).
 
 **Example:**
@@ -316,8 +317,7 @@ module.
 ### `this.file(filename)`
 
 **_filename_ String** - The name of the file you want to create the path
-for.<br>
-**Returns String**
+for.<br> **Returns String**
 
 If you want to create a path to a file in your module folder, use the `file()`
 method. It returns the path to the filename given as the attribute. Is method
@@ -345,22 +345,24 @@ start: function() {
 ...
 ```
 
-**_options_ Object** - (_Introduced in version: 2.25.0._) Optional. Allows you to determine the animation speed and animation type options, whenever your module needs to be updated
+**_options_ Object** - (_Introduced in version: 2.25.0._) Optional. Allows you
+to determine the animation speed and animation type options, whenever your
+module needs to be updated
 
-| options | type | description |
-| ------- | ---- | ----------- |
-| speed   | Number | animation speed in ms |
+| options | type   | description                          |
+| ------- | ------ | ------------------------------------ |
+| speed   | Number | animation speed in ms                |
 | animate | Object | animate IN and OUT rules (see below) |
-
 
 **animate Object**
 
-| animate | type | description |
-| ------- | ---- | ----------- |
-| in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](../modules/animate#animatein)) |
-| out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](../modules/animate#animateout)) |
+| animate | type   | description                                                                                                                                             |
+| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](/modules/animate#animatein))     |
+| out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](/modules/animate#animateout)) |
 
 As an example:
+
 ```javascript
 ...
   this.updateDom( {
@@ -377,8 +379,8 @@ As an example:
 
 ### `this.sendNotification(notification, payload)`
 
-**_notification_ String** - The notification identifier.<br>
-**_payload_ AnyType** - Optional. A notification payload.
+- `notification` - String - The notification identifier.
+- `payload` - AnyType - (Optional) A notification payload.
 
 If you want to send a notification to all other modules, use the
 `sendNotification(notification, payload)`. All other modules will receive the
@@ -395,8 +397,8 @@ this.sendNotification("MYMODULE_READY_FOR_ACTION", { foo: bar });
 
 ### `this.sendSocketNotification(notification, payload)`
 
-**_notification_ String** - The notification identifier.<br>
-**_payload_ AnyType** - Optional. A notification payload.
+- `notification` - String - The notification identifier.
+- `payload` - AnyType - (Optional) A notification payload.
 
 If you want to send a notification to the node_helper, use the
 `sendSocketNotification(notification, payload)`. Only the node_helper of this
@@ -411,9 +413,13 @@ this.sendSocketNotification("SET_CONFIG", this.config);
 ### `this.hide(speed, callback, options)`
 
 **_speed_ Number** - Optional (Required when setting callback or options), The
-speed of the hide animation in milliseconds.<br>
-**_callback_ Function** - Optional, The callback after the hide animation is finished.<br>
-**_options_ Function** - Optional, Object with additional options for the hide action (see below). (_Introduced in version: 2.1.0._)
+speed of the hide animation in milliseconds.
+
+**_callback_ Function** - Optional, The callback after the hide animation is
+finished.
+
+**_options_ Function** - Optional, Object with additional options for the hide
+action (see below). (_Introduced in version: 2.1.0._)
 
 To hide a module, you can call the `hide(speed, callback)` method. You can call
 the hide method on the module instance itself using `this.hide()`, but of course
@@ -427,23 +433,32 @@ Possible configurable options:
   modules identifier as the locksString: `this.identifier`. See _visibility
   locking_ below.
 
-- `animate` - String - (_Introduced in version: 2.25.0._) Hide the module with a special animate. It will use an `animateOut` type name. All animations name are available in [Animation Guide](../modules/animate.html#animateout)
+- `animate` - String - (_Introduced in version: 2.25.0._) Hide the module with a
+  special animate. It will use an `animateOut` type name. All animations name
+  are available in [Animation Guide](/modules/animate.md#animateout)
 
 ::: warning Notes:
-- If the hide animation is cancelled, for instance because the show
-method is called before the hide animation was finished, the callback will not
-be called.<br>
-- If the hide animation is hijacked (an other method calls hide on the same module),the callback will not be called.<br>
+
+- If the hide animation is cancelled, for instance because the show method is
+  called before the hide animation was finished, the callback will not be
+  called.<br>
+- If the hide animation is hijacked (an other method calls hide on the same
+  module),the callback will not be called.<br>
 - If the dom is not yet created, the hide method won't work. Wait for the
-`DOM_OBJECTS_CREATED` [notification](#notificationreceived-notification-payload-sender).<br>
-- If an `animateOut` is defined in global module configuration, `animate` string will be ignored
+  `DOM_OBJECTS_CREATED`
+  [notification](#notificationreceived-notification-payload-sender).<br>
+- If an `animateOut` is defined in global module configuration, `animate` string
+  will be ignored
+
 :::
 
 ### `this.show(speed, callback, options)`
 
-**_speed_ Number** - Optional (Required when setting callback or options), The speed of the show animation in milliseconds.<br>
-**_callback_ Function** - Optional, The callback after the show animation is finished.<br>
-**_options_ Function** - Optional, Object with additional options for the show action (see below). (_Introduced in version: 2.1.0._)
+**_speed_ Number** - Optional (Required when setting callback or options), The
+speed of the show animation in milliseconds.<br> **_callback_ Function** -
+Optional, The callback after the show animation is finished.<br> **_options_
+Function** - Optional, Object with additional options for the show action (see
+below). (_Introduced in version: 2.1.0._)
 
 To show a module, you can call the `show(speed, callback)` method. You can call
 the show method on the module instance itself using `this.show()`, but of course
@@ -461,17 +476,23 @@ Possible configurable options:
 - `onError(error)` - Function - If a module is hidden with other lock strings
   and can therefore not be shown the onError callback triggers with an error
   object, if specified in the options (_Introduced in version: 2.15.0_).
-- `animate` - String - (_Introduced in version: 2.25.0._) Show the module with a special animation. It will use an `animateIn` type name. All animations name are available in [Animation Guide](../modules/animate.html#animatein)
+- `animate` - String - (_Introduced in version: 2.25.0._) Show the module with a
+  special animation. It will use an `animateIn` type name. All animations name
+  are available in [Animation Guide](/modules/animate.md#animatein)
 
 ::: warning Notes:
-- If the show animation is canceled, for instance because the hide
-method is called before the show animation was finished, the callback will not
-be called.<br>
-- If the show animation is hijacked (an other method
-calls show on the same module), the callback will not be called.<br>
+
+- If the show animation is canceled, for instance because the hide method is
+  called before the show animation was finished, the callback will not be
+  called.<br>
+- If the show animation is hijacked (an other method calls show on the same
+  module), the callback will not be called.<br>
 - If the dom is not yet created, the show method won't work. Wait for the
-`DOM_OBJECTS_CREATED` [notification](#notificationreceived-notification-payload-sender).<br>
-- If an `animateIn` is defined in global module configuration, `animate` string will be ignored
+  `DOM_OBJECTS_CREATED`
+  [notification](#notificationreceived-notification-payload-sender).<br>
+- If an `animateIn` is defined in global module configuration, `animate` string
+  will be ignored
+
 :::
 
 ### Visibility locking
@@ -554,7 +575,7 @@ Use this `force` method with caution. See `show()` method for more information.
 
 **_identifier_ String** - Identifier of the string that should be translated.
 
-The Magic Mirror contains a convenience wrapper for `l18n`. You can use this to
+MagicMirror contains a convenience wrapper for `l18n`. You can use this to
 automatically serve different translations for your modules based on the user's
 `language` configuration.
 
@@ -573,7 +594,7 @@ follows:
 
 When adding translations to your module, it's a good idea to see if an
 appropriate translation is already available in the
-[core translation files](https://github.com/MichMich/MagicMirror/tree/master/translations).
+[core translation files](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/translations).
 This way, your module can benefit from the existing translations.
 
 **Example:**
@@ -596,8 +617,9 @@ Comments in translation files could help other translators.
 
 #### `this.translate(identifier, variables)`
 
-**_identifier_ String** - Identifier of the string that should be translated.<br>
-**_variables_ Object** - Object of variables to be used in translation.
+**_identifier_ String** - Identifier of the string that should be
+translated.<br> **_variables_ Object** - Object of variables to be used in
+translation.
 
 This improved and backwards compatible way to handle translations behaves like
 the normal translation function and follows the rules described above. It's

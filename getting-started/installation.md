@@ -1,10 +1,10 @@
 # Installation & Usage
 
-The Magic Mirror can be installed manually or using automatic installers. At the
+The MagicMirror² can be installed manually or using automatic installers. At the
 start of 2020 the decision was made to remove the automatic installer from the
 MagicMirror² core repository and move it to a community maintained separate
 repository. For more information about this decision, please check issue
-[#1860](https://github.com/MichMich/MagicMirror/issues/1860) on GitHub.
+[#1860](https://github.com/MagicMirrorOrg/MagicMirror/issues/1860) on GitHub.
 
 Therefore the only officially supported way of installation is by using a
 [manual installation](#manual-installation). Using external installation scripts
@@ -17,17 +17,19 @@ installers can be found under:
 These instructions deploy a standalone version of MagicMirror², for [Server Only](/getting-started/installation.html#server-only) and [Client Only](/getting-started/installation.html#client-only) installs please read the install specific instructions below
 
 1. Download and install the latest _Node.js_ version, see the official documentation:
+
 - [Linux based distributions](https://github.com/nodesource/distributions)
 - [Others](https://nodejs.org/en/download)
 2. Clone the repository and check out the master branch:
-   `git clone https://github.com/MichMich/MagicMirror`
+   `git clone https://github.com/MagicMirrorOrg/MagicMirror`
 3. Enter the repository: `cd MagicMirror/`
 4. Install the application: `npm run install-mm`
 5. Make a copy of the config sample file:
    `cp config/config.js.sample config/config.js`
 6. Start the application: `npm run start` 
 
-::: warning NOTE The installation step for `npm run install-mm` will take a very
+::: warning NOTE
+The installation step for `npm run install-mm` will take a very
 long time, often with little or no terminal response! For the RPi3 this is
 **~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk
 getting a :broken_heart: by Raspberry Jam.

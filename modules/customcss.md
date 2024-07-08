@@ -23,7 +23,7 @@ it to your `custom.css`-file like in the example above.
 
 Each module has a class set for the div it resides in named after the module
 (including all the 3rd-party modules). As an example the
-[Clock-module](https://github.com/MichMich/MagicMirror/tree/master/modules/default/clock)
+[Clock-module](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/modules/default/clock)
 could be customized by using the class `.clock`.
 
 ### Help
