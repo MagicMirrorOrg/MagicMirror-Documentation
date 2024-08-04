@@ -58,11 +58,11 @@ compliments.
 Compliments can be set for a specific day in the format `YYYY-MM-DD`. `.` can be
 used as a wildcard.
 
-starting in Version 2.29, the compliment can use a cron type specification, which provides more options, in addition to date, one can use hours, minutes and day of week for additional control
-the cron format string is 5 groups of space separated values
-min hour day month day_of_week
+starting in Version 2.29, the compliments configuration can use a cron type specification, which provides more options. In addition to date, one can use hours, minutes and day of week for additional control
+the cron format string is 5 groups of space separated values<br><br>
+**minute hour day month day_of_week**<br><br>
 each can be a range, and use numbers or names
-see https://crontab-generator.org for a visual cron syntax creator.. this tool asks for the command to be executed (cron is usually used to execute commands on a schedule), just use anything, and take the first 5 space separated tokens of he result. 
+see https://crontab-generator.org for a visual cron syntax creator.. this tool asks for the command to be executed (cron is usually used to execute commands on a schedule), just use anything, and take the first 5 space separated tokens of the result. 
 
 If set, the weather can be used for compliments. The available properties are:
 
