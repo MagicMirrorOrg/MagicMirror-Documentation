@@ -696,7 +696,7 @@
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.5.4.tgz"
   integrity sha512-L2MCDD8l7yC62Te5UUyPVpmexhL9ipVnYRw9CsWfm/BGRL5FwDX4a25bcJ/OJSD3+Hx+k/a8LDKcG2AFdJV3BA==
 
-"@vuepress/bundler-vite@^2.0.0-rc.14":
+"@vuepress/bundler-vite@^2.0.0-rc.15":
   version "2.0.0-rc.15"
   resolved "https://registry.npmjs.org/@vuepress/bundler-vite/-/bundler-vite-2.0.0-rc.15.tgz"
   integrity sha512-xPJBOvrt9hn+3dkMuWIpVy1Jb3a29ZPkEZ0nE10ULzLaGvN+Lv6tB7FPTN9d67LGT4wi09X0EXSvWg9Eun+6pQ==
@@ -795,7 +795,7 @@
     "@vueuse/core" "^11.0.1"
     vue "^3.4.38"
 
-"@vuepress/plugin-back-to-top@2.0.0-rc.42", "@vuepress/plugin-back-to-top@^2.0.0-rc.37":
+"@vuepress/plugin-back-to-top@2.0.0-rc.42", "@vuepress/plugin-back-to-top@^2.0.0-rc.42":
   version "2.0.0-rc.42"
   resolved "https://registry.npmjs.org/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-rc.42.tgz"
   integrity sha512-6X8cr0pTYfZRt23o4oT8EahG2bJa5QmFjxKhozw4VmkmBDbb4Yq1h9wgCdkIMROqb6kYMzhJM7++jRiXWbvI3w==
@@ -813,7 +813,7 @@
     "@vueuse/core" "^11.0.1"
     vue "^3.4.38"
 
-"@vuepress/plugin-docsearch@^2.0.0-rc.37":
+"@vuepress/plugin-docsearch@^2.0.0-rc.42":
   version "2.0.0-rc.42"
   resolved "https://registry.npmjs.org/@vuepress/plugin-docsearch/-/plugin-docsearch-2.0.0-rc.42.tgz"
   integrity sha512-aFyUvFayTnvx2x8tr3QamgJT/UzeF4nOi308aWYw263lmhs8nKLwgioR1bSisArApmMzGgP5u8ozuL24Ouyz1w==
@@ -833,7 +833,7 @@
   dependencies:
     execa "^9.3.1"
 
-"@vuepress/plugin-google-analytics@^2.0.0-rc.37":
+"@vuepress/plugin-google-analytics@^2.0.0-rc.42":
   version "2.0.0-rc.42"
   resolved "https://registry.npmjs.org/@vuepress/plugin-google-analytics/-/plugin-google-analytics-2.0.0-rc.42.tgz"
   integrity sha512-daMpfiGB7g8ot0O2UXEOs77kaBqn4LJYD5aMX9MZBAT3zms100M7Qgu6QylYFSh6f9AnfU1g7zuQkfFaMFjDGw==
@@ -926,7 +926,7 @@
   dependencies:
     "@mdit-vue/types" "^2.1.0"
 
-"@vuepress/theme-default@^2.0.0-rc.37":
+"@vuepress/theme-default@^2.0.0-rc.42":
   version "2.0.0-rc.42"
   resolved "https://registry.npmjs.org/@vuepress/theme-default/-/theme-default-2.0.0-rc.42.tgz"
   integrity sha512-fFfrxYF5bsf9S7U52uDTU0THt/rNpwCdwxKYNlIUdV+ybzn5G0EQJF+Rhb7vLudLWVJm9LI1xipg9ZCnfPn1uw==
@@ -1372,7 +1372,7 @@ fs-extra@^11.2.0:
 
 fsevents@~2.3.2, fsevents@~2.3.3:
   version "2.3.3"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 get-east-asian-width@^1.0.0:
@@ -2023,7 +2023,7 @@ vue-router@^4.4.3:
   dependencies:
     "@vue/devtools-api" "^6.6.4"
 
-vue@^3.4.31, vue@^3.4.37, vue@^3.4.38:
+vue@^3.4.37, vue@^3.4.38, vue@^3.5.4:
   version "3.5.4"
   resolved "https://registry.npmjs.org/vue/-/vue-3.5.4.tgz"
   integrity sha512-3yAj2gkmiY+i7+22A1PWM+kjOVXjU74UPINcTiN7grIVPyFFI0lpGwHlV/4xydDmobaBn7/xmi+YG8HeSlCTcg==
@@ -2034,7 +2034,7 @@ vue@^3.4.31, vue@^3.4.37, vue@^3.4.38:
     "@vue/server-renderer" "3.5.4"
     "@vue/shared" "3.5.4"
 
-vuepress@^2.0.0-rc.14:
+vuepress@^2.0.0-rc.15:
   version "2.0.0-rc.15"
   resolved "https://registry.npmjs.org/vuepress/-/vuepress-2.0.0-rc.15.tgz"
   integrity sha512-8DRaONwIaG0Jn3P8OKBysTfcO1yPO1UwfUUNQjbToLrbYSsGFiFwpuTMSL3HbdaX7ou6TuJHgK/wuslsUV8jCQ==
