@@ -20,8 +20,8 @@ installers can be found under:
 - [Linux based distributions](https://github.com/nodesource/distributions)
 - [Others](https://nodejs.org/en/download)
 
-2. check if `git` is installed on your machine by executing `git`
-   (should show usage), otherwise install it
+2. check if `git` is installed on your machine by executing `git` (should show
+   usage), otherwise install it
 3. Clone the repository:
    `git clone https://github.com/MagicMirrorOrg/MagicMirror`
 4. Enter the repository: `cd MagicMirror/`
