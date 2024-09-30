@@ -141,9 +141,8 @@ retrieve more than 5 days you must subscribe to the OpenWeatherMap API.
 
 | Option      | Description                                                                                                                                                                                                                        |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `apiBase`   | The UKMO DataHub base URL.<br><br> **Possible value:** `'https://api-metoffice.apiconnect.ibmcloud.com/metoffice/production/v0/forecasts/point/'` <br> This value is **REQUIRED**                                                  |
-| `apiKey`    | Your API key (MetOffice API ClientID). See the [Getting Started](https://metoffice.apiconnect.ibmcloud.com/metoffice/production/start) guide on the Met Office website for creating a new account. <br> This value is **REQUIRED** |
-| `apiSecret` | Your API secret (MetOffice API ClientSecret). <br> This value is **REQUIRED**                                                                                                                                                      |
+| `apiBase`   | The UKMO DataHub base URL.<br><br> **Possible value:** `'https://data.hub.api.metoffice.gov.uk/sitespecific/v0/point/'` <br> This value is **REQUIRED**                                                  |
+| `apiKey`    | Your API key (MetOffice API ClientID). See the [Getting Started](https://datahub.metoffice.gov.uk) guide on the Met Office website for creating a new account. Subscribe to the Site Specific Forecast service - Global Spot.<br> This value is **REQUIRED** |
 | `lat`       | The latitude coordinate for the desired location. <br><br> **Possible value:** `50.7271915` <br> This value is **REQUIRED**                                                                                                        |
 | `lon`       | The longitude coordinate for the desired location. <br><br> **Possible value:** `-3.4776089` <br> This value is **REQUIRED**                                                                                                       |
 
