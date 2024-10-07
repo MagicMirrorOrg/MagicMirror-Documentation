@@ -14,20 +14,13 @@ sudo apt install fonts-noto-color-emoji
 ## Enable the Open GL driver to decrease Electron's CPU usage.
 
 
-## Rotating the screen and hide Rainbow colored cube
+## Rotating the screen
 
-Option 1: Screen Configuration Tool
+See the [official documentation](https://www.raspberrypi.com/documentation/computers/configuration.html#setting-the-desktop-environment-resolution-and-rotation)
 
-Option 2: Command line https://pimylifeup.com/raspberry-pi-rotate-screen/
+In case you still run an older version of the Raspberry Pi OS, you can follow these instructions:
 
-Case 2.1: 
-
-dtoverlay=vc4-kms-v3d enabled -> set via xrandr tool
-
-Case 2.2:
-
-set display_hdmi_rotate=0 in boot/config.txt
-
+https://pimylifeup.com/raspberry-pi-rotate-screen/
 
 ## Autohiding the Mouse Pointer
 
