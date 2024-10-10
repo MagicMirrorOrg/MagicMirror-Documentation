@@ -1,96 +1,94 @@
-module.exports = {
-  title: "MagicMirror² Documentation",
+import { defaultTheme } from '@vuepress/theme-default';
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
+import { docsearchPlugin } from '@vuepress/plugin-docsearch';
+import { viteBundler } from '@vuepress/bundler-vite';
+
+export default {
+  title: "MagicMirror² Docs",
   description: "The open source modular smart mirror platform.",
-  themeConfig: {
-    // logo: '/mm.png',
-    algolia: {
-      appId: "U3QOOOGLZR",
-      apiKey: "96d207343bbb5e45068a1e3c8d141bb4",
-      indexName: "docs-magicmirror-builders",
-    },
-    nav: [
+  bundler: viteBundler({}),
+  theme: defaultTheme({
+    contributors: false,
+    docsRepo: "MagicMirrorOrg/MagicMirror-Documentation",
+    docsBranch: "master",
+    editLinkText: "Help us improve this page!",
+    logo: 'logo.png',
+    navbar: [
       { text: "Donate", link: "https://magicmirror.builders/donate" },
       { text: "Forum", link: "https://forum.magicmirror.builders" },
     ],
+    repo: "MagicMirrorOrg/MagicMirror",
+    repoLabel: "GitHub",
     sidebar: [
       {
-        title: "Getting Started",
-        collapsable: true,
+        text: "Getting Started",
+        collapsible: true,
         children: [
           "/",
-          "getting-started/requirements",
-          "getting-started/installation",
-          "getting-started/upgrade-guide",
+          "/getting-started/requirements.md",
+          "/getting-started/installation.md",
+          "/getting-started/upgrade-guide",
         ],
       },
       {
-        title: "Configuration",
-        collapsable: true,
+        text: "Configuration",
+        collapsible: true,
         children: [
-          "configuration/introduction",
-          "configuration/autostart",
-          "configuration/raspberry",
+          "/configuration/introduction",
+          "/configuration/autostart",
+          "/configuration/raspberry",
         ],
       },
       {
-        title: "Modules",
-        collapsable: true,
+        text: "Modules",
+        collapsible: true,
         children: [
-          "modules/introduction",
-          "modules/configuration",
+          "/modules/introduction",
+          "/modules/configuration",
           {
-            title: "Default Modules",
-            collapsable: false,
+            text: "Default Modules",
+            collapsible: false,
             children: [
-              "modules/alert",
-              "modules/calendar",
-              "modules/clock",
-              "modules/compliments",
-              "modules/helloworld",
-              "modules/newsfeed",
-              "modules/updatenotification",
-              "modules/weather",
+              "/modules/alert",
+              "/modules/calendar",
+              "/modules/clock",
+              "/modules/compliments",
+              "/modules/helloworld",
+              "/modules/newsfeed",
+              "/modules/updatenotification",
+              "/modules/weather",
             ],
           },
-          "modules/customcss",
-          "modules/animate"
+          "/modules/animate"
         ],
       },
       {
-        title: "Module Development",
-        collapsable: true,
+        text: "Module Development",
+        collapsible: true,
         children: [
-          "development/introduction.md",
-          "development/core-module-file.md",
-          "development/node-helper.md",
-          "development/helper-methods.md",
-          "development/logger.md",
-          "development/notifications.md",
-          "development/weather-provider.md",
-          "development/documentation.md",
+          "/development/introduction.md",
+          "/development/core-module-file.md",
+          "/development/node-helper.md",
+          "/development/helper-methods.md",
+          "/development/logger.md",
+          "/development/notifications.md",
+          "/development/weather-provider.md",
+          "/development/documentation.md",
         ],
       },
       {
-        title: "About",
-        collapsable: true,
+        text: "About",
+        collapsible: true,
         children: [
-          "about/manifesto",
-          "about/contributing",
-          "about/donate",
-          "about/support",
-          "about/license",
+          "/about/manifesto",
+          "/about/contributing",
+          "/about/donate",
+          "/about/support",
+          "/about/license",
         ],
       },
     ],
-    repo: "MagicMirrorOrg/MagicMirror",
-    repoLabel: "GitHub",
-
-    docsRepo: "MagicMirrorOrg/MagicMirror-Documentation",
-    docsBranch: "master",
-    editLinks: true,
-    editLinkText: "Help us improve this page!",
-    lastUpdated: "Updated",
-  },
+  }),
   markdown: {
     toc: { includeLevel: [2, 3, 4] },
   },
@@ -100,13 +98,14 @@ module.exports = {
     },
   },
   plugins: [
-    ["@vuepress/back-to-top"],
-    ['check-md'],
-    [
-      "@vuepress/google-analytics",
-      {
-        ga: "UA-1219071-59", // UA-00000000-0
-      },
-    ],
+    googleAnalyticsPlugin({
+      id: "UA-1219071-59",
+    }),
+    docsearchPlugin({
+      apiKey: "96d207343bbb5e45068a1e3c8d141bb4",
+      appId: "U3QOOOGLZR",
+      indexName: "docs-magicmirror-builders",
+    }),
   ],
 };
+
