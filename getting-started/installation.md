@@ -16,15 +16,13 @@ installers can be found under:
 
 1. Download and install the latest _Node.js_ version, see the official
    documentation:
-
-- [Linux based distributions](https://github.com/nodesource/distributions)
-- [Others](https://nodejs.org/en/download)
-
+    - [Linux based distributions](https://github.com/nodesource/distributions)
+    - [Others](https://nodejs.org/en/download)
 2. check if `git` is installed on your machine by executing `git` (should show
    usage), otherwise install it
 3. Clone the repository:
    `git clone https://github.com/MagicMirrorOrg/MagicMirror`
-4. Enter the repository: `cd MagicMirror/`
+4. Enter the repository: `cd MagicMirror`
 5. Install the application: `npm run install-mm`
 6. Make a copy of the config sample file:
    `cp config/config.js.sample config/config.js`
@@ -74,41 +72,32 @@ team. Use these scripts and methods at your own risk.
 
 ## Other Operating Systems
 
-### Windows:
+### Windows
 
-To get the MagicMirror software running on Windows, you have to do two things in
+::: warning IMPORTANT
+MagicMirror² is designed to run on Linux. But with an extra step in the
+installation process and a different start command, you can also
+run it on Windows. Some third-party modules may not work on Windows.
+:::
+
+To get the software running on Windows, you have to do two things in
 addition to the [steps](#manual-installation) above:
 
-4a. Install dependencies in the vendor and font directories:
+**After step 5:** Install dependencies in the vendor and font directories:
 
-Powershell:
+  Powershell:
 
-1. `cd fonts; npm install; cd ..`
-2. `cd vendor; npm install; cd ..`
+  1. `cd fonts; npm install; cd ..`
+  2. `cd vendor; npm install; cd ..`
 
-Command Prompt:
+  Command Prompt:
 
-1. `cd fonts && npm install && cd ..`
-2. `cd vendor && npm install && cd ..`
+  1. `cd fonts && npm install && cd ..`
+  2. `cd vendor && npm install && cd ..`
 
-Otherwise the screen will stay black when starting the MagicMirror.
+  Otherwise the screen will stay black when starting the software.
 
-5a. Fix the start script in the `package.json` file:
-
-1. Navigate to the file `package.json`
-2. Find where it says
-   ```
-   "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
-   "start:dev": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js dev",
-   ```
-3. and replace it with
-   ```
-   "start": ".\\node_modules\\.bin\\electron js\\electron.js",
-   "start:dev": ".\\node_modules\\.bin\\electron js\\electron.js dev",
-   ```
-
-Otherwise the program won't start, but will display this error message:
-`"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`
+**Step 7:** In Windows you must use `npm start:windows` instead of `npm start`.
 
 ## Usage
 
@@ -130,7 +119,7 @@ In this case, you can start MagicMirror² in server only mode by manually runnin
 `npm run server`. This will start the server, after which you can open the
 application in your browser of choice. Detailed description below.
 
-::: warning IMPORTANT 
+::: warning IMPORTANT
 Make sure that you whitelist the interface/ip
 (`ipWhitelist`) in the server config where you want the client to connect to,
 otherwise it will not be allowed to connect to the server. You also need to set
@@ -154,3 +143,7 @@ connect as a standalone client to this instance, to show the MM from the server.
 Then from your RPi, you run it with:
 `node clientonly --address 192.168.1.5 --port 8080`. (Specify the ip address and
 port number of the server)
+
+### Wayland
+
+If you use Wayland. Run `npm run start:wayland` instead of `npm run start` to start.
