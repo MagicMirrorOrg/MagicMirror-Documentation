@@ -120,7 +120,17 @@ note: like with the date only setting, if these are the only possible messages
 you want displayed, you need to set **specialDayUnique:true**
 
 As another example you could use this for scary messages ONLY between 8 and
-9pm on Halloween evening <br>"* 20-21 31 10 *":["Boo!!"]
+9pm on Halloween evening:
+
+```javascript
+config: {
+    compliments: {
+        "* 20-21 31 10 *": [
+            "Boo!!"
+        ]
+    }
+}
+```
 
 #### Example use with weather module
 
