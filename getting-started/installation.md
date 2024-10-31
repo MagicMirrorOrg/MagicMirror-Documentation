@@ -72,6 +72,10 @@ team. Use these scripts and methods at your own risk.
   of the box with a default setup of MagicMirror, under the hood it uses the
   [docker setup](https://gitlab.com/khassel/magicmirror).
 
+### NPM
+
+- We also publish the latest version of MagicMirror to the [npm-registry](https://www.npmjs.com/package/magicmirror).
+
 ## Other Operating Systems
 
 ### Windows:
