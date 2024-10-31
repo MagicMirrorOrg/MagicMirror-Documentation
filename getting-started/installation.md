@@ -74,7 +74,8 @@ team. Use these scripts and methods at your own risk.
 
 ### NPM
 
-- We also publish the latest version of MagicMirror to the [npm-registry](https://www.npmjs.com/package/magicmirror).
+- We also publish the latest version of MagicMirror to the
+  [npm-registry](https://www.npmjs.com/package/magicmirror).
 
 ## Other Operating Systems
 

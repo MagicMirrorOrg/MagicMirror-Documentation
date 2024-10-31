@@ -332,7 +332,11 @@ Whenever your module need to be updated, call the `updateDom(speed)` method. It
 requests the MagicMirror core to update its dom object. If you define the speed,
 the content update will be animated, but only if the content will really change.
 
-Note that the rendering of the updated dom on the screen will happen asynchronously. You can listen for the [`DOM_OBJECTS_UPDATED` notification](/development/notifications.html) to know when the rendering is complete and the new dom is safe to interact with. This notification only fires if the content will really change.
+Note that the rendering of the updated dom on the screen will happen
+asynchronously. You can listen for the
+[`DOM_OBJECTS_UPDATED` notification](/development/notifications.html) to know
+when the rendering is complete and the new dom is safe to interact with. This
+notification only fires if the content will really change.
 
 As an example: the clock modules calls this method every second:
 
