@@ -21,8 +21,8 @@ These instructions deploy a standalone version of MagicMirror², for [Server Onl
 - [Linux based distributions](https://github.com/nodesource/distributions)
 - [Others](https://nodejs.org/en/download)
 
-2. check if `git` is installed on your machine by executing `git`
-   (should show usage), otherwise install it
+2. check if `git` is installed on your machine by executing `git` (should show
+   usage), otherwise install it
 3. Clone the repository:
    `git clone https://github.com/MagicMirrorOrg/MagicMirror`
 4. Enter the repository: `cd MagicMirror/`
@@ -71,6 +71,11 @@ team. Use these scripts and methods at your own risk.
   [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out
   of the box with a default setup of MagicMirror, under the hood it uses the
   [docker setup](https://gitlab.com/khassel/magicmirror).
+
+### NPM
+
+- We also publish the latest version of MagicMirror to the
+  [npm-registry](https://www.npmjs.com/package/magicmirror).
 
 ## Other Operating Systems
 
