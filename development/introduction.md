@@ -35,6 +35,9 @@ other module has the same name).
 To rocket launch your module, you can use the [MMM-Template](https://github.com/Dennis-Rosenbaum/MMM-Template) or immediately  [MMM-Template](https://github.com/new?template_name=MMM-Template&template_owner=Dennis-Rosenbaum). 
 Please read the [MMM-Template wiki](https://github.com/Dennis-Rosenbaum/MMM-Template/wiki) for more information.
 
+**Please note!** 
+This module is an externally developed module and not maintained by the MagicMirrorOrg.
+
 ## Module structure
 
 All modules are loaded in the `modules` folder. The default modules are grouped
