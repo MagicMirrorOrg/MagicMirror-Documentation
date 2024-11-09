@@ -14,8 +14,8 @@ installers can be found under:
 
 ## Manual Installation
 
-1. Download and install the latest _Node.js_ version, see the official
-   documentation:
+1. Download and install a [required](https://github.com/MagicMirrorOrg/MagicMirror/releases)
+   _Node.js_ version, see the official documentation:
 
 - [Linux based distributions](https://github.com/nodesource/distributions)
 - [Others](https://nodejs.org/en/download)
