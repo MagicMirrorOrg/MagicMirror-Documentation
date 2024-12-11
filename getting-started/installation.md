@@ -14,8 +14,8 @@ installers can be found under:
 
 ## Manual Installation
 
-1. Download and install the latest _Node.js_ version, see the official
-   documentation:
+1. Download and install a [required](https://github.com/MagicMirrorOrg/MagicMirror/releases)
+   _Node.js_ version, see the official documentation:
     - [Linux based distributions](https://github.com/nodesource/distributions)
     - [Others](https://nodejs.org/en/download)
 2. check if `git` is installed on your machine by executing `git` (should show
@@ -69,6 +69,11 @@ team. Use these scripts and methods at your own risk.
   [MagicMirrorOS](https://github.com/guysoft/MagicMirrorOS) instead. It runs out
   of the box with a default setup of MagicMirror, under the hood it uses the
   [docker setup](https://gitlab.com/khassel/magicmirror).
+
+### NPM
+
+- We also publish the latest version of MagicMirror to the
+  [npm-registry](https://www.npmjs.com/package/magicmirror).
 
 ## Other Operating Systems
 

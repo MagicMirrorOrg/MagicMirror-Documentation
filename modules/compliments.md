@@ -59,11 +59,15 @@ compliments.
 Compliments can be set for a specific day in the format `YYYY-MM-DD`. `.` can be
 used as a wildcard.
 
-starting in Version 2.29, the compliments configuration can use a cron type specification, which provides more options. In addition to date, one can use hours, minutes and day of week for additional control
-the cron format string is 5 groups of space separated values<br><br>
-**minute hour day month day_of_week**<br><br>
-each can be a range, and use numbers or names
-see https://crontab-generator.org for a visual cron syntax creator.. this tool asks for the command to be executed (cron is usually used to execute commands on a schedule), just use anything, and take the first 5 space separated tokens of the result. 
+starting in Version 2.29, the compliments configuration can use a cron type
+specification, which provides more options. In addition to date, one can use
+hours, minutes and day of week for additional control the cron format string is
+5 groups of space separated values<br><br> **minute hour day month
+day_of_week**<br><br> each can be a range, and use numbers or names see
+https://crontab-generator.org for a visual cron syntax creator.. this tool asks
+for the command to be executed (cron is usually used to execute commands on a
+schedule), just use anything, and take the first 5 space separated tokens of the
+result.
 
 If set, the weather can be used for compliments. The available properties are:
 
@@ -99,7 +103,7 @@ config: {
 }
 ```
 
-#### Example use with a cron entry 
+#### Example use with a cron entry
 
 ```javascript
 config: {
@@ -110,11 +114,24 @@ config: {
 	}
 }
 ```
-this means, on Friday or Saturday, every week (* (every) month/day) between 16:48-16:50, 17:48-17:50, and 18:48-18:50, the assigned messages will be used.  note: like with the date only setting, if these are the only possible messages you want displayed, you need to set **specialDayUnique:true**
 
-another example,. you could use this for scary messages ONLY on between 8 and 9pm Halloween evening 
-<br>"* 20-21 31 10 *":["Boo!!"]
+this means, on Friday or Saturday, every week (\* (every) month/day) between
+16:48-16:50, 17:48-17:50, and 18:48-18:50, the assigned messages will be used.
+note: like with the date only setting, if these are the only possible messages
+you want displayed, you need to set **specialDayUnique:true**
 
+As another example you could use this for scary messages ONLY between 8 and
+9pm on Halloween evening:
+
+```javascript
+config: {
+    compliments: {
+        "* 20-21 31 10 *": [
+            "Boo!!"
+        ]
+    }
+}
+```
 
 #### Example use with weather module
 
