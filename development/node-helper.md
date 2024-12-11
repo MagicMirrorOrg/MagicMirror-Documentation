@@ -173,7 +173,7 @@ If you want use `native node modules` within electron you need to recompile them
 for electron. To do so you have to install `electron-rebuild`.
 
 ```shell
-npm install --save-dev electron-rebuild
+npm install --save-dev @electron/rebuild
 ```
 
 and run it after every install (package.json example):
