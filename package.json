@@ -1,14 +1,15 @@
 {
   "devDependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-rc.18",
-    "@vuepress/plugin-back-to-top": "^2.0.0-rc.54",
-    "@vuepress/plugin-docsearch": "^2.0.0-rc.54",
-    "@vuepress/plugin-google-analytics": "^2.0.0-rc.54",
-    "@vuepress/theme-default": "^2.0.0-rc.54",
-    "prettier": "^3.3.3",
+    "@vuepress/bundler-vite": "^2.0.0-rc.19",
+    "@vuepress/plugin-back-to-top": "^2.0.0-rc.66",
+    "@vuepress/plugin-docsearch": "^2.0.0-rc.67",
+    "@vuepress/plugin-google-analytics": "^2.0.0-rc.66",
+    "@vuepress/theme-default": "^2.0.0-rc.66",
+    "prettier": "^3.4.2",
     "prettier-config-vuepress": "^5.0.0",
-    "vue": "^3.5.11",
-    "vuepress": "^2.0.0-rc.18"
+    "sass-embedded": "^1.83.0",
+    "vue": "^3.5.13",
+    "vuepress": "^2.0.0-rc.19"
   },
   "scripts": {
     "start": "npm run docs:dev",
