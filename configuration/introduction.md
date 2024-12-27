@@ -73,7 +73,8 @@ are:
 | Environment Variable Name | Use                                                                                                                                                                                                                                                                                                                                  |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | MM_CONFIG_FILE            | This specifies an alternate configuration file for the system. This is useful when running multiple mirrors on the same device. This does not work with the template option below. NOTE: this file **_MUST_** be located in a directory within the MagicMirror directory. Ideally, place any config file in the config subdirectory. |
-| MM_PORT                   | This specifies an alternate TCPIP port, overriding "port" item within the config file. This is useful for testing to see if the product will run using another port.                                                                                                                                                                 |
+| MM_PORT                   | This specifies an alternate TCPIP port, overriding "port" item within the config file. This is useful for testing to see if the product will run using another port.    
+| mmFetchTimeout | time in milliseconds for fetch timeout. default (30000) <br><br>this value can be used the adjust the nodejs fetch function timeout value (default 10  seconds)  for all node_helper modules that use fetch()          |                                                                               
 
 ##### Examples of use:
 
