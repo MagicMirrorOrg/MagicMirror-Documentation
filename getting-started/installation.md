@@ -14,10 +14,11 @@ installers can be found under:
 
 ## Manual Installation
 
-1. Download and install a [required](https://github.com/MagicMirrorOrg/MagicMirror/releases)
-   _Node.js_ version, see the official documentation:
-    - [Linux based distributions](https://github.com/nodesource/distributions)
-    - [Others](https://nodejs.org/en/download)
+1. Download and install a
+   [required](https://github.com/MagicMirrorOrg/MagicMirror/releases) _Node.js_
+   version, see the official documentation:
+   - [Linux based distributions](https://github.com/nodesource/distributions)
+   - [Others](https://nodejs.org/en/download)
 2. check if `git` is installed on your machine by executing `git` (should show
    usage), otherwise install it
 3. Clone the repository:
@@ -85,22 +86,22 @@ installation process and a different start command, you can also
 run it on Windows. Some third-party modules may not work on Windows.
 :::
 
-To get the software running on Windows, you have to do two things in
-addition to the [steps](#manual-installation) above:
+To get the software running on Windows, you have to do two things in addition to
+the [steps](#manual-installation) above:
 
 **After step 5:** Install dependencies in the vendor and font directories:
 
-  Powershell:
+Powershell:
 
-  1. `cd fonts; npm install; cd ..`
-  2. `cd vendor; npm install; cd ..`
+1. `cd fonts; npm install; cd ..`
+2. `cd vendor; npm install; cd ..`
 
-  Command Prompt:
+Command Prompt:
 
-  1. `cd fonts && npm install && cd ..`
-  2. `cd vendor && npm install && cd ..`
+1. `cd fonts && npm install && cd ..`
+2. `cd vendor && npm install && cd ..`
 
-  Otherwise the screen will stay black when starting the software.
+Otherwise the screen will stay black when starting the software.
 
 **Step 7:** In Windows you must use `npm start:windows` instead of `npm start`.
 
@@ -151,4 +152,5 @@ port number of the server)
 
 ### Wayland
 
-If you use Wayland. Run `npm run start:wayland` instead of `npm run start` to start.
+If you use Wayland. Run `npm run start:wayland` instead of `npm run start` to
+start.
