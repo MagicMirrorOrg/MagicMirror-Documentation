@@ -1,4 +1,5 @@
 {
+  "version": "2.31.0",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.9.10",
     "@vuepress/plugin-google-analytics": "^1.9.10",
