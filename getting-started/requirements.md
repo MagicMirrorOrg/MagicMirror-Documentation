@@ -30,6 +30,6 @@ Raspberry Pi OS versions based on Debian "Buster" are also no longer supported.
 
 ## Node
 
-::: warning NOTE Node v20.9.0 or above is required!
-All older versions will not work.
-:::
+Please refer to the
+[release page](https://github.com/MagicMirrorOrg/MagicMirror/releases) to see
+which node version is required.

@@ -1,4 +1,5 @@
 {
+  "version": "2.31.0",
   "devDependencies": {
     "@vuepress/bundler-vite": "^2.0.0-rc.19",
     "@vuepress/plugin-back-to-top": "^2.0.0-rc.66",
