@@ -32,11 +32,15 @@ other module has the same name).
 
 ## Quick start
 
-To rocket launch your module, you can use the [MMM-Template](https://github.com/Dennis-Rosenbaum/MMM-Template) or immediately  [MMM-Template](https://github.com/new?template_name=MMM-Template&template_owner=Dennis-Rosenbaum). 
-Please read the [MMM-Template wiki](https://github.com/Dennis-Rosenbaum/MMM-Template/wiki) for more information.
+To rocket launch your module, you can use the
+[MMM-Template](https://github.com/Dennis-Rosenbaum/MMM-Template) or immediately
+[MMM-Template](https://github.com/new?template_name=MMM-Template&template_owner=Dennis-Rosenbaum).
+Please read the
+[MMM-Template wiki](https://github.com/Dennis-Rosenbaum/MMM-Template/wiki) for
+more information.
 
-**Please note!** 
-This module is an externally developed module and not maintained by the MagicMirrorOrg.
+**Please note!** This module is an externally developed module and not
+maintained by the MagicMirrorOrg.
 
 ## Module structure
 
