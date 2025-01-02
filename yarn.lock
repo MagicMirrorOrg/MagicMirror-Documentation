@@ -811,6 +811,16 @@ preact@^10.0.0:
   resolved "https://registry.npmjs.org/preact/-/preact-10.25.2.tgz"
   integrity sha512-GEts1EH3oMnqdOIeXhlbBSddZ9nrINd070WBOiPO2ous1orrKGUM4SMDbwyjSWD1iMS2dBvaDjAa5qUhz3TXqw==
 
+prettier-plugin-vitepress@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/prettier-plugin-vitepress/-/prettier-plugin-vitepress-0.0.8.tgz"
+  integrity sha512-JCVPzqQVrkcAjMoEQjwnaAzHg0hpqPTHrrSV8CfxQ4pzAJWG3FAgTWoiJ1icInRcauSFgW/xGNg+o7LC41jwpA==
+
+prettier@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-3.4.2.tgz"
+  integrity sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==
+
 property-information@^6.0.0:
   version "6.5.0"
   resolved "https://registry.npmjs.org/property-information/-/property-information-6.5.0.tgz"

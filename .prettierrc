@@ -1,0 +1,6 @@
+{
+  "plugins": ["prettier-plugin-vitepress"],
+  "proseWrap": "always",
+  "singleQuote": false,
+  "semi": true
+}

@@ -1,12 +1,14 @@
 {
   "version": "2.31.0",
   "devDependencies": {
+    "prettier-plugin-vitepress": "^0.0.8",
     "vitepress": "^1.5.0",
     "vue": "^3.5.13"
   },
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "lint": "prettier . --write"
   }
 }
