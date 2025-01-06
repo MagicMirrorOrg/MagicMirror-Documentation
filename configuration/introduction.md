@@ -197,7 +197,7 @@ You have two 1920x1080 monitors set up in the Pi as sitting next to each other:
 To move the pi to the second monitor, use this:
 
 ```js
-var config = {
+let config = {
 	electronOptions: { x: 1920 },
 	...
 ```
@@ -231,7 +231,7 @@ npm start
 Configuration file 1 (config.js):
 
 ```js
-var config = {
+let config = {
 	address: "0.0.0.0", // Can be whatever you set as your original.
 	port: 8080, // Must be different than the other configuration file.
 	ipWhitelist: [], // Can be whatever you set as your original.
@@ -252,7 +252,7 @@ if (typeof module !== "undefined") {
 Configuration file 2 (config2.js):
 
 ```js
-var config = {
+let config = {
 	electronOptions: { x: 1920 },
 	address: "0.0.0.0", // can be whatever you set as your original.
 	port: 8081, // Must be different than the other configuration file.

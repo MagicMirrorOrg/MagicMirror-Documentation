@@ -22,7 +22,7 @@ Module.register("helloworld", {
 
   // Override dom generator.
   getDom: function () {
-    var wrapper = document.createElement("div");
+    const wrapper = document.createElement("div");
     wrapper.innerHTML = this.config.text;
     return wrapper;
   },
@@ -209,7 +209,7 @@ object.
 
 ```javascript
 getDom: function() {
-	var wrapper = document.createElement("div");
+	const wrapper = document.createElement("div");
 	wrapper.innerHTML = 'Hello world!';
 	return wrapper;
 }
@@ -343,7 +343,7 @@ As an example: the clock modules calls this method every second:
 ```javascript
 ...
 start: function() {
-	var self = this;
+	let self = this;
 	setInterval(function() {
 		self.updateDom(); // no speed defined, so it updates instantly.
 	}, 1000); //perform every 1000 milliseconds.
@@ -635,7 +635,7 @@ translator to change the word order in the sentence to be translated.
 **Example:**
 
 ```javascript
-var timeUntilEnd = moment(event.endDate, "x").fromNow(true);
+const timeUntilEnd = moment(event.endDate, "x").fromNow(true);
 this.translate("RUNNING", { "timeUntilEnd": timeUntilEnd) }); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended.
 ```
 
@@ -663,7 +663,7 @@ did not support the word order, it is recommended to have the fallback layout.
 **Example:**
 
 ```javascript
-var timeUntilEnd = moment(event.endDate, "x").fromNow(true);
+const timeUntilEnd = moment(event.endDate, "x").fromNow(true);
 this.translate("RUNNING", {
 	"fallback": this.translate("RUNNING") + " {timeUntilEnd}"
 	"timeUntilEnd": timeUntilEnd
