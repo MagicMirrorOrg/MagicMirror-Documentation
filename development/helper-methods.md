@@ -80,7 +80,7 @@ Of course, you can combine all of the above filters:
 ```javascript
 let modules = MM.getModules()
   .withClass("classname1")
-  .exceptwithClass("classname2")
+  .exceptWithClass("classname2")
   .exceptModule(aModule);
 ```
 

@@ -136,7 +136,7 @@ getScripts: function() {
 	return [
 		'script.js', // will try to load it from the vendor folder, otherwise it will load is from the module folder.
 		'moment.js', // this file is available in the vendor folder, so it doesn't need to be available in the module folder.
-		this.file('anotherfile.js'), // this file will be loaded straight from the module folder.
+		this.file('another_file.js'), // this file will be loaded straight from the module folder.
 		'https://code.jquery.com/jquery-2.2.3.min.js',  // this file will be loaded from the jquery servers.
 	]
 }
@@ -163,8 +163,8 @@ getStyles: function() {
 	return [
 		'script.css', // will try to load it from the vendor folder, otherwise it will load is from the module folder.
 		'font-awesome.css', // this file is available in the vendor folder, so it doesn't need to be available in the module folder.
-		this.file('anotherfile.css'), // this file will be loaded straight from the module folder.
-		'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',  // this file will be loaded from the bootstrapcdn servers.
+		this.file('another_file.css'), // this file will be loaded straight from the module folder.
+		'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',  // this file will be loaded from the bootstrap cdn servers.
 	]
 }
 
@@ -376,7 +376,7 @@ As an example:
       speed: 1000, // animation duration
       animate: {
         in: "backInDown", // animation when module shown (after update)
-        out: "backOutUp" // animatation when module will hide (before update)
+        out: "backOutUp" // animation when module will hide (before update)
       }
     }
   })
@@ -398,7 +398,7 @@ the sendNotification method.
 **Example:**
 
 ```javascript
-this.sendNotification("MYMODULE_READY_FOR_ACTION", { foo: bar });
+this.sendNotification("MY_MODULE_READY_FOR_ACTION", { foo: bar });
 ```
 
 ### `this.sendSocketNotification(notification, payload)`
@@ -434,7 +434,7 @@ you can also hide another module using `anOtherModule.hide()`.
 Possible configurable options:
 
 - `lockString` - String - When setting lock string, the module can not be shown
-  without passing the correct lockstring. This way (multiple) modules can
+  without passing the correct lock string. This way (multiple) modules can
   prevent a module from showing. It's considered best practice to use your
   modules identifier as the locksString: `this.identifier`. See _visibility
   locking_ below.
@@ -473,7 +473,7 @@ you can also show another module using `anOtherModule.show()`.
 Possible configurable options:
 
 - `lockString` - String - When setting lock string, the module can not be shown
-  without passing the correct lockstring. This way (multiple) modules can
+  without passing the correct lock string. This way (multiple) modules can
   prevent a module from showing. See _visibility locking_ below.
 - `force` - Boolean - When setting the force tag to `true`, the locking
   mechanism will be overwritten. Use this option with caution. It's considered
@@ -568,7 +568,7 @@ moduleA.hidden == false;
 moduleA.show(0, { force: true });
 ```
 
-This will reset the lockstring array, and will show the module.
+This will reset the lockStrings array, and will show the module.
 
 ```javascript
 moduleA.lockStrings == [];

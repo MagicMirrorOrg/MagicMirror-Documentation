@@ -1,6 +1,6 @@
 # Donate
 
-MagicMirror² is opensource and free. That doesn't mean we don't need any money.
+MagicMirror² is open source and free. That doesn't mean we don't need any money.
 
 Please consider a donation to help us cover the ongoing costs like webservers
 and email services. If we receive enough donations we might even be able to free
