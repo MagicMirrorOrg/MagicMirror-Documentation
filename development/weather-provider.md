@@ -20,7 +20,8 @@ WeatherProvider.register("yourprovider", {
 
 ## Weather provider methods to implement
 
-::: warning IMPORTANT 
+::: warning IMPORTANT
+
 The weather module expects the weather data to be in metric units:
 
 - `degree celsius` for temperatures
@@ -30,6 +31,7 @@ Some weather APIs already deliver their data in those units.
 
 If that is not the case you can use helper methods from the `weatherutils.js`
 class to convert the data.
+
 :::
 
 ### `fetchCurrentWeather()`
@@ -134,9 +136,9 @@ This object holds all data from your provider for usage in the template.
 | windDirection  | `number` | Direction of the wind in degrees.                                                                               |
 | sunrise        | `object` | [Moment.js](https://momentjs.com/) object of sunrise.                                                           |
 | sunset         | `object` | [Moment.js](https://momentjs.com/) object of sunset.                                                            |
-| temperature    | `number` | Current temperature in metric `celcius degree`.                                                                 |
-| minTemperature | `number` | Lowest temperature of the day in metric `celcius degree`.                                                       |
-| maxTemperature | `number` | Highest temperature of the day in metric `celcius degree`.                                                      |
+| temperature    | `number` | Current temperature in metric `celsius degree`.                                                                 |
+| minTemperature | `number` | Lowest temperature of the day in metric `celsius degree`.                                                       |
+| maxTemperature | `number` | Highest temperature of the day in metric `celsius degree`.                                                      |
 | weatherType    | `string` | Icon name of the weather type. <br> Possible values: [WeatherIcons](https://www.npmjs.com/package/weathericons) |
 | humidity       | `number` | Percentage of humidity                                                                                          |
 | rain           | `number` | Metric: `millimeters` <br> Imperial: `inches`                                                                   |

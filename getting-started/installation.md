@@ -31,10 +31,12 @@ installers can be found under:
    For **Server Only** use: `npm run server`
 
 ::: warning NOTE
-The installation step for `npm run install-mm` will take a very
-long time, often with little or no terminal response! For the RPi3 this is
-**~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk
-getting a :broken_heart: by Raspberry Jam.
+
+The installation step for `npm run install-mm` will take a very long time, often
+with little or no terminal response! For the RPi3 this is **~10** minutes and
+for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a
+:broken_heart: by Raspberry Jam.
+
 :::
 
 ## Alternative Installation Methods
@@ -81,9 +83,11 @@ team. Use these scripts and methods at your own risk.
 ### Windows
 
 ::: warning IMPORTANT
+
 MagicMirror² is designed to run on Linux. But with an extra step in the
-installation process and a different start command, you can also
-run it on Windows. Some third-party modules may not work on Windows.
+installation process and a different start command, you can also run it on
+Windows. Some third-party modules may not work on Windows.
+
 :::
 
 To get the software running on Windows, you have to do two things in addition to
@@ -126,11 +130,13 @@ In this case, you can start MagicMirror² in server only mode by manually runnin
 application in your browser of choice. Detailed description below.
 
 ::: warning IMPORTANT
-Make sure that you whitelist the interface/ip
-(`ipWhitelist`) in the server config where you want the client to connect to,
-otherwise it will not be allowed to connect to the server. You also need to set
-the local host `address` field to `0.0.0.0` in order for the RPi to listen on
-all interfaces and not only `localhost` (default).
+
+Make sure that you whitelist the interface/ip (`ipWhitelist`) in the server
+config where you want the client to connect to, otherwise it will not be allowed
+to connect to the server. You also need to set the local host `address` field to
+`0.0.0.0` in order for the RPi to listen on all interfaces and not only
+`localhost` (default).
+
 :::
 
 ```javascript
