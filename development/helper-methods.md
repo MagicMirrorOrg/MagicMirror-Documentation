@@ -34,9 +34,9 @@ the `withClass(classname)` method can be an array, or space separated string.
 **Examples:**
 
 ```javascript
-var modules = MM.getModules().withClass("classname");
-var modules = MM.getModules().withClass("classname1 classname2");
-var modules = MM.getModules().withClass(["classname1", "classname2"]);
+let modules = MM.getModules().withClass("classname");
+let modules = MM.getModules().withClass("classname1 classname2");
+let modules = MM.getModules().withClass(["classname1", "classname2"]);
 ```
 
 #### `.exceptWithClass(classnames)`
@@ -52,9 +52,9 @@ string.
 **Examples:**
 
 ```javascript
-var modules = MM.getModules().exceptWithClass("classname");
-var modules = MM.getModules().exceptWithClass("classname1 classname2");
-var modules = MM.getModules().exceptWithClass(["classname1", "classname2"]);
+let modules = MM.getModules().exceptWithClass("classname");
+let modules = MM.getModules().exceptWithClass("classname1 classname2");
+let modules = MM.getModules().exceptWithClass(["classname1", "classname2"]);
 ```
 
 #### `.exceptModule(module)`
@@ -70,7 +70,7 @@ the instance of your module.
 **Examples:**
 
 ```javascript
-var modules = MM.getModules().exceptModule(this);
+let modules = MM.getModules().exceptModule(this);
 ```
 
 Of course, you can combine all of the above filters:
@@ -78,9 +78,9 @@ Of course, you can combine all of the above filters:
 **Example:**
 
 ```javascript
-var modules = MM.getModules()
+let modules = MM.getModules()
   .withClass("classname1")
-  .exceptwithClass("classname2")
+  .exceptWithClass("classname2")
   .exceptModule(aModule);
 ```
 

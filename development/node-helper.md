@@ -164,7 +164,10 @@ this.sendSocketNotification("SET_CONFIG", this.config);
 ```
 
 ::: warning Reminder
-`sendSocketNotification` sends a notification from the helper to all the instances of your module.
+
+`sendSocketNotification` sends a notification from the helper to all the
+instances of your module.
+
 :::
 
 ## Using native node modules in your node_helper
