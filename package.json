@@ -16,6 +16,10 @@
     "start": "npm run docs:dev",
     "docs:dev": "vuepress dev .",
     "docs:build": "vuepress build .",
-    "lint": "prettier . --write"
+    "check": "vuepress check-md .",
+    "lint": "prettier . --write",
+    "test": "npm run test:format && npm run test:spelling",
+    "test:format": "prettier . --check",
+    "test:spelling": "cspell . --gitignore"
   }
 }
