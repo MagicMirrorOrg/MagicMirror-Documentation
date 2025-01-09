@@ -84,7 +84,7 @@ export default {
           "/about/contributing",
           "/about/donate",
           "/about/support",
-          "/about/license",
+          "/about/LICENSE",
         ],
       },
     ],
