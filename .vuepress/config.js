@@ -15,6 +15,7 @@ export default {
     logo: 'logo.png',
     navbar: [
       { text: "Donate", link: "https://magicmirror.builders/donate" },
+      { text: "Discord", link: "https://discord.gg/J5BAtvx" },
       { text: "Forum", link: "https://forum.magicmirror.builders" },
     ],
     repo: "MagicMirrorOrg/MagicMirror",
