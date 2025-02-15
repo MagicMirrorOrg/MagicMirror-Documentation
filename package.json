@@ -3,7 +3,7 @@
   "devDependencies": {
     "cspell": "^8.17.1",
     "prettier-plugin-vitepress": "^0.0.8",
-    "vitepress": "^1.5.0",
+    "vitepress": "^1.6.3",
     "vue": "^3.5.13"
   },
   "scripts": {
