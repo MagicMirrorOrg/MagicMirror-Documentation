@@ -22,7 +22,8 @@ layout: doc
   />
   <a href="https://github.com/MagicMirrorOrg/MagicMirror">
     <img
-      src="https://img.shields.io/github/stars/magicmirrororg/magicmirror?style=social"
+      src="https://img.shields.io/github/stars/magicmirrororg/magicmirror?style=social" 
+      alt="GitHub stars"
     />
   </a>
 </p>
