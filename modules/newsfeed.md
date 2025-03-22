@@ -124,9 +124,11 @@ The following properties can be configured:
 The `feeds` property contains an array with multiple objects. These objects have
 the following properties:
 
-| Option         | Description                                                                                                                                                       |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`        | The name of the feed source to be displayed above the news items. <br><br> This property is optional.                                                             |
-| `url`          | The url of the feed used for the headlines. <br><br> **Example:** `'https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'`                                   |
-| `encoding`     | The encoding of the news feed. <br><br> This property is optional. <br> **Possible values:** `'UTF-8'`, `'ISO-8859-1'`, etc ... <br> **Default value:** `'UTF-8'` |
-| `useCorsProxy` | Uses the internal cors proxy to avoid cors errors. <br><br> This property is optional. <br> **Possible values:** `true` or `false` <br> **Default value:** `true` |
+| Option            | Description                                                                                                                                                       |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`           | The name of the feed source to be displayed above the news items. <br><br> This property is optional.                                                             |
+| `url`             | The url of the feed used for the headlines. <br><br> **Example:** `'https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'`                                   |
+| `encoding`        | The encoding of the news feed. <br><br> This property is optional. <br> **Possible values:** `'UTF-8'`, `'ISO-8859-1'`, etc ... <br> **Default value:** `'UTF-8'` |
+| `useCorsProxy`    | Uses the internal cors proxy to avoid cors errors. <br><br> This property is optional. <br> **Possible values:** `true` or `false` <br> **Default value:** `true` |
+| `ignoreOldItems`  | Overrides the property defined for the module (see above) for the specific feed                                                                                   |
+| `ignoreOlderThan` | Overrides the property defined for the module (see above) for the specific feed                                                                                   |
