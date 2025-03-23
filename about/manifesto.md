@@ -36,4 +36,4 @@ Through this philosophy, MagicMirror² not only provides functionality but foste
 
 Building on our philosophy of fostering contributions, we aim to continue evolving MagicMirror² with the active involvement of its community. Each new feature and improvement will stay true to the spirit of collaboration and openness that defines this project.
 
-As the platform grows, we will explore innovations such as graphical tools or frameworks while ensuring simplicity remains at its core. By maintaining this balance, MagicMirror² will remain both approachable for newcomers and empowering for advanced users.
+As the platform grows, we will remain open to explore innovations such as graphical tools or frameworks while ensuring simplicity remains at its core. By maintaining this balance, MagicMirror² will remain both approachable for newcomers and empowering for advanced users.
