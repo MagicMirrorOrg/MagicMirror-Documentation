@@ -27,5 +27,11 @@ the source code, so only execute this if you know what you are doing!
 Type `git status` to see your changes, if there are any, you can reset them with
 `git reset --hard`. After that, `git pull` should be possible.
 
+Your upgrade may fail if you do not have the version of `node` required by the 
+latest release of MagicMirror².  If you need to upgrade `node`, you can run the 
+following command:
+
+`sudo n stable`
+
 If you want to try the community maintained automated update then, please see
 [alternative installation methods](installation.md#alternative-installation-methods)
