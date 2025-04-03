@@ -7,6 +7,8 @@ start the upgrade process!
 
 :::
 
+## Manual Upgrade
+
 If you want to update your MagicMirror² to the latest version, use your terminal
 to go to your MagicMirror folder and type the following command:
 
@@ -27,11 +29,11 @@ the source code, so only execute this if you know what you are doing!
 Type `git status` to see your changes, if there are any, you can reset them with
 `git reset --hard`. After that, `git pull` should be possible.
 
-Your upgrade may fail if you do not have the version of `node` required by the 
-latest release of MagicMirror².  If you need to upgrade `node`, you can run the 
-following command:
-
 `sudo n stable`
 
-If you want to try the community maintained automated update then, please see
-[alternative installation methods](installation.md#alternative-installation-methods)
+## Alternative Upgrade Methods
+
+### Community-Maintained Automatic Upgrade Script
+
+Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains an 
+easy-to-use update script: [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts/?tab=readme-ov-file#upgrade-to-next-magicmirror-version-from-an-existing-installation)
