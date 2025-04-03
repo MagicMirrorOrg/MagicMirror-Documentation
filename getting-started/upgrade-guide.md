@@ -29,7 +29,10 @@ the source code, so only execute this if you know what you are doing!
 Type `git status` to see your changes, if there are any, you can reset them with
 `git reset --hard`. After that, `git pull` should be possible.
 
-`sudo n stable`
+MagicMirror² updates may change the minimum version of `Node.js` that is required, 
+and the installation script above may fail if your system does not meet that 
+minimum requirement.  You can find information on installing newer versions of 
+`Nodes.js` [here](https://github.com/nodesource/distributions) and [here](https://nodejs.org/en/download).
 
 ## Alternative Upgrade Methods
 
