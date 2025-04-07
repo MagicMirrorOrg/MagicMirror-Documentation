@@ -84,7 +84,7 @@ By default, you would use config.js with a bash script (mm.sh):
 
 ```bash
 cd ~/MagicMirror
-npm start
+npm run start
 ```
 
 To use the 2nd configuration file, use a bash script like this (mm2.sh):
@@ -92,7 +92,7 @@ To use the 2nd configuration file, use a bash script like this (mm2.sh):
 ```bash
 cd ~/MagicMirror
 export MM_CONFIG_FILE=config/config2.js
-npm start
+npm run start
 ```
 
 To change the port:
@@ -100,7 +100,7 @@ To change the port:
 ```bash
 cd ~/MagicMirror
 export MM_PORT=8081
-npm start
+npm run start
 ```
 
 You can run `npm run config:check` on your 2nd configuration file by typing the
@@ -182,7 +182,7 @@ cd ~/MagicMirror
 export MY_ADDRESS=localhost
 export MY_PORT=8080
 export MY_HTTPS=false
-npm start
+npm run start
 ```
 
 ### Using `electronOptions`
@@ -217,7 +217,7 @@ Starting Script 1 (mm.sh):
 
 ```bash
 cd ~/MagicMirror
-npm start
+npm run start
 ```
 
 Starting Script 2 (mm2.sh):
@@ -225,7 +225,7 @@ Starting Script 2 (mm2.sh):
 ```bash
 cd ~/MagicMirror
 export MM_CONFIG_FILE=config/config2.js
-npm start
+npm run start
 ```
 
 Configuration file 1 (config.js):
