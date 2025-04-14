@@ -107,7 +107,8 @@ Command Prompt:
 
 Otherwise the screen will stay black when starting the software.
 
-**Step 7:** In Windows you must use `npm run start:windows` instead of `npm run start`.
+**Step 7:** In Windows you must use `npm run start:windows` instead of
+`npm run start`.
 
 ## Usage
 
