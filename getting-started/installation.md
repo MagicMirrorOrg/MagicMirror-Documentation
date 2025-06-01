@@ -90,22 +90,8 @@ Windows. Some third-party modules may not work on Windows.
 
 :::
 
-To get the software running on Windows, you have to do two things in addition to
+To get the software running on Windows, you have to change one thing in
 the [steps](#manual-installation) above:
-
-**After step 5:** Install dependencies in the vendor and font directories:
-
-Powershell:
-
-1. `cd fonts; npm install; cd ..`
-2. `cd vendor; npm install; cd ..`
-
-Command Prompt:
-
-1. `cd fonts && npm install && cd ..`
-2. `cd vendor && npm install && cd ..`
-
-Otherwise the screen will stay black when starting the software.
 
 **Step 7:** In Windows you must use `npm run start:windows` instead of
 `npm run start`.

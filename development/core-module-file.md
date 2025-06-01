@@ -127,15 +127,15 @@ The getScripts method is called to request any additional scripts that need to
 be loaded. This method should therefore return an array with strings. If you
 want to return a full path to a file in the module folder, use the
 `this.file('filename.js')` method. In all cases the loader will only load a file
-once. It even checks if the file is available in the default vendor folder.
+once. It even checks the files defined in `js/vendor.js`.
 
 **Example:**
 
 ```javascript
 getScripts: function() {
 	return [
-		'script.js', // will try to load it from the vendor folder, otherwise it will load is from the module folder.
-		'moment.js', // this file is available in the vendor folder, so it doesn't need to be available in the module folder.
+		'script.js', // will try to load it from the files defined in `js/vendor.js`, otherwise it will load it from the module folder.
+		'moment.js', // this file is defined in `js/vendor.js`, so it doesn't need to be available in the module folder.
 		this.file('another_file.js'), // this file will be loaded straight from the module folder.
 		'https://code.jquery.com/jquery-2.2.3.min.js',  // this file will be loaded from the jquery servers.
 	]
@@ -154,15 +154,15 @@ The getStyles method is called to request any additional stylesheets that need
 to be loaded. This method should therefore return an array with strings. If you
 want to return a full path to a file in the module folder, use the
 `this.file('filename.css')` method. In all cases the loader will only load a
-file once. It even checks if the file is available in the default vendor folder.
+file once. It even checks the files defined in `js/vendor.js`.
 
 **Example:**
 
 ```javascript
 getStyles: function() {
 	return [
-		'script.css', // will try to load it from the vendor folder, otherwise it will load is from the module folder.
-		'font-awesome.css', // this file is available in the vendor folder, so it doesn't need to be available in the module folder.
+		'script.css', // will try to load it from the files defined in `js/vendor.js`, otherwise it will load it from the module folder.
+		'font-awesome.css', // this file is defined in `js/vendor.js`, so it doesn't need to be available in the module folder.
 		this.file('another_file.css'), // this file will be loaded straight from the module folder.
 		'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',  // this file will be loaded from the bootstrap cdn servers.
 	]
