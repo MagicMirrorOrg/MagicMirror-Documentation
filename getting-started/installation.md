@@ -107,14 +107,15 @@ Command Prompt:
 
 Otherwise the screen will stay black when starting the software.
 
-**Step 7:** In Windows you must use `npm start:windows` instead of `npm start`.
+**Step 7:** In Windows you must use `npm run start:windows` instead of
+`npm run start`.
 
 ## Usage
 
 Note the following:
 
-- `npm start` does **not** work via SSH. But you can use
-  `DISPLAY=:0 nohup npm start &` instead. \
+- `npm run start` does **not** work via SSH. But you can use
+  `DISPLAY=:0 nohup npm run start &` instead. \
   This starts the mirror on the remote display.
 - If you want to debug on your Raspberry Pi you can use `npm run start:dev`
   which will start MM with _Dev Tools_ enabled.
