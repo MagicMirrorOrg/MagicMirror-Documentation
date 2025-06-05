@@ -40,6 +40,12 @@ upgrade script above and reading any error messages.
 
 ## Alternative Upgrade Methods
 
+::: tip NOTE
+
+Users who prefer a straightforward, automated solution may find alternative methods more practical. Although convenient, not using the manual method obove may mean that you gain less insight into the system, which could make it harder to troubleshoot issues independently.
+
+:::
+
 ### Community-Maintained Automatic Upgrade Script
 
 Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains an 
