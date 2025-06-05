@@ -42,7 +42,7 @@ upgrade script above and reading any error messages.
 
 ::: tip NOTE
 
-Users who prefer a straightforward, automated solution may find alternative methods more practical. Although convenient, not using the manual method obove may mean that you gain less insight into the system, which could make it harder to troubleshoot issues independently.
+Users who prefer a straightforward, automated solution may find alternative methods more practical. Although convenient, not using the manual method above may mean that you gain less insight into the system, which could make it harder to troubleshoot issues independently.
 
 :::
 
