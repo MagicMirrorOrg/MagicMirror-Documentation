@@ -44,7 +44,7 @@ Add the following lines:
 
 ```shell
 cd ./MagicMirror
-DISPLAY=:0 npm start
+DISPLAY=:0 npm run start
 ```
 
 Save and close, using the commands `CTRL-O` and `CTRL-X`. Now make sure the

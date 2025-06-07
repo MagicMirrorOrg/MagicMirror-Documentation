@@ -78,43 +78,12 @@ team. Use these scripts and methods at your own risk.
 - We also publish the latest version of MagicMirror to the
   [npm-registry](https://www.npmjs.com/package/magicmirror).
 
-## Other Operating Systems
-
-### Windows
-
-::: warning IMPORTANT
-
-MagicMirror² is designed to run on Linux. But with an extra step in the
-installation process and a different start command, you can also run it on
-Windows. Some third-party modules may not work on Windows.
-
-:::
-
-To get the software running on Windows, you have to do two things in addition to
-the [steps](#manual-installation) above:
-
-**After step 5:** Install dependencies in the vendor and font directories:
-
-Powershell:
-
-1. `cd fonts; npm install; cd ..`
-2. `cd vendor; npm install; cd ..`
-
-Command Prompt:
-
-1. `cd fonts && npm install && cd ..`
-2. `cd vendor && npm install && cd ..`
-
-Otherwise the screen will stay black when starting the software.
-
-**Step 7:** In Windows you must use `npm start:windows` instead of `npm start`.
-
 ## Usage
 
 Note the following:
 
-- `npm start` does **not** work via SSH. But you can use
-  `DISPLAY=:0 nohup npm start &` instead. \
+- `npm run start` does **not** work via SSH. But you can use
+  `DISPLAY=:0 nohup npm run start &` instead. \
   This starts the mirror on the remote display.
 - If you want to debug on your Raspberry Pi you can use `npm run start:dev`
   which will start MM with _Dev Tools_ enabled.
@@ -160,3 +129,15 @@ port number of the server)
 
 If you use Wayland. Run `npm run start:wayland` instead of `npm run start` to
 start.
+
+### Windows
+
+::: warning IMPORTANT
+
+MagicMirror² is designed to run on Linux. But with a different start command,
+you can also run it on Windows. Some third-party modules may not work on Windows.
+
+:::
+
+In Windows you must use `npm run start:windows` instead of
+`npm run start`.
