@@ -7,6 +7,9 @@ on:
     types:
       - closed
 
+permissions:
+  contents: write
+
 jobs:
   merge-master-back-to-develop:
     if: github.event.pull_request.merged == true
