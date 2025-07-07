@@ -13,7 +13,7 @@ If you want to update your MagicMirror² to the latest version, use your termina
 to go to your MagicMirror folder and type the following command:
 
 ```shell
-git pull && npm run install-mm
+git pull && node --run install-mm
 ```
 
 If you changed nothing more than the config or the modules, this should work

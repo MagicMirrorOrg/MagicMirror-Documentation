@@ -1,18 +1,15 @@
 name: Merge master into develop
 
 on:
-  pull_request:
+  push:
     branches:
       - master
-    types:
-      - closed
 
 permissions:
   contents: write
 
 jobs:
   merge-master-back-to-develop:
-    if: github.event.pull_request.merged == true
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
