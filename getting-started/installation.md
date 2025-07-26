@@ -24,15 +24,15 @@ installers can be found under:
 3. Clone the repository:
    `git clone https://github.com/MagicMirrorOrg/MagicMirror`
 4. Enter the repository: `cd MagicMirror`
-5. Install the application: `npm run install-mm`
+5. Install the application: `node --run install-mm`
 6. Make a copy of the config sample file:
    `cp config/config.js.sample config/config.js`
-7. Start the application: `npm run start` \
-   For **Server Only** use: `npm run server`
+7. Start the application: `node --run start` \
+   For **Server Only** use: `node --run server`
 
 ::: warning NOTE
 
-The installation step for `npm run install-mm` will take a very long time, often
+The installation step for `node --run install-mm` will take a very long time, often
 with little or no terminal response! For the RPi3 this is **~10** minutes and
 for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a
 :broken_heart: by Raspberry Jam.
@@ -82,10 +82,10 @@ team. Use these scripts and methods at your own risk.
 
 Note the following:
 
-- `npm run start` does **not** work via SSH. But you can use
-  `DISPLAY=:0 nohup npm run start &` instead. \
+- `node --run start` does **not** work via SSH. But you can use
+  `DISPLAY=:0 nohup node --run start &` instead. \
   This starts the mirror on the remote display.
-- If you want to debug on your Raspberry Pi you can use `npm run start:dev`
+- If you want to debug on your Raspberry Pi you can use `node --run start:dev`
   which will start MM with _Dev Tools_ enabled.
 - To access the toolbar menu when in mirror mode, hit `ALT` key.
 - To toggle the (web) `Developer Tools` from mirror mode, use `CTRL-SHIFT-I` or
@@ -95,7 +95,7 @@ Note the following:
 
 In some cases, you want to start the application without an actual app window.
 In this case, you can start MagicMirror² in server only mode by manually running
-`npm run server`. This will start the server, after which you can open the
+`node --run server`. This will start the server, after which you can open the
 application in your browser of choice. Detailed description below.
 
 ::: warning IMPORTANT
@@ -127,7 +127,7 @@ port number of the server)
 
 ### Wayland
 
-If you use Wayland. Run `npm run start:wayland` instead of `npm run start` to
+If you use Wayland. Run `node --run start:wayland` instead of `node --run start` to
 start.
 
 ### Windows
@@ -139,5 +139,5 @@ you can also run it on Windows. Some third-party modules may not work on Windows
 
 :::
 
-In Windows you must use `npm run start:windows` instead of
-`npm run start`.
+In Windows you must use `node --run start:windows` instead of
+`node --run start`.

@@ -54,7 +54,7 @@ modules: [
         // array of module update commands
         {
           // update of MMM-Test with embed npm script
-          "MMM-Test": "npm run update",
+          "MMM-Test": "node --run update",
         },
         {
           // update of MMM-OtherSample with "complex" process command
