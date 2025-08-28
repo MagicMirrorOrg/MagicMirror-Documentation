@@ -7,16 +7,14 @@ displays notifications from other modules.
 
 To use this module, add it to the modules array in the config/config.js file:
 
-```
-modules: [
-	{
-		module: "alert",
-		config: {
-			// The config property is optional.
-			// See 'Configuration options' for more information.
-		}
-	}
-]
+```js
+    {
+      module: "alert",
+      config: {
+        // The config property is optional.
+        // See 'Configuration options' for more information.
+      }
+    },
 ```
 
 ## Configuration options
@@ -29,19 +27,19 @@ The following properties can be configured:
 | `alert_effect`    | The animation effect to use for alerts. <br><br> **Possible values:** `scale` `slide` `genie` `jelly` `flip` `exploader` `bouncyflip` <br> **Default value:** `jelly`        |
 | `display_time`    | Time a notification is displayed in milliseconds. <br><br> **Possible values:** `int` <br> **Default value:** `3500`                                                         |
 | `position`        | Position where the notifications should be displayed. <br><br> **Possible values:** `left` `center` `right` <br> **Default value:** `center`                                 |
-| `welcome_message` | Message shown at startup. <br><br> **Possible values:** `string` `false` <br> **Default value:** `false` (no message at startup)                                             |
+| `welcome_message` | Message shown at startup. <br><br> **Possible values:** `string` `false` `true` <br> **Default value:** `false` (no message at startup)                                      |
 
 ## Developer notes
 
 For notifications use:
 
-```
-self.sendNotification("SHOW_ALERT", {type: "notification"});
+```js
+self.sendNotification("SHOW_ALERT", { type: "notification" });
 ```
 
 For alerts use:
 
-```
+```js
 self.sendNotification("SHOW_ALERT", {});
 ```
 
