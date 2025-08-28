@@ -8,17 +8,15 @@ MagicMirror application is available.
 
 To use this module, add it to the modules array in the `config/config.js` file:
 
-```javascript
-modules: [
-  {
-    module: "updatenotification",
-    position: "top_center", // This can be any of the regions.
-    config: {
-      // The config property is optional.
-      // See 'Configuration options' for more information.
+```js
+    {
+      module: "updatenotification",
+      position: "top_center", // This can be any of the regions.
+      config: {
+        // The config property is optional.
+        // See 'Configuration options' for more information.
+      },
     },
-  },
-];
 ```
 
 ## Configuration options
@@ -32,7 +30,7 @@ The following properties can be configured:
 | `sendUpdatesNotifications` | Allow to broadcast update with **UPDATES** notification to other modules.<br><br> **Default value:** `false`                                                                                                                                                  |
 | `updates`                  | Array of updates modules commands. <br> **Default value:** `[]` (see bellow)                                                                                                                                                                                  |
 | `updateTimeout`            | Maximum Update duration before cancel it. <br> **Default Value:** `120000` (2 minutes)                                                                                                                                                                        |
-| `updateAutorestart`        | Restart automaticaly MagicMirror² after update is done. <br> **Default Value:** `false`                                                                                                                                                                       |
+| `updateAutorestart`        | Restart automatically MagicMirror² after update is done. <br> **Default Value:** `false`                                                                                                                                                                      |
 | `useModulesFromConfig`     | If `false` iterate over modules directory instead using modules defined in `config.js`. <br> **Default Value:** `true`                                                                                                                                        |
 
 ### `updates` Array
@@ -44,35 +42,33 @@ update command
 
 Sample:
 
-```javascript
-modules: [
-  {
-    module: "updatenotification",
-    position: "top_center", // This can be any of the regions.
-    config: {
-      updates: [
-        // array of module update commands
-        {
-          // update of MMM-Test with embed npm script
-          "MMM-Test": "node --run update",
-        },
-        {
-          // update of MMM-OtherSample with "complex" process command
-          "MMM-OtherSample":
-            "rm -rf package-lock.json && git reset --hard && git pull && npm install",
-        },
-        {
-          // update of MMM-OtherSample2 with git pull && npm install command
-          "MMM-OtherSample2": "git pull && npm install",
-        },
-        {
-          // update of MMM-OtherSample3 with a simple git pull
-          "MMM-OtherSample3": "git pull",
-        },
-      ],
+```js
+    {
+      module: "updatenotification",
+      position: "top_center", // This can be any of the regions.
+      config: {
+        updates: [
+          // array of module update commands
+          {
+            // update of MMM-Test with embed npm script
+            "MMM-Test": "node --run update",
+          },
+          {
+            // update of MMM-OtherSample with "complex" process command
+            "MMM-OtherSample":
+              "rm -rf package-lock.json && git reset --hard && git pull && npm install",
+          },
+          {
+            // update of MMM-OtherSample2 with git pull && npm install command
+            "MMM-OtherSample2": "git pull && npm install",
+          },
+          {
+            // update of MMM-OtherSample3 with a simple git pull
+            "MMM-OtherSample3": "git pull",
+          },
+        ],
+      },
     },
-  },
-];
 ```
 
 Note: Don’t hesitate to ask the module developer for the ideal command to update

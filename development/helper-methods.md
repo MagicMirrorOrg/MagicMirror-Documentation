@@ -33,7 +33,7 @@ the `withClass(classname)` method can be an array, or space separated string.
 
 **Examples:**
 
-```javascript
+```js
 let modules = MM.getModules().withClass("classname");
 let modules = MM.getModules().withClass("classname1 classname2");
 let modules = MM.getModules().withClass(["classname1", "classname2"]);
@@ -51,7 +51,7 @@ string.
 
 **Examples:**
 
-```javascript
+```js
 let modules = MM.getModules().exceptWithClass("classname");
 let modules = MM.getModules().exceptWithClass("classname1 classname2");
 let modules = MM.getModules().exceptWithClass(["classname1", "classname2"]);
@@ -69,7 +69,7 @@ the instance of your module.
 
 **Examples:**
 
-```javascript
+```js
 let modules = MM.getModules().exceptModule(this);
 ```
 
@@ -77,7 +77,7 @@ Of course, you can combine all of the above filters:
 
 **Example:**
 
-```javascript
+```js
 let modules = MM.getModules()
   .withClass("classname1")
   .exceptWithClass("classname2")
@@ -91,7 +91,7 @@ let modules = MM.getModules()
 If you want to perform an action on all selected modules, you can use the
 `enumerate` function:
 
-```javascript
+```js
 MM.getModules().enumerate(function (module) {
   Log.log(module.name);
 });
@@ -100,7 +100,7 @@ MM.getModules().enumerate(function (module) {
 **Example:** To hide all modules except your module instance, you could write
 something like:
 
-```javascript
+```js
 Module.register("modulename", {
   //...
   notificationReceived: function (notification, payload, sender) {

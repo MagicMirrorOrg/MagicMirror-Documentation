@@ -8,7 +8,7 @@ provider for the weather module.
 This is the script in which the weather provider will be defined. In its most
 simple form, the weather provider must implement the following:
 
-```javascript
+```js
 WeatherProvider.register("yourprovider", {
   providerName: "YourProvider",
 
