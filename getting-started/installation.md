@@ -32,9 +32,9 @@ installers can be found under:
 
 ::: warning NOTE
 
-The installation step for `node --run install-mm` will take a very long time, often
-with little or no terminal response! For the RPi3 this is **~10** minutes and
-for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a
+The installation step for `node --run install-mm` will take a very long time,
+often with little or no terminal response! For the RPi3 this is **~10** minutes
+and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a
 :broken_heart: by Raspberry Jam.
 
 :::
@@ -127,15 +127,16 @@ port number of the server)
 
 ### Wayland
 
-If you use Wayland. Run `node --run start:wayland` instead of `node --run start` to
-start.
+If you use Wayland. Run `node --run start:wayland` instead of `node --run start`
+to start.
 
 ### Windows
 
 ::: warning IMPORTANT
 
 MagicMirror² is designed to run on Linux. But with a different start command,
-you can also run it on Windows. Some third-party modules may not work on Windows.
+you can also run it on Windows. Some third-party modules may not work on
+Windows.
 
 :::
 

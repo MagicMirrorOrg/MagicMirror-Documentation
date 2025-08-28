@@ -103,8 +103,8 @@ export MM_PORT=8081
 node --run start
 ```
 
-You can run `node --run config:check` on your 2nd configuration file by typing the
-export line in first, example:
+You can run `node --run config:check` on your 2nd configuration file by typing
+the export line in first, example:
 
 ```bash
 export MM_CONFIG_FILE=config/config2.js

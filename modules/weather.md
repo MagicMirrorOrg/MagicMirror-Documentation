@@ -170,8 +170,8 @@ retrieve more than 5 days you must subscribe to the OpenWeatherMap API.
 When using the `type: "forecast"` config, the module can display a max of 6 days
 (Today + the next 5 days). The forecast for each day reflects the daytime
 forecast. The Today forecast is a special case that will reflect the daytime
-forecast until late afternoon, after which Today will be reflecting the nighttime
-forecast for the current day.
+forecast until late afternoon, after which Today will be reflecting the
+nighttime forecast for the current day.
 
 When using the `type: "hourly"` config, the module can display a max of 24
 hours.
