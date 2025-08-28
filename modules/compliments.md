@@ -11,19 +11,17 @@ module displays a random compliment.
 
 To use this module, add it to the modules array in the `config/config.js` file:
 
-```javascript
-modules: [
-  {
-    module: "compliments",
-    position: "lower_third", // This can be any of the regions.
-    // Best results in one of the middle regions like: lower_third
-    config: {
-      // The config property is optional.
-      // If no config is set, the default compliments are shown.
-      // See 'Configuration options' for more information.
+```js
+    {
+      module: "compliments",
+      position: "lower_third", // This can be any of the regions.
+      // Best results in one of the middle regions like: lower_third
+      config: {
+        // The config property is optional.
+        // If no config is set, the default compliments are shown.
+        // See 'Configuration options' for more information.
+      },
     },
-  },
-];
 ```
 
 ## Configuration options
@@ -90,29 +88,29 @@ If set, the weather can be used for compliments. The available properties are:
 
 #### Example use with date
 
-```javascript
-config: {
-	compliments: {
-		"....-01-01": [
-			"Happy new year!"
-		],
-		"....-10-31": [
-			"Happy Halloween!"
-		]
-	}
-}
+```js
+    config: {
+      compliments: {
+        "....-01-01": [
+          "Happy new year!"
+        ],
+        "....-10-31": [
+          "Happy Halloween!"
+        ]
+      }
+    }
 ```
 
 #### Example use with a cron entry
 
-```javascript
-config: {
-	compliments: {
-		"48-50 16-18 * * 5,6": [
-			"Happy Hour!", "Its a Party"
-		]
-	}
-}
+```js
+    config: {
+      compliments: {
+        "48-50 16-18 * * 5,6": [
+          "Happy Hour!", "Its a Party"
+        ]
+      }
+    }
 ```
 
 this means, on Friday or Saturday, every week (\* (every) month/day) between
@@ -123,63 +121,63 @@ you want displayed, you need to set **specialDayUnique:true**
 As another example you could use this for scary messages ONLY between 8 and 9pm
 on Halloween evening:
 
-```javascript
-config: {
-    compliments: {
-        "* 20-21 31 10 *": [
-            "Boo!!"
-        ]
+```js
+    config: {
+        compliments: {
+            "* 20-21 31 10 *": [
+                "Boo!!"
+            ]
+        }
     }
-}
 ```
 
 #### Example use with weather module
 
-```javascript
-config: {
-	compliments: {
-		day_sunny: [
-			"Today is a sunny day",
-			"It's a beautiful day"
-		],
-		snow: [
-			"Snowball battle!"
-		],
-		rain: [
-			"Don't forget your umbrella"
-		]
-	}
-}
+```js
+    config: {
+      compliments: {
+        day_sunny: [
+          "Today is a sunny day",
+          "It's a beautiful day"
+        ],
+        snow: [
+          "Snowball battle!"
+        ],
+        rain: [
+          "Don't forget your umbrella"
+        ]
+      }
+    }
 ```
 
 #### Default value:
 
-```javascript
-config: {
-	compliments: {
-		anytime: [
-			"Hey there sexy!"
-		],
-		morning: [
-			"Good morning, handsome!",
-			"Enjoy your day!",
-			"How was your sleep?"
-		],
-		afternoon: [
-			"Hello, beauty!",
-			"You look sexy!",
-			"Looking good today!"
-		],
-		evening: [
-			"Wow, you look hot!",
-			"You look nice!",
-			"Hi, sexy!"
-		],
-		"....-01-01": [
-			"Happy new year!"
-		]
-	}
-}
+```js
+    config: {
+      compliments: {
+        anytime: [
+          "Hey there sexy!"
+        ],
+        morning: [
+          "Good morning, handsome!",
+          "Enjoy your day!",
+          "How was your sleep?"
+        ],
+        afternoon: [
+          "Hello, beauty!",
+          "You look sexy!",
+          "Looking good today!"
+        ],
+        evening: [
+          "Wow, you look hot!",
+          "You look nice!",
+          "Hi, sexy!"
+        ],
+        "....-01-01": [
+          "Happy new year!"
+        ]
+      }
+    }
 ```
 
 #### Multi-line compliments:
@@ -205,15 +203,14 @@ them ("morning", "afternoon", "evening", "snow", "rain", etc.).
 
 #### Example config/config.js of a Compliment File hosted on GitHub
 
-```
-{
-module: 'compliments',
-position: 'middle_center',
-   config: {
-     remoteFile: 'https://gist.githubusercontent.com/user/e28a69665b8839f6e9a7acd6b4acc97d/raw/be1dee8f805a433f6ee0fa3556d1927da14e7799/compliments.json'
-   }
-},
-
+```js
+    {
+    module: 'compliments',
+    position: 'middle_center',
+      config: {
+        remoteFile: 'https://gist.githubusercontent.com/user/e28a69665b8839f6e9a7acd6b4acc97d/raw/be1dee8f805a433f6ee0fa3556d1927da14e7799/compliments.json'
+      }
+    },
 ```
 
 (When copying the link from Github, you must use the 'Raw' link)

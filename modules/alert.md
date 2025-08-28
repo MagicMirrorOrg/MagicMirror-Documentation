@@ -7,16 +7,14 @@ displays notifications from other modules.
 
 To use this module, add it to the modules array in the config/config.js file:
 
-```
-modules: [
-	{
-		module: "alert",
-		config: {
-			// The config property is optional.
-			// See 'Configuration options' for more information.
-		}
-	}
-]
+```js
+    {
+      module: "alert",
+      config: {
+        // The config property is optional.
+        // See 'Configuration options' for more information.
+      }
+    },
 ```
 
 ## Configuration options
@@ -35,13 +33,13 @@ The following properties can be configured:
 
 For notifications use:
 
-```
+```js
 self.sendNotification("SHOW_ALERT", {type: "notification"});
 ```
 
 For alerts use:
 
-```
+```js
 self.sendNotification("SHOW_ALERT", {});
 ```
 

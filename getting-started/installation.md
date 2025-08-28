@@ -108,7 +108,7 @@ to connect to the server. You also need to set the local host `address` field to
 
 :::
 
-```javascript
+```js
 let config = {
 	address: "0.0.0.0",	// default is "localhost"
 	port: 8080,		// default

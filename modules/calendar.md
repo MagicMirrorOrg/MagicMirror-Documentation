@@ -8,18 +8,16 @@ calendars.
 
 To use this module, add it to the modules array in the `config/config.js` file:
 
-```javascript
-modules: [
-  {
-    module: "calendar",
-    position: "top_left", // This can be any of the regions. Best results in left or right regions.
-    config: {
-      // The config property is optional.
-      // If no config is set, an example calendar is shown.
-      // See 'Configuration options' for more information.
+```js
+    {
+      module: "calendar",
+      position: "top_left", // This can be any of the regions. Best results in left or right regions.
+      config: {
+        // The config property is optional.
+        // If no config is set, an example calendar is shown.
+        // See 'Configuration options' for more information.
+      },
     },
-  },
-];
 ```
 
 ## Configuration options
@@ -80,24 +78,24 @@ The following properties can be configured:
 
 #### Default value:
 
-```javascript
-config: {
-	coloredText: false,
-	coloredBorder: false,
-	coloredSymbol: false,
-	coloredBackground: false,
-	calendars: [
-		{
-			url: 'https://www.calendarlabs.com/templates/ical/US-Holidays.ics',
-			symbol: 'calendar',
-			auth: {
-			    user: 'username',
-			    pass: 'superstrongpassword',
-			    method: 'basic'
-			}
-		},
-	],
-}
+```js
+    config: {
+      coloredText: false,
+      coloredBorder: false,
+      coloredSymbol: false,
+      coloredBackground: false,
+      calendars: [
+        {
+          url: 'https://www.calendarlabs.com/templates/ical/US-Holidays.ics',
+          symbol: 'calendar',
+          auth: {
+              user: 'username',
+              pass: 'superstrongpassword',
+              method: 'basic'
+          }
+        },
+      ],
+    }
 ```
 
 #### Calendar configuration options:
@@ -183,7 +181,7 @@ payload containing the _url_ to the calendar in which to update.
 Socket notifications can be accessed through `this.io` from any MagicMirror
 `node_helper`. _(See example)_
 
-```javascript
+```js
 this.io.of("calendar").emit("FETCH_CALENDAR", { url: "http://url.to.cal" });
 ```
 

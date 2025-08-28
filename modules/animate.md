@@ -161,7 +161,7 @@ Sample:
 - You have created a `<div>` named "myDivSample"
 - You want to add a `flipInX` type animation for a duration of 1 second
 
-```javascript
+```js
 addAnimateCSS("myDivSample", "flipInX", 1);
 ```
 
@@ -179,7 +179,7 @@ Sample:
 - You want to remove a `flipInX` type animation created with `addAnimateCSS()`
   function
 
-```javascript
+```js
 removeAnimateCSS("myDivSample", "flipInX");
 ```
 
@@ -191,7 +191,7 @@ So, why not add an animation!?
 
 :::
 
-```javascript
+```js
 ...
 // select element ("myDivSample")
 let test = document.getElementById("myDivSample")

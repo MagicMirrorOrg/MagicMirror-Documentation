@@ -19,7 +19,7 @@ see [configuration](/configuration/introduction.md) for more information.
 
 ## Example
 
-```javascript
+```js
 let config = {
   modules: [
     {
@@ -90,7 +90,7 @@ in the middle, and exit from the right (`slideOutRight` animation)
 
 ![animateCSS](./screenshots/animate.gif)
 
-```javascript
+```js
 {
   module: "newsfeed",
   position: "bottom_bar",

@@ -11,17 +11,15 @@ displays the current date and time. The information will be updated realtime.
 
 To use this module, add it to the modules array in the `config/config.js` file:
 
-```javascript
-modules: [
-  {
-    module: "clock",
-    position: "top_left", // This can be any of the regions.
-    config: {
-      // The config property is optional.
-      // See 'Configuration options' for more information.
+```js
+    {
+      module: "clock",
+      position: "top_left", // This can be any of the regions.
+      config: {
+        // The config property is optional.
+        // See 'Configuration options' for more information.
+      },
     },
-  },
-];
 ```
 
 ## Configuration options

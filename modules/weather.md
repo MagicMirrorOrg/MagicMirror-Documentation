@@ -24,17 +24,15 @@ in stone, so keep that in mind when you want to contribute.
 
 To use this module, add it to the modules array in the `config/config.js` file:
 
-```javascript
-modules: [
-  {
-    module: "weather",
-    position: "top_right",
-    config: {
-      // See 'Configuration options' for more information.
-      type: "current",
+```js
+    {
+      module: "weather",
+      position: "top_right",
+      config: {
+        // See 'Configuration options' for more information.
+        type: "current",
+      },
     },
-  },
-];
 ```
 
 ## Configuration options

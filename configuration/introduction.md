@@ -129,7 +129,7 @@ Variables must be inserted as `${MY_VARIABLE}`, examples:
 
 `config.js.template`:
 
-```javascript
+```js
 let config = {
 	address: "${MY_ADDRESS}",
 	port: ${MY_PORT},
@@ -143,7 +143,7 @@ would become
 
 `config.js`:
 
-```javascript
+```js
 let config = {
   address: "localhost",
   port: 8080,
@@ -280,7 +280,7 @@ them from the config.js file.
 
 `config.js.template`:
 
-```javascript
+```js
 let config = {
   address: "0.0.0.0",
   port: 8080,
