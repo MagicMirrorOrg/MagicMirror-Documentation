@@ -14,12 +14,17 @@ installers can be found under:
 
 ## Manual Installation
 
+These instructions deploy a standalone version of MagicMirror², for
+[Server Only](/getting-started/installation.md#server-only) and
+[Client Only](/getting-started/installation.md#client-only) installs please read
+the install specific instructions below
+
 1. Download and install a
    [required](https://github.com/MagicMirrorOrg/MagicMirror/releases) _Node.js_
    version, see the official documentation:
    - [Linux based distributions](https://github.com/nodesource/distributions)
    - [Others](https://nodejs.org/en/download)
-2. check if `git` is installed on your machine by executing `git` (should show
+2. Check if `git` is installed on your machine by executing `git` (should show
    usage), otherwise install it
 3. Clone the repository:
    `git clone https://github.com/MagicMirrorOrg/MagicMirror`
@@ -27,8 +32,7 @@ installers can be found under:
 5. Install the application: `node --run install-mm`
 6. Make a copy of the config sample file:
    `cp config/config.js.sample config/config.js`
-7. Start the application: `node --run start` \
-   For **Server Only** use: `node --run server`
+7. Start the application: `node --run start`
 
 ::: warning NOTE
 
@@ -82,9 +86,6 @@ team. Use these scripts and methods at your own risk.
 
 Note the following:
 
-- `node --run start` does **not** work via SSH. But you can use
-  `DISPLAY=:0 nohup node --run start &` instead. \
-  This starts the mirror on the remote display.
 - If you want to debug on your Raspberry Pi you can use `node --run start:dev`
   which will start MM with _Dev Tools_ enabled.
 - To access the toolbar menu when in mirror mode, hit `ALT` key.
@@ -94,19 +95,34 @@ Note the following:
 ### Server Only
 
 In some cases, you want to start the application without an actual app window.
-In this case, you can start MagicMirror² in server only mode by manually running
-`node --run server`. This will start the server, after which you can open the
-application in your browser of choice. Detailed description below.
+To do so after installation you can start MagicMirror² in server only mode by
+manually running the following command within the MagicMirror directory
+`node --run server`
 
 ::: warning IMPORTANT
 
-Make sure that you whitelist the interface/ip (`ipWhitelist`) in the server
-config where you want the client to connect to, otherwise it will not be allowed
-to connect to the server. You also need to set the local host `address` field to
-`0.0.0.0` in order for the RPi to listen on all interfaces and not only
-`localhost` (default).
+Please read the information below on fully setting up MagicMirror² for running
+in server only mode otherwise you wont be able to connect to your MagicMirror²
+server from a remote device.
 
 :::
+
+In order to run MagicMirror² in server mode you need to:
+
+- Allow Remote Connections to MagicMirror²
+- Start MagicMirror² in Server mode on boot
+
+#### Allow Remote Connections to MagicMirror²
+
+By default MagicMirror² does not allow other remote devices to connect, this is
+controlled by settings inside the `config/config.js` file by interface and ip:
+
+- Change address to `0.0.0.0` this will allow MagicMirror² to listen on all
+  network interfaces
+- Change `ipWhitelist` to the list of IP's you want to allow to connect
+
+Sample Configuration below
+[and link to full configuration options](/configuration/introduction.md#introduction)
 
 ```js
 let config = {
@@ -120,10 +136,12 @@ let config = {
 ### Client Only
 
 This is when you already have a server running remotely and want your RPi to
-connect as a standalone client to this instance, to show the MM from the server.
-Then from your RPi, you run it with:
-`node clientonly --address 192.168.1.5 --port 8080`. (Specify the ip address and
-port number of the server)
+connect as a standalone client to this instance, to show the MagicMirror² from
+the server.
+
+You can start MagicMirror² in client mode by manually running the following
+command with the MagicMirror directory:
+`node clientonly --address 192.168.1.5 --port 8080`
 
 ### Wayland
 
