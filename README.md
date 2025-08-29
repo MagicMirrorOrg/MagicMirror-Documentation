@@ -11,7 +11,7 @@ title: Introduction
 	<img src="https://img.shields.io/github/actions/workflow/status/magicmirrororg/magicmirror/automated-tests.yaml" alt="GitHub Actions">
 	<img src="https://img.shields.io/github/check-runs/magicmirrororg/magicmirror/master" alt="Build Status">
 	<a href="https://github.com/MagicMirrorOrg/MagicMirror">
-		<img src="https://img.shields.io/github/stars/magicmirrororg/magicmirror?style=social">
+		<img src="https://img.shields.io/github/stars/magicmirrororg/magicmirror?style=social" alt="GitHub stars">
 	</a>
 </p>
 

@@ -1,31 +1,76 @@
-# Manifesto
+# MagicMirror² Manifesto
 
-A real Manifesto is still to be written. Till then, Michael's response on
-[one of the repository issues](https://github.com/MagicMirrorOrg/MagicMirror/issues/1174)
-gives a great summary:
+The following core principles form the foundation of MagicMirror² and guide our
+decisions and actions. They reflect the project’s commitment to simplicity,
+accessibility, and community-driven innovation.
 
-> "... I started this project as an ultimate starter project for Raspberry Pi
-> enthusiasts. As a matter of fact, for most of the contributors, the
-> MagicMirror project is the first open source project they ever contributed to.
-> This is one of the reasons why the MagicMirror project is featured in several
-> RasPi magazines.
->
-> The project has a lot of opportunities for improvement. We could use a
-> powerful framework like Vue to ramp up the development speed. We could use
-> SASS for better/easier css implementations. We could make it an NPM
-> installable package. And as you say, we could bundle it up. The big downside
-> of of of these changes is that it over complicates things: a user no longer
-> will be able to open just one file and make a small modification and see how
-> it works out.
->
-> Of course, a bundled version can be complimentary to the regular un-bundled
-> version. And I'm sure a lot of (new) users will opt for the bundled version.
-> But this means those users won't be motivated to take a peek under the hood.
-> They will just remain 'users'. They won't become contributors, and worse: they
-> won't be motivated to take their first steps in software development.
->
-> And to be honest: motivating curious users to step out of their comfort zone
-> and take those first steps is what drives me in this project. Therefore my
-> ultimate goal is this project is to keep it as accessible as possible."
->
-> ~ Michael Teeuw
+## Vision
+
+To empower Raspberry Pi enthusiasts and developers of all levels by providing a
+platform that combines **simplicity** and **magic**, inspiring curiosity and
+collaboration in open-source development.
+
+## Mission
+
+- **Preserve** the core philosophy of simplicity, ensuring that users can
+  confidently modify and experiment with the software.
+- **Inspire** contributors by transforming MagicMirror² into an approachable
+  entry point into the world of software development.
+- **Advance** the platform continuously while keeping accessibility and
+  modularity at its heart.
+
+## Core Principles
+
+- **Accessibility for All**: MagicMirror² strives to be the ultimate starter
+  project for Raspberry Pi enthusiasts. Whether you’re a beginner taking your
+  first steps or an experienced developer looking for a creative outlet,
+  MagicMirror² aims to be intuitive and welcoming.
+- **Fostering Learning**: The project is not just about delivering a
+  product—it’s about empowering users to explore, learn, and contribute to
+  open-source development. We believe in inspiring curious minds to step out of
+  their comfort zones and try new things.
+- **Modular and Open**: MagicMirror² is designed to be modular, allowing
+  contributors to easily add or remove features. Each module reflects the
+  diverse creativity of the community, while the project remains open to new
+  ideas and improvements.
+- **Simplicity as a Foundation**: While we embrace technological advancements,
+  simplicity remains a basic cornerstone of the project. As the project’s
+  founder, [stated](https://github.com/MagicMirrorOrg/MagicMirror/issues/1174):
+
+  > _We could use a powerful framework like Vue to ramp up the development
+  > speed. We could use SASS for better/easier CSS implementations. ... But the
+  > big downside of these changes is that it over complicates things: a user no
+  > longer will be able to open just one file and make a small modification and
+  > see how it works out._ --Michael Teeuw
+
+  This principle ensures that MagicMirror² remains approachable, empowering
+  users to take control of their projects with confidence.
+
+- **Collaborative Growth**: MagicMirror² thrives on collaboration. Contributions
+  from the community—whether through code, feedback, or ideas—drive the project
+  forward. We aim to create an environment where users feel valued and
+  encouraged to contribute.
+
+## Inspiring Contribution
+
+MagicMirror² is more than just a tool – it’s a platform that invites users to
+become creators. By keeping the system accessible and open, it motivates
+individuals to step beyond being passive users and to actively contribute to the
+project.
+
+Although bundled versions and pre-packaged solutions may seem convenient, they
+risk suppressing users' curiosity. As Michael has highlighted, _"users won’t be
+motivated to take a peek under the hood. They will just remain 'users'."_
+MagicMirror² challenges this dynamic by encouraging even non-technical users to
+explore, learn, and take their first steps into software development.
+
+Through this philosophy, MagicMirror² not only provides functionality but
+fosters a community of learners, innovators, and collaborators – ensuring that
+its magic is driven by the passion and creativity of its contributors.
+
+## Future Directions
+
+Building on our philosophy of fostering contributions, we aim to continue
+evolving MagicMirror² with the active involvement of its community. Each new
+feature and improvement will stay true to the spirit of collaboration and
+openness that defines this project.

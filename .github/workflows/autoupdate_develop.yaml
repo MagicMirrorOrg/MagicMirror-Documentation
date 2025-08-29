@@ -1,0 +1,25 @@
+name: Merge master into develop
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  merge-master-back-to-develop:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Merge master back to develop
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+          git fetch --unshallow
+          git checkout develop
+          git status
+          git merge --no-ff --allow-unrelated-histories origin/master -m "Auto-merge master back to develop"
+          git push

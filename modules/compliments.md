@@ -11,37 +11,36 @@ module displays a random compliment.
 
 To use this module, add it to the modules array in the `config/config.js` file:
 
-```javascript
-modules: [
-  {
-    module: "compliments",
-    position: "lower_third", // This can be any of the regions.
-    // Best results in one of the middle regions like: lower_third
-    config: {
-      // The config property is optional.
-      // If no config is set, the default compliments are shown.
-      // See 'Configuration options' for more information.
+```js
+    {
+      module: "compliments",
+      position: "lower_third", // This can be any of the regions.
+      // Best results in one of the middle regions like: lower_third
+      config: {
+        // The config property is optional.
+        // If no config is set, the default compliments are shown.
+        // See 'Configuration options' for more information.
+      },
     },
-  },
-];
 ```
 
 ## Configuration options
 
 The following properties can be configured:
 
-| Option               | Description                                                                                                                                                                                                                                                                                                                                                                                                    |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `updateInterval`     | How often does the compliment have to change? (Milliseconds) <br><br> **Possible values:** `1000` - `86400000` <br> **Default value:** `30000` (30 seconds)                                                                                                                                                                                                                                                    |
-| `fadeSpeed`          | Speed of the update animation. (Milliseconds) <br><br> **Possible values:**`0` - `5000` <br> **Default value:** `4000` (4 seconds)                                                                                                                                                                                                                                                                             |
-| `compliments`        | The list of compliments. <br><br> **Possible values:** An object with four arrays: `morning`, `afternoon`, `evening` and `anytime`. See _compliment configuration_ below. <br> **Default value:** See _compliment configuration_ below.                                                                                                                                                                        |
-| `remoteFile`         | External file from which to load the compliments <br><br> **Possible values:** Path or URL (starting with `http://` or `https://`) to a JSON file containing compliments, configured as per the value of the _compliments configuration_ (see below). An object with four arrays: `morning`, `afternoon`, `evening` and `anytime`. - `compliments.json` <br> **Default value:** `null` (Do not load from file) |
-| `classes`            | Override the CSS classes of the div showing the compliments <br><br> **Default value:** `thin xlarge bright`                                                                                                                                                                                                                                                                                                   |
-| `morningStartTime`   | Time in hours (in 24 format), after which the mode of "morning" will begin <br> **Possible values:** `0` - `24` <br><br> **Default value:** `3`                                                                                                                                                                                                                                                                |
-| `morningEndTime`     | Time in hours (in 24 format), after which the mode of "morning" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                 |
-| `afternoonStartTime` | Time in hours (in 24 format), after which the mode "afternoon" will begin <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                |
-| `afternoonEndTime`   | Time in hours (in 24 format), after which the mode "afternoon" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `17`                                                                                                                                                                                                                                                                  |
-| `specialDayUnique`   | Compliments configured with a date are by default added to the existing compliments list. Setting this option to `true` will show only your special day compliments on that day. See _Example use with date_ below <br><br> **Default value:** `false`                                                                                                                                                         |
+| Option                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `updateInterval`            | How often does the compliment have to change? (Milliseconds) <br><br> **Possible values:** `1000` - `86400000` <br> **Default value:** `30000` (30 seconds)                                                                                                                                                                                                                                                                                                      |
+| `fadeSpeed`                 | Speed of the update animation. (Milliseconds) <br><br> **Possible values:**`0` - `5000` <br> **Default value:** `4000` (4 seconds)                                                                                                                                                                                                                                                                                                                               |
+| `compliments`               | The list of compliments. <br><br> **Possible values:** An object with four arrays: `morning`, `afternoon`, `evening` and `anytime`. See _compliment configuration_ below. <br> **Default value:** See _compliment configuration_ below.                                                                                                                                                                                                                          |
+| `remoteFile`                | External file from which to load the compliments <br><br> **Possible values:** Path or URL (starting with `http://` or `https://`) to a JSON file containing compliments, configured as per the value of the _compliments configuration_ (see below). An json object {} with at least one of the arrays: `morning`, `afternoon`, `evening`, `anytime`, `datetype` and/or `crontype`. - `compliments.json` <br> **Default value:** `null` (Do not load from file) |
+| `remoteFileRefreshInterval` | How often to reload the remote file, if remoteFile is specified. in ms <br> **Default value:** 0 <br> **Minimum value:** 15 minutes (15\*60\*60\*1000)                                                                                                                                                                                                                                                                                                           |
+| `classes`                   | Override the CSS classes of the div showing the compliments <br><br> **Default value:** `thin xlarge bright`                                                                                                                                                                                                                                                                                                                                                     |
+| `morningStartTime`          | Time in hours (in 24 format), after which the mode of "morning" will begin <br> **Possible values:** `0` - `24` <br><br> **Default value:** `3`                                                                                                                                                                                                                                                                                                                  |
+| `morningEndTime`            | Time in hours (in 24 format), after which the mode of "morning" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                                                                   |
+| `afternoonStartTime`        | Time in hours (in 24 format), after which the mode "afternoon" will begin <br> **Possible values:** `0` - `24` <br><br> **Default value:** `12`                                                                                                                                                                                                                                                                                                                  |
+| `afternoonEndTime`          | Time in hours (in 24 format), after which the mode "afternoon" will end <br> **Possible values:** `0` - `24` <br><br> **Default value:** `17`                                                                                                                                                                                                                                                                                                                    |
+| `specialDayUnique`          | Compliments configured with a date are by default added to the existing compliments list. Setting this option to `true` will show only your special day compliments on that day. See _Example use with date_ below <br><br> **Default value:** `false`                                                                                                                                                                                                           |
 
 All the rest of the time that does not fall into the
 morningStartTime-morningEndTime and afternoonStartTime-afternoonEndTime ranges
@@ -89,29 +88,29 @@ If set, the weather can be used for compliments. The available properties are:
 
 #### Example use with date
 
-```javascript
-config: {
-	compliments: {
-		"....-01-01": [
-			"Happy new year!"
-		],
-		"....-10-31": [
-			"Happy Halloween!"
-		]
-	}
-}
+```js
+    config: {
+      compliments: {
+        "....-01-01": [
+          "Happy new year!"
+        ],
+        "....-10-31": [
+          "Happy Halloween!"
+        ]
+      }
+    }
 ```
 
 #### Example use with a cron entry
 
-```javascript
-config: {
-	compliments: {
-		"48-50 16-18 * * 5,6": [
-			"Happy Hour!", "Its a Party"
-		]
-	}
-}
+```js
+    config: {
+      compliments: {
+        "48-50 16-18 * * 5,6": [
+          "Happy Hour!", "Its a Party"
+        ]
+      }
+    }
 ```
 
 this means, on Friday or Saturday, every week (\* (every) month/day) between
@@ -119,66 +118,66 @@ this means, on Friday or Saturday, every week (\* (every) month/day) between
 note: like with the date only setting, if these are the only possible messages
 you want displayed, you need to set **specialDayUnique:true**
 
-As another example you could use this for scary messages ONLY between 8 and
-9pm on Halloween evening:
+As another example you could use this for scary messages ONLY between 8 and 9pm
+on Halloween evening:
 
-```javascript
-config: {
-    compliments: {
-        "* 20-21 31 10 *": [
-            "Boo!!"
-        ]
+```js
+    config: {
+        compliments: {
+            "* 20-21 31 10 *": [
+                "Boo!!"
+            ]
+        }
     }
-}
 ```
 
 #### Example use with weather module
 
-```javascript
-config: {
-	compliments: {
-		day_sunny: [
-			"Today is a sunny day",
-			"It's a beautiful day"
-		],
-		snow: [
-			"Snowball battle!"
-		],
-		rain: [
-			"Don't forget your umbrella"
-		]
-	}
-}
+```js
+    config: {
+      compliments: {
+        day_sunny: [
+          "Today is a sunny day",
+          "It's a beautiful day"
+        ],
+        snow: [
+          "Snowball battle!"
+        ],
+        rain: [
+          "Don't forget your umbrella"
+        ]
+      }
+    }
 ```
 
 #### Default value:
 
-```javascript
-config: {
-	compliments: {
-		anytime: [
-			"Hey there sexy!"
-		],
-		morning: [
-			"Good morning, handsome!",
-			"Enjoy your day!",
-			"How was your sleep?"
-		],
-		afternoon: [
-			"Hello, beauty!",
-			"You look sexy!",
-			"Looking good today!"
-		],
-		evening: [
-			"Wow, you look hot!",
-			"You look nice!",
-			"Hi, sexy!"
-		],
-		"....-01-01": [
-			"Happy new year!"
-		]
-	}
-}
+```js
+    config: {
+      compliments: {
+        anytime: [
+          "Hey there sexy!"
+        ],
+        morning: [
+          "Good morning, handsome!",
+          "Enjoy your day!",
+          "How was your sleep?"
+        ],
+        afternoon: [
+          "Hello, beauty!",
+          "You look sexy!",
+          "Looking good today!"
+        ],
+        evening: [
+          "Wow, you look hot!",
+          "You look nice!",
+          "Hi, sexy!"
+        ],
+        "....-01-01": [
+          "Happy new year!"
+        ]
+      }
+    }
 ```
 
 #### Multi-line compliments:
@@ -204,15 +203,14 @@ them ("morning", "afternoon", "evening", "snow", "rain", etc.).
 
 #### Example config/config.js of a Compliment File hosted on GitHub
 
-```
-{
-module: 'compliments',
-position: 'middle_center',
-   config: {
-     remoteFile: 'https://gist.githubusercontent.com/user/e28a69665b8839f6e9a7acd6b4acc97d/raw/be1dee8f805a433f6ee0fa3556d1927da14e7799/compliments.json'
-   }
-},
-
+```js
+    {
+    module: 'compliments',
+    position: 'middle_center',
+      config: {
+        remoteFile: 'https://gist.githubusercontent.com/user/e28a69665b8839f6e9a7acd6b4acc97d/raw/be1dee8f805a433f6ee0fa3556d1927da14e7799/compliments.json'
+      }
+    },
 ```
 
 (When copying the link from Github, you must use the 'Raw' link)

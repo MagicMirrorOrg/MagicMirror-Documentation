@@ -11,7 +11,7 @@ config from your module to your node helper.
 
 In its most simple form, the node_helper.js file must contain:
 
-```javascript
+```js
 const NodeHelper = require("node_helper");
 module.exports = NodeHelper.create({});
 ```
@@ -42,7 +42,7 @@ routes.
 
 **Example:**
 
-```javascript
+```js
 start: function() {
 	this.expressApp.get("/foobar", function (req, res) {
 		res.send("GET request to /foobar");
@@ -53,7 +53,7 @@ start: function() {
 **Note:** By default, a public path to your module's public folder will be
 created:
 
-```javascript
+```js
 this.expressApp.use("/" + this.name, express.static(this.path + "/public"));
 ```
 
@@ -79,7 +79,7 @@ module.
 
 Example:
 
-```javascript
+```js
 requiresVersion: "2.1.0",
 ```
 
@@ -98,7 +98,7 @@ properties:
 
 **Example:**
 
-```javascript
+```js
 start: function() {
 	this.mySpecialProperty = "So much wow!";
 	Log.log(this.name + " is started!");
@@ -113,7 +113,7 @@ any open connections, stop any sub-processes and gracefully exit the module.
 
 **Example:**
 
-```javascript
+```js
 stop: function() {
 	Log.log("Shutting down MyModule");
 	this.connection.close();
@@ -134,7 +134,7 @@ first message using
 
 **Example:**
 
-```javascript
+```js
 socketNotificationReceived: function(notification, payload) {
 	Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 },
@@ -159,12 +159,15 @@ it's your task to make sure the right module responds to your messages.
 
 **Example:**
 
-```javascript
+```js
 this.sendSocketNotification("SET_CONFIG", this.config);
 ```
 
 ::: warning Reminder
-`sendSocketNotification` sends a notification from the helper to all the instances of your module.
+
+`sendSocketNotification` sends a notification from the helper to all the
+instances of your module.
+
 :::
 
 ## Using native node modules in your node_helper
@@ -173,12 +176,12 @@ If you want use `native node modules` within electron you need to recompile them
 for electron. To do so you have to install `electron-rebuild`.
 
 ```shell
-npm install --save-dev electron-rebuild
+npm install --save-dev @electron/rebuild
 ```
 
 and run it after every install (package.json example):
 
-```javascript
+```js
 ...
 "scripts": {
 	...

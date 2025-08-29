@@ -1,6 +1,6 @@
 # Introduction
 
-### Basic Configuration of MagicMirror²
+## Basic Configuration of MagicMirror²
 
 1. Go to your configuration directory: In Bash/linux, it'll be in
    `~/MagicMirror/config/`
@@ -28,7 +28,7 @@
    [installation](/getting-started/installation.md) if you're not sure how to do
    so.
 
-### More useful configuration of your MagicMirror
+## More useful configuration of your MagicMirror
 
 These directions assume a linux/bash style command line, and previous
 instructions followed. If not, please insert the path directly from your
@@ -42,7 +42,7 @@ installation.
 2. Modify your required settings using your preferred editor. `nano` is the
    easiest.
 
-3. You can check your configuration running `npm run config:check` in
+3. You can check your configuration running `node --run config:check` in
    `~/MagicMirror`.
 
 The following properties can be configured, place them above the modules item:
@@ -73,9 +73,10 @@ are:
 | Environment Variable Name | Use                                                                                                                                                                                                                                                                                                                                  |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | MM_CONFIG_FILE            | This specifies an alternate configuration file for the system. This is useful when running multiple mirrors on the same device. This does not work with the template option below. NOTE: this file **_MUST_** be located in a directory within the MagicMirror directory. Ideally, place any config file in the config subdirectory. |
-| MM_PORT                   | This specifies an alternate TCPIP port, overriding "port" item within the config file. This is useful for testing to see if the product will run using another port.                                                                                                                                                                 |
+| MM_PORT                   | This specifies an alternate TCP/IP port, overriding "port" item within the config file. This is useful for testing to see if the product will run using another port.                                                                                                                                                                |
+| mmFetchTimeout            | time in milliseconds for fetch timeout. default (30000) <br><br>this value can be used to adjust the nodejs fetch function timeout value (default 10 seconds) for all node_helper modules that use fetch()                                                                                                                           |
 
-##### Examples of use:
+#### Examples of use
 
 You have created two config files, named config.js and config2.js
 
@@ -83,7 +84,7 @@ By default, you would use config.js with a bash script (mm.sh):
 
 ```bash
 cd ~/MagicMirror
-npm start
+node --run start
 ```
 
 To use the 2nd configuration file, use a bash script like this (mm2.sh):
@@ -91,7 +92,7 @@ To use the 2nd configuration file, use a bash script like this (mm2.sh):
 ```bash
 cd ~/MagicMirror
 export MM_CONFIG_FILE=config/config2.js
-npm start
+node --run start
 ```
 
 To change the port:
@@ -99,23 +100,23 @@ To change the port:
 ```bash
 cd ~/MagicMirror
 export MM_PORT=8081
-npm start
+node --run start
 ```
 
-You can run `npm run config:check` on your 2nd configuration file by typing the
-export line in first, example:
+You can run `node --run config:check` on your 2nd configuration file by typing
+the export line in first, example:
 
 ```bash
 export MM_CONFIG_FILE=config/config2.js
-npm run config:check
+node --run config:check
 ```
 
-```
+```log
 [26.12.2023 18:13.12.972] [INFO]  Checking file...  /home/<user>/MagicMirror/config/config2.js
 [26.12.2023 18:13.13.062] [INFO]  Your configuration file doesn't contain syntax errors :)
 ```
 
-#### Configuration Template system:
+### Configuration Template system
 
 `config.js.template` can be used instead of `config.js`. This allows you to use
 variables to replace hardcoded options. When starting MagicMirror² a `config.js`
@@ -128,7 +129,7 @@ Variables must be inserted as `${MY_VARIABLE}`, examples:
 
 `config.js.template`:
 
-```javascript
+```js
 let config = {
 	address: "${MY_ADDRESS}",
 	port: ${MY_PORT},
@@ -142,7 +143,7 @@ would become
 
 `config.js`:
 
-```javascript
+```js
 let config = {
   address: "localhost",
   port: 8080,
@@ -154,37 +155,37 @@ if (typeof module !== "undefined") {
 }
 ```
 
-##### Defining variables:
+#### Defining variables
 
 There are 2 ways to define variables, you can mix as needed or desired. If a
 variable is defined in both ways the linux environment variable is used.
 
-##### Using a `config.env` file
+#### Using a `config.env` file
 
 This file must be in the same folder as the `config.js.template` and contains
 the variables, using the example from above:
 
 File content of `config.env`:
 
-```
+```log
 MY_ADDRESS=localhost
-MYPORT=8080
+MY_PORT=8080
 MY_HTTPS=false
 ```
 
-##### Using linux environment variables
+#### Using linux environment variables
 
 define them before you start MagicMirror², in a bash script, for example:
 
 ```bash
 cd ~/MagicMirror
 export MY_ADDRESS=localhost
-export MYPORT=8080
+export MY_PORT=8080
 export MY_HTTPS=false
-npm start
+node --run start
 ```
 
-#### Using `electronOptions`:
+### Using `electronOptions`
 
 The most common use for `electronOptions` is a dual monitor setup on a Raspberry
 Pi 4 or greater. To do so, you can launch a second MagicMirror and use
@@ -196,14 +197,14 @@ You have two 1920x1080 monitors set up in the Pi as sitting next to each other:
 To move the pi to the second monitor, use this:
 
 ```js
-var config = {
+let config = {
 	electronOptions: { x: 1920 },
 	...
 ```
 
-#### A Couple of Real World Examples:
+### A Couple of Real World Examples
 
-##### Two Screens:
+#### Two Screens
 
 A user has two monitors running on a Pi4B. User wants to show cameras on one
 monitor, and wants to show informational panels on the other. Monitors are set
@@ -216,7 +217,7 @@ Starting Script 1 (mm.sh):
 
 ```bash
 cd ~/MagicMirror
-npm start
+node --run start
 ```
 
 Starting Script 2 (mm2.sh):
@@ -224,13 +225,13 @@ Starting Script 2 (mm2.sh):
 ```bash
 cd ~/MagicMirror
 export MM_CONFIG_FILE=config/config2.js
-npm start
+node --run start
 ```
 
 Configuration file 1 (config.js):
 
 ```js
-var config = {
+let config = {
 	address: "0.0.0.0", // Can be whatever you set as your original.
 	port: 8080, // Must be different than the other configuration file.
 	ipWhitelist: [], // Can be whatever you set as your original.
@@ -251,7 +252,7 @@ if (typeof module !== "undefined") {
 Configuration file 2 (config2.js):
 
 ```js
-var config = {
+let config = {
 	electronOptions: { x: 1920 },
 	address: "0.0.0.0", // can be whatever you set as your original.
 	port: 8081, // Must be different than the other configuration file.
@@ -270,7 +271,7 @@ if (typeof module !== "undefined") {
 }
 ```
 
-##### config.js.template example:
+#### config.js.template example
 
 User likes to help German language users in the forums. As such, he wants to be
 able to paste bits of his config.js into the forums to show as an example, but
@@ -279,7 +280,7 @@ them from the config.js file.
 
 `config.js.template`:
 
-```javascript
+```js
 let config = {
   address: "0.0.0.0",
   port: 8080,

@@ -16,26 +16,28 @@ installers can be found under:
 
 These instructions deploy a standalone version of MagicMirror², for [Server Only](/getting-started/installation.html#server-only) and [Client Only](/getting-started/installation.html#client-only) installs please read the install specific instructions below
 
-1. Download and install the latest _Node.js_ version, see the official documentation:
-
-- [Linux based distributions](https://github.com/nodesource/distributions)
-- [Others](https://nodejs.org/en/download)
-
+1. Download and install a
+   [required](https://github.com/MagicMirrorOrg/MagicMirror/releases) _Node.js_
+   version, see the official documentation:
+   - [Linux based distributions](https://github.com/nodesource/distributions)
+   - [Others](https://nodejs.org/en/download)
 2. check if `git` is installed on your machine by executing `git` (should show
    usage), otherwise install it
 3. Clone the repository:
    `git clone https://github.com/MagicMirrorOrg/MagicMirror`
-4. Enter the repository: `cd MagicMirror/`
-5. Install the application: `npm run install-mm`
+4. Enter the repository: `cd MagicMirror`
+5. Install the application: `node --run install-mm`
 6. Make a copy of the config sample file:
    `cp config/config.js.sample config/config.js`
-7. Start the application: `npm run start` 
+7. Start the application: `node --run start`
 
 ::: warning NOTE
-The installation step for `npm run install-mm` will take a very
-long time, often with little or no terminal response! For the RPi3 this is
-**~10** minutes and for the Rpi2 **~25** minutes. Do not interrupt or you risk
-getting a :broken_heart: by Raspberry Jam.
+
+The installation step for `node --run install-mm` will take a very long time,
+often with little or no terminal response! For the RPi3 this is **~10** minutes
+and for the Rpi2 **~25** minutes. Do not interrupt or you risk getting a
+:broken_heart: by Raspberry Jam.
+
 :::
 
 ## Alternative Installation Methods
@@ -77,49 +79,11 @@ team. Use these scripts and methods at your own risk.
 - We also publish the latest version of MagicMirror to the
   [npm-registry](https://www.npmjs.com/package/magicmirror).
 
-## Other Operating Systems
-
-### Windows:
-
-To get the MagicMirror software running on Windows, you have to do two things in
-addition to the [steps](#manual-installation) above:
-
-4a. Install dependencies in the vendor and font directories:
-
-Powershell:
-
-1. `cd fonts; npm install; cd ..`
-2. `cd vendor; npm install; cd ..`
-
-Command Prompt:
-
-1. `cd fonts && npm install && cd ..`
-2. `cd vendor && npm install && cd ..`
-
-Otherwise the screen will stay black when starting the MagicMirror.
-
-5a. Fix the start script in the `package.json` file:
-
-1. Navigate to the file `package.json`
-2. Find where it says
-   ```
-   "start": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js",
-   "start:dev": "DISPLAY=\"${DISPLAY:=:0}\" ./node_modules/.bin/electron js/electron.js dev",
-   ```
-3. and replace it with
-   ```
-   "start": ".\\node_modules\\.bin\\electron js\\electron.js",
-   "start:dev": ".\\node_modules\\.bin\\electron js\\electron.js dev",
-   ```
-
-Otherwise the program won't start, but will display this error message:
-`"'DISPLAY' is not recognized as an internal or external command, operable program or batch file."`
-
 ## Usage
 
 Note the following:
 
-- If you want to debug on your Raspberry Pi you can use `npm run start:dev`
+- If you want to debug on your Raspberry Pi you can use `node --run start:dev`
   which will start MM with _Dev Tools_ enabled.
 - To access the toolbar menu when in mirror mode, hit `ALT` key.
 - To toggle the (web) `Developer Tools` from mirror mode, use `CTRL-SHIFT-I` or
@@ -127,10 +91,14 @@ Note the following:
 
 ### Server Only
 
-In some cases, you want to start the application without an actual app window. To do so after installation you can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
-`npm run server` 
+In some cases, you want to start the application without an actual app window. To do so after
+installation you can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
+`node --run server` 
 
-::: warning IMPORTANT please read the information below on fully setting up MagicMirror² for running in server only mode otherwise you wont be able to connect to your MagicMirror² server from a remote device
+::: warning IMPORTANT
+
+please read the information below on fully setting up MagicMirror² for running in server only mode otherwise you wont be able to connect to your MagicMirror² server from a remote device
+
 ::: 
 
 In order to run MagicMirror² in server mode you need to:
@@ -145,7 +113,7 @@ By default MagicMirror² does not allow other remote devices to connect, this is
 
 Sample Configuration below [and link to full configuration options](/configuration/introduction.html#introduction)
 
-```javascript
+```js
 let config = {
 	address: "0.0.0.0",	// default is "localhost"
 	port: 8080,		// default
@@ -183,3 +151,21 @@ To always start MagicMirror² in client mode you need to edit `installers/mm.sh`
    with
    `DISPLAY=:0 node clientonly --address 192.168.1.5 --port 8080` (Specify the ip address and port number of the server)
 4. Reboot
+
+### Wayland
+
+If you use Wayland. Run `node --run start:wayland` instead of `node --run start`
+to start.
+
+### Windows
+
+::: warning IMPORTANT
+
+MagicMirror² is designed to run on Linux. But with a different start command,
+you can also run it on Windows. Some third-party modules may not work on
+Windows.
+
+:::
+
+In Windows you must use `node --run start:windows` instead of
+`node --run start`.
