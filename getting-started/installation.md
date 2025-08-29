@@ -133,16 +133,6 @@ let config = {
 };
 ```
 
-#### Start MagicMirror² in Server mode on boot
-
-To always start MagicMirror² in server only mode you need to edit the
-`installers/mm.sh` file otherwise it will start in full mode after a reboot:
-
-1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
-2. Edit mm.sh: `nano mm.sh` (you can use your favorite editor)
-3. Replace `DISPLAY=:0 npm start` with `DISPLAY=:0 npm server`
-4. Reboot
-
 ### Client Only
 
 This is when you already have a server running remotely and want your RPi to
@@ -152,16 +142,6 @@ the server.
 You can start MagicMirror² in client mode by manually running the following
 command with the MagicMirror directory:
 `node clientonly --address 192.168.1.5 --port 8080`
-
-To always start MagicMirror² in client mode you need to edit `installers/mm.sh`
-file otherwise it will start in full mode after a reboot:
-
-1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
-2. Edit mm.sh: `nano mm.sh` (you can use your favorite editor)
-3. Replace `DISPLAY=:0 npm start` with
-   `DISPLAY=:0 node clientonly --address 192.168.1.5 --port 8080` (Specify the
-   ip address and port number of the server)
-4. Reboot
 
 ### Wayland
 
