@@ -15,9 +15,9 @@ installers can be found under:
 ## Manual Installation
 
 These instructions deploy a standalone version of MagicMirror², for
-[Server Only](/getting-started/installation.html#server-only) and
-[Client Only](/getting-started/installation.html#client-only) installs please
-read the install specific instructions below
+[Server Only](/getting-started/installation.md#server-only) and
+[Client Only](/getting-started/installation.md#client-only) installs please read
+the install specific instructions below
 
 1. Download and install a
    [required](https://github.com/MagicMirrorOrg/MagicMirror/releases) _Node.js_
@@ -122,7 +122,7 @@ controlled by settings inside the `config/config.js` file by interface and ip
 - change `ipWhitelist` to the list of IP's you want to allow to connect
 
 Sample Configuration below
-[and link to full configuration options](/configuration/introduction.html#introduction)
+[and link to full configuration options](/configuration/introduction.md#introduction)
 
 ```js
 let config = {
