@@ -24,7 +24,7 @@ the install specific instructions below
    version, see the official documentation:
    - [Linux based distributions](https://github.com/nodesource/distributions)
    - [Others](https://nodejs.org/en/download)
-2. check if `git` is installed on your machine by executing `git` (should show
+2. Check if `git` is installed on your machine by executing `git` (should show
    usage), otherwise install it
 3. Clone the repository:
    `git clone https://github.com/MagicMirrorOrg/MagicMirror`
@@ -101,9 +101,9 @@ manually running the following command within the MagicMirror directory
 
 ::: warning IMPORTANT
 
-please read the information below on fully setting up MagicMirror² for running
+Please read the information below on fully setting up MagicMirror² for running
 in server only mode otherwise you wont be able to connect to your MagicMirror²
-server from a remote device
+server from a remote device.
 
 :::
 
@@ -115,11 +115,11 @@ In order to run MagicMirror² in server mode you need to:
 #### Allow Remote Connections to MagicMirror²
 
 By default MagicMirror² does not allow other remote devices to connect, this is
-controlled by settings inside the `config/config.js` file by interface and ip
+controlled by settings inside the `config/config.js` file by interface and ip:
 
-- change address to `0.0.0.0` this will allow MagicMirror² to listen on all
+- Change address to `0.0.0.0` this will allow MagicMirror² to listen on all
   network interfaces
-- change `ipWhitelist` to the list of IP's you want to allow to connect
+- Change `ipWhitelist` to the list of IP's you want to allow to connect
 
 Sample Configuration below
 [and link to full configuration options](/configuration/introduction.md#introduction)
