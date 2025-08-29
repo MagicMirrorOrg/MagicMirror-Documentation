@@ -14,7 +14,10 @@ installers can be found under:
 
 ## Manual Installation
 
-These instructions deploy a standalone version of MagicMirror², for [Server Only](/getting-started/installation.html#server-only) and [Client Only](/getting-started/installation.html#client-only) installs please read the install specific instructions below
+These instructions deploy a standalone version of MagicMirror², for
+[Server Only](/getting-started/installation.html#server-only) and
+[Client Only](/getting-started/installation.html#client-only) installs please
+read the install specific instructions below
 
 1. Download and install a
    [required](https://github.com/MagicMirrorOrg/MagicMirror/releases) _Node.js_
@@ -91,27 +94,35 @@ Note the following:
 
 ### Server Only
 
-In some cases, you want to start the application without an actual app window. To do so after
-installation you can start MagicMirror² in server only mode by manually running the following command within the MagicMirror directory
-`node --run server` 
+In some cases, you want to start the application without an actual app window.
+To do so after installation you can start MagicMirror² in server only mode by
+manually running the following command within the MagicMirror directory
+`node --run server`
 
 ::: warning IMPORTANT
 
-please read the information below on fully setting up MagicMirror² for running in server only mode otherwise you wont be able to connect to your MagicMirror² server from a remote device
+please read the information below on fully setting up MagicMirror² for running
+in server only mode otherwise you wont be able to connect to your MagicMirror²
+server from a remote device
 
-::: 
+:::
 
 In order to run MagicMirror² in server mode you need to:
+
 - Allow Remote Connections to MagicMirror²
 - Start MagicMirror² in Server mode on boot
 
 #### Allow Remote Connections to MagicMirror²
 
-By default MagicMirror² does not allow other remote devices to connect, this is controlled by settings inside the `config/config.js` file by interface and ip
-- change address to `0.0.0.0` this will allow MagicMirror² to listen on all network interfaces
+By default MagicMirror² does not allow other remote devices to connect, this is
+controlled by settings inside the `config/config.js` file by interface and ip
+
+- change address to `0.0.0.0` this will allow MagicMirror² to listen on all
+  network interfaces
 - change `ipWhitelist` to the list of IP's you want to allow to connect
 
-Sample Configuration below [and link to full configuration options](/configuration/introduction.html#introduction)
+Sample Configuration below
+[and link to full configuration options](/configuration/introduction.html#introduction)
 
 ```js
 let config = {
@@ -124,32 +135,32 @@ let config = {
 
 #### Start MagicMirror² in Server mode on boot
 
-To always start MagicMirror² in server only mode you need to edit the `installers/mm.sh` file otherwise it will start in full mode after a reboot:
+To always start MagicMirror² in server only mode you need to edit the
+`installers/mm.sh` file otherwise it will start in full mode after a reboot:
 
 1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
 2. Edit mm.sh: `nano mm.sh` (you can use your favorite editor)
-3. Replace
-   `DISPLAY=:0 npm start`
-   with
-   `DISPLAY=:0 npm server`
+3. Replace `DISPLAY=:0 npm start` with `DISPLAY=:0 npm server`
 4. Reboot
 
 ### Client Only
 
 This is when you already have a server running remotely and want your RPi to
-connect as a standalone client to this instance, to show the MagicMirror² from the server.
+connect as a standalone client to this instance, to show the MagicMirror² from
+the server.
 
-You can start MagicMirror² in client mode by manually running the following command with the MagicMirror directory:
+You can start MagicMirror² in client mode by manually running the following
+command with the MagicMirror directory:
 `node clientonly --address 192.168.1.5 --port 8080`
 
-To always start MagicMirror² in client mode you need to edit `installers/mm.sh` file otherwise it will start in full mode after a reboot:
+To always start MagicMirror² in client mode you need to edit `installers/mm.sh`
+file otherwise it will start in full mode after a reboot:
 
 1. Backup mm.sh: `cp installers/mm.sh installers/mm.sh.bak`
 2. Edit mm.sh: `nano mm.sh` (you can use your favorite editor)
-3. Replace
-   `DISPLAY=:0 npm start`
-   with
-   `DISPLAY=:0 node clientonly --address 192.168.1.5 --port 8080` (Specify the ip address and port number of the server)
+3. Replace `DISPLAY=:0 npm start` with
+   `DISPLAY=:0 node clientonly --address 192.168.1.5 --port 8080` (Specify the
+   ip address and port number of the server)
 4. Reboot
 
 ### Wayland
