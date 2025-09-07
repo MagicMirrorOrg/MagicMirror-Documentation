@@ -16,7 +16,7 @@ visual breakpoints and inspecting of objects.
 It can be very useful to set the current date to debug calendar issues. In order to do this, override `Date.now` with a lambda in *config/config.js*:
 
 ```js
-Date.now = () => new Date('2023-12-31T14:05:32');
+Date.now = () => new Date('2023-12-31T14:05:32').valueOf();
 ```
 
 This will cause every request for the current time to return the specified time, at least for the core and built-in modules.
