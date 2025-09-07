@@ -75,5 +75,5 @@ map, component interactions, and codebase hot spots — it may help you to gain 
 deeper understanding, spot extension points, and debug faster. See the
 [Deepwiki overview of MagicMirror](https://deepwiki.com/MagicMirrorOrg/MagicMirror/).
 
-This is an independent, third-party documentation and analysis tool (not
-affiliated with the MagicMirror team).
+This independent, third-party, AI generated documentation and analysis is not
+authored by the MagicMirror team — use it with a critical eye.

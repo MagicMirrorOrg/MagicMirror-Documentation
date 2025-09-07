@@ -28,5 +28,6 @@ For a big‑picture view of how modules plug into the core (APIs, lifecycle,
 communication paths), see Deepwiki’s project overview — great for planning
 integrations and troubleshooting:
 [Deepwiki overview of MagicMirror](https://deepwiki.com/MagicMirrorOrg/MagicMirror/).
-This is an independent, third-party documentation and analysis tool (not
-affiliated with the MagicMirror team).
+
+This independent, third-party, AI generated documentation and analysis is not
+authored by the MagicMirror team — use it with a critical eye.
