@@ -78,6 +78,15 @@ export default {
         ],
       },
       {
+        text: "Core Development",
+        collapsible: true,
+        children: [
+          "/core-development/introduction.md",
+          "/core-development/testing.md",
+          "/core-development/debugging.md",
+        ],
+      },
+      {
         text: "About",
         collapsible: true,
         children: [

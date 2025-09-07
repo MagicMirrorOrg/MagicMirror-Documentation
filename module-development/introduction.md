@@ -21,6 +21,8 @@ information in your README file.**
 - What external API's it depends upon, including web links to those
 - Whether the API/request require a key and the user limitations of those. (Is
   it free?)
+- **Do not use `new Date()` for the current timestamp, instead prefer `Date.now()`
+  as it can be more [easily overridden for debugging](..\core-development\debugging.md#Date)**.
 
 Surely this also help you get better recognition and feedback for your work.
 
