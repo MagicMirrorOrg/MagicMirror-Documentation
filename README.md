@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-![MagicMirror²: The open source modular smart mirror platform. ](./.vuepress/public/header.png)
+![MagicMirror²: The open source modular smart mirror platform. ](/header.png)
 
 <p style="text-align: center">
 	<a href="https://choosealicense.com/licenses/mit">
