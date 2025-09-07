@@ -11,12 +11,12 @@ This documentation describes core MagicMirror² development.
 MagicMirror² is a community-driven development effort, and [contributions](../about/contributing.md) are
 welcome!
 
-In general, new features and bug fixes should be tracked against an [issue in the MagicMirror repo](https://github.com/MichMich/MagicMirror/issues).
+In general, new features and bug fixes should be tracked against an [issue in the MagicMirror repo](https://github.com/MagicMirrorOrg/MagicMirror/issues).
 It is always a good idea to search existing issues to see if a problem you're experiencing has already been reported,
 or if someone has already suggested a feature you'd like to propose. Creating or finding an issue also starts the
 discussion and helps build consensus around your proposed fix or feature.
 
-The MagicMirror² core is [developed on GitHub](https://github.com/MichMich/MagicMirror/) out of the
+The MagicMirror² core is [developed on GitHub](https://github.com/MagicMirrorOrg/MagicMirror/) out of the
 *develop* branch. To begin developing MagicMirror² core, please fork the GitHub project and
 create a new branch based off of the *develop* branch.
 

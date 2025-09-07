@@ -6,7 +6,7 @@ title: Testing
 
 Unit tests are important to ensure the quality of the project as changes occur.
 
-All tests are located in the [*tests* top-level directory](https://github.com/MichMich/MagicMirror/tree/master/tests).
+All tests are located in the [*tests* top-level directory](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/tests).
 
 ## Hierarchy of Tests
 
