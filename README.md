@@ -27,6 +27,16 @@ MagicMirror² focuses on a modular plugin system and uses
 [Electron](https://www.electronjs.org/) as an application wrapper. So no more
 web server or browser installs necessary!
 
+## Further reading
+
+Looking for a deeper understanding or a different perspective? Deepwiki offers a
+concise architecture map and cross‑repo insights that complement this
+documentation:
+[Deepwiki overview of MagicMirror](https://deepwiki.com/MagicMirrorOrg/MagicMirror/).
+
+This independent, third-party, AI generated documentation and analysis is not
+authored by the MagicMirror team — use it with a critical eye.
+
 <p style="text-align: center">
 	<a href="https://forum.magicmirror.builders/topic/728/magicmirror-is-voted-number-1-in-the-magpi-top-50"><img src="https://magicmirror.builders/img/magpi-best-watermark-custom.png" width="150" alt="MagPi Top 50"></a>
 </p>

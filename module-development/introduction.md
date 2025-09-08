@@ -70,3 +70,13 @@ same time.
   can be used by the core module script. For example:
   _modulename/css/modulename.css_ would be a good path for your additional
   module styles.
+
+## Further reading
+
+Deepwiki provides a complementary, high‑level view of MagicMirror — architecture
+map, component interactions, and codebase hot spots — it may help you to gain a
+deeper understanding, spot extension points, and debug faster. See the
+[Deepwiki overview of MagicMirror](https://deepwiki.com/MagicMirrorOrg/MagicMirror/).
+
+This independent, third-party, AI generated documentation and analysis is not
+authored by the MagicMirror team — use it with a critical eye.
