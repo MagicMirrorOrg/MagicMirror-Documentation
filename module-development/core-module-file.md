@@ -270,8 +270,6 @@ getTemplateData: function() {
 
 ```
 
-### getTemplateData
-
 ### `getHeader()`
 
 **Should return:** String
