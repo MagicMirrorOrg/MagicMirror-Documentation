@@ -216,6 +216,59 @@ getDom: function() {
 
 ```
 
+### `getTemplate()`
+
+**Should return:** String
+
+Alternatively to using `getDom`, you may provide the path to a
+[Nunjucks template](https://mozilla.github.io/nunjucks/templating.html).
+MagicMirror will use this template to render your component. You may provide
+data to the template with `getTemplateData`.
+
+**Example:**
+
+```js
+getTemplate: function() {
+  return 'MMM-Example.njk';
+}
+
+```
+
+**Example Template:** `./MMM-Example.njk`
+
+```nunjucks
+<div>
+  <header>
+    {{ "INFO" | translate }}
+  </header>
+
+  <p class="hello">
+    {{ prompt }}
+  </p>
+</div>
+
+```
+
+### `getTemplateData`
+
+**Should return:** Object
+
+Used in conjunction with `getTemplate`. The data passed to the Nunjucks template
+for use in the component.
+
+**Example:**
+
+```js
+getTemplateData: function() {
+  return {
+    prompt: this.data.prompt;
+  };
+}
+
+```
+
+### getTemplateData
+
 ### `getHeader()`
 
 **Should return:** String
