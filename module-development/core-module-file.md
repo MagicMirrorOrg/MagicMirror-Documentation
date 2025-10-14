@@ -73,7 +73,7 @@ set this value in the Node helper.
 be run in older versions. Keep this in mind if you get issue reports on your
 module.
 
-Example:
+**Example:**
 
 ```js
 requiresVersion: "2.1.0",
@@ -338,7 +338,9 @@ asynchronously. You can listen for the
 when the rendering is complete and the new dom is safe to interact with. This
 notification only fires if the content will really change.
 
-As an example: the clock modules calls this method every second:
+**Example:**
+
+The clock modules calls this method every second:
 
 ```js
 start: function() {
@@ -365,7 +367,7 @@ module needs to be updated
 | in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](/modules/animate#animatein))     |
 | out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](/modules/animate#animateout)) |
 
-As an example:
+**Example:**
 
 ```js
   this.updateDom( {
