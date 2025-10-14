@@ -341,14 +341,12 @@ notification only fires if the content will really change.
 As an example: the clock modules calls this method every second:
 
 ```js
-...
 start: function() {
 	let self = this;
 	setInterval(function() {
 		self.updateDom(); // no speed defined, so it updates instantly.
 	}, 1000); //perform every 1000 milliseconds.
 },
-...
 ```
 
 **_options_ Object** - (_Introduced in version: 2.25.0._) Optional. Allows you
@@ -370,7 +368,6 @@ module needs to be updated
 As an example:
 
 ```js
-...
   this.updateDom( {
     options: {
       speed: 1000, // animation duration
@@ -380,7 +377,6 @@ As an example:
       }
     }
   })
-...
 ```
 
 ### `this.sendNotification(notification, payload)`
