@@ -121,7 +121,7 @@ start: function() {
 
 ### `getScripts()`
 
-**Should return: Array**
+**Should return:** Array
 
 The getScripts method is called to request any additional scripts that need to
 be loaded. This method should therefore return an array with strings. If you
@@ -148,7 +148,7 @@ Therefore, it's advised not to use any external urls.
 
 ### `getStyles()`
 
-**Should return: Array**
+**Should return:** Array
 
 The getStyles method is called to request any additional stylesheets that need
 to be loaded. This method should therefore return an array with strings. If you
@@ -175,7 +175,7 @@ Therefore, it's advised not to use any external URLs.
 
 ### `getTranslations()`
 
-**Should return: Dictionary**
+**Should return:** Dictionary
 
 The getTranslations method is called to request translation files that need to
 be loaded. This method should therefore return a dictionary with the files to
@@ -212,6 +212,60 @@ getDom: function() {
 	const wrapper = document.createElement("div");
 	wrapper.innerHTML = 'Hello world!';
 	return wrapper;
+}
+
+```
+
+### `getTemplate()`
+
+**Should return:** String
+
+Alternatively to using `getDom`, you may provide the path to a
+[Nunjucks template](https://mozilla.github.io/nunjucks/templating.html).
+MagicMirror will use this template to render your component. You may provide
+data to the template with `getTemplateData`.
+
+An example of a default module that uses this method is
+[newsfeed](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/modules/default/newsfeed/newsfeed.js).
+
+**Example:**
+
+```js
+getTemplate: function() {
+  return 'MMM-Example.njk';
+}
+
+```
+
+**Example Template:** `./MMM-Example.njk`
+
+```nunjucks
+<div>
+  <header>
+    {{ "INFO" | translate }}
+  </header>
+
+  <p class="hello">
+    {{ prompt }}
+  </p>
+</div>
+
+```
+
+### `getTemplateData`
+
+**Should return:** Object
+
+Used in conjunction with `getTemplate`. The data passed to the Nunjucks template
+for use in the component.
+
+**Example:**
+
+```js
+getTemplateData: function() {
+  return {
+    prompt: this.data.prompt;
+  };
 }
 
 ```
