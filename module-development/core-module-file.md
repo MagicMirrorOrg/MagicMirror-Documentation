@@ -121,7 +121,7 @@ start: function() {
 
 ### `getScripts()`
 
-**Should return: Array**
+**Should return:** Array
 
 The getScripts method is called to request any additional scripts that need to
 be loaded. This method should therefore return an array with strings. If you
@@ -148,7 +148,7 @@ Therefore, it's advised not to use any external urls.
 
 ### `getStyles()`
 
-**Should return: Array**
+**Should return:** Array
 
 The getStyles method is called to request any additional stylesheets that need
 to be loaded. This method should therefore return an array with strings. If you
@@ -175,7 +175,7 @@ Therefore, it's advised not to use any external URLs.
 
 ### `getTranslations()`
 
-**Should return: Dictionary**
+**Should return:** Dictionary
 
 The getTranslations method is called to request translation files that need to
 be loaded. This method should therefore return a dictionary with the files to
