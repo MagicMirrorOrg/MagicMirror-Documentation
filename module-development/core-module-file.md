@@ -634,7 +634,7 @@ translator to change the word order in the sentence to be translated.
 
 ```js
 const timeUntilEnd = moment(event.endDate, "x").fromNow(true);
-this.translate("RUNNING", { "timeUntilEnd": timeUntilEnd) }); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended.
+this.translate("RUNNING", { "timeUntilEnd": timeUntilEnd }); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended.
 ```
 
 **Example English.json file:**
@@ -663,9 +663,9 @@ did not support the word order, it is recommended to have the fallback layout.
 ```js
 const timeUntilEnd = moment(event.endDate, "x").fromNow(true);
 this.translate("RUNNING", {
-	"fallback": this.translate("RUNNING") + " {timeUntilEnd}"
-	"timeUntilEnd": timeUntilEnd
-)}); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended. (has a fallback)
+	"fallback": this.translate("RUNNING") + " {timeUntilEnd}",
+	"timeUntilEnd": timeUntilEnd,
+}); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended. (has a fallback)
 ```
 
 **Example Swedish.json file that does not have the variable in it:**
