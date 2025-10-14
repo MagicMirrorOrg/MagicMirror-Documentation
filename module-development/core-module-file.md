@@ -73,7 +73,7 @@ set this value in the Node helper.
 be run in older versions. Keep this in mind if you get issue reports on your
 module.
 
-Example:
+**Example:**
 
 ```js
 requiresVersion: "2.1.0",
@@ -338,17 +338,17 @@ asynchronously. You can listen for the
 when the rendering is complete and the new dom is safe to interact with. This
 notification only fires if the content will really change.
 
-As an example: the clock modules calls this method every second:
+**Example:**
+
+The clock modules calls this method every second:
 
 ```js
-...
 start: function() {
 	let self = this;
 	setInterval(function() {
 		self.updateDom(); // no speed defined, so it updates instantly.
 	}, 1000); //perform every 1000 milliseconds.
 },
-...
 ```
 
 **_options_ Object** - (_Introduced in version: 2.25.0._) Optional. Allows you
@@ -367,10 +367,9 @@ module needs to be updated
 | in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](/modules/animate#animatein))     |
 | out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](/modules/animate#animateout)) |
 
-As an example:
+**Example:**
 
 ```js
-...
   this.updateDom( {
     options: {
       speed: 1000, // animation duration
@@ -380,7 +379,6 @@ As an example:
       }
     }
   })
-...
 ```
 
 ### `this.sendNotification(notification, payload)`
@@ -636,7 +634,7 @@ translator to change the word order in the sentence to be translated.
 
 ```js
 const timeUntilEnd = moment(event.endDate, "x").fromNow(true);
-this.translate("RUNNING", { "timeUntilEnd": timeUntilEnd) }); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended.
+this.translate("RUNNING", { "timeUntilEnd": timeUntilEnd }); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended.
 ```
 
 **Example English.json file:**
@@ -665,9 +663,9 @@ did not support the word order, it is recommended to have the fallback layout.
 ```js
 const timeUntilEnd = moment(event.endDate, "x").fromNow(true);
 this.translate("RUNNING", {
-	"fallback": this.translate("RUNNING") + " {timeUntilEnd}"
-	"timeUntilEnd": timeUntilEnd
-)}); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended. (has a fallback)
+	"fallback": this.translate("RUNNING") + " {timeUntilEnd}",
+	"timeUntilEnd": timeUntilEnd,
+}); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended. (has a fallback)
 ```
 
 **Example Swedish.json file that does not have the variable in it:**
