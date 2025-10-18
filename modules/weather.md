@@ -12,11 +12,11 @@ in stone, so keep that in mind when you want to contribute.
 
 ## Screenshot
 
-### Current weather:
+### Current weather
 
 ![Screenshot of current weather](./screenshots/weather_current.png)
 
-### Forecast:
+### Forecast
 
 ![Screenshot of weather forecast](./screenshots/weather_forecast.png)
 
