@@ -4,14 +4,14 @@ This is the script in which the module will be defined. This script is required
 in order for the module to be used. In it's most simple form, the core module
 file must be named after the module (`modulename.js`) and must contain:
 
-```javascript
+```js
 Module.register("modulename", {});
 ```
 
 Of course, the above module would not do anything fancy, so it's good to look at
 one of the simplest modules: **helloworld**:
 
-```javascript
+```js
 //helloworld.js:
 
 Module.register("helloworld", {
@@ -73,9 +73,9 @@ set this value in the Node helper.
 be run in older versions. Keep this in mind if you get issue reports on your
 module.
 
-Example:
+**Example:**
 
-```javascript
+```js
 requiresVersion: "2.1.0",
 ```
 
@@ -96,7 +96,7 @@ done loading. In most cases you do not need to subclass this method.
 
 **Example:**
 
-```javascript
+```js
 loaded: function(callback) {
 	this.finishLoading();
 	Log.log(this.name + ' is loaded!');
@@ -112,7 +112,7 @@ start method is a perfect place to define any additional module properties:
 
 **Example:**
 
-```javascript
+```js
 start: function() {
 	this.mySpecialProperty = "So much wow!";
 	Log.log(this.name + ' is started!');
@@ -121,7 +121,7 @@ start: function() {
 
 ### `getScripts()`
 
-**Should return: Array**
+**Should return:** Array
 
 The getScripts method is called to request any additional scripts that need to
 be loaded. This method should therefore return an array with strings. If you
@@ -131,7 +131,7 @@ once. It even checks the files defined in `js/vendor.js`.
 
 **Example:**
 
-```javascript
+```js
 getScripts: function() {
 	return [
 		'script.js', // will try to load it from the files defined in `js/vendor.js`, otherwise it will load it from the module folder.
@@ -148,7 +148,7 @@ Therefore, it's advised not to use any external urls.
 
 ### `getStyles()`
 
-**Should return: Array**
+**Should return:** Array
 
 The getStyles method is called to request any additional stylesheets that need
 to be loaded. This method should therefore return an array with strings. If you
@@ -158,7 +158,7 @@ file once. It even checks the files defined in `js/vendor.js`.
 
 **Example:**
 
-```javascript
+```js
 getStyles: function() {
 	return [
 		'script.css', // will try to load it from the files defined in `js/vendor.js`, otherwise it will load it from the module folder.
@@ -175,7 +175,7 @@ Therefore, it's advised not to use any external URLs.
 
 ### `getTranslations()`
 
-**Should return: Dictionary**
+**Should return:** Dictionary
 
 The getTranslations method is called to request translation files that need to
 be loaded. This method should therefore return a dictionary with the files to
@@ -186,7 +186,7 @@ just be omitted or return `false`.
 
 **Example:**
 
-```javascript
+```js
 getTranslations: function() {
 	return {
 			en: "translations/en.json",
@@ -207,11 +207,65 @@ object.
 
 **Example:**
 
-```javascript
+```js
 getDom: function() {
 	const wrapper = document.createElement("div");
 	wrapper.innerHTML = 'Hello world!';
 	return wrapper;
+}
+
+```
+
+### `getTemplate()`
+
+**Should return:** String
+
+Alternatively to using `getDom`, you may provide the path to a
+[Nunjucks template](https://mozilla.github.io/nunjucks/templating.html).
+MagicMirror will use this template to render your component. You may provide
+data to the template with `getTemplateData`.
+
+An example of a default module that uses this method is
+[newsfeed](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/modules/default/newsfeed/newsfeed.js).
+
+**Example:**
+
+```js
+getTemplate: function() {
+  return 'MMM-Example.njk';
+}
+
+```
+
+**Example Template:** `./MMM-Example.njk`
+
+```nunjucks
+<div>
+  <header>
+    {{ "INFO" | translate }}
+  </header>
+
+  <p class="hello">
+    {{ prompt }}
+  </p>
+</div>
+
+```
+
+### `getTemplateData`
+
+**Should return:** Object
+
+Used in conjunction with `getTemplate`. The data passed to the Nunjucks template
+for use in the component.
+
+**Example:**
+
+```js
+getTemplateData: function() {
+  return {
+    prompt: this.data.prompt;
+  };
 }
 
 ```
@@ -234,7 +288,7 @@ displayed and thus this method will not be called.
 
 **Example:**
 
-```javascript
+```js
 getHeader: function() {
 	return this.data.header + ' Foo Bar';
 }
@@ -254,7 +308,7 @@ When this module is called, it has 3 arguments:
 
 **Example:**
 
-```javascript
+```js
 notificationReceived: function(notification, payload, sender) {
 	if (sender) {
 		Log.log(this.name + " received a module notification: " + notification + " from sender: " + sender.name);
@@ -291,7 +345,7 @@ first message using
 
 **Example:**
 
-```javascript
+```js
 socketNotificationReceived: function(notification, payload) {
 	Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
 },
@@ -338,17 +392,17 @@ asynchronously. You can listen for the
 when the rendering is complete and the new dom is safe to interact with. This
 notification only fires if the content will really change.
 
-As an example: the clock modules calls this method every second:
+**Example:**
 
-```javascript
-...
+The clock modules calls this method every second:
+
+```js
 start: function() {
 	let self = this;
 	setInterval(function() {
 		self.updateDom(); // no speed defined, so it updates instantly.
 	}, 1000); //perform every 1000 milliseconds.
 },
-...
 ```
 
 **_options_ Object** - (_Introduced in version: 2.25.0._) Optional. Allows you
@@ -367,20 +421,18 @@ module needs to be updated
 | in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](/modules/animate#animatein))     |
 | out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](/modules/animate#animateout)) |
 
-As an example:
+**Example:**
 
-```javascript
-...
-  this.updateDom( {
-    options: {
-      speed: 1000, // animation duration
-      animate: {
-        in: "backInDown", // animation when module shown (after update)
-        out: "backOutUp" // animation when module will hide (before update)
-      }
-    }
-  })
-...
+```js
+this.updateDom({
+  options: {
+    speed: 1000, // animation duration
+    animate: {
+      in: "backInDown", // animation when module shown (after update)
+      out: "backOutUp", // animation when module will hide (before update)
+    },
+  },
+});
 ```
 
 ### `this.sendNotification(notification, payload)`
@@ -397,7 +449,7 @@ the sendNotification method.
 
 **Example:**
 
-```javascript
+```js
 this.sendNotification("MY_MODULE_READY_FOR_ACTION", { foo: bar });
 ```
 
@@ -412,7 +464,7 @@ module will receive the socket notification.
 
 **Example:**
 
-```javascript
+```js
 this.sendSocketNotification("SET_CONFIG", this.config);
 ```
 
@@ -510,67 +562,67 @@ actions. The following scenario explains the concept:
 
 **Module B asks module A to hide:**
 
-```javascript
+```js
 moduleA.hide(0, { lockString: "module_b_identifier" });
 ```
 
 Module A is now hidden, and has an lock array with the following strings:
 
-```javascript
+```js
 moduleA.lockStrings == ["module_b_identifier"];
 moduleA.hidden == true;
 ```
 
 **Module C asks module A to hide:**
 
-```javascript
+```js
 moduleA.hide(0, { lockString: "module_c_identifier" });
 ```
 
 Module A is now hidden, and has an lock array with the following strings:
 
-```javascript
+```js
 moduleA.lockStrings == ["module_b_identifier", "module_c_identifier"];
 moduleA.hidden == true;
 ```
 
 **Module B asks module A to show:**
 
-```javascript
+```js
 moduleA.show(0, { lockString: "module_b_identifier" });
 ```
 
 The lockString will be removed from moduleA’s locks array, but since there still
 is an other lock string available, the module remains hidden:
 
-```javascript
+```js
 moduleA.lockStrings == ["module_c_identifier"];
 moduleA.hidden == true;
 ```
 
 **Module C asks module A to show:**
 
-```javascript
+```js
 moduleA.show(0, { lockString: "module_c_identifier" });
 ```
 
 The lockString will be removed from moduleA’s locks array, and since this will
 result in an empty lock array, the module will be visible:
 
-```javascript
+```js
 moduleA.lockStrings == [];
 moduleA.hidden == false;
 ```
 
 **Note:** The locking mechanism can be overwritten by using the force tag:
 
-```javascript
+```js
 moduleA.show(0, { force: true });
 ```
 
 This will reset the lockStrings array, and will show the module.
 
-```javascript
+```js
 moduleA.lockStrings == [];
 moduleA.hidden == false;
 ```
@@ -605,13 +657,13 @@ This way, your module can benefit from the existing translations.
 
 **Example:**
 
-```javascript
+```js
 this.translate("INFO"); //Will return a translated string for the identifier INFO
 ```
 
 **Example json file:**
 
-```javascript
+```js
 {
   "INFO": "Really important information!"
 }
@@ -634,14 +686,14 @@ translator to change the word order in the sentence to be translated.
 
 **Example:**
 
-```javascript
+```js
 const timeUntilEnd = moment(event.endDate, "x").fromNow(true);
-this.translate("RUNNING", { "timeUntilEnd": timeUntilEnd) }); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended.
+this.translate("RUNNING", { timeUntilEnd: timeUntilEnd }); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended.
 ```
 
 **Example English.json file:**
 
-```javascript
+```js
 {
 	"RUNNING": "Ends in {timeUntilEnd}",
 }
@@ -649,7 +701,7 @@ this.translate("RUNNING", { "timeUntilEnd": timeUntilEnd) }); // Will return a t
 
 **Example Finnish.json file:**
 
-```javascript
+```js
 {
 	"RUNNING": "Päättyy {timeUntilEnd} päästä",
 }
@@ -662,17 +714,17 @@ did not support the word order, it is recommended to have the fallback layout.
 
 **Example:**
 
-```javascript
+```js
 const timeUntilEnd = moment(event.endDate, "x").fromNow(true);
 this.translate("RUNNING", {
-	"fallback": this.translate("RUNNING") + " {timeUntilEnd}"
-	"timeUntilEnd": timeUntilEnd
-)}); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended. (has a fallback)
+  fallback: this.translate("RUNNING") + " {timeUntilEnd}",
+  timeUntilEnd: timeUntilEnd,
+}); // Will return a translated string for the identifier RUNNING, replacing `{timeUntilEnd}` with the contents of the variable `timeUntilEnd` in the order that translator intended. (has a fallback)
 ```
 
 **Example Swedish.json file that does not have the variable in it:**
 
-```javascript
+```js
 {
 	"RUNNING": "Slutar",
 }

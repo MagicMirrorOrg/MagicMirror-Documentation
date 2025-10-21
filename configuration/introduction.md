@@ -42,7 +42,7 @@ installation.
 2. Modify your required settings using your preferred editor. `nano` is the
    easiest.
 
-3. You can check your configuration running `npm run config:check` in
+3. You can check your configuration running `node --run config:check` in
    `~/MagicMirror`.
 
 The following properties can be configured, place them above the modules item:
@@ -84,7 +84,7 @@ By default, you would use config.js with a bash script (mm.sh):
 
 ```bash
 cd ~/MagicMirror
-npm run start
+node --run start
 ```
 
 To use the 2nd configuration file, use a bash script like this (mm2.sh):
@@ -92,7 +92,7 @@ To use the 2nd configuration file, use a bash script like this (mm2.sh):
 ```bash
 cd ~/MagicMirror
 export MM_CONFIG_FILE=config/config2.js
-npm run start
+node --run start
 ```
 
 To change the port:
@@ -100,15 +100,15 @@ To change the port:
 ```bash
 cd ~/MagicMirror
 export MM_PORT=8081
-npm run start
+node --run start
 ```
 
-You can run `npm run config:check` on your 2nd configuration file by typing the
-export line in first, example:
+You can run `node --run config:check` on your 2nd configuration file by typing
+the export line in first, example:
 
 ```bash
 export MM_CONFIG_FILE=config/config2.js
-npm run config:check
+node --run config:check
 ```
 
 ```log
@@ -129,7 +129,7 @@ Variables must be inserted as `${MY_VARIABLE}`, examples:
 
 `config.js.template`:
 
-```javascript
+```js
 let config = {
 	address: "${MY_ADDRESS}",
 	port: ${MY_PORT},
@@ -143,7 +143,7 @@ would become
 
 `config.js`:
 
-```javascript
+```js
 let config = {
   address: "localhost",
   port: 8080,
@@ -182,7 +182,7 @@ cd ~/MagicMirror
 export MY_ADDRESS=localhost
 export MY_PORT=8080
 export MY_HTTPS=false
-npm run start
+node --run start
 ```
 
 ### Using `electronOptions`
@@ -217,7 +217,7 @@ Starting Script 1 (mm.sh):
 
 ```bash
 cd ~/MagicMirror
-npm run start
+node --run start
 ```
 
 Starting Script 2 (mm2.sh):
@@ -225,7 +225,7 @@ Starting Script 2 (mm2.sh):
 ```bash
 cd ~/MagicMirror
 export MM_CONFIG_FILE=config/config2.js
-npm run start
+node --run start
 ```
 
 Configuration file 1 (config.js):
@@ -280,7 +280,7 @@ them from the config.js file.
 
 `config.js.template`:
 
-```javascript
+```js
 let config = {
   address: "0.0.0.0",
   port: 8080,

@@ -11,12 +11,12 @@ animation name result.
 
 ::: warning Where animation can be used?
 
-- [global module configuration](configuration.md#animated) of a module
-- [this.hide()](/development/core-module-file.md#this-hide-speed-callback-options)
+- [global module configuration](configuration.html#animated) of a module
+- [this.hide()](../module-development/core-module-file.html#this-hide-speed-callback-options)
   function in core module file
-- [this.show()](/development/core-module-file.md#this-show-speed-callback-options)
+- [this.show()](../module-development/core-module-file.html#this-show-speed-callback-options)
   function in core module file
-- [this.updateDom()](/development/core-module-file.md#this-updatedom-speed-options)
+- [this.updateDom()](../module-development/core-module-file.html#this-updatedom-speed-options)
   function in core module file
 
 :::
@@ -161,7 +161,7 @@ Sample:
 - You have created a `<div>` named "myDivSample"
 - You want to add a `flipInX` type animation for a duration of 1 second
 
-```javascript
+```js
 addAnimateCSS("myDivSample", "flipInX", 1);
 ```
 
@@ -179,7 +179,7 @@ Sample:
 - You want to remove a `flipInX` type animation created with `addAnimateCSS()`
   function
 
-```javascript
+```js
 removeAnimateCSS("myDivSample", "flipInX");
 ```
 
@@ -191,7 +191,7 @@ So, why not add an animation!?
 
 :::
 
-```javascript
+```js
 ...
 // select element ("myDivSample")
 let test = document.getElementById("myDivSample")

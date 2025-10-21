@@ -103,26 +103,38 @@ export default defineConfig({
         text: "Module Development",
         collapsed: true,
         items: [
-          { text: "Introduction", link: "/development/introduction" },
+          { text: "Introduction", link: "/module-development/introduction" },
           {
             text: "The Core module file",
-            link: "/development/core-module-file",
+            link: "/module-development/core-module-file",
           },
-          { text: "The Node Helper", link: "/development/node-helper" },
+          { text: "The Node Helper", link: "/module-development/node-helper" },
           {
             text: "MagicMirror Helper Methods",
-            link: "/development/helper-methods",
+            link: "/module-development/helper-methods",
           },
-          { text: "Logger", link: "/development/logger" },
-          { text: "Notifications", link: "/development/notifications" },
+          { text: "Logger", link: "/module-development/logger" },
+          { text: "Notifications", link: "/module-development/notifications" },
           {
             text: "Weather Module Weather Provider Development",
-            link: "/development/weather-provider",
+            link: "/module-development/weather-provider",
           },
           {
             text: "How to write good documentation",
-            link: "/development/documentation",
+            link: "/module-development/documentation",
           },
+        ],
+      },
+      {
+        text: "Core Development",
+        collapsed: true,
+        items: [
+          { text: "Introduction", link: "/core-development/introduction.md" },
+          {
+            text: "Testing",
+            link: "/core-development/testing.md",
+          },
+          { text: "Debugging", link: "/core-development/debugging.md" },
         ],
       },
       {

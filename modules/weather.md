@@ -12,11 +12,11 @@ in stone, so keep that in mind when you want to contribute.
 
 ## Screenshot
 
-### Current weather:
+### Current weather
 
 ![Screenshot of current weather](./screenshots/weather_current.png)
 
-### Forecast:
+### Forecast
 
 ![Screenshot of weather forecast](./screenshots/weather_forecast.png)
 
@@ -24,17 +24,15 @@ in stone, so keep that in mind when you want to contribute.
 
 To use this module, add it to the modules array in the `config/config.js` file:
 
-```javascript
-modules: [
-  {
-    module: "weather",
-    position: "top_right",
-    config: {
-      // See 'Configuration options' for more information.
-      type: "current",
+```js
+    {
+      module: "weather",
+      position: "top_right",
+      config: {
+        // See 'Configuration options' for more information.
+        type: "current",
+      },
     },
-  },
-];
 ```
 
 ## Configuration options
@@ -83,15 +81,16 @@ The following properties can be configured:
 
 #### Weather forecast options
 
-| Option            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `tableClass`      | The class for the forecast table. <br><br>**Possible values:** `'xsmall'`, `'small'`, `'medium'`, `'large'`, `'xlarge'` <br> **Default value:** `'small'`                                                                                                                                                                                                                                                                                                                                          |
-| `colored`         | If set to `true`, the min and max temperature are color coded. <br><br> **Default value:** `false`                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `fade`            | Fade the future events to black. (Gradient) <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`                                                                                                                                                                                                                                                                                                                                                                         |
-| `fadePoint`       | Where to start fade? <br><br> **Possible values:** `0` (top of the list) - `1` (bottom of list) <br> **Default value:** `0.25`                                                                                                                                                                                                                                                                                                                                                                     |
-| `maxNumberOfDays` | How many days of forecast to return. Specified by config.js <br><br> **Possible values:** `1` - `16` <br> **Default value:** `5` (5 days) <br> This value is optional. By default the weather module will return 5 days.                                                                                                                                                                                                                                                                           |
-| `maxEntries`      | How many entries of an OpenWeatherMap One Call hourly or daily forecast type to return. Specified by config.js <br><br> **Possible values:** `1` - `48` for `'hourly'` , `1` - `7` for `'daily'` <br> **Default value:** `5` (5 entries) <br> This value is optional and specifically meant to be used with the OpenWeatherMap provider and its `'/onecall'` endpoint. By default the weather module will return 5 entries. Intended to act as a more generalized of the `maxNumberOfDays` option. |
-| `ignoreToday`     | If set to `true`, today's weather will not be displayed. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                                                                                                                                                                                                                                                                                           |
+| Option               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tableClass`         | The class for the forecast table. <br><br>**Possible values:** `'xsmall'`, `'small'`, `'medium'`, `'large'`, `'xlarge'` <br> **Default value:** `'small'`                                                                                                                                                                                                                                                                                                                                          |
+| `colored`            | If set to `true`, the min and max temperature are color coded. <br><br> **Default value:** `false`                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `fade`               | Fade the future events to black. (Gradient) <br><br> **Possible values:** `true` or `false` <br> **Default value:** `true`                                                                                                                                                                                                                                                                                                                                                                         |
+| `fadePoint`          | Where to start fade? <br><br> **Possible values:** `0` (top of the list) - `1` (bottom of list) <br> **Default value:** `0.25`                                                                                                                                                                                                                                                                                                                                                                     |
+| `maxNumberOfDays`    | How many days of forecast to return. Specified by config.js <br><br> **Possible values:** `1` - `16` <br> **Default value:** `5` (5 days) <br> This value is optional. By default the weather module will return 5 days.                                                                                                                                                                                                                                                                           |
+| `maxEntries`         | How many entries of an OpenWeatherMap One Call hourly or daily forecast type to return. Specified by config.js <br><br> **Possible values:** `1` - `48` for `'hourly'` , `1` - `7` for `'daily'` <br> **Default value:** `5` (5 entries) <br> This value is optional and specifically meant to be used with the OpenWeatherMap provider and its `'/onecall'` endpoint. By default the weather module will return 5 entries. Intended to act as a more generalized of the `maxNumberOfDays` option. |
+| `ignoreToday`        | If set to `true`, today's weather will not be displayed. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                                                                                                                                                                                                                                                                                           |
+| `forecastDateFormat` | The date format to use for displaying forecast dates. Uses [Moment.js format](https://momentjs.com/docs/#/displaying/format/). <br><br> **Possible values:** Any valid Moment.js format string, e.g., `'ddd'` (Mon, Tue), `'dddd'` (Monday, Tuesday), `'D MMM'` (18 Oct), `'DD.MM.'` (18.10.) <br> **Default value:** `'ddd'` <br> This option only applies to the forecast view (`type: "forecast"`).                                                                                             |
 
 ### OpenWeatherMap options
 
@@ -172,16 +171,16 @@ retrieve more than 5 days you must subscribe to the OpenWeatherMap API.
 When using the `type: "forecast"` config, the module can display a max of 6 days
 (Today + the next 5 days). The forecast for each day reflects the daytime
 forecast. The Today forecast is a special case that will reflect the daytime
-forecast until late afternoon, after which Today will be reflecting the nighttime
-forecast for the current day.
+forecast until late afternoon, after which Today will be reflecting the
+nighttime forecast for the current day.
 
 When using the `type: "hourly"` config, the module can display a max of 24
 hours.
 
 | Option     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `siteCode` | The city/town unique identifier for which weather is to be displayed. <br><br> **Example:** `siteCode: 's0000458'` is the value for Toronto, Ontario <br><br> To determine the `siteCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `siteCode` under column A (Codes) <br><br> This value is **REQUIRED**                                                   |
-| `provCode` | The 2-character province code for the selected city/town `siteCode`. <br><br> **Example:** `provCode: 'ON'` is the value for Toronto, Ontario <br><br> To determine the `provCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `provCode` under column C (Province) - and of course the `siteCode` under column A (Codes) <br><br> This value is **REQUIRED** |
+| `siteCode` | The city/town unique identifier for which weather is to be displayed. <br><br> **Example:** `siteCode: 's0000458'` is the value for Toronto, Ontario <br><br> To determine the `siteCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/today/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `siteCode` under column A (Codes) <br><br> This value is **REQUIRED**                                                   |
+| `provCode` | The 2-character province code for the selected city/town `siteCode`. <br><br> **Example:** `provCode: 'ON'` is the value for Toronto, Ontario <br><br> To determine the `provCode` value for a Canadian city/town, look at the Environment Canada document at https://dd.weather.gc.ca/today/citypage_weather/docs/site_list_en.csv (or site_list_fr.csv). There you will find a table with city/town names you can search under column B (English Names), with the corresponding `provCode` under column C (Province) - and of course the `siteCode` under column A (Codes) <br><br> This value is **REQUIRED** |
 | `location` | The free-format text string intended to hold a location name (e.g. city) that should appear in the module header. <br><br> **Example:** `location: 'Toronto, ON'`                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ### Weatherflow options
@@ -233,4 +232,4 @@ update.
 ## API Provider Development
 
 If you want to add another API provider checkout the
-[Guide](/development/weather-provider.md).
+[Guide](/module-development/weather-provider.md).
