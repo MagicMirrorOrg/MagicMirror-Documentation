@@ -4,6 +4,11 @@ There are two main approaches to rendering your component. Procedurally
 generating a Dom object with `getDom`, or using the built in Nunjucks templating
 engine.
 
+With both approaches, rendering is first triggered when the module is first
+loaded. When your module's data changes, you can call
+[`this.updateDom()`](/module-development/core-module-file.md#thisupdatedomsspeed)
+to trigger a re-render.
+
 ## Using `getDom`
 
 The `getDom` method is called by MagicMirror whenever it needs to update
