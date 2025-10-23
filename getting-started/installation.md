@@ -27,12 +27,25 @@ the install specific instructions below
 2. Check if `git` is installed on your machine by executing `git` (should show
    usage), otherwise install it
 3. Clone the repository:
-   `git clone https://github.com/MagicMirrorOrg/MagicMirror`
-4. Enter the repository: `cd MagicMirror`
-5. Install the application: `node --run install-mm`
+```shell
+   git clone https://github.com/MagicMirrorOrg/MagicMirror
+```
+4. Enter the repository: 
+```shell
+  cd MagicMirror
+```
+5. Install the application: ``
+```shell
+  node --run install-mm
+```
 6. Make a copy of the config sample file:
-   `cp config/config.js.sample config/config.js`
-7. Start the application: `node --run start`
+```shell
+   cp config/config.js.sample config/config.js
+```
+7. Start the application:
+```shell
+  node --run start
+```
 
 ::: warning NOTE
 
