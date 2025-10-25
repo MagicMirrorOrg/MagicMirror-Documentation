@@ -70,6 +70,7 @@ export default {
           "/module-development/introduction.md",
           "/module-development/core-module-file.md",
           "/module-development/node-helper.md",
+          "/module-development/rendering.md",
           "/module-development/helper-methods.md",
           "/module-development/logger.md",
           "/module-development/notifications.md",
@@ -118,4 +119,3 @@ export default {
     }),
   ],
 };
-
