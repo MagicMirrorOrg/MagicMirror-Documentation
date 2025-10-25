@@ -31,7 +31,7 @@ getDom: function() {
 If `getDom` is not overridden, MagicMirror will try and render a
 [Nunjucks](https://mozilla.github.io/nunjucks/) template from `getTemplate`.
 
-Nunjucks is a templating language for Javascript. You can read more about the
+Nunjucks is a templating language for JavaScript. You can read more about the
 syntax in the
 [Nunjucks Documentation](https://mozilla.github.io/nunjucks/templating.html).
 
