@@ -32,13 +32,16 @@ scripts and inspect variables.
 
 ## Watch Mode with Auto-Reload
 
-For active development, MagicMirror² provides a `server:watch` script that automatically restarts the server and reloads connected browsers when files change:
+For active development, MagicMirror² provides a `server:watch` script that
+automatically restarts the server and reloads connected browsers when files
+change:
 
 ```sh
 node --run server:watch
 ```
 
-This mode monitors files specified in your `config.js` under the `watchTargets` property:
+This mode monitors files specified in your `config.js` under the `watchTargets`
+property:
 
 ```js
 let config = {
@@ -46,28 +49,32 @@ let config = {
     "config/config.js",
     "css/custom.css",
     "modules/MMM-MyModule/MMM-MyModule.js",
-    "modules/MMM-MyModule/node_helper.js"
+    "modules/MMM-MyModule/node_helper.js",
   ],
   // ... rest of config
 };
 ```
 
 When any monitored file changes:
+
 1. The server automatically restarts
 2. Waits for the port to become available
 3. Sends a reload notification to all connected browsers via Socket.io
 4. Browsers automatically refresh to show the changes
 
-This creates a seamless development experience where you can edit code, save, and see the results within seconds without manual restarts.
+This creates a seamless development experience where you can edit code, save,
+and see the results within seconds without manual restarts.
 
-**Note:** If `watchTargets` is empty or undefined, the watcher starts but monitors nothing.
+**Note:** If `watchTargets` is empty or undefined, the watcher starts but
+monitors nothing.
 
 ## Logging
 
 While there are no log files produced by the server, info is reported in two
 different places:
 
-- The console when running from `node --run start`, `node --run server`, or `node --run server:watch`.
+- The console when running from `node --run start`, `node --run server`, or
+  `node --run server:watch`.
   - This is separated into two streams, `console.log()` is output as the
     `stdout` stream, and
   - `console.error()` is output as the `stderr` stream.
