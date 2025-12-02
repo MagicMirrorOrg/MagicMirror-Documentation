@@ -6,11 +6,11 @@
     "@vuepress/plugin-docsearch": "^2.0.0-rc.112",
     "@vuepress/plugin-google-analytics": "^2.0.0-rc.112",
     "@vuepress/theme-default": "^2.0.0-rc.112",
-    "cspell": "^9.2.2",
-    "prettier": "^3.6.2",
+    "cspell": "^9.4.0",
+    "prettier": "^3.7.3",
     "prettier-config-vuepress": "^7.0.4",
-    "sass-embedded": "^1.93.2",
-    "vue": "^3.5.22",
+    "sass-embedded": "^1.93.3",
+    "vue": "^3.5.25",
     "vuepress": "^2.0.0-rc.24"
   },
   "scripts": {
