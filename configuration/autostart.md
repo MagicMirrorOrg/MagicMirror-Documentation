@@ -121,7 +121,7 @@ The examples below assume:
 - Avoid running as "root" unless absolutely necessary - it increases security risks.
 
 ### Full Electron UI Mode (Recommended for Desktop Auto-Login)
-For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best to use a user systemd service. It starts automatically after the user session is fully initialized - including the X11 display server.
+For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best to use a user systemd service. It starts automatically after the user session is fully initialized - including the display server (X11 or Wayland with Xwayland compatibility).
 
 #### Create service file
 
@@ -148,17 +148,18 @@ Environment=DISPLAY=:0
 Environment=XAUTHORITY=%h/.Xauthority
 WorkingDirectory=%h/MagicMirror
 ExecStart=/usr/bin/node --run start
-StandardOutput=file:%h/MagicMirror/magicmirror.log
-StandardError=file:%h/MagicMirror/magicmirror.log
+# Uncomment below lines only for debugging. Persistent logging wears out SD cards.
+#StandardOutput=file:%h/MagicMirror/magicmirror.log
+#StandardError=file:%h/MagicMirror/magicmirror.log
 
 [Install]
 WantedBy=default.target
 ```
 
 Notes: 
-- Why XAUTHORITY? The XAUTHORITY environment variable points to the X11 authentication file (usually ~/.Xauthority). Without it, applications cannot connect to the X server due to permission denied errors - even if DISPLAY is set correctly.
+- Why XAUTHORITY? The XAUTHORITY environment variable points to the X11 authentication file (usually ~/.Xauthority). This file contains authentication credentials for the display server. Even on modern Wayland-based systems (like Raspberry Pi OS Bookworm), MagicMirror runs via Xwayland for compatibility, which still requires X11-style authentication. Without it, the application cannot connect to the display.
 - %h is a systemd placeholder for the user’s home directory (e.g., /home/server). It’s safer than hardcoding paths.
-- Logs are written to magicmirror.log in your MagicMirror folder. The file is overwritten on every restart (due to file: mode).
+- Logging note: By default, this service does not write logs to disk to avoid excessive writes on SD cards. If you need logs for debugging, uncomment the StandardOutput and StandardError lines in the service file. Remember to disable them again after troubleshooting. The file is overwritten on every restart (due to file: mode).
 
 #### Enable and start the service
 
