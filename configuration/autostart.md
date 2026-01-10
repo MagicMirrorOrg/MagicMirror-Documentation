@@ -311,6 +311,11 @@ sudo journalctl -u magicmirror -f            # for system service
 ```
 Also you may look into `~/MagicMirror/magicmirror.log`.
 
-- **Blank screen?** Verify DISPLAY=:0 and XAUTHORITY are set.
+- **Blank screen?** Verify DISPLAY=:0 and XAUTHORITY are set. Add lines below into your `~/.config/systemd/user/magicmirror.service`
+```shell
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+```
+
 - **Permission denied?** Never run Electron as root.
  
