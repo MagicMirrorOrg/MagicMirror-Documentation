@@ -109,29 +109,99 @@ pm2 show mm
 
 ## Using systemd/systemctl
 
-Note: Systemctl is a control interface for systemd, a powerful service manager
-often found in full Linux systems. This approach is most like only applicable
-for those using the "server only" setup running on a linux server.
+Systemctl is a control interface for systemd, a powerful service manager
+often found in full Linux systems. This approach works for both headless (serveronly) and full Electron UI modes.
 
-### Create service file
+The examples below assume:
 
-To start, you'll need to create a config file via your editor of choice (nano
-used in these examples):
+- MagicMirror is installed in "/home/server/MagicMirror/"
+- Node.js is located at "/usr/bin/node" (Run `which node` if you're unsure.)
+- Systemd requires absolute paths for all binaries and directories.
+- Also, the examples use a user named "server" - replace it with your actual username.
+- Avoid running as "root" unless absolutely necessary - it increases security risks.
+
+### Full Electron UI Mode (Recommended for Desktop Auto-Login)
+For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best to use a user systemd service. It starts automatically after the user session is fully initialized - including the X11 display server.
+
+#### Create service file
+
+```shell
+mkdir -p ~/.config/systemd/user
+nano ~/.config/systemd/user/magicmirror.service
+```
+
+Note: Why "~/.config/systemd/user/"?
+User services run in the context of your desktop session, giving them access to DISPLAY, sound, and other GUI resources.
+
+#### Paste the following configuration (adjust paths as needed)
+
+```ini
+[Unit]
+Description=MagicMirror
+After=graphical-session.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=15
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+WorkingDirectory=%h/MagicMirror
+ExecStart=/usr/bin/node --run start
+StandardOutput=file:%h/MagicMirror/magicmirror.log
+StandardError=file:%h/MagicMirror/magicmirror.log
+
+[Install]
+WantedBy=default.target
+```
+
+Notes: 
+- Why XAUTHORITY? The XAUTHORITY environment variable points to the X11 authentication file (usually ~/.Xauthority). Without it, applications cannot connect to the X server due to permission denied errors - even if DISPLAY is set correctly.
+- %h is a systemd placeholder for the user’s home directory (e.g., /home/server). It’s safer than hardcoding paths.
+- Logs are written to magicmirror.log in your MagicMirror folder. The file is overwritten on every restart (due to file: mode).
+
+#### Enable and start the service
+
+Run these commands as your regular user (not with sudo)
+
+```shell
+# Reload systemd user config
+systemctl --user daemon-reload
+
+# Start MagicMirror now
+systemctl --user start magicmirror
+
+# Enable auto-start on boot (after user login)
+systemctl --user enable magicmirror
+
+# Restart MagicMirror
+systemctl --user restart magicmirror.service
+
+# Stop MagicMirror
+systemctl --user stop magicmirror.service
+
+# Disable auto-start
+systemctl --user disable magicmirror.service
+```
+
+Tip: You can omit `.service` - `systemctl --user start magicmirror` works just as well.
+
+#### Ensure auto-login is enabled
+
+For this to work on boot, your system must auto-login to the desktop (no password prompt). On Raspberry Pi OS, configure this via
+`sudo raspi-config → System Options → Boot / Auto Login → Desktop Autologin`
+
+### Headless Mode (serveronly)
+
+Use this if you run MagicMirror without a local GUI (e.g., serving to remote browsers or using a separate display device).
+
+#### Create a system-wide service
 
 ```shell
 sudo nano /etc/systemd/system/magicmirror.service
 ```
 
-Place the below text into your new file, modify as needed (see notes below) then
-save & exit. Notes: The example assumes MagicMirror is installed in the
-"WorkingDirectory" of "/home/server/MagicMirror/" and your node install is
-located at "/usr/bin/node" (run `which node` if you're unsure where to find
-node) this means your full manual start command would be "/usr/bin/node
-/home/server/MagicMirror/serveronly". While you almost certainly don't type this
-all out when you run manually, systemctl requires full paths. This example also
-assumes you have an existing Linux user of "server", but any user will do.
-"root" will certainly work but has the potential to do more damage, so you
-should avoid it if possible.
+#### Paste the configuration
 
 ```ini
 [Unit]
@@ -151,51 +221,42 @@ ExecStart=/usr/bin/node serveronly
 WantedBy=multi-user.target
 ```
 
-### Control MM with systemctl
+This runs as a background service - no GUI access. You’ll need a separate browser (on another device or locally) to view http://localhost:8080.
 
-Now try starting MM with the commands below. If start is successful work, use
-the 'enable' command below to automatically start when MM fails or is rebooted.
-If MM does not start, use the "status" command below to see most recent errors.
-
-Note: For any of the below commands 'magicmirror.service' can be replaced with
-`magicmirror` as systemd will automatically look for `\*.service`
-
-#### Start MM with systemctl
+#### Control the service (requires sudo)
 
 ```shell
-sudo systemctl start magicmirror.service
-```
+# Reload systemd user config
+sudo systemctl daemon-reload
 
-#### Stop MM with systemctl
+# Start MagicMirror now
+sudo systemctl start magicmirror
 
-```shell
+# Enable auto-start on boot (after user login)
+sudo systemctl enable magicmirror
+
+# Restart MagicMirror
+sudo systemctl restart magicmirror.service
+
+# Stop MagicMirror
 sudo systemctl stop magicmirror.service
-```
 
-#### To check the status of MagicMirror²
-
-```shell
-sudo systemctl status magicmirror.service
-```
-
-#### Allow autostart MagicMirror² on boot
-
-Note: does not start immediately, need to run start command or reboot
-
-```shell
-sudo systemctl enable magicmirror.service
-```
-
-#### Disable autostart of MagicMirror²
-
-```shell
+# Disable auto-start
 sudo systemctl disable magicmirror.service
 ```
 
-### Autostart browser for server mode
+### Auto-Starting a Browser (for serveronly mode)
 
-Create file `/home/server/.config/lxsession/LXDE-pi/autostart` with the
-following contents:
+If you still want a local display while using serveronly, auto-start Chromium in kiosk mode
+
+#### Edit the LXDE autostart file
+
+```shell
+mkdir -p ~/.config/lxsession/LXDE-pi
+nano ~/.config/lxsession/LXDE-pi/autostart
+```
+
+#### Add these lines
 
 ```shell
 @lxpanel --profile LXDE-pi
@@ -205,7 +266,14 @@ following contents:
 @sh /home/server/bin/start-chromium.sh
 ```
 
-Create file `/home/server/bin/start-chromium.sh` with the following contents:
+#### Create the Chromium launcher script
+
+```shell
+mkdir -p ~/bin
+nano ~/bin/start-chromium.sh
+```
+
+#### Add the following contents
 
 ```shell
 #!/bin/sh
@@ -228,3 +296,22 @@ chromium-browser \
         --start-maximized \
         --kiosk http://localhost:8080 &
 ```
+
+#### Make it executable
+
+```shell
+chmod +x ~/bin/start-chromium.sh
+```
+
+### Troubleshooting
+
+- **Service won’t start? Check logs**
+```shell
+journalctl --user -u magicmirror -f          # for user service
+sudo journalctl -u magicmirror -f            # for system service
+```
+Also you may look into `~/MagicMirror/magicmirror.log`.
+
+- **Blank screen?** Verify DISPLAY=:0 and XAUTHORITY are set.
+- **Permission denied?** Never run Electron as root.
+ 
