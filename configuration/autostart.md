@@ -121,7 +121,7 @@ The examples below assume:
 - Avoid running as "root" unless absolutely necessary - it increases security risks.
 
 ### Full Electron UI Mode (Recommended for Desktop Auto-Login)
-For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best to use a user systemd service. It starts automatically after the user session is fully initialized - including the display server (X11 or Wayland with Xwayland compatibility).
+For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best to use a user systemd service. It starts automatically after the user session is fully initialized. 
 
 #### Create service file
 
@@ -131,7 +131,7 @@ nano ~/.config/systemd/user/magicmirror.service
 ```
 
 Note: Why "~/.config/systemd/user/"?
-User services run in the context of your desktop session, giving them access to DISPLAY, sound, and other GUI resources.
+User services run in the context of your desktop session, giving them access to DISPLAY (or WAYLAND_DIAPLAY), sound, and other GUI resources.
 
 #### Paste the following configuration (adjust paths as needed)
 
@@ -144,8 +144,6 @@ After=graphical-session.target
 Type=simple
 Restart=always
 RestartSec=15
-Environment=DISPLAY=:0
-Environment=XAUTHORITY=%h/.Xauthority
 WorkingDirectory=%h/MagicMirror
 ExecStart=/usr/bin/node --run start
 # Uncomment below lines only for debugging. Persistent logging wears out SD cards.
@@ -157,9 +155,8 @@ WantedBy=default.target
 ```
 
 Notes: 
-- Why XAUTHORITY? The XAUTHORITY environment variable points to the X11 authentication file (usually ~/.Xauthority). This file contains authentication credentials for the display server. Even on modern Wayland-based systems (like Raspberry Pi OS Bookworm), MagicMirror runs via Xwayland for compatibility, which still requires X11-style authentication. Without it, the application cannot connect to the display.
 - %h is a systemd placeholder for the user’s home directory (e.g., /home/server). It’s safer than hardcoding paths.
-- Logging note: By default, this service does not write logs to disk to avoid excessive writes on SD cards. If you need logs for debugging, uncomment the StandardOutput and StandardError lines in the service file. Remember to disable them again after troubleshooting. The file is overwritten on every restart (due to file: mode).
+- Logging note: By default, this service does not write logs to disk to avoid excessive writes on SD cards. If you need logs for debugging, uncomment the StandardOutput and StandardError lines in the service file. Remember to disable them again after troubleshooting. The file is overwritten on every restart (due to `file:` mode).
 
 #### Enable and start the service
 
@@ -190,6 +187,7 @@ Tip: You can omit `.service` - `systemctl --user start magicmirror` works just a
 #### Ensure auto-login is enabled
 
 For this to work on boot, your system must auto-login to the desktop (no password prompt). On Raspberry Pi OS, configure this via
+
 `sudo raspi-config → System Options → Boot / Auto Login → Desktop Autologin`
 
 ### Headless Mode (serveronly)
