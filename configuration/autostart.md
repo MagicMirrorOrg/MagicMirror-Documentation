@@ -121,7 +121,12 @@ The examples below assume:
 - Avoid running as "root" unless absolutely necessary - it increases security risks.
 
 ### Full Electron UI Mode (Recommended for Desktop Auto-Login)
-For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best to use a user systemd service. It starts automatically after the user session is fully initialized. 
+
+::: warning Note
+This section is tailored for **Raspberry Pi OS Desktop**. Users on other Linux distributions may need to adapt the configuration.
+:::
+
+For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best to use a user systemd service. It starts automatically after the user session is fully initialized.
 
 #### Create service file
 
@@ -131,7 +136,7 @@ nano ~/.config/systemd/user/magicmirror.service
 ```
 
 Note: Why "~/.config/systemd/user/"?
-User services run in the context of your desktop session, giving them access to DISPLAY (or WAYLAND_DIAPLAY), sound, and other GUI resources.
+User services run in the context of your desktop session, giving them access to DISPLAY (or WAYLAND_DISPLAY), sound, and other GUI resources.
 
 #### Paste the following configuration (adjust paths as needed)
 
@@ -154,7 +159,7 @@ ExecStart=/usr/bin/node --run start
 WantedBy=default.target
 ```
 
-Notes: 
+Notes:
 - %h is a systemd placeholder for the user’s home directory (e.g., /home/server). It’s safer than hardcoding paths.
 - Logging note: By default, this service does not write logs to disk to avoid excessive writes on SD cards. If you need logs for debugging, uncomment the StandardOutput and StandardError lines in the service file. Remember to disable them again after troubleshooting. The file is overwritten on every restart (due to `file:` mode).
 
@@ -225,13 +230,13 @@ This runs as a background service - no GUI access. You’ll need a separate brow
 #### Control the service (requires sudo)
 
 ```shell
-# Reload systemd user config
+# Reload systemd config
 sudo systemctl daemon-reload
 
 # Start MagicMirror now
 sudo systemctl start magicmirror
 
-# Enable auto-start on boot (after user login)
+# Enable auto-start on boot
 sudo systemctl enable magicmirror
 
 # Restart MagicMirror
@@ -318,4 +323,3 @@ Environment=XAUTHORITY=%h/.Xauthority
 ```
 
 - **Permission denied?** Never run Electron as root.
- 
