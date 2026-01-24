@@ -205,6 +205,9 @@ starts, or because your module asked a refresh using `this.updateDom()`), the
 system calls the getDom method. This method should therefore return a dom
 object.
 
+Read more about Rendering Components
+[in the Rendering Component documentation](./rendering.md).
+
 **Example:**
 
 ```js
@@ -227,6 +230,9 @@ data to the template with `getTemplateData`.
 
 An example of a default module that uses this method is
 [newsfeed](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/modules/default/newsfeed/newsfeed.js).
+
+Read more about Rendering Components
+[in the Rendering Component documentation](./rendering.md).
 
 **Example:**
 

@@ -31,7 +31,7 @@ The following properties can be configured:
 | `updates`                  | Array of updates modules commands. <br> **Default value:** `[]` (see bellow)                                                                                                                                                                                  |
 | `updateTimeout`            | Maximum Update duration before cancel it. <br> **Default Value:** `120000` (2 minutes)                                                                                                                                                                        |
 | `updateAutorestart`        | Restart automatically MagicMirror² after update is done. <br> **Default Value:** `false`                                                                                                                                                                      |
-| `useModulesFromConfig`     | If `false` iterate over modules directory instead using modules defined in `config.js`. <br> **Default Value:** `true`                                                                                                                                        |
+| `useModulesFromConfig`     | If `false`, iterate over the modules directory instead of using the modules defined in `config.js`. <br> **Default Value:** `true`                                                                                                                            |
 
 ### `updates` Array
 
