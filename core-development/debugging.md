@@ -47,7 +47,7 @@ property:
 let config = {
   watchTargets: [
     "config/config.js",
-    "css/custom.css",
+    "config/custom.css",
     "modules/MMM-MyModule/MMM-MyModule.js",
     "modules/MMM-MyModule/node_helper.js",
   ],
