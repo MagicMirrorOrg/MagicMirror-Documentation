@@ -229,7 +229,7 @@ MagicMirror will use this template to render your component. You may provide
 data to the template with `getTemplateData`.
 
 An example of a default module that uses this method is
-[newsfeed](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/modules/default/newsfeed/newsfeed.js).
+[newsfeed](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/defaultmodules/newsfeed/newsfeed.js).
 
 Read more about Rendering Components
 [in the Rendering Component documentation](/module-development/rendering.md).
