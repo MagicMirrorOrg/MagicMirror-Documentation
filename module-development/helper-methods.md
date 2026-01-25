@@ -20,7 +20,7 @@ for more info.
 
 **Note:** This method returns an empty array if not all modules are started yet.
 Wait for the `ALL_MODULES_STARTED`
-[notification](core-module-file.md#notificationreceived-notification-payload-sender).
+[notification](/module-development/core-module-file.md#notificationreceived-notification-payload-sender).
 
 #### `.withClass(classnames)`
 

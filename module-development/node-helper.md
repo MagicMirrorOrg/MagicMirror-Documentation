@@ -130,7 +130,7 @@ When this method is called, it has 2 arguments:
 
 **Note:** The socket connection is established as soon as the module sends its
 first message using
-[sendSocketNotification](core-module-file.md#this-sendsocketnotification-notification-payload).
+[sendSocketNotification](/module-development/core-module-file.md#this-sendsocketnotification-notification-payload).
 
 **Example:**
 
