@@ -20,7 +20,7 @@ You will need to install the latest full version of
 Raspbian).
 
 If you want to run the software on other Operating Systems, take a look at
-[this section](/getting-started/installation.md#other-operating-systems)
+[this section](/getting-started/installation.md#alternative-installation-methods)
 
 ::: warning NOTE You **do** need a desktop environment to run Electron!
 
