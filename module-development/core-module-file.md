@@ -206,7 +206,7 @@ system calls the getDom method. This method should therefore return a dom
 object.
 
 Read more about Rendering Components
-[in the Rendering Component documentation](./rendering.md).
+[in the Rendering Component documentation](/module-development/rendering.md).
 
 **Example:**
 
@@ -232,7 +232,7 @@ An example of a default module that uses this method is
 [newsfeed](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/modules/default/newsfeed/newsfeed.js).
 
 Read more about Rendering Components
-[in the Rendering Component documentation](./rendering.md).
+[in the Rendering Component documentation](/module-development/rendering.md).
 
 **Example:**
 
@@ -394,9 +394,9 @@ the content update will be animated, but only if the content will really change.
 
 Note that the rendering of the updated dom on the screen will happen
 asynchronously. You can listen for the
-[`DOM_OBJECTS_UPDATED` notification](/module-development/notifications) to know
-when the rendering is complete and the new dom is safe to interact with. This
-notification only fires if the content will really change.
+[`DOM_OBJECTS_UPDATED` notification](/module-development/notifications.md) to
+know when the rendering is complete and the new dom is safe to interact with.
+This notification only fires if the content will really change.
 
 **Example:**
 
@@ -422,10 +422,10 @@ module needs to be updated
 
 **animate Object**
 
-| animate | type   | description                                                                                                                                             |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](/modules/animate#animatein))     |
-| out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](/modules/animate#animateout)) |
+| animate | type   | description                                                                                                                                                |
+| ------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| in      | String | Animate name when module will be shown (after dom update), it will use an `animateIn` type name (see [Animation Guide](/modules/animate.md#animatein))     |
+| out     | String | Animate name when module will be hidden (before dom update), it will use an `animateOut` type name (see [Animation Guide](/modules/animate.md#animateout)) |
 
 **Example:**
 

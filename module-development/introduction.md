@@ -23,7 +23,7 @@ information in your README file.**
   it free?)
 - **Do not use `new Date()` for the current timestamp, instead prefer
   `new Date(Date.now())` as it can be more
-  [easily overridden for debugging](../core-development/debugging.html#Date)**.
+  [easily overridden for debugging](/core-development/debugging.md#Date)**.
 
 Surely this also help you get better recognition and feedback for your work.
 

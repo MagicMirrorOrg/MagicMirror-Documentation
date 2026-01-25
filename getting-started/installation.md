@@ -74,7 +74,7 @@ team. Use these scripts and methods at your own risk.
 
 - Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains
   an easy-to-use installation and update script:
-  [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts)
+  [MagicMirror Scripts](https://github.com/sdetweil/MagicMirror_scripts)
 - [The MagicMirror Package Manager](https://github.com/Bee-Mar/mmpm) is a
   command line interface designed to simplify the installation, removal, and
   maintenance of MagicMirror modules.
