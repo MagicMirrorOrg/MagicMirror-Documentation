@@ -147,7 +147,7 @@ export default defineConfig({
           { text: "Contributing Guidelines", link: "/about/contributing" },
           { text: "Donate", link: "/about/donate" },
           { text: "Support", link: "/about/support" },
-          { text: "License", link: "/about/license" },
+          { text: "License", link: "/about/LICENSE" },
         ],
       },
     ],
