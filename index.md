@@ -3,7 +3,7 @@
 layout: doc
 ---
 
-![MagicMirror²: The open source modular smart mirror platform. ](./public/header.png)
+![MagicMirror²: The open source modular smart mirror platform. ](/header.png)
 
 <p style="display: flex; gap: 10px;justify-content: center">
   <a href="https://choosealicense.com/licenses/mit">

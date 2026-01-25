@@ -39,7 +39,7 @@ export default defineConfig({
     lastUpdated: {
       text: "Updated at",
     },
-    logo: "/public/logo.png",
+    logo: "/logo.png",
     nav: [
       { text: "Donate", link: "https://magicmirror.builders/donate" },
       { text: "Forum", link: "https://forum.magicmirror.builders" },
