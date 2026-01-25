@@ -33,7 +33,9 @@ export default defineConfig({
         "https://github.com/MagicMirrorOrg/MagicMirror-Documentation/blob/master/:path",
       text: "Help us improve this page!",
     },
-    lastUpdated: true,
+    lastUpdated: {
+      text: "Updated at",
+    },
     logo: "/public/logo.png",
     nav: [
       { text: "Donate", link: "https://magicmirror.builders/donate" },
