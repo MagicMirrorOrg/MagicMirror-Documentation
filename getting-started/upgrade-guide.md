@@ -53,4 +53,4 @@ to troubleshoot issues independently.
 
 Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains
 an easy-to-use update script:
-[https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts/?tab=readme-ov-file#upgrade-to-next-magicmirror-version-from-an-existing-installation)
+[MagicMirror Scripts](https://github.com/sdetweil/MagicMirror_scripts/?tab=readme-ov-file#upgrade-to-next-magicmirror-version-from-an-existing-installation)

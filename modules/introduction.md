@@ -6,13 +6,13 @@ title: Introduction
 
 The following modules are installed by default.
 
-- [**Clock**](clock.md)
-- [**Calendar**](calendar.md)
-- [**Weather**](weather.md)
-- [**News Feed**](newsfeed.md)
-- [**Compliments**](compliments.md)
-- [**Hello World**](helloworld.md)
-- [**Alert**](alert.md)
+- [**Clock**](/modules/clock.md)
+- [**Calendar**](/modules/calendar.md)
+- [**Weather**](/modules/weather.md)
+- [**News Feed**](/modules/newsfeed.md)
+- [**Compliments**](/modules/compliments.md)
+- [**Hello World**](/modules/helloworld.md)
+- [**Alert**](/modules/alert.md)
 
 For more available modules, check out out the wiki page
 [MagicMirror² 3rd Party Modules](https://github.com/MagicMirrorOrg/MagicMirror/wiki/3rd-party-modules).

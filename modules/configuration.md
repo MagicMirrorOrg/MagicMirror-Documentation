@@ -74,7 +74,7 @@ Animated feature allows to define an animation to a module
 - `animateIn`: When module appears
 - `animateOut`: When module should hide
 
-The whole of animation names are available [there](animate.md).
+The whole of animation names are available [there](/modules/animate.md).
 
 ::: tip Preview of animations
 

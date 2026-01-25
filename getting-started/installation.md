@@ -15,8 +15,7 @@ installers can be found under:
 ## Manual Installation
 
 These instructions deploy a standalone version of MagicMirror², for
-[Server Only](/getting-started/installation.md#server-only) and
-[Client Only](/getting-started/installation.md#client-only) installs please read
+[Server Only](#server-only) and [Client Only](#client-only) installs please read
 the install specific instructions below
 
 1. Download and install a
@@ -74,7 +73,7 @@ team. Use these scripts and methods at your own risk.
 
 - Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains
   an easy-to-use installation and update script:
-  [https://github.com/sdetweil/MagicMirror_scripts](https://github.com/sdetweil/MagicMirror_scripts)
+  [MagicMirror Scripts](https://github.com/sdetweil/MagicMirror_scripts)
 - [The MagicMirror Package Manager](https://github.com/Bee-Mar/mmpm) is a
   command line interface designed to simplify the installation, removal, and
   maintenance of MagicMirror modules.
@@ -144,7 +143,7 @@ controlled by settings inside the `config/config.js` file by interface and ip:
 - Change `ipWhitelist` to the list of IP's you want to allow to connect
 
 Sample Configuration below
-[and link to full configuration options](/configuration/introduction.md#introduction)
+[and link to full configuration options](/configuration/introduction.md)
 
 ```js
 let config = {

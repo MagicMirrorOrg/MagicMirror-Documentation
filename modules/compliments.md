@@ -49,6 +49,7 @@ is considered "evening".
 ### Compliment configuration
 
 The `compliments` property contains an object with at least four arrays:
+
 <code>morning</code>, <code>afternoon</code>, <code>evening</code> and
 <code>anytime</code>. Based on the time of the day, the compliments will be
 picked out of one of these arrays. The arrays contain one or multiple
