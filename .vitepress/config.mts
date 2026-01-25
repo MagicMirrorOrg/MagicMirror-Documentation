@@ -114,6 +114,7 @@ export default defineConfig({
             link: "/module-development/core-module-file",
           },
           { text: "The Node Helper", link: "/module-development/node-helper" },
+          { text: "Rendering Component", link: "/module-development/rendering" },
           {
             text: "MagicMirror Helper Methods",
             link: "/module-development/helper-methods",
