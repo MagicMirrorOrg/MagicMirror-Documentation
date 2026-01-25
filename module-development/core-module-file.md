@@ -394,7 +394,7 @@ the content update will be animated, but only if the content will really change.
 
 Note that the rendering of the updated dom on the screen will happen
 asynchronously. You can listen for the
-[`DOM_OBJECTS_UPDATED` notification](/development/notifications.html) to know
+[`DOM_OBJECTS_UPDATED` notification](/module-development/notifications) to know
 when the rendering is complete and the new dom is safe to interact with. This
 notification only fires if the content will really change.
 
