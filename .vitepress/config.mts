@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "MagicMirror² Documentation",
+  title: "MagicMirror² Docs",
   description: "The open source modular smart mirror platform.",
   head: [
     [
@@ -34,7 +34,7 @@ export default defineConfig({
       text: "Help us improve this page!",
     },
     lastUpdated: true,
-    // logo: '/public/logo.png',
+    logo: "/public/logo.png",
     nav: [
       { text: "Donate", link: "https://magicmirror.builders/donate" },
       { text: "Forum", link: "https://forum.magicmirror.builders" },
