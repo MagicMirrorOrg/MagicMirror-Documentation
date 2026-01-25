@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "MagicMirror² Docs",
   description: "The open source modular smart mirror platform.",
+  lang: "en",
   head: [
     [
       "script",
@@ -21,7 +22,9 @@ export default defineConfig({
       gtag('config', 'TAG_ID');`,
     ],
   ],
-  lang: "en",
+  sitemap: {
+    hostname: "https://docs.magicmirror.builders/",
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     carbonAds: {
