@@ -16,5 +16,8 @@
     "test": "node --run test:format && node --run test:spelling",
     "test:format": "prettier . --check",
     "test:spelling": "cspell . --gitignore"
+  },
+  "dependencies": {
+    "@miletorix/vitepress-back-to-top-button": "^1.0.3"
   }
 }
