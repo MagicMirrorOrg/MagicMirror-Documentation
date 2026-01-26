@@ -80,6 +80,6 @@
     "yearmatchgroup",
     "yourprovider"
   ],
-  "ignorePaths": ["node_modules/**"],
+  "ignorePaths": ["container/**", "node_modules/**"],
   "dictionaries": ["node"]
 }
