@@ -5,6 +5,7 @@ export default defineConfig({
   title: "MagicMirror² Docs",
   description: "The open source modular smart mirror platform.",
   lang: "en",
+  ignoreDeadLinks: "localhostLinks",
   head: [
     [
       "script",

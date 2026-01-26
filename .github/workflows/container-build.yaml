@@ -1,0 +1,36 @@
+name: "Container Build"
+
+on:
+  push:
+    branches:
+      - "master"
+      - "develop"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    container:
+      image: moby/buildkit:latest
+      options: --privileged
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Build container
+        run: |
+          REPO="$(echo "$GITHUB_REPOSITORY" | tr "[:upper:]" "[:lower:]")"
+          PARAMS="--output type=image,\"name=ghcr.io/${REPO}:${{ github.ref_name }}\",push=true"
+          # registry credentials
+          export DOCKER_CONFIG="$(pwd)/container"
+          echo "{\"auths\":{\"ghcr.io\":{\"auth\":\"$(echo -n ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} | base64 -w 0)\"}}}" > $DOCKER_CONFIG/config.json
+          # build
+          buildctl-daemonless.sh build \
+            --progress plain \
+            --frontend=dockerfile.v0 \
+            --local context=. \
+            --local dockerfile=container \
+            $PARAMS
