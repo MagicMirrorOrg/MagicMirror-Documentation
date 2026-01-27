@@ -104,4 +104,4 @@ this.nunjucksEnvironment().addFilter("space", function (str) {
 ```
 
 For filter examples see the
-[`weather` module](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/modules/default/weather/weather.js#L221).
+[`weather` module](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/defaultmodules/weather/weather.js#L221).

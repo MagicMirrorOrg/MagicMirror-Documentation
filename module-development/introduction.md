@@ -47,8 +47,8 @@ maintained by the MagicMirrorOrg.
 
 ## Module structure
 
-All modules are loaded in the `modules` folder. The default modules are grouped
-together in the `modules/default` folder. Your module should be placed in a
+We have 2 folders. The default modules are grouped together in the `defaultmodules` 
+folder. All other modules should be placed in a
 subfolder of `modules`. Note that any file or folder you create in the `modules`
 folder will be ignored by git, allowing you to upgrade the MagicMirror² without
 the loss of your files.
