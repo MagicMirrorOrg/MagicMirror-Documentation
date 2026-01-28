@@ -63,4 +63,4 @@ Current notifications are:
 | `CLOCK_SECOND` | A second has elapsed. <br> _Parameter_: second value |
 | `CLOCK_MINUTE` | A minute has elapsed <br> _Parameter_: minute value  |
 
-## styles for clock hands (analog) and text (digital) can be found in clock_style.css, use css/custom.css to override
+## styles for clock hands (analog) and text (digital) can be found in clock_style.css, use `config/custom.css` to override

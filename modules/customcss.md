@@ -1,7 +1,7 @@
 # Custom CSS
 
 MagicMirror² comes with a default theme but it can be customized by placing a
-custom css-file in `css/custom.css`.
+custom css-file in `config/custom.css`.
 
 ### Example
 
