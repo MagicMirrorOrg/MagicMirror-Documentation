@@ -9,7 +9,8 @@ import "@miletorix/vitepress-back-to-top-button/style.css";
 
 function rewrite(path: string): string | null {
   // Example: VuePress legacy prefix
-  if (path.startsWith("/development/")) return path.replace("/development/", "/module-development/");
+  if (path.startsWith("/development/"))
+    return path.replace("/development/", "/module-development/");
 
   return null;
 }
