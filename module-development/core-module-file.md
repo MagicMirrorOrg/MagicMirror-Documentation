@@ -283,8 +283,8 @@ getTemplateData: function() {
 Whenever the MagicMirror needs to update the information on screen (because it
 starts, or because your module asked a refresh using `this.updateDom()`), the
 system calls the getHeader method to retrieve the module's header. This method
-should therefore return a string. If this method is not subclassed, this function
-will return the user's configured header.
+should therefore return a string. If this method is not subclassed, this
+function will return the user's configured header.
 
 If you want to use the original user's configured header, reference
 `this.data.header`.
