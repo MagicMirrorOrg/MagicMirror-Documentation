@@ -109,24 +109,28 @@ pm2 show mm
 
 ## Using systemd/systemctl
 
-Systemctl is a control interface for systemd, a powerful service manager
-often found in full Linux systems. This approach works for both headless (serveronly) and full Electron UI modes.
+Systemctl is a control interface for systemd, a powerful service manager often
+found in full Linux systems. This approach works for both headless (serveronly)
+and full Electron UI modes.
 
 The examples below assume:
 
 - MagicMirror is installed in "/home/server/MagicMirror/"
 - Node.js is located at "/usr/bin/node" (Run `which node` if you're unsure.)
 - Systemd requires absolute paths for all binaries and directories.
-- Also, the examples use a user named "server" - replace it with your actual username.
-- Avoid running as "root" unless absolutely necessary - it increases security risks.
+- Also, the examples use a user named "server" - replace it with your actual
+  username.
+- Avoid running as "root" unless absolutely necessary - it increases security
+  risks.
 
 ### Full Electron UI Mode (Recommended for Desktop Auto-Login)
 
-::: warning Note
-This section is tailored for **Raspberry Pi OS Desktop**. Users on other Linux distributions may need to adapt the configuration.
-:::
+::: warning Note This section is tailored for **Raspberry Pi OS Desktop**. Users
+on other Linux distributions may need to adapt the configuration. :::
 
-For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best to use a user systemd service. It starts automatically after the user session is fully initialized.
+For systems with graphical auto-login (e.g. Raspberry Pi OS Desktop), it's best
+to use a user systemd service. It starts automatically after the user session is
+fully initialized.
 
 #### Create service file
 
@@ -135,8 +139,9 @@ mkdir -p ~/.config/systemd/user
 nano ~/.config/systemd/user/magicmirror.service
 ```
 
-Note: Why "~/.config/systemd/user/"?
-User services run in the context of your desktop session, giving them access to DISPLAY (or WAYLAND_DISPLAY), sound, and other GUI resources.
+Note: Why "~/.config/systemd/user/"? User services run in the context of your
+desktop session, giving them access to DISPLAY (or WAYLAND_DISPLAY), sound, and
+other GUI resources.
 
 #### Paste the following configuration (adjust paths as needed)
 
@@ -160,8 +165,14 @@ WantedBy=default.target
 ```
 
 Notes:
-- %h is a systemd placeholder for the user’s home directory (e.g., /home/server). It’s safer than hardcoding paths.
-- Logging note: By default, this service does not write logs to disk to avoid excessive writes on SD cards. If you need logs for debugging, uncomment the StandardOutput and StandardError lines in the service file. Remember to disable them again after troubleshooting. The file is overwritten on every restart (due to `file:` mode).
+
+- %h is a systemd placeholder for the user’s home directory (e.g.,
+  /home/server). It’s safer than hardcoding paths.
+- Logging note: By default, this service does not write logs to disk to avoid
+  excessive writes on SD cards. If you need logs for debugging, uncomment the
+  StandardOutput and StandardError lines in the service file. Remember to
+  disable them again after troubleshooting. The file is overwritten on every
+  restart (due to `file:` mode).
 
 #### Enable and start the service
 
@@ -187,17 +198,20 @@ systemctl --user stop magicmirror.service
 systemctl --user disable magicmirror.service
 ```
 
-Tip: You can omit `.service` - `systemctl --user start magicmirror` works just as well.
+Tip: You can omit `.service` - `systemctl --user start magicmirror` works just
+as well.
 
 #### Ensure auto-login is enabled
 
-For this to work on boot, your system must auto-login to the desktop (no password prompt). On Raspberry Pi OS, configure this via
+For this to work on boot, your system must auto-login to the desktop (no
+password prompt). On Raspberry Pi OS, configure this via
 
 `sudo raspi-config → System Options → Boot / Auto Login → Desktop Autologin`
 
 ### Headless Mode (serveronly)
 
-Use this if you run MagicMirror without a local GUI (e.g., serving to remote browsers or using a separate display device).
+Use this if you run MagicMirror without a local GUI (e.g., serving to remote
+browsers or using a separate display device).
 
 #### Create a system-wide service
 
@@ -225,7 +239,8 @@ ExecStart=/usr/bin/node serveronly
 WantedBy=multi-user.target
 ```
 
-This runs as a background service - no GUI access. You’ll need a separate browser (on another device or locally) to view http://localhost:8080.
+This runs as a background service - no GUI access. You’ll need a separate
+browser (on another device or locally) to view http://localhost:8080.
 
 #### Control the service (requires sudo)
 
@@ -251,7 +266,8 @@ sudo systemctl disable magicmirror.service
 
 ### Auto-Starting a Browser (for serveronly mode)
 
-If you still want a local display while using serveronly, auto-start Chromium in kiosk mode
+If you still want a local display while using serveronly, auto-start Chromium in
+kiosk mode
 
 #### Edit the LXDE autostart file
 
@@ -310,13 +326,17 @@ chmod +x ~/bin/start-chromium.sh
 ### Troubleshooting
 
 - **Service won’t start? Check logs**
+
 ```shell
 journalctl --user -u magicmirror -f          # for user service
 sudo journalctl -u magicmirror -f            # for system service
 ```
+
 Also you may look into `~/MagicMirror/magicmirror.log`.
 
-- **Blank screen?** Verify DISPLAY=:0 and XAUTHORITY are set. Add lines below into your `~/.config/systemd/user/magicmirror.service`
+- **Blank screen?** Verify DISPLAY=:0 and XAUTHORITY are set. Add lines below
+  into your `~/.config/systemd/user/magicmirror.service`
+
 ```shell
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=%h/.Xauthority

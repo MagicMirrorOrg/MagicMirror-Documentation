@@ -23,7 +23,7 @@ information in your README file.**
   it free?)
 - **Do not use `new Date()` for the current timestamp, instead prefer
   `new Date(Date.now())` as it can be more
-  [easily overridden for debugging](/core-development/debugging.md#date)**.
+  [easily overridden for debugging](/core-development/debugging#date)**.
 
 Surely this also help you get better recognition and feedback for your work.
 
@@ -47,11 +47,11 @@ maintained by the MagicMirrorOrg.
 
 ## Module structure
 
-We have 2 folders. The default modules are grouped together in the `defaultmodules` 
-folder. All other modules should be placed in a
-subfolder of `modules`. Note that any file or folder you create in the `modules`
-folder will be ignored by git, allowing you to upgrade the MagicMirror² without
-the loss of your files.
+We have 2 folders. The default modules are grouped together in the
+`defaultmodules` folder. All other modules should be placed in a subfolder of
+`modules`. Note that any file or folder you create in the `modules` folder will
+be ignored by git, allowing you to upgrade the MagicMirror² without the loss of
+your files.
 
 A module can be placed in one single folder. Or multiple modules can be grouped
 in a subfolder. Note that name of the module must be unique. Even when a module

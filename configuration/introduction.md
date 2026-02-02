@@ -21,11 +21,11 @@
    };
    ```
 
-   See [module configuration](/modules/configuration.md) for more information
-   and examples.
+   See [module configuration](/modules/configuration) for more information and
+   examples.
 
 4. Run your magic mirror. Refer back to
-   [installation](/getting-started/installation.md) if you're not sure how to do
+   [installation](/getting-started/installation) if you're not sure how to do
    so.
 
 ## More useful configuration of your MagicMirror
@@ -56,13 +56,13 @@ The following properties can be configured, place them above the modules item:
 | `language`         | The language of the interface. (Note: Not all elements will be localized.) Possible values are `en`, `nl`, `ru`, `fr`, etc. for the full list see: [List of ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)                                                                                                                                                                                                                                                                                                                       | `en`                                       |
 | `timeFormat`       | The form of time notation that will be used. Possible values are `12` or `24`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | 24                                         |
 | `units`            | The units that will be used in the default weather modules. Possible values are `metric` or `imperial`.                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `metric`                                   |
-| `electronOptions`  | An optional array of Electron (browser) options. This allows configuration of e.g. the browser screen size and position (example: `electronOptions: { fullscreen: false, width: 800, height: 600 }`). Kiosk mode can be enabled by setting `kiosk: true`, `autoHideMenuBar: false` and `fullscreen: false`. More options can be found [here](https://github.com/electron/electron/blob/master/docs/api/browser-window.md). This will most likely be used in advanced installations, below.                                                                | []                                         |
+| `electronOptions`  | An optional array of Electron (browser) options. This allows configuration of e.g. the browser screen size and position (example: `electronOptions: { fullscreen: false, width: 800, height: 600 }`). Kiosk mode can be enabled by setting `kiosk: true`, `autoHideMenuBar: false` and `fullscreen: false`. More options can be found [here](https://github.com/electron/electron/blob/master/docs/api/browser-window). This will most likely be used in advanced installations, below.                                                                   | []                                         |
 | `electronSwitches` | An optional array of Electron switches. This allows configuration of electron app itself. <br> This properties will not affect the `serveronly` mode. Usually normal `MM` users don't need this property, but if you are a hard-core hacker, you might need this to handle Electron itself over `MagicMirror` provides. More options can be found [here](https://www.electronjs.org/docs/latest/api/command-line-switches) (Not all available switches are described there.)<br>example:`electronSwitches:["enable-transparent-visuals", "disable-gpu"];` | []                                         |
 | `customCss`        | The path of the `custom.css` stylesheet. The default is `config/custom.css`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `config/custom.css`                        |
-| `watchTargets`     | An optional array of file paths to monitor when using `node --run server:watch`. When any of these files change, the server automatically restarts and connected browsers reload. Particularly useful when frequently modifying `config.js`, `custom.css`, or module files during development or setup. Example: `watchTargets: ["config/config.js", "config/custom.css", "modules/MMM-MyModule/MMM-MyModule.js"]`. See [Development Mode](/core-development/debugging.md#watch-mode-with-auto-reload) for more details.                                  | `undefined`                                |
+| `watchTargets`     | An optional array of file paths to monitor when using `node --run server:watch`. When any of these files change, the server automatically restarts and connected browsers reload. Particularly useful when frequently modifying `config.js`, `custom.css`, or module files during development or setup. Example: `watchTargets: ["config/config.js", "config/custom.css", "modules/MMM-MyModule/MMM-MyModule.js"]`. See [Development Mode](/core-development/debugging#watch-mode-with-auto-reload) for more details.                                     | `undefined`                                |
 
 After the above options, you will then add modules. See
-[module configuration](/modules/configuration.md) for more information.
+[module configuration](/modules/configuration) for more information.
 
 ### Advanced configuration and frequently asked how to configure examples
 

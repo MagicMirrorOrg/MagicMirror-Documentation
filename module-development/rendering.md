@@ -6,7 +6,7 @@ engine.
 
 With both approaches, rendering is first triggered when the module is first
 loaded. When your module's data changes, you can call
-[`this.updateDom()`](/module-development/core-module-file.md#this-updatedom-speed-options)
+[`this.updateDom()`](/module-development/core-module-file#this-updatedom-speed-options)
 to trigger a re-render.
 
 ## Using `getDom`
@@ -86,7 +86,7 @@ template.
 
 MagicMirror provides a `translate` filter which can be used to access the same
 functionality available in the
-[`this.translate` module instance method](/module-development/core-module-file.md#this-translate-identifier).
+[`this.translate` module instance method](/module-development/core-module-file#this-translate-identifier).
 
 ```nunjucks
 {{ "INFO" | translate }}
