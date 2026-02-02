@@ -1,7 +1,7 @@
 # Module Configuration
 
 The module configuration is used as part of the main configuration file. Please
-see [configuration](/configuration/introduction.md) for more information.
+see [configuration](/configuration/introduction) for more information.
 
 | **Option**        | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -74,7 +74,7 @@ Animated feature allows to define an animation to a module
 - `animateIn`: When module appears
 - `animateOut`: When module should hide
 
-The whole of animation names are available [there](/modules/animate.md).
+The whole of animation names are available [there](/modules/animate).
 
 ::: tip Preview of animations
 

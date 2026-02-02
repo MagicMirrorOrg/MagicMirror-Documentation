@@ -11,12 +11,12 @@ animation name result.
 
 ::: warning Where animation can be used?
 
-- [global module configuration](/modules/configuration.md#animated) of a module
-- [this.hide()](/module-development/core-module-file.md#this-hide-speed-callback-options)
+- [global module configuration](/modules/configuration#animated) of a module
+- [this.hide()](/module-development/core-module-file#this-hide-speed-callback-options)
   function in core module file
-- [this.show()](/module-development/core-module-file.md#this-show-speed-callback-options)
+- [this.show()](/module-development/core-module-file#this-show-speed-callback-options)
   function in core module file
-- [this.updateDom()](/module-development/core-module-file.md#this-updatedom-speed-options)
+- [this.updateDom()](/module-development/core-module-file#this-updatedom-speed-options)
   function in core module file
 
 :::

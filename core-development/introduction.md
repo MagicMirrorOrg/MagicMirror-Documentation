@@ -9,7 +9,7 @@ This documentation describes core MagicMirror² development.
 ## General
 
 MagicMirror² is a community-driven development effort, and
-[contributions](/about/contributing.md) are welcome!
+[contributions](/about/contributing) are welcome!
 
 In general, new features and bug fixes should be tracked against an
 [issue in the MagicMirror repo](https://github.com/MagicMirrorOrg/MagicMirror/issues).

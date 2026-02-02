@@ -8,21 +8,21 @@ The MagicMirror core has the ability to send notifications to modules. Or even
 better: the modules have the possibility to send notifications to other modules.
 
 Additional technical information on the notifications can be found in the
-[modules' documentation](/module-development/introduction.md#general-advice):
+[modules' documentation](/module-development/introduction#general-advice):
 
-- [notificationReceived](/module-development/core-module-file.md#notificationreceived-notification-payload-sender)
-- [sendNotification](/module-development/core-module-file.md#module-instance-methods)
+- [notificationReceived](/module-development/core-module-file#notificationreceived-notification-payload-sender)
+- [sendNotification](/module-development/core-module-file#module-instance-methods)
 
 # System notifications
 
 The system sends three notifications when starting up:
 
-| Notification          | Payload | Description                                                                                                                                                                                                                                         |
-| --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ALL_MODULES_STARTED` | _none_  | All modules are started. You can now send notifications to other modules.                                                                                                                                                                           |
-| `DOM_OBJECTS_CREATED` | _none_  | All dom objects are created. The system is now ready to perform visual changes.                                                                                                                                                                     |
-| `MODULE_DOM_CREATED`  | _none_  | This module's dom has been fully loaded. You can now access your module's dom objects.                                                                                                                                                              |
-| `MODULE_DOM_UPDATED`  | _none_  | This module's dom has been updated and re-rendered. You can now access your module's (updated) dom objects. This notification is sent in response to a call to [`updateDom`](/module-development/core-module-file.md#this-updatedom-speed-options). |
+| Notification          | Payload | Description                                                                                                                                                                                                                                        |
+| --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ALL_MODULES_STARTED` | _none_  | All modules are started. You can now send notifications to other modules.                                                                                                                                                                          |
+| `DOM_OBJECTS_CREATED` | _none_  | All dom objects are created. The system is now ready to perform visual changes.                                                                                                                                                                    |
+| `MODULE_DOM_CREATED`  | _none_  | This module's dom has been fully loaded. You can now access your module's dom objects.                                                                                                                                                             |
+| `MODULE_DOM_UPDATED`  | _none_  | This module's dom has been updated and re-rendered. You can now access your module's (updated) dom objects. This notification is sent in response to a call to [`updateDom`](/module-development/core-module-file#this-updatedom-speed-options). |
 
 # Default module notifications
 
