@@ -143,7 +143,7 @@ controlled by settings inside the `config/config.js` file by interface and ip:
 - Change `ipWhitelist` to the list of IP's you want to allow to connect
 
 Sample Configuration below
-[and link to full configuration options](/configuration/introduction.md)
+[and link to full configuration options](/configuration/introduction)
 
 ```js
 let config = {
