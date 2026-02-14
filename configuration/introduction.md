@@ -120,9 +120,9 @@ node --run config:check
 ### Environment variables inside the configuration file
 
 Since MagicMirror² version `v2.35.0` curly braced bash environment variable are
-allowed inside the `config.js` file. This allows you to use variables to replace 
-hardcoded options. When starting MagicMirror² the variables are resolved. This is
-most useful for tech support provided on the
+allowed inside the `config.js` file. This allows you to use variables to replace
+hardcoded options. When starting MagicMirror² the variables are resolved. This
+is most useful for tech support provided on the
 [forums](http://forum.magicmirror.builders) and sharing your configuration.
 
 Variables must be inserted as `${MY_VARIABLE}`, examples:
@@ -160,8 +160,8 @@ variable is defined in both ways the linux environment variable is used.
 
 #### Using a `config.env` file
 
-This file must be in the same folder as the `config.js` and contains
-the variables, using the example from above:
+This file must be in the same folder as the `config.js` and contains the
+variables, using the example from above:
 
 File content of `config.env`:
 
