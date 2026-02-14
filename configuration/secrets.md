@@ -131,7 +131,7 @@ let config = {
       module: "MMM-Flights",
       position: "top_left",
       config: {
-        mapUrl: "https://api.mapbox.com/styles/v1/username/mapId/tiles/{z}/{x}/{y}?access_token=abc
+        mapUrl: "https://api.mapbox.com/styles/v1/username/mapId/tiles/{z}/{x}/{y}?access_token=abc"
       },
     },
   ...
