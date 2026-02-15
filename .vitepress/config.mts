@@ -72,6 +72,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "Introduction", link: "/configuration/introduction" },
+          { text: "Secrets", link: "/configuration/secrets" },
           {
             text: "Autostart your MagicMirror²",
             link: "/configuration/autostart",

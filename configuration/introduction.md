@@ -71,11 +71,11 @@ After the above options, you will then add modules. See
 There are two environment variables that override part or all of config.js. They
 are:
 
-| Environment Variable Name | Use                                                                                                                                                                                                                                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| MM_CONFIG_FILE            | This specifies an alternate configuration file for the system. This is useful when running multiple mirrors on the same device. This does not work with the template option below. NOTE: this file **_MUST_** be located in a directory within the MagicMirror directory. Ideally, place any config file in the config subdirectory. |
-| MM_PORT                   | This specifies an alternate TCP/IP port, overriding "port" item within the config file. This is useful for testing to see if the product will run using another port.                                                                                                                                                                |
-| mmFetchTimeout            | time in milliseconds for fetch timeout. default (30000) <br><br>this value can be used to adjust the nodejs fetch function timeout value for all node_helper modules that use fetch()                                                                                                                                                |
+| Environment Variable Name | Use                                                                                                                                                                                                                                                                               |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MM_CONFIG_FILE            | This specifies an alternate configuration file for the system. This is useful when running multiple mirrors on the same device. NOTE: this file **_MUST_** be located in a directory within the MagicMirror directory. Ideally, place any config file in the config subdirectory. |
+| MM_PORT                   | This specifies an alternate TCP/IP port, overriding "port" item within the config file. This is useful for testing to see if the product will run using another port.                                                                                                             |
+| mmFetchTimeout            | time in milliseconds for fetch timeout. default (30000) <br><br>this value can be used to adjust the nodejs fetch function timeout value for all node_helper modules that use fetch()                                                                                             |
 
 #### Examples of use
 
@@ -117,18 +117,17 @@ node --run config:check
 [26.12.2023 18:13.13.062] [INFO]  Your configuration file doesn't contain syntax errors :)
 ```
 
-### Configuration Template system
+### Environment variables inside the configuration file
 
-`config.js.template` can be used instead of `config.js`. This allows you to use
-variables to replace hardcoded options. When starting MagicMirror² a `config.js`
-is created from `config.js.template` and the variables are resolved. This is
-most useful for tech support provided on the
+Since MagicMirror² version `v2.35.0` curly braced bash environment variable are
+allowed inside the `config.js` file. This allows you to use variables to replace
+hardcoded options. When starting MagicMirror² the variables are resolved. This
+is most useful for tech support provided on the
 [forums](http://forum.magicmirror.builders) and sharing your configuration.
-Note: You cannot use this with MM_CONFIG_FILE above at this time.
 
 Variables must be inserted as `${MY_VARIABLE}`, examples:
 
-`config.js.template`:
+`config.js`:
 
 ```js
 let config = {
@@ -140,9 +139,7 @@ let config = {
 if (typeof module !== "undefined") {module.exports = config;}
 ```
 
-would become
-
-`config.js`:
+would be translated to
 
 ```js
 let config = {
@@ -163,8 +160,8 @@ variable is defined in both ways the linux environment variable is used.
 
 #### Using a `config.env` file
 
-This file must be in the same folder as the `config.js.template` and contains
-the variables, using the example from above:
+This file must be in the same folder as the `config.js` and contains the
+variables, using the example from above:
 
 File content of `config.env`:
 
@@ -176,7 +173,7 @@ MY_HTTPS=false
 
 #### Using linux environment variables
 
-define them before you start MagicMirror², in a bash script, for example:
+Define them before you start MagicMirror², in a bash script, for example:
 
 ```bash
 cd ~/MagicMirror
@@ -272,14 +269,14 @@ if (typeof module !== "undefined") {
 }
 ```
 
-#### config.js.template example
+#### config.js with variables
 
 User likes to help German language users in the forums. As such, he wants to be
 able to paste bits of his config.js into the forums to show as an example, but
 don't want to share his private data, and has a hard time remembering to remove
 them from the config.js file.
 
-`config.js.template`:
+`config.js`:
 
 ```js
 let config = {
