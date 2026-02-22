@@ -197,7 +197,7 @@ hours.
 
 | Option    | Description                                                                                                                                    |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `apiBase` | The Weather API base URL.<br><br> **Possible value:** `https://api.weatherapi.com/v1` <br> This value is **REQUIRED**                          |
+| `apiBase` | The Weather API base URL.<br><br> **Possible value:** `https://api.weatherapi.com/v1`                                                          |
 | `apiKey`  | The [Weather API](https://www.weatherapi.com) key which can be obtained by creating an Weather API account <br><br> This value is **REQUIRED** |
 | `lat`     | The latitude coordinate for the desired location. <br><br> **Possible value:** `59.322665` <br> This value is **REQUIRED**                     |
 | `lon`     | The longitude coordinate for the desired location. <br><br> **Possible value:** `18.069666` <br> This value is **REQUIRED**                    |
