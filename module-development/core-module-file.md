@@ -86,35 +86,32 @@ requiresVersion: "2.1.0",
 This method is called when a module gets instantiated. In most cases you do not
 need to subclass this method.
 
-### `loaded(callback)`
-
-_Introduced in version: 2.1.1._
-
-This method is called when a module is loaded. Subsequent modules in the config
-are not yet loaded. The `callback` function MUST be called when the module is
-done loading. In most cases you do not need to subclass this method.
-
-**Example:**
-
-```js
-loaded: function(callback) {
-	this.finishLoading();
-	Log.log(this.name + ' is loaded!');
-	callback();
-}
-```
-
 ### `start()`
 
 This method is called when all modules are loaded and the system is ready to
 boot up. Keep in mind that the dom object for the module is not yet created. The
-start method is a perfect place to define any additional module properties:
+start method is a perfect place to define any additional module properties.
+
+This method can be `async` or return a `Promise`. The system will wait for all
+modules' `start()` promises to settle (via `Promise.allSettled`) before
+proceeding to create the DOM and call `getDom()`. This makes it the right place
+for any asynchronous initialization, such as waiting for Web Components to be
+registered.
 
 **Example:**
 
 ```js
 start: function() {
 	this.mySpecialProperty = "So much wow!";
+	Log.log(this.name + ' is started!');
+}
+```
+
+**Async example:**
+
+```js
+async start() {
+	await customElements.whenDefined("my-custom-element");
 	Log.log(this.name + ' is started!');
 }
 ```
