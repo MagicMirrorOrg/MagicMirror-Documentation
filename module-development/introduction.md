@@ -65,7 +65,13 @@ same time.
   by the node script. The node helper and module script can communicate with
   each other using an integrated socket system.
 - **modulename/public** - Any files in this folder can be accessed via the
-  browser on `/modulename/filename.ext`.
+  browser on `/modulename/filename.ext`. **Note:** This requires the module to
+  have a `node_helper.js` file. If your module doesn't need a node helper for
+  anything else, an empty stub is enough:
+  ```js
+  const NodeHelper = require("node_helper");
+  module.exports = NodeHelper.create({});
+  ```
 - **modulename/anyfileorfolder** Any other file or folder in the module folder
   can be used by the core module script. For example:
   _modulename/css/modulename.css_ would be a good path for your additional

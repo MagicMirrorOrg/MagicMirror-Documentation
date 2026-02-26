@@ -57,6 +57,10 @@ created:
 this.expressApp.use("/" + this.name, express.static(this.path + "/public"));
 ```
 
+This means files in the `public` folder are only served if the module has a
+`node_helper.js`. See also the
+[module structure](introduction.md#files) documentation.
+
 ### `this.io`
 
 **Socket IO Instance**
