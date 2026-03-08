@@ -4,11 +4,8 @@ This module will be configurable to be used as a current weather view, or to
 show the forecast. This way the module can be used twice to fulfill both
 purposes.
 
-The biggest change is the use of weather providers. This way we are not bound to
-one API source. And users can choose which API they want to use as their source.
-
-The module is in a very early stage, and needs a lot of work. It's API isn't set
-in stone, so keep that in mind when you want to contribute.
+The module uses weather providers. This way we are not bound to one API source.
+And users can choose which API they want to use as their source.
 
 ## Screenshot
 
@@ -34,6 +31,25 @@ To use this module, add it to the modules array in the `config/config.js` file:
       },
     },
 ```
+
+## Themes
+
+Beginning with MagicMirror² `v2.35.0` we offer the use of themes. With this enhancement
+users must not create an own module if they only want to change the design of the module.
+
+Usage:
+
+- create a theme directory under `modules`, e.g. `modules/myweathertemplate`.
+- create own files `current.njk`, `forecast.njk`, `hourly.njk` and `weather.css` in the new directory.
+  As starting point you can copy the existing files (located at `defaultmodules/weather`).
+- set the configuration option `themeDir` to your new theme directory (e.g. `../../../modules/myweathertemplate`).
+
+For advanced users there are more options to customize the template:
+- you can define a function `window.initWeatherTheme(this)` which is called when starting the module.
+  Insert own code here if you need to do additional stuff before start.
+- you can define a function `window.updateWeatherTheme(this)` for updating the dom with own code.
+- you can use custom scripts located in your theme directory which contain e.g. the 2 methods
+  mentioned above or other stuff. Use the configuration option `themeCustomScripts` to load these scripts.
 
 ## Configuration options
 
@@ -63,7 +79,8 @@ The following properties can be configured:
 | `initialLoadDelay`             | The initial delay before loading. If you have multiple modules that use the same API key, you might want to delay one of the requests. (Milliseconds) <br><br> **Possible values:** `1000` - `5000` <br> **Default value:** `0`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `appendLocationNameToHeader`   | If set to `true`, the returned location name will be appended to the header of the module, if the header is enabled. This is mainly interesting when using calender based weather. <br><br> **Default value:** `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `calendarClass`                | The class for the calender module to base the event based weather information on. <br><br> **Default value:** `'calendar'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `useCorsProxy`                 | Some weather modules need a cors proxy to get their api running. <br><br> **Possible values:** true or false <br> **Default value:** `false` (except providers `pirateweather` and `envcanada`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `themeDir`                     | Defines the location of the 3 `*.njk` and the `weather.css` file. You can use an own dir containing these files to override the default ones. Directory must be specified relative to the `weather` directory. <br><br> **Possible values:** relative path <br> **Default value:** `./`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `themeCustomScripts`           | Defines additional script file names located in the `themeDir`. Only needed it your weather theme needs own additional scripts. <br><br> **Possible values:** array of filenames <br> **Default value:** `[]`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 #### Current weather options
 
