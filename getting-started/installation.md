@@ -164,9 +164,9 @@ You can start MagicMirror² in client mode by manually running the following
 command with the MagicMirror directory:
 `node clientonly --address 192.168.1.5 --port 8080`
 
-### Wayland
+### X11
 
-If you use Wayland. Run `node --run start:wayland` instead of `node --run start`
+MagicMirror² now uses Wayland by default. If you use X11, run `node --run start:x11` instead of `node --run start`
 to start.
 
 ### Windows
