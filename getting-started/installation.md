@@ -166,8 +166,8 @@ command with the MagicMirror directory:
 
 ### X11
 
-MagicMirror² now uses Wayland by default. If you use X11, run `node --run start:x11` instead of `node --run start`
-to start.
+MagicMirror² now uses Wayland by default. If you use X11, run
+`node --run start:x11` instead of `node --run start` to start.
 
 ### Windows
 
