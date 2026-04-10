@@ -78,6 +78,7 @@ export default defineConfig({
             link: "/configuration/autostart",
           },
           { text: "Raspberry Specific", link: "/configuration/raspberry" },
+          { text: "Cors Proxy", link: "/configuration/cors" },
         ],
       },
       {

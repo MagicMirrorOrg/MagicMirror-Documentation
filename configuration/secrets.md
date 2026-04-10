@@ -51,7 +51,7 @@ including all secrets, and send it somewhere else.
 
 ## Using secrets in server-side modules
 
-You have to add a new parameter in `config.js`:
+You have to add a new parameters in `config.js`:
 
 ```js
 let config = {
@@ -126,6 +126,8 @@ Example:
 let config = {
   ...
   hideConfigSecrets: true,
+  cors: "allowWhitelist",
+  corsDomainWhitelist: ["api.mapbox.com"],
   ...
   modules: [
     {
@@ -152,3 +154,15 @@ acts as a proxy here:
 `mapUrl: "/cors?url=https://api.mapbox.com/styles/v1/${SECRET_MAPBOX_ID}/tiles/{z}/{x}/{y}?access_token=${SECRET_MAPBOX_TOKEN}"`
 
 Behind the scenes the server substitutes the variables before fetching the data.
+
+::: warning NOTE
+
+You must whitelist every domain you use as cors url. Therefore, in the example
+above, we need to set
+
+```js
+  cors: "allowWhitelist",
+  corsDomainWhitelist: ["api.mapbox.com"],
+```
+
+:::
