@@ -51,7 +51,7 @@ including all secrets, and send it somewhere else.
 
 ## Using secrets in server-side modules
 
-You have to add a new parameters in `config.js`:
+You have to add new parameters in `config.js`:
 
 ```js
 let config = {
