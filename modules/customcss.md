@@ -9,8 +9,12 @@ as an example of how to override the default variables.
 cp config/custom.css.sample config/custom.css
 ```
 
-The full main CSS file for MagicMirror² is located at
+The base CSS file for MagicMirror² is located at
 [`css/main.css`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/css/main.css).
+
+Each module can then have their own CSS styles located in their respective
+folders. For example the `weather` modules has its own CSS file located at
+[`defaultmodules/weather/weather.css`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/defaultmodules/weather/weather.css)
 
 ### Example
 
