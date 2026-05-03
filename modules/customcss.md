@@ -16,6 +16,10 @@ Each module can then have their own CSS styles located in their respective
 folders. For example the `weather` modules has its own CSS file located at
 [`defaultmodules/weather/weather.css`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/defaultmodules/weather/weather.css)
 
+The `custom.css` file is loaded after all the default CSS files, so any styles
+you add there will override the default styles. You should not edit any of the
+default files directly.
+
 ### Example
 
 One common request is to make the weather icons colorful, this can easily be
