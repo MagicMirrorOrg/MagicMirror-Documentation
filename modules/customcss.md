@@ -1,7 +1,24 @@
 # Custom CSS
 
 MagicMirror² comes with a default theme but it can be customized by placing a
-custom css-file in `config/custom.css`.
+custom CSS file at `config/custom.css`. You can start with
+[`config/custom.css.sample`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/config/custom.css.sample)
+as an example of how to override the default variables.
+
+```sh
+cp config/custom.css.sample config/custom.css
+```
+
+The base CSS file for MagicMirror² is located at
+[`css/main.css`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/css/main.css).
+
+Each module can then have their own CSS styles located in their respective
+folders. For example the `weather` modules has its own CSS file located at
+[`defaultmodules/weather/weather.css`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/defaultmodules/weather/weather.css)
+
+The `custom.css` file is loaded after all the default CSS files, so any styles
+you add there will override the default styles. You should not edit any of the
+default files directly.
 
 ### Example
 
