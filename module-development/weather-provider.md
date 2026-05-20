@@ -3,19 +3,92 @@
 This document describes the way to develop your own MagicMirror² weather
 provider for the weather module.
 
-## The weather provider file: yourprovider.js
+::: warning BREAKING CHANGE in v2.35.0
 
-This is the script in which the weather provider will be defined. In its most
-simple form, the weather provider must implement the following:
+Weather providers now run **server-side** as Node.js classes. The old
+client-side `WeatherProvider.register("name", { ... })` API was removed. Custom
+providers from earlier versions must be updated for the new structure.
+
+:::
+
+## The weather provider file: `yourprovider.js`
+
+This is the script in which the weather provider will be defined. The file must
+be placed in MagicMirror's built-in weather provider directory:
+
+```bash
+~/MagicMirror/defaultmodules/weather/providers/yourprovider.js
+```
+
+The filename (lowercased) must match the `weatherProvider` value in `config.js`.
 
 ```js
-WeatherProvider.register("yourprovider", {
-  providerName: "YourProvider",
+{
+  module: "weather",
+  config: {
+    weatherProvider: "yourprovider",
+    type: "current" // or "forecast" / "hourly"
+  }
+}
+```
 
-  fetchCurrentWeather() {},
+This directory is part of the MagicMirror git repository. A custom file placed
+here may conflict with future updates, so keep a copy outside the repository
+before running `git pull`. You can also tell git not to track local changes to
+that file:
 
-  fetchWeatherForecast() {},
-});
+```bash
+git -C ~/MagicMirror update-index --assume-unchanged \
+  defaultmodules/weather/providers/yourprovider.js
+```
+
+In its most simple form, the weather provider must implement the following:
+
+```js
+const HTTPFetcher = require("#http_fetcher");
+
+class YourProvider {
+  constructor(config) {
+    this.config = config;
+    this.locationName = null;
+    this.fetcher = null;
+    this.onDataCallback = null;
+    this.onErrorCallback = null;
+  }
+
+  setCallbacks(onData, onError) {
+    this.onDataCallback = onData;
+    this.onErrorCallback = onError;
+  }
+
+  initialize() {
+    this.fetcher = new HTTPFetcher("https://your.api/endpoint", {
+      reloadInterval: this.config.updateInterval,
+      logContext: "weatherprovider.yourprovider",
+    });
+
+    this.fetcher.on("response", async (response) => {
+      const data = await response.json();
+      this.onDataCallback(this.parseWeather(data));
+    });
+
+    this.fetcher.on("error", (errorInfo) => this.onErrorCallback(errorInfo));
+  }
+
+  start() {
+    this.fetcher?.startPeriodicFetch();
+  }
+
+  stop() {
+    this.fetcher?.clearTimer();
+  }
+
+  parseWeather(data) {
+    return { temperature: data.temp };
+  }
+}
+
+module.exports = YourProvider;
 ```
 
 ## Weather provider methods to implement
@@ -29,121 +102,114 @@ The weather module expects the weather data to be in metric units:
 
 Some weather APIs already deliver their data in those units.
 
-If that is not the case you can use helper methods from the `weatherutils.js`
-class to convert the data.
+If that is not the case, convert the values before sending them to the weather
+module.
 
 :::
 
-### `fetchCurrentWeather()`
+### `constructor(config)`
 
-This method is called when the weather module tries to fetch the current weather
-of your provider. The implementation of this method is required for current
-weather support. The implementation can make use of the already implemented
-function `this.fetchData(url, method, data);`, which is returning a promise.
-After the response is processed, the current weather information (as a
-[WeatherObject](#weatherobject)) needs to be set with
-`this.setCurrentWeather(currentWeather);`. It will then automatically refresh
-the module DOM with the new data.
+This method receives the full weather module config. Store it as `this.config`
+and initialize the provider state here. The optional `locationName` property is
+shown in the module header.
 
-### `fetchWeatherForecast()`
+### `setCallbacks(onData, onError)`
 
-This method is called when the weather module tries to fetch the weather of your
-provider. The implementation of this method is required for forecast support.
-The implementation can make use of the already implemented function
-`this.fetchData(url, method, data);`, which is returning a promise. After the
-response is processed, the weather forecast information (as an array of
-[WeatherObject](#weatherobject)s) needs to be set with
-`this.setWeatherForecast(forecast);`. It will then automatically refresh the
-module DOM with the new data.
+This method is called by the `node_helper` before `initialize()`. Store both
+callbacks and call `onData(weatherData)` whenever new weather data is available.
+Call `onError({ message, translationKey })` when something goes wrong.
 
-### `fetchWeatherHourly()`
+### `initialize()`
 
-This method is called when the weather module tries to fetch the weather of your
-provider. The implementation of this method is required for hourly support. The
-implementation can make use of the already implemented function
-`this.fetchData(url, method, data);`, which is returning a promise. After the
-response is processed, the hourly weather forecast information (as an array of
-[WeatherObject](#weatherobject)s) needs to be set with
-`this.setWeatherHourly(forecast);`. It will then automatically refresh the
-module DOM with the new data.
+This method is called once when the provider is loaded. It may be `async`.
 
-## Weather Provider instance methods
+Validate required options such as API keys, coordinates, or provider-specific
+location IDs here. If required configuration is missing, call `onErrorCallback`
+with a useful message and return early — without creating the fetcher.
 
-### `init()`
+If validation passes, delegate the fetcher setup to a private helper (e.g.
+`#initializeFetcher()`). Keeping these two concerns separate makes the code
+easier to follow. You can also resolve `this.locationName` here if your provider
+needs an extra lookup before starting to fetch.
 
-Called when a weather provider is initialized.
-
-### `setConfig(config)`
-
-Called to set the config, this config is the same as the weather module's
-config.
+If `initialize()` throws, provider startup fails and the module reports an
+error. For API errors, call `onErrorCallback` with a useful message instead of
+throwing from setup code.
 
 ### `start()`
 
-Called when the weather provider is about to start.
+This method is called when the weather provider is about to start. Usually this
+starts periodic fetching:
 
-#### `currentWeather()`
+```js
+start() {
+  this.fetcher?.startPeriodicFetch();
+}
+```
 
-This returns a WeatherDay object for the current weather.
+### `stop()`
 
-### `weatherForecast()`
+This method is called when the weather provider is stopped. Cancel timers or
+other open resources here:
 
-This returns an array of WeatherDay objects for the weather forecast.
+```js
+stop() {
+  this.fetcher?.clearTimer();
+}
+```
 
-### `weatherHourly()`
+### Parsing weather data
 
-This returns an array of WeatherDay objects for the hourly weather forecast.
+Process the API response in your `HTTPFetcher` response handler and pass the
+result to `onDataCallback`. Return a plain JavaScript object for
+`type: "current"`, or an array of objects for `type: "forecast"` and
+`type: "hourly"`.
 
-### `fetchedLocation()`
+Wrap `response.json()` and your parsing logic in `try`/`catch` so invalid JSON
+or unexpected API response shapes can be reported through `onErrorCallback`
+instead of failing silently.
 
-This returns the name of the fetched location or an empty string.
+`HTTPFetcher` (`require("#http_fetcher")`) handles periodic fetching with retry
+and backoff. See
+[`js/http_fetcher.js`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/js/http_fetcher.js)
+for all options. Common `translationKey` values: `MODULE_ERROR_UNAUTHORIZED`,
+`MODULE_ERROR_RATE_LIMITED`, `MODULE_ERROR_SERVER_ERROR`,
+`MODULE_ERROR_NO_CONNECTION`, `MODULE_ERROR_UNSPECIFIED`.
 
-### `setCurrentWeather(currentWeatherObject)`
+## Weather Provider instance methods
 
-Set the currentWeather and notify the delegate that new information is
-available.
+The `node_helper` controls the provider lifecycle in this order:
 
-### `setWeatherForecast(weatherForecastArray)`
+1. `setCallbacks(onData, onError)`
+2. `initialize()`
+3. `start()`
+4. `stop()` when the module is stopped
 
-Set the weatherForecastArray and notify the delegate that new information is
-available.
-
-### `setWeatherHourly(weatherHourlyArray)`
-
-Set the weatherHourlyArray and notify the delegate that new information is
-available.
-
-### `setFetchedLocation(name)`
-
-Set the fetched location name.
-
-### `updateAvailable()`
-
-Notify the delegate that new weather is available.
-
-### `fetchData(url, method, data)`
-
-A convenience function to make requests. It returns a promise.
+These replace the old client-side provider methods such as
+`fetchCurrentWeather()`, `fetchWeatherForecast()`, `setCurrentWeather()`, and
+`updateAvailable()`.
 
 ## WeatherObject
 
-This object holds all data from your provider for usage in the template.
+This object holds all data from your provider for usage in the template. A
+server-side provider returns plain objects; the weather module converts them to
+`WeatherObject` instances on the client.
 
-| Property       | Type     | Value/Unit                                                                                                      |
-| -------------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| date           | `object` | [Moment.js](https://momentjs.com/) object of the time/date.                                                     |
-| windSpeed      | `number` | Speed of the wind in metric: `meter/second`                                                                     |
-| windDirection  | `number` | Direction of the wind in degrees.                                                                               |
-| sunrise        | `object` | [Moment.js](https://momentjs.com/) object of sunrise.                                                           |
-| sunset         | `object` | [Moment.js](https://momentjs.com/) object of sunset.                                                            |
-| temperature    | `number` | Current temperature in metric `celsius degree`.                                                                 |
-| minTemperature | `number` | Lowest temperature of the day in metric `celsius degree`.                                                       |
-| maxTemperature | `number` | Highest temperature of the day in metric `celsius degree`.                                                      |
-| weatherType    | `string` | Icon name of the weather type. <br> Possible values: [WeatherIcons](https://www.npmjs.com/package/weathericons) |
-| humidity       | `number` | Percentage of humidity                                                                                          |
-| rain           | `number` | Metric: `millimeters` <br> Imperial: `inches`                                                                   |
-| snow           | `number` | Metric: `millimeters` <br> Imperial: `inches`                                                                   |
-| precipitation  | `number` | Metric: `millimeters` <br> Imperial: `inches` <br> UK Met Office provider: `percent`                            |
+| Property                 | Type     | Value/Unit                                                                                                      |
+| ------------------------ | -------- | --------------------------------------------------------------------------------------------------------------- |
+| date                     | `Date`   | JavaScript `Date` object of the time/date.                                                                      |
+| windSpeed                | `number` | Speed of the wind in metric: `meter/second`                                                                     |
+| windFromDirection        | `number` | Direction of the wind in degrees.                                                                               |
+| sunrise                  | `Date`   | JavaScript `Date` object of sunrise.                                                                            |
+| sunset                   | `Date`   | JavaScript `Date` object of sunset.                                                                             |
+| temperature              | `number` | Current temperature in metric `celsius degree`.                                                                 |
+| minTemperature           | `number` | Lowest temperature of the day in metric `celsius degree`.                                                       |
+| maxTemperature           | `number` | Highest temperature of the day in metric `celsius degree`.                                                      |
+| weatherType              | `string` | Icon name of the weather type. <br> Possible values: [WeatherIcons](https://www.npmjs.com/package/weathericons) |
+| humidity                 | `number` | Percentage of humidity                                                                                          |
+| precipitationAmount      | `number` | Metric: `millimeters`                                                                                           |
+| precipitationUnits       | `string` | Optional precipitation unit override                                                                            |
+| precipitationProbability | `number` | Precipitation probability as percentage                                                                         |
 
 ### Current weather
 
@@ -154,7 +220,7 @@ For the current weather object the following properties are required:
 - sunset
 - temperature
 - weatherType
-- windDirection
+- windFromDirection
 - windSpeed
 
 ### Weather forecast
@@ -164,5 +230,12 @@ For the forecast weather object the following properties are required:
 - date
 - maxTemperature
 - minTemperature
-- rain
+- precipitationAmount
 - weatherType
+
+If your API does not provide one of these values, use a sensible fallback where
+possible. The important part is that the weather module receives the fields it
+expects for the selected `type`.
+
+For real examples, look at the built-in providers in
+[`defaultmodules/weather/providers/`](https://github.com/MagicMirrorOrg/MagicMirror/tree/master/defaultmodules/weather/providers).
