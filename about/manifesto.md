@@ -68,6 +68,13 @@ Through this philosophy, MagicMirror² not only provides functionality but
 fosters a community of learners, innovators, and collaborators – ensuring that
 its magic is driven by the passion and creativity of its contributors.
 
+### AI Usage
+
+MagicMirror² is a hobby and learning project. If you use AI assistants, we
+encourage you to let them help you _understand_ the code, not skip the learning
+process. Whatever you contribute — with or without AI — make sure you fully
+grasp how it works and can stand behind it.
+
 ## Future Directions
 
 Building on our philosophy of fostering contributions, we aim to continue
