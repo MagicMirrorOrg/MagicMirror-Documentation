@@ -19,6 +19,9 @@
        },
      ],
    };
+
+   /*************** DO NOT EDIT THE LINE BELOW ***************/
+   if (typeof module !== "undefined") {module.exports = config;}
    ```
 
    See [module configuration](/modules/configuration) for more information and
@@ -95,6 +98,11 @@ debugging:
 - `httpHeaders` (default: built-in helmet config object) allows overriding
   server security header behavior.
 - `hideConfigSecrets` is documented in detail in [Secrets](./secrets).
+
+When you use functions in `config.js`, keep them inside the exported `config`
+object if they need to be available in the browser. MagicMirror² serves the
+browser copy of the configuration from the `config` object, so free-standing
+helper functions outside that object are not included there.
 
 #### Bash Environment variables
 
