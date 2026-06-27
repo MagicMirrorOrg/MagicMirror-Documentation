@@ -1,11 +1,11 @@
 {
   "version": "2.31.0",
   "devDependencies": {
-    "cspell": "^9.7.0",
-    "prettier": "^3.8.1",
+    "cspell": "^10.0.1",
+    "prettier": "^3.9.0",
     "prettier-plugin-vitepress": "^0.0.10",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.30"
+    "vue": "^3.5.39"
   },
   "scripts": {
     "start": "node --run docs:dev",
