@@ -9,6 +9,7 @@
 
 3. Minimum configuration requires the following:
 
+   <!-- prettier-ignore -->
    ```js
    let config = {
      modules: [
@@ -179,6 +180,7 @@ if (typeof module !== "undefined") {module.exports = config;}
 
 would be translated to
 
+<!-- prettier-ignore -->
 ```js
 let config = {
   address: "localhost",
@@ -186,9 +188,7 @@ let config = {
   useHttps: false,
 };
 /*************** DO NOT EDIT THE LINE BELOW ***************/
-if (typeof module !== "undefined") {
-  module.exports = config;
-}
+if (typeof module !== "undefined") {module.exports = config;}
 ```
 
 #### Defining variables
