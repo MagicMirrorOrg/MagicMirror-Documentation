@@ -9,6 +9,7 @@
 
 3. Minimum configuration requires the following:
 
+   <!-- prettier-ignore -->
    ```js
    let config = {
      modules: [
@@ -19,6 +20,9 @@
        },
      ],
    };
+
+   /*************** DO NOT EDIT THE LINE BELOW ***************/
+   if (typeof module !== "undefined") {module.exports = config;}
    ```
 
    See [module configuration](/modules/configuration) for more information and
@@ -96,6 +100,11 @@ debugging:
   server security header behavior.
 - `hideConfigSecrets` is documented in detail in [Secrets](./secrets).
 
+When you use functions in `config.js`, keep them inside the exported `config`
+object if they need to be available in the browser. MagicMirror² serves the
+browser copy of the configuration from the `config` object, so free-standing
+helper functions outside that object are not included there.
+
 #### Bash Environment variables
 
 There are two environment variables that override part or all of config.js. They
@@ -171,6 +180,7 @@ if (typeof module !== "undefined") {module.exports = config;}
 
 would be translated to
 
+<!-- prettier-ignore -->
 ```js
 let config = {
   address: "localhost",
@@ -178,9 +188,7 @@ let config = {
   useHttps: false,
 };
 /*************** DO NOT EDIT THE LINE BELOW ***************/
-if (typeof module !== "undefined") {
-  module.exports = config;
-}
+if (typeof module !== "undefined") {module.exports = config;}
 ```
 
 #### Defining variables

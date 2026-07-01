@@ -19,7 +19,7 @@ jobs:
       options: --privileged
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Build container
         run: |
           REPO="$(echo "$GITHUB_REPOSITORY" | tr "[:upper:]" "[:lower:]")"
