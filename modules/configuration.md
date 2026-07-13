@@ -20,7 +20,7 @@ see [configuration](/configuration/introduction) for more information.
 ## Example
 
 ```js
-let config = {
+const config = {
   modules: [
     {
       module: "clock",
