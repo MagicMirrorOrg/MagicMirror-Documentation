@@ -11,7 +11,7 @@
 
    <!-- prettier-ignore -->
    ```js
-   let config = {
+   const config = {
      modules: [
        {
          module: "clock",
@@ -169,7 +169,7 @@ Variables must be inserted as `${MY_VARIABLE}`, examples:
 `config.js`:
 
 ```js
-let config = {
+const config = {
 	address: "${MY_ADDRESS}",
 	port: ${MY_PORT},
 	useHttps: ${MY_HTTPS},
@@ -182,7 +182,7 @@ would be translated to
 
 <!-- prettier-ignore -->
 ```js
-let config = {
+const config = {
   address: "localhost",
   port: 8080,
   useHttps: false,
@@ -233,7 +233,7 @@ You have two 1920x1080 monitors set up in the Pi as sitting next to each other:
 To move the pi to the second monitor, use this:
 
 ```js
-let config = {
+const config = {
 	electronOptions: { x: 1920 },
 	...
 ```
@@ -267,7 +267,7 @@ node --run start
 Configuration file 1 (config.js):
 
 ```js
-let config = {
+const config = {
 	address: "0.0.0.0", // Can be whatever you set as your original.
 	port: 8080, // Must be different than the other configuration file.
 	ipWhitelist: [], // Can be whatever you set as your original.
@@ -288,7 +288,7 @@ if (typeof module !== "undefined") {
 Configuration file 2 (config2.js):
 
 ```js
-let config = {
+const config = {
 	electronOptions: { x: 1920 },
 	address: "0.0.0.0", // can be whatever you set as your original.
 	port: 8081, // Must be different than the other configuration file.
@@ -317,7 +317,7 @@ them from the config.js file.
 `config.js`:
 
 ```js
-let config = {
+const config = {
   address: "0.0.0.0",
   port: 8080,
   ipWhitelist: [],
