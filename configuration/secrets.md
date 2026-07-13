@@ -54,7 +54,7 @@ including all secrets, and send it somewhere else.
 You have to add new parameters in `config.js`:
 
 ```js
-let config = {
+const config = {
   ...
   hideConfigSecrets: true,
   ...
@@ -73,7 +73,7 @@ In this example the 2 parameters are set with 2 normal environment variables
 `STRAVA_CLIENT_ID` and `STRAVA_API_KEY`:
 
 ```js
-let config = {
+const config = {
   ...
   hideConfigSecrets: true,
   ...
@@ -123,7 +123,7 @@ token in the URL.
 Example:
 
 ```js
-let config = {
+const config = {
   ...
   hideConfigSecrets: true,
   cors: "allowWhitelist",

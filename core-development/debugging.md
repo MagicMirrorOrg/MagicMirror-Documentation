@@ -44,7 +44,7 @@ This mode monitors files specified in your `config.js` under the `watchTargets`
 property:
 
 ```js
-let config = {
+const config = {
   watchTargets: [
     "config/config.js",
     "config/custom.css",
@@ -91,7 +91,7 @@ Debug logging is disabled by default, and can be very verbose. It can be enabled
 in the _config/config.js_ file by adding `"DEBUG"` to the `logLevel` key:
 
 ```js
-let config = {
+const config = {
   // ...
   logLevel: ["INFO", "LOG", "WARN", "ERROR", "DEBUG"], // Add "DEBUG" for even more logging
   // ...
