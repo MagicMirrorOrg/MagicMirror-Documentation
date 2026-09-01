@@ -1,11 +1,11 @@
 {
   "version": "2.31.0",
   "devDependencies": {
-    "cspell": "^10.0.1",
-    "prettier": "^3.9.0",
+    "cspell": "^10.2.0",
+    "prettier": "^3.9.6",
     "prettier-plugin-vitepress": "^0.0.10",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.39"
+    "vue": "^3.5.42"
   },
   "scripts": {
     "start": "node --run docs:dev",
@@ -19,5 +19,9 @@
   },
   "dependencies": {
     "@miletorix/vitepress-back-to-top-button": "^1.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true,
+    "fsevents@2.3.3": true
   }
 }
