@@ -6,23 +6,6 @@ export default defineConfig({
   description: "The open source modular smart mirror platform.",
   lang: "en",
   ignoreDeadLinks: "localhostLinks",
-  head: [
-    [
-      "script",
-      {
-        async: "",
-        src: "https://www.googletagmanager.com/gtag/js?id=UA-1219071-59",
-      },
-    ],
-    [
-      "script",
-      {},
-      `window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'TAG_ID');`,
-    ],
-  ],
   sitemap: {
     hostname: "https://docs.magicmirror.builders/",
   },
