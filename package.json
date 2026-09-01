@@ -1,7 +1,7 @@
 {
   "version": "2.38.0-beta",
   "devDependencies": {
-    "cspell": "^10.1.1",
+    "cspell": "^10.2.0",
     "prettier": "^3.9.6",
     "prettier-plugin-vitepress": "^0.0.10",
     "vitepress": "^1.6.4",
@@ -19,5 +19,9 @@
   },
   "dependencies": {
     "@miletorix/vitepress-back-to-top-button": "^1.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true,
+    "fsevents@2.3.3": true
   }
 }
