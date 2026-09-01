@@ -1,7 +1,7 @@
 {
   "version": "2.38.0-beta",
   "devDependencies": {
-    "cspell": "^10.0.1",
+    "cspell": "^10.1.1",
     "prettier": "^3.9.6",
     "prettier-plugin-vitepress": "^0.0.10",
     "vitepress": "^1.6.4",
