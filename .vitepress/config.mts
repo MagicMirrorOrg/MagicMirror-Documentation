@@ -59,12 +59,12 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "Introduction", link: "/" },
-          { text: "Requirements", link: "/getting-started/requirements.md" },
+          { text: "Requirements", link: "/getting-started/requirements" },
           {
             text: "Installation & Usage",
-            link: "/getting-started/installation.md",
+            link: "/getting-started/installation",
           },
-          { text: "Upgrade Guide", link: "/getting-started/upgrade-guide.md" },
+          { text: "Upgrade Guide", link: "/getting-started/upgrade-guide" },
         ],
       },
       {
@@ -142,12 +142,12 @@ export default defineConfig({
         text: "Core Development",
         collapsed: true,
         items: [
-          { text: "Introduction", link: "/core-development/introduction.md" },
+          { text: "Introduction", link: "/core-development/introduction" },
           {
             text: "Testing",
-            link: "/core-development/testing.md",
+            link: "/core-development/testing",
           },
-          { text: "Debugging", link: "/core-development/debugging.md" },
+          { text: "Debugging", link: "/core-development/debugging" },
         ],
       },
       {
