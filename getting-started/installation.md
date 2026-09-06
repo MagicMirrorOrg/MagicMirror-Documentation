@@ -160,6 +160,9 @@ controlled by settings inside the `config/config.js` file by interface and ip:
 - Change address to `0.0.0.0` this will allow MagicMirror² to listen on all
   network interfaces
 - Change `ipWhitelist` to the list of IP's you want to allow to connect
+- If MagicMirror² is behind a reverse proxy, add the proxy's IP address to
+  `trustedProxies`. This must be the address of the proxy as seen from the
+  MagicMirror² server. Do not set this for direct connections.
 
 Sample Configuration below
 [and link to full configuration options](/configuration/introduction)
@@ -169,6 +172,7 @@ const config = {
 	address: "0.0.0.0",	// default is "localhost"
 	port: 8080,		// default
 	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:172.17.0.1"], // default -- need to add your IP here
+  trustedProxies: [],	// add your reverse proxy address here when applicable
 	...
 };
 ```
