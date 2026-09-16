@@ -135,6 +135,36 @@ The following properties can be configured:
 | `ignoreToday`        | If set to `true`, today's weather will not be displayed. <br><br> **Possible values:** `true` or `false` <br> **Default value:** `false`                                                                                                                                                                                                                                                                                                                                                           |
 | `forecastDateFormat` | The date format to use for displaying forecast dates. Uses [Moment.js format](https://momentjs.com/docs/#/displaying/format/). <br><br> **Possible values:** Any valid Moment.js format string, e.g., `'ddd'` (Mon, Tue), `'dddd'` (Monday, Tuesday), `'D MMM'` (18 Oct), `'DD.MM.'` (18.10.) <br> **Default value:** `'ddd'` <br> This option only applies to the forecast view (`type: "forecast"`).                                                                                             |
 
+#### Weather forecast column order
+
+Forecast and hourly columns can be reordered with CSS custom properties in
+`css/custom.css`. The values are positive order numbers; lower numbers appear
+first. The default order is shown below:
+
+```css
+.weather .weather-forecast {
+  --weather-forecast-day-order: 1;
+  --weather-forecast-icon-order: 2;
+  --weather-forecast-min-temp-order: 3;
+  --weather-forecast-max-temp-order: 4;
+  --weather-forecast-uv-index-order: 5;
+  --weather-forecast-precipitation-amount-order: 6;
+  --weather-forecast-precipitation-prob-order: 7;
+}
+
+.weather .weather-hourly {
+  --weather-hourly-time-order: 1;
+  --weather-hourly-icon-order: 2;
+  --weather-hourly-temperature-order: 3;
+  --weather-hourly-uv-index-order: 4;
+  --weather-hourly-humidity-order: 5;
+  --weather-hourly-precipitation-amount-order: 6;
+  --weather-hourly-precipitation-prob-order: 7;
+}
+```
+
+Only columns enabled by the corresponding weather options are displayed.
+
 ### OpenWeatherMap options
 
 **Note:** When using the type: "forecast" config, if you are using a free api
