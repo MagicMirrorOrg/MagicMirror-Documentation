@@ -2,7 +2,7 @@
 title: Debugging
 ---
 
-# Core Development Documentation: Debugging
+# Debugging MagicMirror²
 
 Tips and tricks for debugging MagicMirror²,
 
