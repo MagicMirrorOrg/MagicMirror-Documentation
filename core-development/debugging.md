@@ -2,7 +2,7 @@
 title: Debugging
 ---
 
-# Core Development Documentation: Debugging
+# Debugging MagicMirror²
 
 Tips and tricks for debugging MagicMirror²,
 
@@ -67,6 +67,12 @@ and see the results within seconds without manual restarts.
 
 **Note:** If `watchTargets` is empty or undefined, the watcher starts but
 monitors nothing.
+
+## Isolate a module
+
+When debugging a module, temporarily disable unrelated modules. This reduces
+startup time, makes the logs easier to read, and helps identify module-specific
+problems.
 
 ## Logging
 
