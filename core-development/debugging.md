@@ -68,6 +68,12 @@ and see the results within seconds without manual restarts.
 **Note:** If `watchTargets` is empty or undefined, the watcher starts but
 monitors nothing.
 
+## Isolate a module
+
+When debugging a module, temporarily disable unrelated modules. This reduces
+startup time, makes the logs easier to read, and helps identify module-specific
+problems.
+
 ## Logging
 
 While there are no log files produced by the server, info is reported in two
