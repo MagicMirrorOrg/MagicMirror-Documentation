@@ -12,23 +12,20 @@ However, there are plenty of parameters worth protecting, such as:
 
 ::: warning NOTE
 
-Due to its design, this data is also displayed in the web browser, for example,
-in the `/config` subpath.
-
-Therefore, be careful when sharing your MagicMirror² website with others. Anyone
-with access to the site can also access the secrets.
+MagicMirror² always sends a redacted configuration to the web browser. Raw
+configuration files are never served.
 
 :::
 
-Beginning with MagicMirror² `v2.35.0` we offer beta support for secrets.
+Beginning with MagicMirror² `v2.35.0` we offer support for secrets.
 
 This is based on
 [environment variables inside the configuration file](/configuration/introduction.html#environment-variables-inside-the-configuration-file).
 
 ::: warning NOTE
 
-"Beta" means we offer no guarantee that the methods described below for
-protecting sensitive information will actually work. Use at your own risk.
+Secret values are only protected when they are used by server-side modules or
+through the internal CORS proxy. Always review the modules you install.
 
 :::
 
@@ -51,19 +48,6 @@ including all secrets, and send it somewhere else.
 
 ## Using secrets in server-side modules
 
-You have to add new parameters in `config.js`:
-
-```js
-const config = {
-  ...
-  hideConfigSecrets: true,
-  ...
-};
-```
-
-After a restart MagicMirror² will not send environment variables beginning with
-`SECRET_` to the clients (browsers).
-
 ### Example
 
 The MMM-Strava module displays activities and needs 2 parameters `client_id` and
@@ -75,7 +59,6 @@ In this example the 2 parameters are set with 2 normal environment variables
 ```js
 const config = {
   ...
-  hideConfigSecrets: true,
   ...
   modules: [
     {
@@ -101,18 +84,15 @@ const config = {
 };
 ```
 
-This setup is unsafe, you can see the contents of the 2 environment variables in
-the browser.
-
-To be safe, you have to use environment variables called
-`SECRET_STRAVA_CLIENT_ID` and `SECRET_STRAVA_API_KEY`. The browser has no access
-to the content of variables prefixed with `SECRET_`, the content of e.g.
-`SECRET_STRAVA_CLIENT_ID` is displayed as `**SECRET_STRAVA_CLIENT_ID**`.
+This setup is unsafe because the values are sent to the browser. To keep them
+server-side, use environment variables called `SECRET_STRAVA_CLIENT_ID` and
+`SECRET_STRAVA_API_KEY`. The browser receives placeholders such as
+`**SECRET_STRAVA_CLIENT_ID**` instead of the secret values.
 
 ## Using secrets on the browser-side
 
-Yes, we wrote above that this isn't possible. However, for some applications it
-might work with a workaround.
+Browser-side modules cannot receive secret values directly. For some
+applications, the internal CORS proxy provides a safe workaround.
 
 There are modules that use a map (e.g. MMM-RAIN-MAP, MMM-Flights) and the data
 required for this map is of course retrieved in the browser.
@@ -125,7 +105,6 @@ Example:
 ```js
 const config = {
   ...
-  hideConfigSecrets: true,
   cors: "allowWhitelist",
   corsDomainWhitelist: ["api.mapbox.com"],
   ...
