@@ -12,12 +12,43 @@ config from your module to your node helper.
 In its most simple form, the node_helper.js file must contain:
 
 ```js
-const NodeHelper = require("node_helper");
-module.exports = NodeHelper.create({});
+import NodeHelper from "node_helper";
+
+export default class extends NodeHelper {}
 ```
 
 Of course, the above helper would not do anything useful. So with the
 information above, you should be able to make it a bit more sophisticated.
+
+## ES modules
+
+_Introduced in version: 2.39.0._
+
+ES modules are the new standard way to write a node helper. Your module folder
+needs a `package.json` with `"type": "module"`; without it, Node.js loads
+`node_helper.js` as CommonJS and the `import` statements fail. The helper
+exports a class that extends `NodeHelper` as the default export:
+
+```js
+import NodeHelper from "node_helper";
+import Log from "logger";
+
+export default class extends NodeHelper {
+  start() {
+    Log.log(`Starting ${this.name}`);
+  }
+}
+```
+
+## CommonJS (legacy)
+
+Before version 2.39.0, node helpers had to be CommonJS. This still works and
+there is no need to change existing modules:
+
+```js
+const NodeHelper = require("node_helper");
+module.exports = NodeHelper.create({});
+```
 
 ## Available module instance properties
 
@@ -91,8 +122,9 @@ requiresVersion: "2.1.0",
 
 ### `init()`
 
-This method is called when a node helper gets instantiated. In most cases you do
-not need to subclass this method.
+This method is called when a node helper created with `NodeHelper.create()` gets
+instantiated. In a class, use the constructor instead. In most cases you do not
+need to subclass this method.
 
 ### `loaded()`
 
