@@ -233,7 +233,7 @@ Restart=always
 RestartSec=1
 User=server
 WorkingDirectory=/home/server/MagicMirror/
-ExecStart=/usr/bin/node serveronly
+ExecStart=/usr/bin/node --run server
 
 [Install]
 WantedBy=multi-user.target
