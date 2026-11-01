@@ -24,7 +24,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: current
+          node-version: lts/*
 
       - name: Install Dependencies
         run: npm ci --ignore-scripts
