@@ -107,6 +107,9 @@ const config = {
   ...
   cors: "allowWhitelist",
   corsDomainWhitelist: ["api.mapbox.com"],
+  corsSecretWhitelist: {
+    "api.mapbox.com": ["SECRET_MAPBOX_ID", "SECRET_MAPBOX_TOKEN"]
+  },
   ...
   modules: [
     {
@@ -142,6 +145,23 @@ above, we need to set
 ```js
   cors: "allowWhitelist",
   corsDomainWhitelist: ["api.mapbox.com"],
+  corsSecretWhitelist: {
+    "api.mapbox.com": ["SECRET_MAPBOX_ID", "SECRET_MAPBOX_TOKEN"]
+  },
 ```
+
+Only secrets listed for the target hostname are substituted, all other
+placeholders stay unchanged. With `cors: "allowAll"` no secrets are substituted.
+
+Requests with secrets must use HTTPS on port 443, must not contain URL
+credentials, and secrets must not change the host. They are never redirected.
+
+If you already use secrets in proxy URLs, add a `corsSecretWhitelist` entry like
+the one above. The modules themselves need no changes.
+
+Only list secrets the target service really needs, with minimal permissions. The
+whitelist does not restrict paths or query parameters, and the service's
+response is returned to the browser. A service that echoes the secret back can
+still expose it.
 
 :::
