@@ -62,7 +62,8 @@ class YourProvider {
   }
 
   initialize() {
-    this.fetcher = new HTTPFetcher("https://your.api/endpoint", {
+    this.fetcher = new HTTPFetcher({
+      url: "https://your.api/endpoint",
       reloadInterval: this.config.updateInterval,
       logContext: "weatherprovider.yourprovider",
     });
@@ -170,8 +171,9 @@ or unexpected API response shapes can be reported through `onErrorCallback`
 instead of failing silently.
 
 `HTTPFetcher` (`require("#http_fetcher")`) handles periodic fetching with retry
-and backoff. See
-[`js/http_fetcher.js`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/js/http_fetcher.js)
+and backoff. Pass `url` for a static address or `urlFactory` for an address that
+changes between requests. See
+[`js/http_fetcher.mjs`](https://github.com/MagicMirrorOrg/MagicMirror/blob/master/js/http_fetcher.mjs)
 for all options. Common `translationKey` values: `MODULE_ERROR_UNAUTHORIZED`,
 `MODULE_ERROR_RATE_LIMITED`, `MODULE_ERROR_SERVER_ERROR`,
 `MODULE_ERROR_NO_CONNECTION`, `MODULE_ERROR_UNSPECIFIED`.
@@ -205,6 +207,7 @@ server-side provider returns plain objects; the weather module converts them to
 | temperature              | `number` | Current temperature in metric `celsius degree`.                                                                 |
 | minTemperature           | `number` | Lowest temperature of the day in metric `celsius degree`.                                                       |
 | maxTemperature           | `number` | Highest temperature of the day in metric `celsius degree`.                                                      |
+| feelsLikeTemp            | `number` | Optional apparent temperature in metric `celsius degree`. Calculated if omitted.                                |
 | weatherType              | `string` | Icon name of the weather type. <br> Possible values: [WeatherIcons](https://www.npmjs.com/package/weathericons) |
 | humidity                 | `number` | Percentage of humidity                                                                                          |
 | precipitationAmount      | `number` | Metric: `millimeters`                                                                                           |
