@@ -4,8 +4,8 @@ import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import "./style.css";
 
-import BackToTopButton from "@miletorix/vitepress-back-to-top-button";
-import "@miletorix/vitepress-back-to-top-button/style.css";
+import BackToTopButton from "@belikellwyd/vitepress-back-to-top-button";
+import "@belikellwyd/vitepress-back-to-top-button/style.css";
 
 function rewrite(path: string): string | null {
   // Example: VuePress legacy prefix
