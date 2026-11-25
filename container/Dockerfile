@@ -12,7 +12,7 @@ npm install
 node --run docs:build
 EOF
 
-FROM nginxinc/nginx-unprivileged:alpine-slim
+FROM nginx/nginx-unprivileged:alpine-slim
 LABEL maintainer="MagicMirrorOrg"
 
 COPY container/default.conf /etc/nginx/conf.d/
