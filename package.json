@@ -18,7 +18,7 @@
     "test:spelling": "cspell . --gitignore"
   },
   "dependencies": {
-    "@miletorix/vitepress-back-to-top-button": "^1.0.3"
+    "@belikellwyd/vitepress-back-to-top-button": "^1.0.5"
   },
   "allowScripts": {
     "esbuild@0.21.5": true,
