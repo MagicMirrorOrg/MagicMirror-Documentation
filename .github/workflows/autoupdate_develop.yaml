@@ -8,18 +8,32 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: merge-master-to-develop
+  cancel-in-progress: false
+
 jobs:
   merge-master-back-to-develop:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Merge master back to develop
+        with:
+          fetch-depth: 0
+
+      - name: Check and merge master into develop
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "Github Actions"
-          git fetch --unshallow
           git checkout develop
-          git status
+
+          # check missing commits
+          COMMITS_BEHIND=$(git rev-list --count develop..origin/master)
+
+          if [ "$COMMITS_BEHIND" -eq "0" ]; then
+            echo "develop is already up to date."
+            exit 0
+          fi
+
           git merge --no-ff --allow-unrelated-histories origin/master -m "Auto-merge master back to develop"
-          git push
+          git push origin develop

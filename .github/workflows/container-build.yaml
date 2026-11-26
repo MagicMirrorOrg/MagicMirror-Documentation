@@ -1,33 +1,92 @@
 name: "Container Build"
 
+# Dynamic title in the Actions overview so the target branch is immediately visible
+run-name:
+  "Container Build (${{ github.event_name == 'workflow_run' && 'develop' ||
+  github.ref_name }})"
+
 on:
   push:
     branches:
       - "master"
       - "develop"
+  workflow_run:
+    workflows: ["Merge master into develop"]
+    types:
+      - completed
 
 permissions:
   contents: read
   packages: write
 
+# Cancel outdated builds for the same target branch if a newer run starts
+concurrency:
+  group:
+    container-build-${{ github.event_name == 'workflow_run' && 'develop' ||
+    github.ref_name }}
+  cancel-in-progress: true
+
 jobs:
   build:
+    if:
+      ${{ github.event_name == 'push' || github.event.workflow_run.conclusion ==
+      'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
       image: moby/buildkit:latest
       options: --privileged
+
     steps:
+      - name: Determine target branch
+        id: branch
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            echo "name=develop" >> $GITHUB_OUTPUT
+          else
+            echo "name=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Checkout code
         uses: actions/checkout@v7
+        with:
+          ref: ${{ steps.branch.outputs.name }}
+
+      - name: Check if build is needed
+        id: check
+        run: |
+          # Always build on regular push events
+          if [ "${{ github.event_name }}" != "workflow_run" ]; then
+            echo "should_build=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Fix for "dubious ownership" inside the root container
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+          # On workflow_run, check if the latest commit on develop was created by the auto-merge bot
+          LAST_AUTHOR=$(git log -1 --pretty=format:'%an')
+          LAST_MSG=$(git log -1 --pretty=format:'%s')
+
+          if [ "$LAST_AUTHOR" = "Github Actions" ] && [ "$LAST_MSG" = "Auto-merge master back to develop" ]; then
+            echo "should_build=true" >> $GITHUB_OUTPUT
+          else
+            echo "No new auto-merge detected. Skipping build."
+            echo "should_build=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Build container
+        if: steps.check.outputs.should_build == 'true'
         run: |
           REPO="$(echo "$GITHUB_REPOSITORY" | tr "[:upper:]" "[:lower:]")"
-          PARAMS="--output type=image,\"name=ghcr.io/${REPO}:${{ github.ref_name }}\",push=true"
-          # registry credentials
+          TARGET_TAG="${{ steps.branch.outputs.name }}"
+          PARAMS="--output type=image,\"name=ghcr.io/${REPO}:${TARGET_TAG}\",push=true"
+
+          # Registry credentials
           export DOCKER_CONFIG="$(pwd)/container"
           echo "{\"auths\":{\"ghcr.io\":{\"auth\":\"$(echo -n ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} | base64 -w 0)\"}}}" > $DOCKER_CONFIG/config.json
-          # build
+
+          # Build
           buildctl-daemonless.sh build \
             --progress plain \
             --frontend=dockerfile.v0 \
